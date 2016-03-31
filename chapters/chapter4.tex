@@ -3,5 +3,57 @@
 %%---------------------------------------------------------------------------%%
 
 
-\chapter{计算代数~Riccati~方程的~ULM~方法}
-\label{chapter:ULMM_RiccatiEq}
+\chapter{移动网格有限元的多重网格预处理方法}
+    原始变量形式的不可压Navier-Stokes方程
+    \begin{equation}
+      \begin{array}{rcl}
+         \partial_t \vec{u} - \nu \nabla^2 \vec{u} +
+        (\vec{u} \cdot \nabla )\vec{u} + \nabla p & =
+        & \vec{f},\\
+        \nabla \cdot \vec{u} & = & 0,
+      \end{array}
+      \label{eq::NS}
+    \end{equation}
+    $\partial \Omega = \partial \Omega_D \bigcup \partial \Omega_N$上的
+    边界条件以及初值条件:
+    \begin{equation}
+      \begin{array}{ll}
+        \vec{u} = \vec{w},& \mbox{ on } \partial \Omega_D \times [0,
+        T]\\
+        \nu \displaystyle \frac{\partial \vec{u}}{\partial n} - p =
+        \vec{0}, & \mbox{ on } \partial \Omega_N \times [0, T],  \\
+        \vec{u}|_{t = 0} = \vec{u_0}, & \mbox{ in } \Omega.
+      \end{array}
+      \label{eq::bc}
+    \end{equation}
+    其中 $\Omega \in \mathcal{R}^d,(d = 2, 3)$ 是计算区域，
+    $[0,T]$ 是时间区间, $\vec{u}$是速度变量并且常量$p$是压力， $\vec{n}$ 是边界
+    $\partial \Omega$上的外法向方向， $\nu > 0$ 是粘性动力学系数。
+    我们用\cite{li2001mesh} 和 \cite{di2005}中提出的移动网格有限元方法求解(\ref{eq::NS}) 和 (\ref{eq::bc})。
+    过去几十年，很多人在移动网格移动网格方法上做出了很多工作(\cite{cao1999adaptive}、
+    \cite{cao2003moving}、\cite{di2005moving}、\cite{di2007level}、\cite{di2007moving}、
+    \cite{li2001PHDthesis}、\cite{li2006moving})。Winslow \cite{Winslow1966NUMERICAL} 提出了
+    用移动网格方法求解椭圆方程。作为Winslow的工作的拓展, Dvinsky \cite{dvinsky1991adaptive}
+    提出了调和函数理论可以用来产生网格。收到Dvinsky工作的启发, L1, Tang and Zhang \cite{li2001mesh}
+    提出了基于调和映射的移动网格有限元方法。邸\cite{di2005moving}把这种移动网格策略应用到求解原始
+    变量形式的不可压Navier-Stokes方程。文中在移动网格策略中提出了保持散度的插值方法，这是通过
+    求解一个类似线性化的Navier-Stokes方程。我们在上一章中，提到了我们将$4P1-P1$元应用到移动网格    有限元方法上。$4P1-P1$元自然满足LBB(inf-sup)条件，在\cite{bercovier1979error}给出了$P1isop2P1$
+    元的误差收敛阶，速度$L^2$误差是二阶收敛，压力是一阶收敛。$4P1-P1$跟$P1isoP2P1$元具有相同的
+    数据结构，但是$4P1-P1$元中的速度单元上的基函数全部位于一个速度单元上，在速度单元和压力单元
+    进行拼装的时候，只要建立速度单元和压力单元间的索引，便是一个简单的过程。
+    
+    据我们所知，用满足inf-sup条件的$4P1-P1$元可以推出一个鞍点问题，许和何(\cite{xu1992iterative}、\cite{shen1999schur}、\cite{he2003})
+    将两格子方法应用到Navier-Stokes方程的求解。很多人在为krylov子空间方法提供预处理子方面做出了很多工作。
+    在\cite{benzi2005numerical}文中，概括了求解鞍点问题常用的数值方法，例如块预处理和多重网格预处理。文献(
+    \cite{bai2005inexact}, \cite{bai2006structured},\cite{elman2007least},\cite{elman2009boundary}等)中提出了许多块预处理方法，来
+    找到鞍点问题的schur补的更好的近似。\cite{benzi2006augmented}中提出了求解Ossen系统的增广的基于lagarian方法。在\cite{benzi2011relaxed}
+    中提出了求解不可压Navier-Stokes方程的维数分解的预处理方法。(\cite{boyle2007hsl}
+    \cite{boyle2010hsl_mi20})中提出了求解Navier-Stokes方程的一种高效的Krylov子空间方法，这种方法是用代数多重网格做预处理子。
+    但是据我们所知，对于鞍点问题的高效预处理方法基本上都是基于均匀网格上的，尽管在\cite{benzi2011relaxed}一文中，考虑了拉伸
+    网格的情形。
+    
+    在\cite{elman2005finite}的基础上，我们将为移动网格有限元方法求解(\ref{eq::NS})和
+    (\ref{eq::bc})提供了一个代数多重网格预处理方法。我们通过数值例子来表明，我们的预处理子的高效性。
+    
+    
+\label{chapter:AMG_preconditioner}

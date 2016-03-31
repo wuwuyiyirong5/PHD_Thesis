@@ -53,7 +53,7 @@
    传树结构，如Figure(\ref{fig::hgrometrytree})所示。一个宏压力单元对
    应这四个速度单元，通过遍历一次所有的速度单元，利用几何遗传树结构，
    就可以建立速度单元和压力单元的$1-1$对应。
-   
+
    在AFEPack中，速度网格和压力网格分别存储在两张非正则网格irregularMeshV
    和irregularMeshP上，这两张非正则网格都是建立在同一颗树上。非正则网格上，
    可以进行全局加密，局部加密以及疏化的操作，能进行这种操作得益于它的四叉树结构。
@@ -67,8 +67,8 @@
    $1-1$索引，注意到，只要不产生新的网格单元，我们建立的索引不需要重新改。应用到
    移动网格上，我们只需要一次构建索引就可以，不管网格如何移动，网格间的索引不会改变。
    建立索引的过程参见算法(\ref{alg::index})。
-   
-   
+
+
    \begin{algorithm}
      \caption{构建速度单元和压力单元间的索引}
      \begin{algorithmic}[1]
@@ -103,10 +103,19 @@
 
 \section{混合元近似}
     \subsection{流体方程}
-        在Stokes方程的基础上加一个对流项，我们可以得到一个稳态的Navier-Stokes方程
+        在Stokes方程
         \begin{equation}
             \begin{aligned}
-                -\nu \nabla^2\vec{u} + \vec{u}\cdot \nabla \vec{u} + \nabla p &=& \vec{f}, \\
+                -\bigtriangleup \vec{u} + \nabla p = f \quad \text{在}\Omega \text{内}, \\
+                \nabla \cdot \vec{u} = 0 \quad \text{在}\Omega \text{内},\\
+                \vec{u} = 0 \qquad \text{在}\partial \Omega \text{上},
+            \end{aligned}
+            \label{eq::stokes}
+        \end{equation}
+        的基础上加一个对流项，再加上时间项，我们可以得到一个时间发展的Navier-Stokes方程
+        \begin{equation}
+            \begin{aligned}
+                \frac{\partial \vec{u}}{\partial t}-\nu \nabla^2\vec{u} + \vec{u}\cdot \nabla \vec{u} + \nabla p &=& \vec{f}, \\
                 \nabla \cdot \vec{u} = 0.
             \end{aligned}
             \label{eq::NS_system}
@@ -114,7 +123,7 @@
         其中$\nu > 0$ 是一个常数，称作动力学粘性系数。跟Stokes 方程中类似，$\vec{u}$表示流体速度，
         $p$表示压力。对流项$\vec{u} \cdot \nabla \vec{u} := (\vec{u} \cdot \nabla) \vec{u}$，是非
         线性项，这也使得Navier-Stokes方程的解不唯一，这也给我们的数值计算带来了一定的挑战。
-        系统(\ref{eq::NS_system})的计算区域是$\Omega$，可以是二维的或三维的。在边界$\partial \Omega = 
+        系统(\ref{eq::NS_system})的计算区域是$\Omega$，可以是二维的或三维的。在边界$\partial \Omega =
         \partial \Omega_D \cup \Omega_N$上的边界条件如下：
         \begin{equation}
             \begin{array}{ll}
@@ -147,69 +156,97 @@
         简单的讲，就是说流入$\Omega$的流体的体积，要与流出的体积相等。这也是压力不唯一的原因。在处理入流/出流的问题时，要注意保
         证这个相容性条件，否则Navier-Stokes问题的解有可能不存在。一般情况下，我们在出流边界设置自然条件，相容性条件会自然满足，因此
         这时候问题(\ref{eq::NS_system})和(\ref{eq::bc})的压力解是唯一的。
-        
-        (\ref{eq::NS_system})是Navier-Stokes的原始变量形式    
+
+        (\ref{eq::NS_system})是Navier-Stokes的原始变量形式,它的另外一组表现形式是流函数形式。如果区域$\Omega$是单连通的，那么不可压缩条件
+        \begin{equation}
+            \frac{\partial u_x}{\partial x} = -\frac{\partial u_y}{\partial y}
+        \end{equation}
+        意味着存在一个流函数$\psi(x, y)$ 使得
+        \begin{equation}
+            u_x = \frac{\partial \psi}{\partial y}, \quad u_y = -\frac{\partial \psi}{\partial x}.
+        \end{equation}
+        $\psi(x, y)$除去一个常数外被$\vec{u}$唯一确定。
+        对(\ref{eq::NS_system})中的动量方程取curl，我们可以得到流函数形式：
+        \begin{equation}
+            -\nu \nabla^4 \psi + \frac{\partial \psi}{\partial y}\frac{\partial}{\partial x}(\nabla^2\psi) - \frac{\partial \psi}{\partial x}\frac{\partial }{\partial y}(\nabla^2 \psi) = -curl \vec{f}
+            \label{eq::stream_line}
+        \end{equation}
+        但由于流函数形式(\ref{eq::stream_line})在三维空间没有一般形式，所以流函数形式只在二维。我们还是研究(\ref{eq::NS_system})中的原始
+        变量形式。
+    \subsection{Weak formulation}
         我们定义解和检验空间如下：
-    \begin{eqnarray}
-      \mathbf{H}_E^1 & := & \left\{ \vec{u} \in \mathcal{H}^1(\Omega)^d \big|
-        \vec{u} = \vec{w} \mbox{ on } \partial \Omega_D \right\},\\
-      \mathbf{H}_{E_0}^1 & := & \left\{ \vec{v} \in \mathcal{H}^1(\Omega)^d \big|
-        \vec{u} = \vec{0} \mbox{ on } \partial \Omega_D \right\},
-    \end{eqnarray}
-    那么变分形式为：寻找$(\vec{u}, p) \in (\mathbf{H}_E^1,
-    L_2(\Omega))$ 使得
-    \begin{eqnarray}
-         \int_{\Omega}\frac{\partial \vec{u}}{\partial t} \cdot \vec{v} +
-        \nu \int_\Omega \nabla \vec{u} : \nabla \vec{v} + \int_\Omega \left(
-        \vec{u} \cdot \nabla \vec{u} \right) \cdot \vec{v} - \int p
-        \left( \nabla \cdot \vec{v} \right) & = & \int_\Omega \vec{f} \cdot
-        \vec{v}, \label{eq::generalweak_momentum}\\
-         & & \forall \vec{v} \in \mathbf{H}_{E_0}^1,\notag \\
-         \int_\Omega q \left( \nabla \cdot \vec{u} \right) & = & 0,
-         \label{eq::generalweak_mass} \\
-        & & \forall q \in L_2(\Omega). \notag
-   \end{eqnarray}
+        \begin{eqnarray}
+            \mathbf{H}_E^1 & := & \left\{ \vec{u} \in \mathcal{H}^1(\Omega)^d \big|
+            \vec{u} = \vec{w} \mbox{ on } \partial \Omega_D \right\},\\
+            \mathbf{H}_{E_0}^1 & := & \left\{ \vec{v} \in \mathcal{H}^1(\Omega)^d \big|
+            \vec{u} = \vec{0} \mbox{ on } \partial \Omega_D \right\}.
+        \end{eqnarray}
+        那么变分形式为：寻找$(\vec{u}, p) \in (\mathbf{H}_E^1,
+        L_2(\Omega))$ 使得
+        \begin{eqnarray}
+             \int_{\Omega}\frac{\partial \vec{u}}{\partial t} \cdot \vec{v} +
+            \nu \int_\Omega \nabla \vec{u} : \nabla \vec{v} + \int_\Omega \left(
+            \vec{u} \cdot \nabla \vec{u} \right) \cdot \vec{v} - \int p
+            \left( \nabla \cdot \vec{v} \right) & = & \int_\Omega \vec{f} \cdot
+            \vec{v}, \label{eq::generalweak_momentum}\\
+             & & \forall \vec{v} \in \mathbf{H}_{E_0}^1,\notag \\
+             \int_\Omega q \left( \nabla \cdot \vec{u} \right) & = & 0,
+             \label{eq::generalweak_mass} \\
+            & & \forall q \in L_2(\Omega). \notag
+       \end{eqnarray}
 
-   其中$\nabla \vec{u} : \nabla \vec{v}$ 表示纯量的乘积，在二维中为
-   $\nabla u_x \cdot \nabla v_x + \nabla u_y \cdot \nabla v_y$.
+       其中$\nabla \vec{u} : \nabla \vec{v}$ 表示纯量的乘积，在二维中为
+       $\nabla u_x \cdot \nabla v_x + \nabla u_y \cdot \nabla v_y$.
+       我们在构造混合元近似的时候要确保可解性条件
+       \begin{equation}
+            \int_{\Omega}p \nabla \cdot \vec{v} = 0 \quad \text{对任意的}\vec{v} \in \mathbf{H}_{E_0}^1 \Rightarrow \left\{ \begin{array}{ll}
+                p = \mbox{constant} & \text{如果} \partial \Omega = \partial \Omega_D \\
+                p = 0 & \text{其他情况}
+            \end{array}
+            \right.
+            \label{eq::solve_condition}
+       \end{equation}
+        (\ref{eq::solve_condition})可以由inf-sup 条件推出。
+        \begin{equation}
+            \inf_{ q \neq \mbox{constant}} \sup_{\vec{v} \neq \vec{0}} \frac{|(q, \nabla \cdot \vec{v})|}{||vec{v}||_{H(\Omega)^1} ||q||_{L(\Omega)^0}} \geq \gamma > 0.
+        \end{equation}
 
-   假设$\tau_h$是$\Omega$ 上对压力网格的三角剖分，网格尺度 $h = max_{T
-     \in \tau_h} diam(T)$, $T$ 为三角剖分 $\tau_h$ 的单元。对应的，
-   $\tau_{\frac{h}{2}}$ 是对速度网格的三角剖分。基于
-   $\tau_{\frac{h}{2}}$ 和 $\tau_{h}$ 上的有限元空间 $X_E^h$ 和 $P_h$
-   满足
-   \begin{equation}
-     X_E^h \subset \mathcal{H}_E, \quad P_h \subset L_2(\Omega)
-     \notag
-   \end{equation}
+       假设$\tau_h$是$\Omega$ 上对压力网格的三角剖分，网格尺度 $h = max_{T
+         \in \tau_h} diam(T)$, $T$ 为三角剖分 $\tau_h$ 的单元。对应的，
+       $\tau_{\frac{h}{2}}$ 是对速度网格的三角剖分。基于
+       $\tau_{\frac{h}{2}}$ 和 $\tau_{h}$ 上的有限元空间 $X_E^h$ 和 $P_h$
+       满足
+       \begin{equation}
+         X_E^h \subset \mathcal{H}_E, \quad P_h \subset L_2(\Omega)
+         \notag
+       \end{equation}
 
-   那么(\ref{eq::generalweak_momentum}) 和 (\ref{eq::generalweak_mass})
-   可以写成如下形式: 寻找 $(\vec{u}_h, p_h) \in X_E^h \times P_h$ 使得
-   \begin{equation}
-     \begin{aligned}
-       &\int_{\Omega}\frac{\partial \vec{u}_h}{\partial t} \cdot \vec{v}_h
-       + \nu \int_\Omega \nabla \vec{u}_h : \nabla \vec{v}_h  \\
-       + & \int_\Omega \left( \vec{u}_h \cdot \nabla \vec{u}_h \right)
-       \cdot \vec{v}_h - \int_\Omega p_h \left( \nabla \cdot \vec{v}_h
-       \right) & = &\int_\Omega \vec{f} \cdot \vec{v}_h, &\quad
-       \forall \vec{v}_h \in \mathbf{X}_0^h;  \\
-       & \int_\Omega q_h \left( \nabla \cdot \vec{u}_h \right) & = &0,&
-       \quad \forall q_h \in P^h.
-       \label{eq::discreted_weak}
-     \end{aligned}
-   \end{equation}
+       那么(\ref{eq::generalweak_momentum}) 和 (\ref{eq::generalweak_mass})
+       可以写成如下形式: 寻找 $(\vec{u}_h, p_h) \in X_E^h \times P_h$ 使得
+       \begin{equation}
+         \begin{aligned}
+           &\int_{\Omega}\frac{\partial \vec{u}_h}{\partial t} \cdot \vec{v}_h
+           + \nu \int_\Omega \nabla \vec{u}_h : \nabla \vec{v}_h  \\
+           + & \int_\Omega \left( \vec{u}_h \cdot \nabla \vec{u}_h \right)
+           \cdot \vec{v}_h - \int_\Omega p_h \left( \nabla \cdot \vec{v}_h
+           \right) & = &\int_\Omega \vec{f} \cdot \vec{v}_h, &\quad
+           \forall \vec{v}_h \in \mathbf{X}_0^h;  \\
+           & \int_\Omega q_h \left( \nabla \cdot \vec{u}_h \right) & = &0,&
+           \quad \forall q_h \in P^h.
+           \label{eq::discreted_weak}
+         \end{aligned}
+       \end{equation}
 
-   时间方向至少三阶Runge-Kutta方法才能保证数值稳定性。
-   为了简便，我们这里只用显示Euler格式：
+   为了简便，我们时间离散上用显示Euler格式：
    $\forall (\vec{v}_h, q_h) \in \mathbf{X}_0^h \times P^h$
    \begin{equation}
      \begin{aligned}
        \int_{\Omega} \frac{\vec{u}_h^{(n + 1)} -
-         \vec{u}_h^{(n)}}{\delta t} + \nu \int_{\Omega} \nabla
+         \vec{u}_h^{(n)}}{\delta t} \cdot \vec{v} + \nu \int_{\Omega} \nabla
        \vec{u}_h^{(n + 1)} : \nabla \vec{v}_h - \int_{\Omega} p_h^{(n
          + 1)} \left( \nabla \cdot \vec{v}_h \right)
-       & = \int_{\Omega} \left( \vec{u}_h^{(n)} \cdot \nabla \vec{u}_h^{(n)}
-       \right) &\\
+       & = \int_{\Omega}\left(\vec{f} + \vec{u}_h^{(n)} \cdot \nabla \vec{u}_h^{(n)}
+       \right) \cdot \vec{v} &\\
        \int_{\Omega} q_h \nabla \cdot \vec{u}_h^{(n + 1)} & = 0.&
      \end{aligned}
      \label{eq::time_discreted_weak}
@@ -344,16 +381,15 @@
 
    我们主要的想法是有两套网格，速度网格和压力网格，速度网格可以由压力
    网格加密一次得到。因此我们对压力网格进行移动，然后对移动完的压力网
-   格全局加密一次，即可实现对速度网格的移动。
+   格全局加密一次，即可实现对速度网格的同步移动。
    为了更好的说明我们的数值方法，我们将算法的流程图如Algorithm(\ref{alg::solve})所示.
    \begin{algorithm}
      \caption{移动网格方法来求解Navier Stokes方程}
      \begin{algorithmic}[1]
+       \State 在初始速度网格$\triangle_v^{(0)}$和压力网格
+       $\triangle_p^{(0)}$上，求解$t = t_n$时刻Stokes方程(\ref{eq::stokes}), 获
+       得数值解$\vec{u}_h^{(0)}, p_h^{(0)}$.
        \While {$t_n < T$}
-             \State 在速度网格$\triangle_v^{(n)}$和压力网格
-                    $\triangle_p^{(n)}$上，求解$t = t_n$时刻
-                    的 Navier-Stokes方程(\ref{eq::linear_system}), 获
-                    得数值解$\vec{u}_h^{(n)}, p_h^{(n)}$.
              \State 在压力网格$\triangle_p^{(n)}$上，用$\vec{u}_h^{(n)},
                     p_h^{(n)}$来计算控制函数, 并通过求解
                     (\ref{eq::logical}), 获得$\vec{\xi}^*$. \label{state::monitor}
@@ -377,7 +413,6 @@
                     (\ref{eq::linear_system}).从而真正获得$t = t_{n +
                       1}$时刻的数值解$\vec{u}_h^{(n + 1)}, p_h^{(n +
                       1)}$.
-
              \State $n = n + 1$
         \EndWhile
      \end{algorithmic}
@@ -657,41 +692,41 @@
           Table(\ref{tab::colliding_uniform_error}) 和
           Table(\ref{tab::colliding_uniform_div_error})所示。
 
-          \begin{table}[!htbp]
-            \centering
-            \begin{tabular}{ccccccc} \hline
-              网格   & $||\vec{u} - \vec{u}_h ||_{L^2}$ & 误差阶 &$||\vec{u} -
-              \vec{u}_h ||_{H^1}$ & $||p - p_h||_{L^0}$ & 误差阶 &$||p -
-              p_h||_{H^1}$  \\ \hline
-              $10 \times 10$   &   $1.42 \times 10^{-1}$   &  &  $3.65 \times
-              10^0$     &   $1.26 \times 10^0$ & & $2.06 \times 10^1$    \\
-              $20 \times 20 $   &   $3.54 \times 10^{-2}$   & 2.01  &  $1.81 \times
-              10^0$     &   $3.90 \times 10^{-1}$ & 1.62 & $1.22 \times 10^1$   \\
-              $40 \times 40 $   &   $8.82 \times 10^{-3}$   & 2.01  & $9.03 \times
-              10^{-1}$  &   $1.14 \times 10^{-1}$ & 1.71 & $6.72 \times 10^0$   \\
-              $80 \times 80 $   &   $2.20 \times 10^{-3}$   & 2.00  & $4.51 \times
-              10^{-1}$  &   $3.39 \times 10^{-2}$ &  1.68 & $3.90 \times 10^0$  \\ \hline
-            \end{tabular}
-            \caption{\small 用均匀网格计算碰撞流的误差, $\nu = 1.0$.}
-            \label{tab::colliding_uniform_error}
-          \end{table}
-
-          \begin{table}[!htbp]
-            \centering
-            \begin{tabular}{ccccc} \hline
-              网格   & 涡量$L^2$误差 & 误差阶 & 散度$L^2$误差 & 误差阶\\ \hline
-              $10 \times 10$    &   $2.62 \times 10^{0}$   &  &   $2.54 \times
-              10^0$ &  \\
-              $20 \times 20 $   &   $1.31 \times 10^{0}$  & 1.00  &   $1.25 \times
-              10^0$ & 1.02 \\
-              $40 \times 40 $   &   $6.54 \times 10^{-1}$ & 1.00  &   $6.22 \times
-              10^{-1}$ &  1.00 \\
-              $80 \times 80 $   &   $3.27 \times 10^{-1}$ & 1.00  &   $3.10 \times
-              10^{-1}$ & 1.00 \\ \hline
-            \end{tabular}
-            \caption{\small 用均匀网格计算碰撞流的散度和涡量误差, $\nu = 1.0$.}
-            \label{tab::colliding_uniform_div_error}
-          \end{table}
+%          \begin{table}[!htbp]
+%            \centering
+%            \begin{tabular}{ccccccc} \hline
+%              网格   & $||\vec{u} - \vec{u}_h ||_{L^2}$ & 误差阶 &$||\vec{u} -
+%              \vec{u}_h ||_{H^1}$ & $||p - p_h||_{L^0}$ & 误差阶 &$||p -
+%              p_h||_{H^1}$  \\ \hline
+%              $10 \times 10$   &   $1.42 \times 10^{-1}$   &  &  $3.65 \times
+%              10^0$     &   $1.26 \times 10^0$ & & $2.06 \times 10^1$    \\
+%              $20 \times 20 $   &   $3.54 \times 10^{-2}$   & 2.01  &  $1.81 \times
+%              10^0$     &   $3.90 \times 10^{-1}$ & 1.62 & $1.22 \times 10^1$   \\
+%              $40 \times 40 $   &   $8.82 \times 10^{-3}$   & 2.01  & $9.03 \times
+%              10^{-1}$  &   $1.14 \times 10^{-1}$ & 1.71 & $6.72 \times 10^0$   \\
+%              $80 \times 80 $   &   $2.20 \times 10^{-3}$   & 2.00  & $4.51 \times
+%              10^{-1}$  &   $3.39 \times 10^{-2}$ &  1.68 & $3.90 \times 10^0$  \\ \hline
+%            \end{tabular}
+%            \caption{\small 用均匀网格计算碰撞流的误差, $\nu = 1.0$.}
+%            \label{tab::colliding_uniform_error}
+%          \end{table}
+%
+%          \begin{table}[!htbp]
+%            \centering
+%            \begin{tabular}{ccccc} \hline
+%              网格   & 涡量$L^2$误差 & 误差阶 & 散度$L^2$误差 & 误差阶\\ \hline
+%              $10 \times 10$    &   $2.62 \times 10^{0}$   &  &   $2.54 \times
+%              10^0$ &  \\
+%              $20 \times 20 $   &   $1.31 \times 10^{0}$  & 1.00  &   $1.25 \times
+%              10^0$ & 1.02 \\
+%              $40 \times 40 $   &   $6.54 \times 10^{-1}$ & 1.00  &   $6.22 \times
+%              10^{-1}$ &  1.00 \\
+%              $80 \times 80 $   &   $3.27 \times 10^{-1}$ & 1.00  &   $3.10 \times
+%              10^{-1}$ & 1.00 \\ \hline
+%            \end{tabular}
+%            \caption{\small 用均匀网格计算碰撞流的散度和涡量误差, $\nu = 1.0$.}
+%            \label{tab::colliding_uniform_div_error}
+%          \end{table}
 
           \begin{table}[!htbp]
             \centering
@@ -743,12 +778,7 @@
           向是对的。再者，判断选取$G_1$为控制函数是否合适。从Figure
           (\ref{fig::uniform_vs_moving_err})中看到：在均匀网格下，速度
           $L^2$误差最大的地方分布在四个顶角上，这与控制函数的分布是一
-          致的。所以选取$G_1$为控制函数是合理的。再来对比
-          Table(\ref{tab::colliding_uniform_error})和
-          Table(\ref{tab::colliding_moving_error})中速度和压力的误差。
-          可以发现，移动网格方法下速度和压力的误差均有所下降，但是下降
-          的很小。
-
+          致的。所以选取$G_1$为控制函数是合理的。
           \begin{figure}[ht]
             \begin{center}
               \includegraphics[width = 0.43\textwidth, angle = -90]{../picture_collidingFlow/mesh_move_direction.eps}
@@ -768,13 +798,6 @@
             \end{center}
           \end{figure}
 
-          注意到在Figure(\ref{fig::uniform_vs_moving_mesh})中，移动网
-          格相对于均匀网格移动的并不是很明显。在
-          Table(\ref{tab::colliding_moving_error_alpha})中我们选取不同
-          的$\alpha$的值，查看速度和压力误差的变化。
-          网格如Figure(\ref{fig::uniform_vs_moving_mesh1})
-          所示。随着$\alpha$的值变大, 虽然网格移动的效果越来越明显,
-          但此时的速度和压力误差却变大了。
 
 
           \begin{figure}[ht]
@@ -786,46 +809,7 @@
             \end{center}
           \end{figure}
 
-          \begin{figure}[ht]
-            \begin{center}
-              \includegraphics[width = 0.43\textwidth, angle =
-              -90]{../picture_collidingFlow/moving_mesh20_vs001.eps}
-              \includegraphics[width = 0.43\textwidth, angle =
-              -90]{../picture_collidingFlow/moving_mesh20_vs01.eps}
-              \caption{\small 网格对比，左；移动网格$\alpha = 0.01,
-                \beta = 2.0$ 右：移动网格 $\alpha = 0.1, \beta = 2.0$.}
-              \label{fig::uniform_vs_moving_mesh1}
-            \end{center}
-          \end{figure}
-
-          \begin{table}[!htbp]
-            \centering
-            \begin{tabular}{ccccc} \hline
-              $\alpha$   & $||\vec{u} - \vec{u}_h ||_{L^2}$ & $||\vec{u} -
-              \vec{u}_h ||_{H^1}$ & $||p - p_h||_{L^0}$ & $||p -
-              p_h||_{H^1}$  \\ \hline
-              0.0(\text{不移动}) &   $3.54 \times 10^{-2}$ & $1.81 \times
-              10^0$   &   $3.90 \times 10^{-1}$   &  $1.22 \times 10^1$   \\
-
-              0.002   &   $2.94 \times 10^{-2}$   &  $1.67 \times
-              10^0$   &   $2.330 \times 10^{-1}$  &  $1.06 \times 10^1$   \\
-              0.005   &   $2.98 \times10^{-2}$    &  $1.64 \times 10^0$
-                      &   $2.08 \times 10^{-1}$   &  $1.06 \times
-                      10^1$ \\
-              0.01    &   $3.22 \times10^{-2}$    &  $1.65 \times 10^0$
-                      &   $2.02 \times 10^{-1}$   &  $1.08 \times
-                      10^1$ \\
-              0.1     &   $5.28 \times 10^{-2}$   &  $2.09 \times
-                      10^0$
-                      &   $3.39 \times 10^{-1}$   &  $1.40 \times
-                      10^1$ \\ \hline
-            \end{tabular}
-            \caption{\small 不同$\alpha$的值，用移动网格计算碰撞流的误差, 网格$20 \times
-              20 $.}
-            \label{tab::colliding_moving_error_alpha}
-          \end{table}
-
-
+          
 \section{Introduction}
 
 Let integer $p \geq 2$. A matrix $X \in \CS^{n \times n}$ is called
