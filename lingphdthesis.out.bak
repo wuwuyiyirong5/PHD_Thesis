@@ -1,0 +1,45 @@
+\BOOKMARK [0][-]{chapter*.1}{摘 \040要}{}% 1
+\BOOKMARK [0][-]{chapter*.2}{Abstract}{}% 2
+\BOOKMARK [0][-]{chapter*.3}{目 \040录}{}% 3
+\BOOKMARK [0][-]{chapter.1}{第 1 章 \040绪论}{}% 4
+\BOOKMARK [1][-]{section.1.1}{1.1 研究背景}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.2}{1.2 迭代法介绍}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.3}{1.3 矩阵函数}{chapter.1}% 7
+\BOOKMARK [2][-]{subsection.1.3.1}{1.3.1 矩阵平方根}{section.1.3}% 8
+\BOOKMARK [2][-]{subsection.1.3.2}{1.3.2 矩阵 p 次根}{section.1.3}% 9
+\BOOKMARK [2][-]{subsection.1.3.3}{1.3.3 代数 Riccati 方程}{section.1.3}% 10
+\BOOKMARK [1][-]{section.1.4}{1.4 论文的组织}{chapter.1}% 11
+\BOOKMARK [0][-]{chapter.2}{第 2 章 \040预备知识}{}% 12
+\BOOKMARK [1][-]{section.2.1}{2.1 混合有限元}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.2}{2.2 几何遗传树结构}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.3}{2.3 移动网格方法}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.4}{2.4 预处理方法}{chapter.2}% 16
+\BOOKMARK [1][-]{section.2.5}{2.5 收敛性结果}{chapter.2}% 17
+\BOOKMARK [1][-]{section.2.6}{2.6 预备引理}{chapter.2}% 18
+\BOOKMARK [1][-]{section.2.7}{2.7 定理 2.3 的证明}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.8}{2.8 Numerical examples}{chapter.2}% 20
+\BOOKMARK [0][-]{chapter.3}{第 3 章 \040基于4P1-P1元求解Navier-Stokes方程的移动网格方法}{}% 21
+\BOOKMARK [1][-]{section.3.1}{3.1 数据结构}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.2}{3.2 混合元近似}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 流体方程}{section.3.2}% 24
+\BOOKMARK [1][-]{section.3.3}{3.3 移动网格策略}{chapter.3}% 25
+\BOOKMARK [2][-]{subsection.3.3.1}{3.3.1 Step 1 获取Monitor}{section.3.3}% 26
+\BOOKMARK [2][-]{subsection.3.3.2}{3.3.2 Step 2 获取新的逻辑网格}{section.3.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.3}{3.3.3 Step 3 物理网格的移动方向}{section.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.4}{3.3.4 Step 4 散度为0的插值}{section.3.3}% 29
+\BOOKMARK [1][-]{section.3.4}{3.4 数值算例}{chapter.3}% 30
+\BOOKMARK [2][-]{subsection.3.4.1}{3.4.1 Colliding Flow}{section.3.4}% 31
+\BOOKMARK [1][-]{section.3.5}{3.5 Introduction}{chapter.3}% 32
+\BOOKMARK [1][-]{section.3.6}{3.6 Convergence results for Euler's method}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.7}{3.7 Proof of Theorem 3.1}{chapter.3}% 34
+\BOOKMARK [2][-]{subsection.3.7.1}{3.7.1 Technical lemmas}{section.3.7}% 35
+\BOOKMARK [2][-]{subsection.3.7.2}{3.7.2 Proof of Theorem 3.1}{section.3.7}% 36
+\BOOKMARK [1][-]{section.3.8}{3.8 A Preconditioned Schur Modification}{chapter.3}% 37
+\BOOKMARK [1][-]{section.3.9}{3.9 Numerical Experiments}{chapter.3}% 38
+\BOOKMARK [1][-]{section.3.10}{3.10 关于 Halley 法的注记}{chapter.3}% 39
+\BOOKMARK [0][-]{chapter.4}{第 4 章 \040计算代数 Riccati 方程的 ULM 方法}{}% 40
+\BOOKMARK [0][-]{chapter.5}{第 5 章 \040计算代数 Riccati 方程的修正 Newton 方法}{}% 41
+\BOOKMARK [0][-]{chapter*.6}{攻读学位期间取得的研究成果}{}% 42
+\BOOKMARK [0][-]{chapter*.7}{致 \040谢}{}% 43
+\BOOKMARK [0][-]{chapter*.8}{浙江大学学位论文独创性声明}{}% 44
+\BOOKMARK [0][-]{chapter*.9}{学位论文使用授权声明}{}% 45
