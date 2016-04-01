@@ -39,8 +39,19 @@
 \BOOKMARK [1][-]{section.3.9}{3.9 Numerical Experiments}{chapter.3}% 39
 \BOOKMARK [1][-]{section.3.10}{3.10 关于 Halley 法的注记}{chapter.3}% 40
 \BOOKMARK [0][-]{chapter.4}{第 4 章 \040移动网格有限元的多重网格预处理方法}{}% 41
-\BOOKMARK [0][-]{chapter.5}{第 5 章 \040计算代数 Riccati 方程的修正 Newton 方法}{}% 42
-\BOOKMARK [0][-]{chapter*.6}{攻读学位期间取得的研究成果}{}% 43
-\BOOKMARK [0][-]{chapter*.7}{致 \040谢}{}% 44
-\BOOKMARK [0][-]{chapter*.8}{浙江大学学位论文独创性声明}{}% 45
-\BOOKMARK [0][-]{chapter*.9}{学位论文使用授权声明}{}% 46
+\BOOKMARK [1][-]{section.4.1}{4.1 时间格式的离散}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.2}{4.2 Fast Krylov Solver}{chapter.4}% 43
+\BOOKMARK [1][-]{section.4.3}{4.3 Moving Mesh Strategy}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Step 1 Obtain monitor function}{section.4.3}% 45
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Step 2 Get a new logical mesh}{section.4.3}% 46
+\BOOKMARK [2][-]{subsection.4.3.3}{4.3.3 Step 3 Achieve mesh move direction in physical domain}{section.4.3}% 47
+\BOOKMARK [2][-]{subsection.4.3.4}{4.3.4 Step 4 Eusure the incompressible constraint interpolation}{section.4.3}% 48
+\BOOKMARK [1][-]{section.4.4}{4.4 Numerical Tests}{chapter.4}% 49
+\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1 driven cavity flow}{section.4.4}% 50
+\BOOKMARK [2][-]{subsection.4.4.2}{4.4.2 Backward step flow}{section.4.4}% 51
+\BOOKMARK [2][-]{subsection.4.4.3}{4.4.3 Flow over cylinder}{section.4.4}% 52
+\BOOKMARK [0][-]{chapter.5}{第 5 章 \040计算代数 Riccati 方程的修正 Newton 方法}{}% 53
+\BOOKMARK [0][-]{chapter*.6}{攻读学位期间取得的研究成果}{}% 54
+\BOOKMARK [0][-]{chapter*.7}{致 \040谢}{}% 55
+\BOOKMARK [0][-]{chapter*.8}{浙江大学学位论文独创性声明}{}% 56
+\BOOKMARK [0][-]{chapter*.9}{学位论文使用授权声明}{}% 57

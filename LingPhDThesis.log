@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2016.3.26)  31 MAR 2016 23:37
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2016.3.26)  2 APR 2016 00:00
 entering extended mode
 **LingPhDThesis.tex
 (E:\PHD_thesis_template\LingPhDThesis.tex
@@ -741,8 +741,35 @@ LaTeX Warning: Label `set:D1' multiply defined.
 
 LaTeX Warning: Label `set:D2' multiply defined.
 
-) (E:\PHD_thesis_template\Chapters/chapter4.aux)
-(E:\PHD_thesis_template\Chapters/chapter5.aux)
+) (E:\PHD_thesis_template\Chapters/chapter4.aux
+
+LaTeX Warning: Label `eq::bc' multiply defined.
+
+
+LaTeX Warning: Label `eq::linear_system' multiply defined.
+
+
+LaTeX Warning: Label `eq::monitor_vorticity' multiply defined.
+
+
+LaTeX Warning: Label `eq::logical' multiply defined.
+
+
+LaTeX Warning: Label `eq::continous_update' multiply defined.
+
+
+LaTeX Warning: Label `state::monitor' multiply defined.
+
+
+LaTeX Warning: Label `state::start' multiply defined.
+
+
+LaTeX Warning: Label `state::end' multiply defined.
+
+
+LaTeX Warning: Label `alg::solve' multiply defined.
+
+) (E:\PHD_thesis_template\Chapters/chapter5.aux)
 (E:\PHD_thesis_template\Chapters/publications.aux)
 (E:\PHD_thesis_template\Chapters/thanks.aux)
 (E:\PHD_thesis_template\Chapters/statements.aux))
@@ -943,14 +970,14 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 12.05pt
 (hyperref)                replaced by space on input line 75.
 
-(E:\PHD_thesis_template\LingPhDThesis.toc [5])
+(E:\PHD_thesis_template\LingPhDThesis.toc [5] [6])
 \tf@toc=\write5
- [6]
+ [7] [8
+
+]
 (E:\PHD_thesis_template\LingPhDThesis.lot)
 \tf@lot=\write6
- [7
-
-] [8
+ [9] [10
 
 ]
 (E:\PHD_thesis_template\LingPhDThesis.lof
@@ -961,7 +988,7 @@ T1/cmr/m/n/12.05 = 25\OML/cmm/m/it/12.05 ; \OT1/cmr/m/n/12.05 100\OML/cmm/m/it/
 12.05 ; \OT1/cmr/m/n/12.05 400$ 
  []
 
-[9]
+[11]
 Overfull \hbox (11.93112pt too wide) in paragraph at lines 56--56
  [][][] [][][]\OT1/cmr/m/n/12.05 The ap-prox-i-mat-ing re-gions of $\OMS/cmsy/m
 /n/12.05 R[]$ \OT1/cmr/m/n/12.05 de-fined in (3.93) for $\OML/cmm/m/it/12.05 p 
@@ -969,9 +996,11 @@ Overfull \hbox (11.93112pt too wide) in paragraph at lines 56--56
 t/12.05 ; \OT1/cmr/m/n/12.05 400$ 
  []
 
-)
+[12])
 \tf@lof=\write7
- [10] (E:\PHD_thesis_template\Chapters/chapter1.tex
+ [13] [14
+
+] (E:\PHD_thesis_template\Chapters/chapter1.tex
 ตฺ\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 1\hspace {0.25em plus
  0.125em minus 0.08em}\ignorespaces ีย
 
@@ -1059,7 +1088,6 @@ Package natbib Warning: Citation `Deuflhard2004' on page 1 undefined on input l
 ine 78.
 
 [1
-
 
 
 ]
@@ -1756,7 +1784,7 @@ n/12.05/45 =$\OML/cmm/m/it/12.05 @\OT1/cmr/m/n/12.05
  = \OML/cmm/m/it/12.05 @\OT1/cmr/m/n/12.05 
 []$|\C19/rm/m/n/12.05/26 ง| \C19/rm/m/n/12.05/51 @ \C19/rm/m/n/12.05/50 o\OT1/c
 mr/m/n/12.05 Navier-Stokes\C19/rm/m/n/12.05/58 ฏ \C19/rm/m/n/12.05/57 K\OT1/cmr
-/m/n/12.05 ([][]3.2[][])\C19/rm/m/n/12.05/43 ฺ\OT1/cmr/m/n/12.05 ([][]3.3[][])\
+/m/n/12.05 ([][]3.2[][])\C19/rm/m/n/12.05/43 ฺ\OT1/cmr/m/n/12.05 ([][]4.2[][])\
 C19/rm/m/n/12.05/40 
  []
 
@@ -2452,9 +2480,6 @@ Package natbib Warning: Citation `di2005' on page 91 undefined on input line 32
 .
 
 
-LaTeX Warning: Reference `eq::NS' on page 91 undefined on input line 32.
-
-
 Package natbib Warning: Citation `cao1999adaptive' on page 91 undefined on inpu
 t line 33.
 
@@ -2560,65 +2585,535 @@ Package natbib Warning: Citation `elman2005finite' on page 92 undefined on inpu
 t line 55.
 
 
-LaTeX Warning: Reference `eq::NS' on page 92 undefined on input line 55.
+Package natbib Warning: Citation `peaceman1955numerical' on page 92 undefined o
+n input line 59.
 
 
-Package natbib Warning: Citation `benzi2005numerical' on page 92 undefined on i
-nput line 62.
+Package natbib Warning: Citation `he2003two' on page 92 undefined on input line
+ 60.
+
+Missing character: There is no ง in font cmr12!
+Missing character: There is no ถ in font cmr12!
+Missing character: There is no ง in font cmr12!
+Missing character: There is no ง in font cmr12!
+Missing character: There is no þ in font cmr12!
+
+Overfull \hbox (41.05469pt too wide) in alignment at lines 72--80
+ [][][] []
+ []
 
 
-Package natbib Warning: Citation `bai2005inexact' on page 92 undefined on input
- line 63.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81             \end{algorithmic}
+                                  
+? 
+
+Package natbib Warning: Citation `dean1993some' on page 92 undefined on input l
+ine 87.
+
+Missing character: There is no ง in font cmr12!
+Missing character: There is no ง in font cmr12!
+Missing character: There is no ถ in font cmr12!
+Missing character: There is no ง in font cmr12!
+Missing character: There is no ถ in font cmr12!
+Missing character: There is no ง in font cmr12!
+Missing character: There is no ง in font cmr12!
+Missing character: There is no ถ in font cmr12!
+
+Overfull \hbox (1104.44783pt too wide) in alignment at lines 93--116
+ [][][] []
+ []
 
 
-Package natbib Warning: Citation `bai2006structured' on page 92 undefined on in
-put line 63.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.117             \end{algorithmic}
+                                   
+? 
+[92]
+
+Package natbib Warning: Citation `li2005multi' on page 93 undefined on input li
+ne 131.
+
+! Undefined control sequence.
+l.136      \subfloat
+                    [One time uniform refined mesh]{
+? 
+! Undefined control sequence.
+l.147      \subfloat
+                    [its hierarchy tree]{
+? 
+
+Package natbib Warning: Citation `Wu2016moving' on page 93 undefined on input l
+ine 172.
+
+[93] [94]
+
+Package natbib Warning: Citation `elman2005finite' on page 95 undefined on inpu
+t line 264.
 
 
-Package natbib Warning: Citation `elman2007least' on page 92 undefined on input
- line 64.
+Package natbib Warning: Citation `elman2005finite' on page 95 undefined on inpu
+t line 281.
+
+[95]
+
+Package natbib Warning: Citation `elman2005finite' on page 96 undefined on inpu
+t line 315.
 
 
-Package natbib Warning: Citation `elman2009boundary' on page 92 undefined on in
-put line 64.
+Package natbib Warning: Citation `elman2011fast' on page 96 undefined on input 
+line 316.
 
 
-Package natbib Warning: Citation `benzi2006augmented' on page 92 undefined on i
-nput line 67.
+Package natbib Warning: Citation `elman2009boundary' on page 96 undefined on in
+put line 321.
 
 
-Package natbib Warning: Citation `benzi2011relaxed' on page 92 undefined on inp
-ut line 68.
+Package natbib Warning: Citation `di2005moving' on page 96 undefined on input l
+ine 331.
 
 
-Package natbib Warning: Citation `boyle2007hsl' on page 92 undefined on input l
-ine 68.
+Package natbib Warning: Citation `di2005moving' on page 96 undefined on input l
+ine 335.
 
 
-Package natbib Warning: Citation `boyle2010hsl_mi20' on page 92 undefined on in
-put line 69.
+Package natbib Warning: Citation `di2005moving' on page 96 undefined on input l
+ine 342.
+
+[96] [97]
+
+Package natbib Warning: Citation `di2005moving' on page 98 undefined on input l
+ine 428.
 
 
-Package natbib Warning: Citation `benzi2011relaxed' on page 92 undefined on inp
-ut line 72.
+Package natbib Warning: Citation `di2005moving' on page 98 undefined on input l
+ine 432.
+
+[98]
+
+Package natbib Warning: Citation `elman2005finite' on page 99 undefined on inpu
+t line 499.
 
 
-LaTeX Warning: Reference `eq::NS' on page 92 undefined on input line 76.
+Overfull \hbox (1.80228pt too wide) in paragraph at lines 496--504
+[]\OT1/cmr/m/n/12.05 As we known, the schur com-ple-ment of ma-trix $\OMS/cmsy/
+m/n/12.05 M[]$ \OT1/cmr/m/n/12.05 is $\OML/cmm/m/it/12.05 M[] \OT1/cmr/m/n/12.0
+5 = \OML/cmm/m/it/12.05 B[]Q[]B[] \OT1/cmr/m/n/12.05 + \OML/cmm/m/it/12.05 B[]Q
+[]B[]$\OT1/cmr/m/n/12.05 .
+ []
 
 
-Package natbib Warning: Citation `elman2005finite' on page 92 undefined on inpu
-t line 78.
+Package natbib Warning: Citation `elman2009boundary' on page 99 undefined on in
+put line 516.
 
-) [92] (E:\PHD_thesis_template\Chapters/chapter5.tex
+
+Underfull \hbox (badness 5274) in paragraph at lines 558--563
+[] \OT1/cmr/m/n/12.05 Solve Navier-Stokes sys-tem ([][]4.8[][]) to ob-tain nu-m
+er-i-cal so-lu-tions
+ []
+
+[99] [100]
+
+LaTeX Warning: File `picture/cavity_flow_data/moving_mesh.eps' not found on inp
+ut line 608.
+
+
+! LaTeX Error: File `picture/cavity_flow_data/moving_mesh.eps' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.608 ...picture/cavity_flow_data/moving_mesh.eps}
+                                                  
+? 
+
+! LaTeX Error: Cannot determine size of graphic in picture/cavity_flow_data/mov
+ing_mesh.eps (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.608 ...picture/cavity_flow_data/moving_mesh.eps}
+                                                  
+? 
+File: picture/cavity_flow_data/moving_mesh.eps Graphic file (type eps)
+<picture/cavity_flow_data/moving_mesh.eps>
+
+LaTeX Warning: File `picture/cavity_flow_data/vortex.eps' not found on input li
+ne 609.
+
+
+! LaTeX Error: File `picture/cavity_flow_data/vortex.eps' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.609 ...-90]{picture/cavity_flow_data/vortex.eps}
+                                                  
+? 
+
+! LaTeX Error: Cannot determine size of graphic in picture/cavity_flow_data/vor
+tex.eps (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.609 ...-90]{picture/cavity_flow_data/vortex.eps}
+                                                  
+? 
+File: picture/cavity_flow_data/vortex.eps Graphic file (type eps)
+<picture/cavity_flow_data/vortex.eps>
+
+LaTeX Warning: File `picture/cavity_flow_data/streamline.eps' not found on inpu
+t line 618.
+
+
+! LaTeX Error: File `picture/cavity_flow_data/streamline.eps' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.618 ...{picture/cavity_flow_data/streamline.eps}
+                                                  
+? 
+
+! LaTeX Error: Cannot determine size of graphic in picture/cavity_flow_data/str
+eamline.eps (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.618 ...{picture/cavity_flow_data/streamline.eps}
+                                                  
+? 
+File: picture/cavity_flow_data/streamline.eps Graphic file (type eps)
+<picture/cavity_flow_data/streamline.eps>
+
+LaTeX Warning: File `picture/cavity_flow_data/NS_iterate_steps.eps' not found o
+n input line 627.
+
+
+! LaTeX Error: File `picture/cavity_flow_data/NS_iterate_steps.eps' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.627 ...re/cavity_flow_data/NS_iterate_steps.eps}
+                                                  
+? 
+
+! LaTeX Error: Cannot determine size of graphic in picture/cavity_flow_data/NS_
+iterate_steps.eps (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.627 ...re/cavity_flow_data/NS_iterate_steps.eps}
+                                                  
+? 
+File: picture/cavity_flow_data/NS_iterate_steps.eps Graphic file (type eps)
+<picture/cavity_flow_data/NS_iterate_steps.eps>
+! Undefined control sequence.
+l.638            \toprule
+                         
+? 
+! Undefined control sequence.
+l.639            \multirow
+                          {2}{*}{pressure mesh}    & \multirow{2}{*}{time
+? 
+! Undefined control sequence.
+l.639 ...tirow{2}{*}{pressure mesh}    & \multirow
+                                                  {2}{*}{time
+? 
+! Undefined control sequence.
+<recently read> \midrule 
+                         
+l.642 ... W_p^n$ & $F_p = A_p + W_p^n$ \\ \midrule
+                                                  
+? 
+! Undefined control sequence.
+<recently read> \midrule 
+                         
+l.644            \\ \midrule
+                            
+? 
+! Undefined control sequence.
+<recently read> \midrule 
+                         
+l.646            \\ \midrule
+                            
+? 
+! Undefined control sequence.
+<recently read> \bottomrule 
+                            
+l.648            \\ \bottomrule
+                               
+? 
+[101]
+Underfull \vbox (badness 2980) has occurred while \output is active []
+
+ [102]
+
+LaTeX Warning: File `picture/L_shaped_flow_data/mesh.eps' not found on input li
+ne 682.
+
+
+! LaTeX Error: File `picture/L_shaped_flow_data/mesh.eps' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.682 ...-90]{picture/L_shaped_flow_data/mesh.eps}
+                                                  
+? 
+
+! LaTeX Error: Cannot determine size of graphic in picture/L_shaped_flow_data/m
+esh.eps (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.682 ...-90]{picture/L_shaped_flow_data/mesh.eps}
+                                                  
+? 
+File: picture/L_shaped_flow_data/mesh.eps Graphic file (type eps)
+<picture/L_shaped_flow_data/mesh.eps>
+
+LaTeX Warning: File `picture/L_shaped_flow_data/streamline.eps' not found on in
+put line 684.
+
+
+! LaTeX Error: File `picture/L_shaped_flow_data/streamline.eps' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.684 ...icture/L_shaped_flow_data/streamline.eps}
+                                                  
+? 
+
+! LaTeX Error: Cannot determine size of graphic in picture/L_shaped_flow_data/s
+treamline.eps (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.684 ...icture/L_shaped_flow_data/streamline.eps}
+                                                  
+? 
+File: picture/L_shaped_flow_data/streamline.eps Graphic file (type eps)
+<picture/L_shaped_flow_data/streamline.eps>
+
+LaTeX Warning: File `picture/L_shaped_flow_data/iterate_steps.eps' not found on
+ input line 692.
+
+
+! LaTeX Error: File `picture/L_shaped_flow_data/iterate_steps.eps' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.692 ...ure/L_shaped_flow_data/iterate_steps.eps}
+                                                  
+? 
+
+! LaTeX Error: Cannot determine size of graphic in picture/L_shaped_flow_data/i
+terate_steps.eps (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.692 ...ure/L_shaped_flow_data/iterate_steps.eps}
+                                                  
+? 
+File: picture/L_shaped_flow_data/iterate_steps.eps Graphic file (type eps)
+<picture/L_shaped_flow_data/iterate_steps.eps>
+
+Package natbib Warning: Citation `cao1999anr' on page 103 undefined on input li
+ne 701.
+
+
+Underfull \vbox (badness 4954) has occurred while \output is active []
+
+ [103]
+
+Package natbib Warning: Citation `milton1982album' on page 104 undefined on inp
+ut line 724.
+
+
+LaTeX Warning: File `picture/obstacle_flow_data/comparation_NS_iterate_step.eps
+' not found on input line 729.
+
+
+! LaTeX Error: File `picture/obstacle_flow_data/comparation_NS_iterate_step.eps
+' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.729 ...low_data/comparation_NS_iterate_step.eps}
+                                                  
+? 
+
+! LaTeX Error: Cannot determine size of graphic in picture/obstacle_flow_data/c
+omparation_NS_iterate_step.eps (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.729 ...low_data/comparation_NS_iterate_step.eps}
+                                                  
+? 
+File: picture/obstacle_flow_data/comparation_NS_iterate_step.eps Graphic file (
+type eps)
+<picture/obstacle_flow_data/comparation_NS_iterate_step.eps>
+
+LaTeX Warning: File `picture/obstacle_flow_data/NS_iterate_steps.eps' not found
+ on input line 739.
+
+
+! LaTeX Error: File `picture/obstacle_flow_data/NS_iterate_steps.eps' not found
+.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.739 .../obstacle_flow_data/NS_iterate_steps.eps}
+                                                  
+? 
+
+! LaTeX Error: Cannot determine size of graphic in picture/obstacle_flow_data/N
+S_iterate_steps.eps (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.739 .../obstacle_flow_data/NS_iterate_steps.eps}
+                                                  
+? 
+File: picture/obstacle_flow_data/NS_iterate_steps.eps Graphic file (type eps)
+<picture/obstacle_flow_data/NS_iterate_steps.eps>
+
+LaTeX Warning: File `picture/obstacle_flow_data/moving_iterate_steps.eps' not f
+ound on input line 740.
+
+
+! LaTeX Error: File `picture/obstacle_flow_data/moving_iterate_steps.eps' not f
+ound.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.740 ...tacle_flow_data/moving_iterate_steps.eps}
+                                                  
+? 
+
+! LaTeX Error: Cannot determine size of graphic in picture/obstacle_flow_data/m
+oving_iterate_steps.eps (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.740 ...tacle_flow_data/moving_iterate_steps.eps}
+                                                  
+? 
+File: picture/obstacle_flow_data/moving_iterate_steps.eps Graphic file (type ep
+s)
+<picture/obstacle_flow_data/moving_iterate_steps.eps>
+
+LaTeX Warning: File `picture/obstacle_flow_data/mesh_t_2s.eps' not found on inp
+ut line 752.
+
+
+! LaTeX Error: File `picture/obstacle_flow_data/mesh_t_2s.eps' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.752 ...picture/obstacle_flow_data/mesh_t_2s.eps}
+                                                  
+? 
+
+! LaTeX Error: Cannot determine size of graphic in picture/obstacle_flow_data/m
+esh_t_2s.eps (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.752 ...picture/obstacle_flow_data/mesh_t_2s.eps}
+                                                  
+? 
+File: picture/obstacle_flow_data/mesh_t_2s.eps Graphic file (type eps)
+<picture/obstacle_flow_data/mesh_t_2s.eps>
+
+LaTeX Warning: File `picture/obstacle_flow_data/mesh_t_40s.eps' not found on in
+put line 760.
+
+
+! LaTeX Error: File `picture/obstacle_flow_data/mesh_t_40s.eps' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.760 ...icture/obstacle_flow_data/mesh_t_40s.eps}
+                                                  
+? 
+
+! LaTeX Error: Cannot determine size of graphic in picture/obstacle_flow_data/m
+esh_t_40s.eps (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.760 ...icture/obstacle_flow_data/mesh_t_40s.eps}
+                                                  
+? 
+File: picture/obstacle_flow_data/mesh_t_40s.eps Graphic file (type eps)
+<picture/obstacle_flow_data/mesh_t_40s.eps>) [104] [105] [106]
+(E:\PHD_thesis_template\Chapters/chapter5.tex
 ตฺ\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 5\hspace {0.25em plus
  0.125em minus 0.08em}\ignorespaces ีย
-) [93
+) [107
 
 
 
 ]
 No file LingPhDThesis.bbl.
-[94
+[108
 
 
 ] (E:\PHD_thesis_template\Chapters/publications.tex
@@ -2627,10 +3122,10 @@ Underfull \hbox (badness 1484) in paragraph at lines 23--25
 -der gamma-
  []
 
-) [95
+) [109
 
 
-] (E:\PHD_thesis_template\Chapters/thanks.tex [96
+] (E:\PHD_thesis_template\Chapters/thanks.tex [110
 
 
 
@@ -2645,7 +3140,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 12.05pt
 (hyperref)                replaced by space on input line 8.
 
-) [97] (E:\PHD_thesis_template\Chapters/statements.tex [98
+) [111] (E:\PHD_thesis_template\Chapters/statements.tex [112
 
 
 ]
@@ -2678,7 +3173,7 @@ Overfull \hbox (38.32639pt too wide) in paragraph at lines 8--126
 [][]$[]$ 
  []
 
-[99
+[113
 
 
 ]
@@ -2705,8 +3200,8 @@ Package rerunfilecheck Warning: File `LingPhDThesis.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `LingPhDThesis.out':
-(rerunfilecheck)             Before: 9C505CFD543A1D112CDC90E364DB7F93;8407
-(rerunfilecheck)             After:  D4B8663D4F36D4E20BF2BD1C270E72E0;3134.
+(rerunfilecheck)             Before: B896E26E6B2078D84FAA82824AED061C;11752
+(rerunfilecheck)             After:  107003183D50E0457690114AA876AC16;4059.
 
 LaTeX Warning: There were undefined references.
 
@@ -2715,12 +3210,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17847 strings out of 495286
- 298867 string characters out of 3181610
- 362768 words of memory out of 3000000
- 20381 multiletter control sequences out of 15000+200000
- 110804 words of font info for 381 fonts, out of 3000000 for 9000
+ 17935 strings out of 495286
+ 300895 string characters out of 3181610
+ 369607 words of memory out of 3000000
+ 20449 multiletter control sequences out of 15000+200000
+ 111569 words of font info for 384 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 54i,18n,51p,1099b,1008s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 54i,19n,51p,1099b,1008s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on LingPhDThesis.dvi (119 pages, 603128 bytes).
+Output written on LingPhDThesis.dvi (137 pages, 681780 bytes).
