@@ -17,327 +17,194 @@
 \citation{li2005multi}
 \citation{di2005moving}
 \citation{di2005moving}
-\@writefile{toc}{\contentsline {chapter}{\numberline {第\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces 3\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace  {0.3em}}基于4P1-P1元求解Navier-Stokes方程的移动网格方法}{41}{chapter.3}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {第\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces 3\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace  {0.3em}}基于4P1-P1元求解Navier-Stokes方程的移动网格方法}{33}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter:4P1-P1_moving}{{\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces 3\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces }{41}{基于4P1-P1元求解Navier-Stokes方程的移动网格方法\relax }{chapter.3}{}}
+\newlabel{chapter:4P1-P1_moving}{{\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces 3\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces }{33}{基于4P1-P1元求解Navier-Stokes方程的移动网格方法\relax }{chapter.3}{}}
 \citation{li2005multi}
 \citation{li2005multi}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}数据结构}{42}{section.3.1}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {3.1}{\ignorespaces 构建速度单元和压力单元间的索引}}{43}{algorithm.3.1}}
-\newlabel{alg::index}{{3.1}{43}{数据结构\relax }{algorithm.3.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}混合元近似}{43}{section.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}流体方程}{43}{subsection.3.2.1}}
-\newlabel{eq::stokes}{{3.1}{43}{流体方程\relax }{equation.3.2.1}{}}
-\newlabel{eq::NS_system}{{3.2}{43}{流体方程\relax }{equation.3.2.2}{}}
-\newlabel{eq::bc}{{3.3}{44}{流体方程\relax }{equation.3.2.3}{}}
-\newlabel{eq::stream_line}{{3.9}{45}{流体方程\relax }{equation.3.2.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Weak formulation}{45}{subsection.3.2.2}}
-\newlabel{eq::generalweak_momentum}{{3.12}{45}{Weak formulation\relax }{equation.3.2.12}{}}
-\newlabel{eq::generalweak_mass}{{3.13}{45}{Weak formulation\relax }{equation.3.2.12}{}}
-\newlabel{eq::solve_condition}{{3.14}{45}{Weak formulation\relax }{equation.3.2.14}{}}
-\newlabel{eq::discreted_weak}{{3.16}{46}{Weak formulation\relax }{equation.3.2.16}{}}
-\newlabel{eq::time_discreted_weak}{{3.17}{46}{Weak formulation\relax }{equation.3.2.17}{}}
-\newlabel{eq::linear_system}{{3.18}{46}{Weak formulation\relax }{equation.3.2.18}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}数据结构}{34}{section.3.1}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3.1}{\ignorespaces 构建速度单元和压力单元间的索引}}{35}{algorithm.3.1}}
+\newlabel{alg::index}{{3.1}{35}{数据结构\relax }{algorithm.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}混合元近似}{35}{section.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}流体方程}{35}{subsection.3.2.1}}
+\newlabel{eq::stokes}{{3.1}{35}{流体方程\relax }{equation.3.2.1}{}}
+\newlabel{eq::NS_system}{{3.2}{35}{流体方程\relax }{equation.3.2.2}{}}
+\newlabel{eq::bc}{{3.3}{36}{流体方程\relax }{equation.3.2.3}{}}
+\newlabel{eq::stream_line}{{3.9}{37}{流体方程\relax }{equation.3.2.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Weak formulation}{37}{subsection.3.2.2}}
+\newlabel{eq::generalweak_momentum}{{3.12}{37}{Weak formulation\relax }{equation.3.2.12}{}}
+\newlabel{eq::generalweak_mass}{{3.13}{37}{Weak formulation\relax }{equation.3.2.12}{}}
+\newlabel{eq::solve_condition}{{3.14}{37}{Weak formulation\relax }{equation.3.2.14}{}}
+\newlabel{eq::discreted_weak}{{3.16}{38}{Weak formulation\relax }{equation.3.2.16}{}}
+\newlabel{eq::time_discreted_weak}{{3.17}{38}{Weak formulation\relax }{equation.3.2.17}{}}
+\newlabel{eq::linear_system}{{3.18}{38}{Weak formulation\relax }{equation.3.2.18}{}}
 \citation{di2005moving}
 \citation{di2005moving}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces 左: $p$ 单元; 右: 与压力单元对应的4个速度$v$单元 }}{47}{figure.3.1}}
-\newlabel{fig::matrix_assemble}{{3.1}{47}{左: $p$ 单元; 右: 与压力单元对应的4个速度$v$单元\relax }{figure.3.1}{}}
-\newlabel{eq::element_matrix}{{3.19}{47}{Weak formulation\relax }{equation.3.2.19}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {3.2}{\ignorespaces 移动网格方法来求解Navier Stokes方程}}{48}{algorithm.3.2}}
-\newlabel{state::monitor}{{3}{48}{Weak formulation\relax }{algorithm.3.2}{}}
-\newlabel{state::start}{{5}{48}{Weak formulation\relax }{algorithm.3.2}{}}
-\newlabel{state::end}{{8}{48}{Weak formulation\relax }{algorithm.3.2}{}}
-\newlabel{alg::solve}{{3.2}{48}{Weak formulation\relax }{algorithm.3.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}移动网格策略}{48}{section.3.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Step 1 获取Monitor}{48}{subsection.3.3.1}}
-\newlabel{eq::monitor_vorticity}{{3.20}{48}{Step 1 获取Monitor\relax }{equation.3.3.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces 左: $p$ 单元; 右: 与压力单元对应的4个速度$v$单元 }}{39}{figure.3.1}}
+\newlabel{fig::matrix_assemble}{{3.1}{39}{左: $p$ 单元; 右: 与压力单元对应的4个速度$v$单元\relax }{figure.3.1}{}}
+\newlabel{eq::element_matrix}{{3.19}{39}{Weak formulation\relax }{equation.3.2.19}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3.2}{\ignorespaces 移动网格方法来求解Navier Stokes方程}}{40}{algorithm.3.2}}
+\newlabel{state::monitor}{{3}{40}{Weak formulation\relax }{algorithm.3.2}{}}
+\newlabel{state::start}{{5}{40}{Weak formulation\relax }{algorithm.3.2}{}}
+\newlabel{state::end}{{8}{40}{Weak formulation\relax }{algorithm.3.2}{}}
+\newlabel{alg::solve}{{3.2}{40}{Weak formulation\relax }{algorithm.3.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}移动网格策略}{40}{section.3.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Step 1 获取Monitor}{40}{subsection.3.3.1}}
+\newlabel{eq::monitor_vorticity}{{3.20}{40}{Step 1 获取Monitor\relax }{equation.3.3.20}{}}
 \citation{di2005moving}
 \citation{di2005moving}
-\newlabel{eq::monitor_gradient}{{3.21}{49}{Step 1 获取Monitor\relax }{equation.3.3.21}{}}
-\newlabel{eq::monitor_posterror}{{3.23}{49}{Step 1 获取Monitor\relax }{equation.3.3.23}{}}
-\newlabel{eq::monitor_posterror_modified}{{3.24}{49}{Step 1 获取Monitor\relax }{equation.3.3.24}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Step 2 获取新的逻辑网格}{49}{subsection.3.3.2}}
-\newlabel{eq::logical}{{3.25}{49}{Step 2 获取新的逻辑网格\relax }{equation.3.3.25}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Step 3 物理网格的移动方向}{49}{subsection.3.3.3}}
+\newlabel{eq::monitor_gradient}{{3.21}{41}{Step 1 获取Monitor\relax }{equation.3.3.21}{}}
+\newlabel{eq::monitor_posterror}{{3.23}{41}{Step 1 获取Monitor\relax }{equation.3.3.23}{}}
+\newlabel{eq::monitor_posterror_modified}{{3.24}{41}{Step 1 获取Monitor\relax }{equation.3.3.24}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Step 2 获取新的逻辑网格}{41}{subsection.3.3.2}}
+\newlabel{eq::logical}{{3.25}{41}{Step 2 获取新的逻辑网格\relax }{equation.3.3.25}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Step 3 物理网格的移动方向}{41}{subsection.3.3.3}}
 \citation{di2005moving}
 \citation{di2005moving}
-\newlabel{eq::muValue}{{3.29}{50}{Step 3 物理网格的移动方向\relax }{equation.3.3.29}{}}
+\newlabel{eq::muValue}{{3.29}{42}{Step 3 物理网格的移动方向\relax }{equation.3.3.29}{}}
 \citation{gunzburger2012finite}
 \citation{gunzburger2012finite}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Step 4 散度为0的插值}{51}{subsection.3.3.4}}
-\newlabel{eq::mesh_old2new}{{3.31}{51}{Step 4 散度为0的插值\relax }{equation.3.3.31}{}}
-\newlabel{eq::divergence_free}{{3.33}{51}{Step 4 散度为0的插值\relax }{equation.3.3.33}{}}
-\newlabel{eq::div_free_space}{{3.35}{51}{Step 4 散度为0的插值\relax }{equation.3.3.35}{}}
-\newlabel{eq::orthogonal_space}{{3.37}{52}{Step 4 散度为0的插值\relax }{equation.3.3.37}{}}
-\newlabel{eq::continous_update}{{3.38}{52}{Step 4 散度为0的插值\relax }{equation.3.3.38}{}}
-\newlabel{eq::discreted_update}{{3.39}{52}{Step 4 散度为0的插值\relax }{equation.3.3.39}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Step 4 散度为0的插值}{43}{subsection.3.3.4}}
+\newlabel{eq::mesh_old2new}{{3.31}{43}{Step 4 散度为0的插值\relax }{equation.3.3.31}{}}
+\newlabel{eq::divergence_free}{{3.33}{43}{Step 4 散度为0的插值\relax }{equation.3.3.33}{}}
+\newlabel{eq::div_free_space}{{3.35}{43}{Step 4 散度为0的插值\relax }{equation.3.3.35}{}}
+\newlabel{eq::orthogonal_space}{{3.37}{44}{Step 4 散度为0的插值\relax }{equation.3.3.37}{}}
+\newlabel{eq::continous_update}{{3.38}{44}{Step 4 散度为0的插值\relax }{equation.3.3.38}{}}
+\newlabel{eq::discreted_update}{{3.39}{44}{Step 4 散度为0的插值\relax }{equation.3.3.39}{}}
 \citation{bercovier1979error}
 \citation{bercovier1979error}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}数值算例}{53}{section.3.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Colliding Flow}{53}{subsection.3.4.1}}
-\newlabel{eq::colliding}{{3.42}{53}{Colliding Flow\relax }{equation.3.4.42}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces \relax \fontsize  {10.54}{12.65}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 用移动网格计算碰撞流的误差, $\nu = 1.0$.}}{53}{table.3.1}}
-\newlabel{tab::colliding_moving_error}{{3.1}{53}{\small 用移动网格计算碰撞流的误差, $\nu = 1.0$}{table.3.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces \relax \fontsize  {10.54}{12.65}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 用移动网格计算碰撞流的散度和涡量误差, $\nu = 1.0$.}}{53}{table.3.2}}
-\newlabel{tab::colliding_moving_div_error}{{3.2}{53}{\small 用移动网格计算碰撞流的散度和涡量误差, $\nu = 1.0$}{table.3.2}{}}
-\citation{Lin2010}
-\citation{Lin2010}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}数值算例}{45}{section.3.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Colliding Flow}{45}{subsection.3.4.1}}
+\newlabel{eq::colliding}{{3.42}{45}{Colliding Flow\relax }{equation.3.4.42}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces \relax \fontsize  {10.54}{12.65}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 用移动网格计算碰撞流的误差, $\nu = 1.0$.}}{45}{table.3.1}}
+\newlabel{tab::colliding_moving_error}{{3.1}{45}{\small 用移动网格计算碰撞流的误差, $\nu = 1.0$}{table.3.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces \relax \fontsize  {10.54}{12.65}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 用移动网格计算碰撞流的散度和涡量误差, $\nu = 1.0$.}}{45}{table.3.2}}
+\newlabel{tab::colliding_moving_div_error}{{3.2}{45}{\small 用移动网格计算碰撞流的散度和涡量误差, $\nu = 1.0$}{table.3.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces \relax \fontsize  {10.54}{12.65}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 左：$m = \frac  {1}{G_1}$的等高线和网格移 动方向；右：压力等高线和速度的流速线 $\alpha = 0.002, \beta = 2.0$.}}{46}{figure.3.2}}
+\newlabel{fig::mesh_move_direction}{{3.2}{46}{\small 左：$m = \frac {1}{G_1}$的等高线和网格移 动方向；右：压力等高线和速度的流速线 $\alpha = 0.002, \beta = 2.0$}{figure.3.2}{}}
+\newlabel{th:MatrixEMCon}{{3.1}{46}{Colliding Flow\relax }{theorem.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces \relax \fontsize  {10.54}{12.65}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 速度$L^2$误差分布，左：均匀网格；右：移动网格 $\alpha = 0.002, \beta = 2.0$.}}{47}{figure.3.3}}
+\newlabel{fig::uniform_vs_moving_err}{{3.3}{47}{\small 速度$L^2$误差分布，左：均匀网格；右：移动网格 $\alpha = 0.002, \beta = 2.0$}{figure.3.3}{}}
+\newlabel{set:R_pra}{{3.43}{47}{Colliding Flow\relax }{equation.3.4.43}{}}
+\citation{Cardoso2011}
+\citation{Cardoso2011}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces \relax \fontsize  {10.54}{12.65}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 网格对比，左：均匀网格$20 \times 20$；右：移动网格 $\alpha = 0.002, \beta = 2.0$.}}{48}{figure.3.4}}
+\newlabel{fig::uniform_vs_moving_mesh}{{3.4}{48}{\small 网格对比，左：均匀网格$20 \times 20$；右：移动网格 $\alpha = 0.002, \beta = 2.0$}{figure.3.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Proof of Theorem \ref  {th:MatrixEMCon}}{48}{section.3.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Technical lemmas}{48}{subsection.3.5.1}}
+\newlabel{lem:RatFunTayExp}{{3.1}{48}{Technical lemmas\relax }{lemma.3.1}{}}
+\newlabel{eq:phi(t)_series_form}{{3.44}{48}{Technical lemmas\relax }{equation.3.5.44}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces The approximating regions of $\mathcal  {R}$ defined in (\ref  {set:R}) for $p = 25, 100, 400$ and $m = 20, 100, 500$, where the red and blue regions denote the set $\{z\in \mathbb  {C}: 1-z \in \overline  {\mathcal  {D}}_1\}$ and $\{z\in \mathbb  {C}: 1-z \in \mathcal  {D}_0 \DOTSB \bigcap@ \slimits@ \mathcal  {D}_2\}$, respectively. }}{49}{figure.3.5}}
+\newlabel{fig:EM_ConvReg}{{3.5}{49}{The approximating regions of $\mathcal {R}$ defined in (\ref {set:R}) for $p = 25, 100, 400$ and $m = 20, 100, 500$, where the red and blue regions denote the set $\{z\in \CS : 1-z \in \overline {\MCD }_1\}$ and $\{z\in \CS : 1-z \in \MCD _0 \bigcap \MCD _2\}$, respectively}{figure.3.5}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{49}{figure.3.5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{49}{figure.3.5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{49}{figure.3.5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {}}}{49}{figure.3.5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {}}}{49}{figure.3.5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {}}}{49}{figure.3.5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {}}}{49}{figure.3.5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {}}}{49}{figure.3.5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {}}}{49}{figure.3.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces For $p=100, m=20$, the actual convergence regions $\mathcal  {R}$ defined in (\ref  {set:R}) (the union of the red and blue parts) and the approximate convergence regions $\mathcal  {R}_{\text  {E}}$ defined in (\ref  {set:R_pra}) of Euler's method (the yellow parts).}}{50}{figure.3.6}}
+\newlabel{fig:EM_PraConvReg_p100n20}{{3.6}{50}{For $p=100, m=20$, the actual convergence regions $\MCR $ defined in (\ref {set:R}) (the union of the red and blue parts) and the approximate convergence regions $\MCR _{\text {E}}$ defined in (\ref {set:R_pra}) of Euler's method (the yellow parts)}{figure.3.6}{}}
+\newlabel{fun:f(z)}{{3.45}{50}{Technical lemmas\relax }{equation.3.5.45}{}}
+\newlabel{fun:r(z)}{{3.46}{50}{Technical lemmas\relax }{equation.3.5.46}{}}
+\newlabel{lem:r(E(z))_r(z)}{{3.2}{50}{Technical lemmas\relax }{lemma.3.2}{}}
+\newlabel{eq:r(E(z))_1}{{3.47}{50}{Technical lemmas\relax }{equation.3.5.47}{}}
+\newlabel{ineq:abs_r(E(z))_1}{{3.48}{50}{Technical lemmas\relax }{equation.3.5.47}{}}
+\newlabel{ineq:abs_r(E(z))_2}{{3.49}{50}{Technical lemmas\relax }{equation.3.5.47}{}}
+\newlabel{eq:zk+1}{{3.50}{51}{Technical lemmas\relax }{}{}}
+\newlabel{eq:E(z)}{{3.5.1}{51}{Technical lemmas\relax }{equation.3.5.47}{}}
+\newlabel{eq:r(E(z))}{{3.50}{51}{Technical lemmas\relax }{equation.3.5.50}{}}
+\newlabel{ineq:abs_r(E(z))}{{3.51}{51}{Technical lemmas\relax }{equation.3.5.51}{}}
+\citation{Cardoso2011}
+\citation{Cardoso2011}
+\newlabel{lem:r(z)_convergence1}{{3.3}{53}{Technical lemmas\relax }{lemma.3.3}{}}
+\newlabel{ineq:abs_r(zk)_1}{{3.52}{53}{Technical lemmas\relax }{equation.3.5.52}{}}
+\newlabel{cons:q1(z0)}{{3.53}{53}{Technical lemmas\relax }{equation.3.5.53}{}}
+\newlabel{lem:r(z)_convergence2}{{3.4}{53}{Technical lemmas\relax }{lemma.3.4}{}}
+\newlabel{cons:q2(z0)}{{3.54}{53}{Technical lemmas\relax }{equation.3.5.54}{}}
+\newlabel{ineq:abs_r(zk)_2}{{3.55}{53}{Technical lemmas\relax }{equation.3.5.55}{}}
+\newlabel{lem:ScalarEMCon1}{{3.5}{54}{Technical lemmas\relax }{lemma.3.5}{}}
+\newlabel{eq:max_mod_1}{{3.56}{55}{Technical lemmas\relax }{equation.3.5.56}{}}
+\newlabel{ineq:abs_r(zk)}{{3.57}{55}{Technical lemmas\relax }{equation.3.5.57}{}}
+\newlabel{eq:zkp}{{3.58}{55}{Technical lemmas\relax }{equation.3.5.58}{}}
+\newlabel{ineq:abs_bounded_M}{{3.59}{55}{Technical lemmas\relax }{equation.3.5.59}{}}
+\newlabel{ineq:abs_zk-z_1}{{3.60}{56}{Technical lemmas\relax }{equation.3.5.60}{}}
+\newlabel{ineq:abs_zk-z_2}{{3.61}{57}{Technical lemmas\relax }{equation.3.5.61}{}}
+\newlabel{ineq:S(z0,lambda0)}{{3.62}{58}{Technical lemmas\relax }{equation.3.5.62}{}}
+\newlabel{cor:zk_convergence1}{{3.1}{58}{Technical lemmas\relax }{corollary.3.1}{}}
+\newlabel{lem:R(E(X))_R(X)}{{3.6}{58}{Technical lemmas\relax }{lemma.3.6}{}}
+\newlabel{eq:r(E(X))}{{3.63}{58}{Technical lemmas\relax }{equation.3.5.63}{}}
+\newlabel{cor:E(Xk)}{{3.2}{59}{Technical lemmas\relax }{corollary.3.2}{}}
+\newlabel{lem:R(X)_convergence1}{{3.7}{60}{Technical lemmas\relax }{lemma.3.7}{}}
+\newlabel{ineq:norm_R(Xk)_1}{{3.64}{60}{Technical lemmas\relax }{equation.3.5.64}{}}
+\newlabel{cons:q(X0)}{{3.65}{60}{Technical lemmas\relax }{equation.3.5.65}{}}
+\newlabel{lem:R(X)_convergence2}{{3.8}{60}{Technical lemmas\relax }{lemma.3.8}{}}
+\newlabel{ineq:norm_R(Xk)_2}{{3.66}{60}{Technical lemmas\relax }{equation.3.5.66}{}}
 \citation{Higham2008}
 \citation{Higham2008}
-\citation{HighamAlMohy2010}
-\citation{HighamAlMohy2010}
-\citation{Smith2003,GrecoIannazzo2010,Iannazzo2013}
-\citation{Smith2003}
-\citation{GrecoIannazzo2010}
-\citation{Iannazzo2013}
-\citation{BiniHighamMeini2005,GuoHigham2006,Guo2010,Iannazzo2006,Iannazzo2008,Laszkiewicz2009,Lin2010,Gomilko2012,Zietak2013}
-\citation{BiniHighamMeini2005}
-\citation{GuoHigham2006}
-\citation{Guo2010}
-\citation{Iannazzo2006}
-\citation{Iannazzo2008}
-\citation{Laszkiewicz2009}
-\citation{Lin2010}
-\citation{Gomilko2012}
-\citation{Zietak2013}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces \relax \fontsize  {10.54}{12.65}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 左：$m = \frac  {1}{G_1}$的等高线和网格移 动方向；右：压力等高线和速度的流速线 $\alpha = 0.002, \beta = 2.0$.}}{54}{figure.3.2}}
-\newlabel{fig::mesh_move_direction}{{3.2}{54}{\small 左：$m = \frac {1}{G_1}$的等高线和网格移 动方向；右：压力等高线和速度的流速线 $\alpha = 0.002, \beta = 2.0$}{figure.3.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Introduction}{54}{section.3.5}}
-\citation{Iannazzo2006}
-\citation{Iannazzo2006}
-\citation{Iannazzo2008}
-\citation{Iannazzo2008}
+\newlabel{ineq:abs_r(zk)_3}{{3.5.1}{61}{Technical lemmas\relax }{equation.3.5.66}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Proof of Theorem \ref  {th:MatrixEMCon}}{61}{subsection.3.5.2}}
+\newlabel{eq:R(Xk)}{{3.67}{61}{Proof of Theorem \ref {th:MatrixEMCon}\relax }{equation.3.5.67}{}}
 \citation{Guo2010}
 \citation{Guo2010}
 \citation{Iannazzo2008}
 \citation{Iannazzo2008}
-\citation{Guo2010}
-\citation{Guo2010}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces \relax \fontsize  {10.54}{12.65}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 速度$L^2$误差分布，左：均匀网格；右：移动网格 $\alpha = 0.002, \beta = 2.0$.}}{55}{figure.3.3}}
-\newlabel{fig::uniform_vs_moving_err}{{3.3}{55}{\small 速度$L^2$误差分布，左：均匀网格；右：移动网格 $\alpha = 0.002, \beta = 2.0$}{figure.3.3}{}}
-\newlabel{eq:f(X)=0}{{3.43}{55}{Introduction\relax }{equation.3.5.43}{}}
-\citation{Laszkiewicz2009,Gomilko2012,Zietak2013}
-\citation{Laszkiewicz2009}
-\citation{Gomilko2012}
-\citation{Zietak2013}
-\citation{Zietak2013}
-\citation{Zietak2013}
-\citation{Cardoso2011,Cardoso2011a}
-\citation{Cardoso2011}
-\citation{Cardoso2011a}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces \relax \fontsize  {10.54}{12.65}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip 网格对比，左：均匀网格$20 \times 20$；右：移动网格 $\alpha = 0.002, \beta = 2.0$.}}{56}{figure.3.4}}
-\newlabel{fig::uniform_vs_moving_mesh}{{3.4}{56}{\small 网格对比，左：均匀网格$20 \times 20$；右：移动网格 $\alpha = 0.002, \beta = 2.0$}{figure.3.4}{}}
-\newlabel{it:EM}{{3.44}{56}{Introduction\relax }{equation.3.5.44}{}}
-\newlabel{it:EM_fun}{{3.45}{56}{Introduction\relax }{equation.3.5.45}{}}
-\citation{Iannazzo2008}
-\citation{Iannazzo2008}
-\citation{Guo2010}
-\citation{Guo2010}
-\citation{GuoHigham2006}
-\citation{GuoHigham2006}
-\citation{Iannazzo2008}
-\citation{Iannazzo2008}
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Convergence results for Euler's method}{57}{section.3.6}}
-\newlabel{fun:u(z)}{{3.6}{58}{Convergence results for Euler's method\relax }{section.3.6}{}}
-\newlabel{fun:phi(z)}{{3.46}{58}{Convergence results for Euler's method\relax }{equation.3.6.46}{}}
-\newlabel{set:D0}{{3.47}{58}{Convergence results for Euler's method\relax }{equation.3.6.47}{}}
-\newlabel{set:R}{{3.48}{58}{Convergence results for Euler's method\relax }{equation.3.6.48}{}}
-\newlabel{set:R_hat}{{3.49}{58}{Convergence results for Euler's method\relax }{equation.3.6.49}{}}
-\newlabel{set:D1}{{3.50}{58}{Convergence results for Euler's method\relax }{equation.3.6.50}{}}
-\newlabel{set:D2}{{3.51}{58}{Convergence results for Euler's method\relax }{equation.3.6.51}{}}
-\newlabel{th:MatrixEMCon}{{3.1}{58}{Convergence results for Euler's method\relax }{theorem.3.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces The approximating regions of $\mathcal  {R}$ defined in (\ref  {set:R}) for $p = 25, 100, 400$ and $m = 20, 100, 500$, where the red and blue regions denote the set $\{z\in \mathbb  {C}: 1-z \in \overline  {\mathcal  {D}}_1\}$ and $\{z\in \mathbb  {C}: 1-z \in \mathcal  {D}_0 \DOTSB \bigcap@ \slimits@ \mathcal  {D}_2\}$, respectively. }}{59}{figure.3.5}}
-\newlabel{fig:EM_ConvReg}{{3.5}{59}{The approximating regions of $\mathcal {R}$ defined in (\ref {set:R}) for $p = 25, 100, 400$ and $m = 20, 100, 500$, where the red and blue regions denote the set $\{z\in \CS : 1-z \in \overline {\MCD }_1\}$ and $\{z\in \CS : 1-z \in \MCD _0 \bigcap \MCD _2\}$, respectively}{figure.3.5}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{59}{figure.3.5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{59}{figure.3.5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{59}{figure.3.5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {}}}{59}{figure.3.5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {}}}{59}{figure.3.5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {}}}{59}{figure.3.5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {}}}{59}{figure.3.5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {}}}{59}{figure.3.5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {}}}{59}{figure.3.5}}
-\newlabel{set:R_pra}{{3.52}{60}{Convergence results for Euler's method\relax }{equation.3.6.52}{}}
-\citation{Cardoso2011}
-\citation{Cardoso2011}
-\citation{Cardoso2011}
-\citation{Cardoso2011}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces For $p=100, m=20$, the actual convergence regions $\mathcal  {R}$ defined in (\ref  {set:R}) (the union of the red and blue parts) and the approximate convergence regions $\mathcal  {R}_{\text  {E}}$ defined in (\ref  {set:R_pra}) of Euler's method (the yellow parts).}}{61}{figure.3.6}}
-\newlabel{fig:EM_PraConvReg_p100n20}{{3.6}{61}{For $p=100, m=20$, the actual convergence regions $\MCR $ defined in (\ref {set:R}) (the union of the red and blue parts) and the approximate convergence regions $\MCR _{\text {E}}$ defined in (\ref {set:R_pra}) of Euler's method (the yellow parts)}{figure.3.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.7}Proof of Theorem \ref  {th:MatrixEMCon}}{61}{section.3.7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.1}Technical lemmas}{61}{subsection.3.7.1}}
-\newlabel{lem:RatFunTayExp}{{3.1}{61}{Technical lemmas\relax }{lemma.3.1}{}}
-\newlabel{eq:phi(t)_series_form}{{3.53}{61}{Technical lemmas\relax }{equation.3.7.53}{}}
-\newlabel{fun:f(z)}{{3.54}{62}{Technical lemmas\relax }{equation.3.7.54}{}}
-\newlabel{fun:r(z)}{{3.55}{62}{Technical lemmas\relax }{equation.3.7.55}{}}
-\newlabel{lem:r(E(z))_r(z)}{{3.2}{62}{Technical lemmas\relax }{lemma.3.2}{}}
-\newlabel{eq:r(E(z))_1}{{3.56}{62}{Technical lemmas\relax }{equation.3.7.56}{}}
-\newlabel{ineq:abs_r(E(z))_1}{{3.57}{62}{Technical lemmas\relax }{equation.3.7.56}{}}
-\newlabel{ineq:abs_r(E(z))_2}{{3.58}{62}{Technical lemmas\relax }{equation.3.7.56}{}}
-\newlabel{eq:zk+1}{{3.59}{62}{Technical lemmas\relax }{}{}}
-\newlabel{eq:E(z)}{{3.7.1}{62}{Technical lemmas\relax }{equation.3.7.56}{}}
-\newlabel{eq:r(E(z))}{{3.59}{63}{Technical lemmas\relax }{equation.3.7.59}{}}
-\newlabel{ineq:abs_r(E(z))}{{3.60}{63}{Technical lemmas\relax }{equation.3.7.60}{}}
-\citation{Cardoso2011}
-\citation{Cardoso2011}
-\newlabel{lem:r(z)_convergence1}{{3.3}{64}{Technical lemmas\relax }{lemma.3.3}{}}
-\newlabel{ineq:abs_r(zk)_1}{{3.61}{64}{Technical lemmas\relax }{equation.3.7.61}{}}
-\newlabel{cons:q1(z0)}{{3.62}{64}{Technical lemmas\relax }{equation.3.7.62}{}}
-\newlabel{lem:r(z)_convergence2}{{3.4}{65}{Technical lemmas\relax }{lemma.3.4}{}}
-\newlabel{cons:q2(z0)}{{3.63}{65}{Technical lemmas\relax }{equation.3.7.63}{}}
-\newlabel{ineq:abs_r(zk)_2}{{3.64}{65}{Technical lemmas\relax }{equation.3.7.64}{}}
-\newlabel{set:R1}{{3.65}{66}{Technical lemmas\relax }{equation.3.7.65}{}}
-\newlabel{set:R2}{{3.66}{66}{Technical lemmas\relax }{equation.3.7.66}{}}
-\newlabel{lem:ScalarEMCon1}{{3.5}{66}{Technical lemmas\relax }{lemma.3.5}{}}
-\newlabel{eq:max_mod_1}{{3.67}{66}{Technical lemmas\relax }{equation.3.7.67}{}}
-\newlabel{ineq:abs_r(zk)}{{3.68}{67}{Technical lemmas\relax }{equation.3.7.68}{}}
-\newlabel{eq:zkp}{{3.69}{67}{Technical lemmas\relax }{equation.3.7.69}{}}
-\newlabel{ineq:abs_bounded_M}{{3.70}{67}{Technical lemmas\relax }{equation.3.7.70}{}}
-\newlabel{ineq:abs_zk-z_1}{{3.71}{68}{Technical lemmas\relax }{equation.3.7.71}{}}
-\newlabel{ineq:abs_zk-z_2}{{3.72}{68}{Technical lemmas\relax }{equation.3.7.72}{}}
-\newlabel{ineq:S(z0,lambda0)}{{3.73}{69}{Technical lemmas\relax }{equation.3.7.73}{}}
-\newlabel{cor:zk_convergence1}{{3.1}{70}{Technical lemmas\relax }{corollary.3.1}{}}
-\newlabel{fun:R(X)}{{3.74}{70}{Technical lemmas\relax }{equation.3.7.74}{}}
-\newlabel{lem:R(E(X))_R(X)}{{3.6}{70}{Technical lemmas\relax }{lemma.3.6}{}}
-\newlabel{eq:r(E(X))}{{3.75}{70}{Technical lemmas\relax }{equation.3.7.75}{}}
-\newlabel{cor:E(Xk)}{{3.2}{71}{Technical lemmas\relax }{corollary.3.2}{}}
-\newlabel{lem:norm_R(E(X))_R(X)}{{3.7}{71}{Technical lemmas\relax }{lemma.3.7}{}}
-\newlabel{ineq:norm_R(E(X))_1}{{3.76}{71}{Technical lemmas\relax }{equation.3.7.76}{}}
-\newlabel{lem:R(X)_convergence1}{{3.8}{72}{Technical lemmas\relax }{lemma.3.8}{}}
-\newlabel{ineq:norm_R(Xk)_1}{{3.77}{72}{Technical lemmas\relax }{equation.3.7.77}{}}
-\newlabel{cons:q(X0)}{{3.78}{72}{Technical lemmas\relax }{equation.3.7.78}{}}
-\citation{Higham2008}
-\citation{Higham2008}
-\citation{Higham2008}
-\citation{Higham2008}
-\newlabel{lem:R(X)_convergence2}{{3.9}{73}{Technical lemmas\relax }{lemma.3.9}{}}
-\newlabel{ineq:norm_R(Xk)_2}{{3.79}{73}{Technical lemmas\relax }{equation.3.7.79}{}}
-\newlabel{ineq:abs_r(zk)_3}{{3.7.1}{73}{Technical lemmas\relax }{equation.3.7.79}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.2}Proof of Theorem \ref  {th:MatrixEMCon}}{73}{subsection.3.7.2}}
-\newlabel{lem:MatIteConLem}{{3.10}{73}{Proof of Theorem \ref {th:MatrixEMCon}\relax }{lemma.3.10}{}}
-\citation{Smith2003}
-\citation{Smith2003}
-\newlabel{eq:R(Xk)}{{3.80}{74}{Proof of Theorem \ref {th:MatrixEMCon}\relax }{equation.3.7.80}{}}
-\newlabel{eq:Ek+1}{{3.81}{74}{Proof of Theorem \ref {th:MatrixEMCon}\relax }{equation.3.7.81}{}}
-\newlabel{ineq_norm_Ek+1}{{3.82}{74}{Proof of Theorem \ref {th:MatrixEMCon}\relax }{equation.3.7.82}{}}
-\citation{Smith2003}
-\citation{Smith2003}
-\@writefile{toc}{\contentsline {section}{\numberline {3.8}A Preconditioned Schur Modification}{75}{section.3.8}}
-\newlabel{eq:wide_Xk+1}{{3.83}{75}{A Preconditioned Schur Modification\relax }{equation.3.8.83}{}}
-\newlabel{eq:wide_deltak+1}{{3.84}{76}{A Preconditioned Schur Modification\relax }{equation.3.8.84}{}}
-\newlabel{eq:pi_ij_k}{{3.85}{76}{A Preconditioned Schur Modification\relax }{equation.3.8.85}{}}
-\newlabel{neq:pi(k)neq1}{{3.86}{76}{A Preconditioned Schur Modification\relax }{equation.3.8.86}{}}
-\citation{Golub1996}
-\citation{Golub1996}
-\citation{Iannazzo2008}
-\citation{Iannazzo2008}
-\citation{GuoHigham2006}
-\citation{GuoHigham2006}
-\newlabel{it:CoupledEM}{{3.87}{77}{A Preconditioned Schur Modification\relax }{equation.3.8.87}{}}
-\citation{GuoHigham2006,Iannazzo2008}
-\citation{GuoHigham2006}
-\citation{Iannazzo2008}
-\citation{GuoHigham2006,Guo2010,Iannazzo2006,Iannazzo2008,HighamLin2011}
-\citation{GuoHigham2006}
-\citation{Guo2010}
-\citation{Iannazzo2006}
-\citation{Iannazzo2008}
-\citation{HighamLin2011}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {3.3}{\ignorespaces Schur-Euler algorithm using (\ref  {it:CoupledEM}) for computing $A^{1/p}$}}{78}{algorithm.3.3}}
-\newlabel{al:SE}{{3.3}{78}{A Preconditioned Schur Modification\relax }{algorithm.3.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.9}Numerical Experiments}{78}{section.3.9}}
-\citation{GuoHigham2006}
-\citation{GuoHigham2006}
-\citation{GuoHigham2006}
-\citation{GuoHigham2006}
-\citation{Iannazzo2008}
-\citation{Iannazzo2008}
-\citation{Iannazzo2008}
-\citation{Iannazzo2008}
-\newlabel{eq:RelResErr}{{3.88}{79}{Numerical Experiments\relax }{equation.3.9.88}{}}
-\citation{HighamLin2011}
-\citation{HighamLin2011}
-\citation{HighamLin2011}
-\citation{HighamLin2011}
-\citation{GuoHigham2006,GrecoIannazzo2010,Iannazzo2006}
-\citation{GuoHigham2006}
-\citation{GrecoIannazzo2010}
-\citation{Iannazzo2006}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces (a) and (b) show the relative error for the $p$th root $A^{1/p}$ by using coupled Euler iteration (\ref  {it:CoupledEM}); (c) is the result of Algorithm \ref  {al:SE}.}}{80}{figure.3.7}}
-\newlabel{fig:relerr_CEM}{{3.7}{80}{(a) and (b) show the relative error for the $p$th root $A^{1/p}$ by using coupled Euler iteration (\ref {it:CoupledEM}); (c) is the result of Algorithm \ref {al:SE}}{figure.3.7}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{80}{figure.3.7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{80}{figure.3.7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{80}{figure.3.7}}
-\newlabel{mat:Ae}{{3.89}{80}{Numerical Experiments\relax }{equation.3.9.89}{}}
-\citation{Guo2010}
-\citation{Guo2010}
-\citation{Iannazzo2008}
-\citation{Iannazzo2008}
-\citation{GuoHigham2006}
-\citation{GuoHigham2006}
-\citation{Iannazzo2008}
-\citation{Iannazzo2008}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces The relative errors for the four algorithms on matrix (\ref  {mat:Ae}).}}{81}{figure.3.8}}
-\newlabel{fig:relerr_Ae}{{3.8}{81}{The relative errors for the four algorithms on matrix (\ref {mat:Ae})}{figure.3.8}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$p=12$}}}{81}{figure.3.8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$p=15$}}}{81}{figure.3.8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$p=30$}}}{81}{figure.3.8}}
-\citation{Iannazzo2006,GrecoIannazzo2010,GuoHigham2006}
-\citation{Iannazzo2006}
-\citation{GrecoIannazzo2010}
-\citation{GuoHigham2006}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces The CPU time (in seconds) required by using the four Algorithms to compute the principal $p$th root of $15 \times 15$ Frank matrix for $p = 10:300$.}}{82}{figure.3.9}}
-\newlabel{fig:cputime}{{3.9}{82}{The CPU time (in seconds) required by using the four Algorithms to compute the principal $p$th root of $15 \times 15$ Frank matrix for $p = 10:300$}{figure.3.9}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{82}{figure.3.9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{82}{figure.3.9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{82}{figure.3.9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {}}}{82}{figure.3.9}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Results for computing $A_1^{1/5}$ and $A_2^{1/15}$ by using the four Algorithms. }}{83}{table.3.3}}
-\newlabel{tab:test3}{{3.3}{83}{Results for computing $A_1^{1/5}$ and $A_2^{1/15}$ by using the four Algorithms}{table.3.3}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Results for a random nonnormal matrix by using the four Algorithms. }}{84}{table.3.4}}
-\newlabel{tab:test4}{{3.4}{84}{Results for a random nonnormal matrix by using the four Algorithms}{table.3.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Results for computing principal $p$th root of $7 \times 7$ Hilbert matrix, $10 \times 10$ Prolate matrix and $12 \times 12$ Frank matrix by using the four Algorithms. }}{85}{table.3.5}}
-\newlabel{tab:relres_err_it}{{3.5}{85}{Results for computing principal $p$th root of $7 \times 7$ Hilbert matrix, $10 \times 10$ Prolate matrix and $12 \times 12$ Frank matrix by using the four Algorithms}{table.3.5}{}}
-\citation{Lin2010}
-\citation{Lin2010}
-\@writefile{toc}{\contentsline {section}{\numberline {3.10}关于\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces Halley\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces 法的注记}{86}{section.3.10}}
-\newlabel{it:HM}{{3.90}{86}{关于~Halley~法的注记\relax }{equation.3.10.90}{}}
-\newlabel{fun:phi(z)}{{3.91}{86}{关于~Halley~法的注记\relax }{equation.3.10.91}{}}
-\newlabel{set:D0}{{3.92}{86}{关于~Halley~法的注记\relax }{equation.3.10.92}{}}
-\newlabel{set:R}{{3.93}{86}{关于~Halley~法的注记\relax }{equation.3.10.93}{}}
-\newlabel{set:R_hat}{{3.94}{86}{关于~Halley~法的注记\relax }{equation.3.10.94}{}}
-\newlabel{set:D1}{{3.95}{86}{关于~Halley~法的注记\relax }{equation.3.10.95}{}}
-\newlabel{set:D2}{{3.96}{86}{关于~Halley~法的注记\relax }{equation.3.10.96}{}}
-\newlabel{ser:Sm(z)}{{3.97}{86}{关于~Halley~法的注记\relax }{equation.3.10.97}{}}
-\citation{Iannazzo2008}
-\citation{Iannazzo2008}
-\newlabel{th:MatrixHMCon}{{3.2}{87}{关于~Halley~法的注记\relax }{theorem.3.2}{}}
-\newlabel{set:R_H_pra}{{3.98}{87}{关于~Halley~法的注记\relax }{equation.3.10.98}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces The approximating regions of $\mathcal  {R}_2$ defined in (\ref  {set:R}) for $p = 25, 100, 400$ and $m = 20, 100, 500$, where the red and blue regions denote the sets $\{z\in \mathbb  {C}: 1-z \in \overline  {\mathcal  {D}}_1\}$ and $\{z\in \mathbb  {C}: 1-z \in \mathcal  {D}_{0,2} \DOTSB \bigcap@ \slimits@ \mathcal  {D}_{2,2}\}$, respectively. }}{88}{figure.3.10}}
-\newlabel{fig:HM_ConvReg}{{3.10}{88}{The approximating regions of $\MCR _2$ defined in (\ref {set:R}) for $p = 25, 100, 400$ and $m = 20, 100, 500$, where the red and blue regions denote the sets $\{z\in \CS : 1-z \in \overline {\MCD }_1\}$ and $\{z\in \CS : 1-z \in \MCD _{0,2} \bigcap \MCD _{2,2}\}$, respectively}{figure.3.10}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{88}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{88}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{88}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {}}}{88}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {}}}{88}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {}}}{88}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {}}}{88}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {}}}{88}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {}}}{88}{figure.3.10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces For fixed $m=20$ and $p=7,20,100$, the actual convergence regions $\mathcal  {R}_2$ defined in (\ref  {set:R}) (the union of the red and blue parts) and the approximate convergence regions $\mathcal  {R}_2^{\text  {H}}$ defined in (\ref  {set:R_H_pra}) (the yellow parts).}}{89}{figure.3.11}}
-\newlabel{fig:HM_PraConvReg}{{3.11}{89}{For fixed $m=20$ and $p=7,20,100$, the actual convergence regions $\MCR _2$ defined in (\ref {set:R}) (the union of the red and blue parts) and the approximate convergence regions $\MCR _2^{\text {H}}$ defined in (\ref {set:R_H_pra}) (the yellow parts)}{figure.3.11}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{89}{figure.3.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{89}{figure.3.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{89}{figure.3.11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces (a) The convergence region $\mathcal  {R}_2$ defined in (\ref  {set:R}) with $p=100$ and $m=20$ (the union of the red and blue parts) and the the disk of center 8/5 and radius 1 given by Iannazzo (the yellow parts); (b) the feasible region $\mathcal  {R}_2^{\text  {H}}$ defined in (\ref  {set:R_H_pra}) (the red part) and the disk of center 8/5 and radius 1 (the blue part).}}{89}{figure.3.12}}
-\newlabel{fig:HM_PraConvRegVSIannazzo}{{3.12}{89}{(a) The convergence region $\MCR _2$ defined in (\ref {set:R}) with $p=100$ and $m=20$ (the union of the red and blue parts) and the the disk of center 8/5 and radius 1 given by Iannazzo (the yellow parts); (b) the feasible region $\MCR _2^{\text {H}}$ defined in (\ref {set:R_H_pra}) (the red part) and the disk of center 8/5 and radius 1 (the blue part)}{figure.3.12}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{89}{figure.3.12}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{89}{figure.3.12}}
+\newlabel{eq:Ek+1}{{3.68}{62}{Proof of Theorem \ref {th:MatrixEMCon}\relax }{equation.3.5.68}{}}
+\newlabel{ineq_norm_Ek+1}{{3.69}{62}{Proof of Theorem \ref {th:MatrixEMCon}\relax }{equation.3.5.69}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}A Preconditioned Schur Modification}{62}{section.3.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Numerical Experiments}{62}{section.3.7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces (a) and (b) show the relative error for the $p$th root $A^{1/p}$ by using coupled Euler iteration (\ref  {it:CoupledEM}); (c) is the result of Algorithm \ref  {al:SE}.}}{62}{figure.3.7}}
+\newlabel{fig:relerr_CEM}{{3.7}{62}{(a) and (b) show the relative error for the $p$th root $A^{1/p}$ by using coupled Euler iteration (\ref {it:CoupledEM}); (c) is the result of Algorithm \ref {al:SE}}{figure.3.7}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{62}{figure.3.7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{62}{figure.3.7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{62}{figure.3.7}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3.3}{\ignorespaces Schur-Euler algorithm using (\ref  {it:CoupledEM}) for computing $A^{1/p}$}}{63}{algorithm.3.3}}
+\newlabel{al:SE}{{3.3}{63}{A Preconditioned Schur Modification\relax }{algorithm.3.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces The relative errors for the four algorithms on matrix (\ref  {mat:Ae}).}}{64}{figure.3.8}}
+\newlabel{fig:relerr_Ae}{{3.8}{64}{The relative errors for the four algorithms on matrix (\ref {mat:Ae})}{figure.3.8}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$p=12$}}}{64}{figure.3.8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$p=15$}}}{64}{figure.3.8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$p=30$}}}{64}{figure.3.8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces The CPU time (in seconds) required by using the four Algorithms to compute the principal $p$th root of $15 \times 15$ Frank matrix for $p = 10:300$.}}{64}{figure.3.9}}
+\newlabel{fig:cputime}{{3.9}{64}{The CPU time (in seconds) required by using the four Algorithms to compute the principal $p$th root of $15 \times 15$ Frank matrix for $p = 10:300$}{figure.3.9}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{64}{figure.3.9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{64}{figure.3.9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{64}{figure.3.9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {}}}{64}{figure.3.9}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Results for computing $A_1^{1/5}$ and $A_2^{1/15}$ by using the four Algorithms. }}{65}{table.3.3}}
+\newlabel{tab:test3}{{3.3}{65}{Results for computing $A_1^{1/5}$ and $A_2^{1/15}$ by using the four Algorithms}{table.3.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Results for a random nonnormal matrix by using the four Algorithms. }}{65}{table.3.4}}
+\newlabel{tab:test4}{{3.4}{65}{Results for a random nonnormal matrix by using the four Algorithms}{table.3.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Results for computing principal $p$th root of $7 \times 7$ Hilbert matrix, $10 \times 10$ Prolate matrix and $12 \times 12$ Frank matrix by using the four Algorithms. }}{66}{table.3.5}}
+\newlabel{tab:relres_err_it}{{3.5}{66}{Results for computing principal $p$th root of $7 \times 7$ Hilbert matrix, $10 \times 10$ Prolate matrix and $12 \times 12$ Frank matrix by using the four Algorithms}{table.3.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces The approximating regions of $\mathcal  {R}_2$ defined in (\ref  {set:R}) for $p = 25, 100, 400$ and $m = 20, 100, 500$, where the red and blue regions denote the sets $\{z\in \mathbb  {C}: 1-z \in \overline  {\mathcal  {D}}_1\}$ and $\{z\in \mathbb  {C}: 1-z \in \mathcal  {D}_{0,2} \DOTSB \bigcap@ \slimits@ \mathcal  {D}_{2,2}\}$, respectively. }}{67}{figure.3.10}}
+\newlabel{fig:HM_ConvReg}{{3.10}{67}{The approximating regions of $\MCR _2$ defined in (\ref {set:R}) for $p = 25, 100, 400$ and $m = 20, 100, 500$, where the red and blue regions denote the sets $\{z\in \CS : 1-z \in \overline {\MCD }_1\}$ and $\{z\in \CS : 1-z \in \MCD _{0,2} \bigcap \MCD _{2,2}\}$, respectively}{figure.3.10}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{67}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{67}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{67}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {}}}{67}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {}}}{67}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {}}}{67}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {}}}{67}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {}}}{67}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {}}}{67}{figure.3.10}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.8}关于\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces Halley\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces 法的注记}{67}{section.3.8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces For fixed $m=20$ and $p=7,20,100$, the actual convergence regions $\mathcal  {R}_2$ defined in (\ref  {set:R}) (the union of the red and blue parts) and the approximate convergence regions $\mathcal  {R}_2^{\text  {H}}$ defined in (\ref  {set:R_H_pra}) (the yellow parts).}}{68}{figure.3.11}}
+\newlabel{fig:HM_PraConvReg}{{3.11}{68}{For fixed $m=20$ and $p=7,20,100$, the actual convergence regions $\MCR _2$ defined in (\ref {set:R}) (the union of the red and blue parts) and the approximate convergence regions $\MCR _2^{\text {H}}$ defined in (\ref {set:R_H_pra}) (the yellow parts)}{figure.3.11}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{68}{figure.3.11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{68}{figure.3.11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{68}{figure.3.11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces (a) The convergence region $\mathcal  {R}_2$ defined in (\ref  {set:R}) with $p=100$ and $m=20$ (the union of the red and blue parts) and the the disk of center 8/5 and radius 1 given by Iannazzo (the yellow parts); (b) the feasible region $\mathcal  {R}_2^{\text  {H}}$ defined in (\ref  {set:R_H_pra}) (the red part) and the disk of center 8/5 and radius 1 (the blue part).}}{68}{figure.3.12}}
+\newlabel{fig:HM_PraConvRegVSIannazzo}{{3.12}{68}{(a) The convergence region $\MCR _2$ defined in (\ref {set:R}) with $p=100$ and $m=20$ (the union of the red and blue parts) and the the disk of center 8/5 and radius 1 given by Iannazzo (the yellow parts); (b) the feasible region $\MCR _2^{\text {H}}$ defined in (\ref {set:R_H_pra}) (the red part) and the disk of center 8/5 and radius 1 (the blue part)}{figure.3.12}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{68}{figure.3.12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{68}{figure.3.12}}
 \@setckpt{Chapters/chapter3}{
-\setcounter{page}{90}
-\setcounter{equation}{98}
-\setcounter{enumi}{4}
+\setcounter{page}{69}
+\setcounter{equation}{69}
+\setcounter{enumi}{0}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
@@ -346,7 +213,7 @@
 \setcounter{CTEX@sectiondepth}{2}
 \setcounter{part}{0}
 \setcounter{chapter}{3}
-\setcounter{section}{10}
+\setcounter{section}{8}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
@@ -367,18 +234,18 @@
 \setcounter{lofdepth}{1}
 \setcounter{subtable}{0}
 \setcounter{lotdepth}{1}
-\setcounter{Item}{36}
+\setcounter{Item}{28}
 \setcounter{Hfootnote}{2}
 \setcounter{Hy@AnnotLevel}{0}
-\setcounter{bookmark@seq@number}{40}
+\setcounter{bookmark@seq@number}{35}
 \setcounter{NAT@ctr}{0}
-\setcounter{theorem}{2}
-\setcounter{lemma}{10}
+\setcounter{theorem}{1}
+\setcounter{lemma}{9}
 \setcounter{proposition}{0}
 \setcounter{corollary}{2}
 \setcounter{definition}{0}
 \setcounter{example}{0}
-\setcounter{remark}{7}
+\setcounter{remark}{6}
 \setcounter{case}{0}
 \setcounter{section@level}{1}
 \setcounter{newlist}{4}

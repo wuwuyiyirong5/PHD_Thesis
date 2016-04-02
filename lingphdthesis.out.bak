@@ -14,44 +14,37 @@
 \BOOKMARK [1][-]{section.2.2}{2.2 几何遗传树结构}{chapter.2}% 14
 \BOOKMARK [1][-]{section.2.3}{2.3 移动网格方法}{chapter.2}% 15
 \BOOKMARK [1][-]{section.2.4}{2.4 预处理方法}{chapter.2}% 16
-\BOOKMARK [1][-]{section.2.5}{2.5 收敛性结果}{chapter.2}% 17
-\BOOKMARK [1][-]{section.2.6}{2.6 预备引理}{chapter.2}% 18
-\BOOKMARK [1][-]{section.2.7}{2.7 定理 2.3 的证明}{chapter.2}% 19
-\BOOKMARK [1][-]{section.2.8}{2.8 Numerical examples}{chapter.2}% 20
-\BOOKMARK [0][-]{chapter.3}{第 3 章 \040基于4P1-P1元求解Navier-Stokes方程的移动网格方法}{}% 21
-\BOOKMARK [1][-]{section.3.1}{3.1 数据结构}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.2}{3.2 混合元近似}{chapter.3}% 23
-\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 流体方程}{section.3.2}% 24
-\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Weak formulation}{section.3.2}% 25
-\BOOKMARK [1][-]{section.3.3}{3.3 移动网格策略}{chapter.3}% 26
-\BOOKMARK [2][-]{subsection.3.3.1}{3.3.1 Step 1 获取Monitor}{section.3.3}% 27
-\BOOKMARK [2][-]{subsection.3.3.2}{3.3.2 Step 2 获取新的逻辑网格}{section.3.3}% 28
-\BOOKMARK [2][-]{subsection.3.3.3}{3.3.3 Step 3 物理网格的移动方向}{section.3.3}% 29
-\BOOKMARK [2][-]{subsection.3.3.4}{3.3.4 Step 4 散度为0的插值}{section.3.3}% 30
-\BOOKMARK [1][-]{section.3.4}{3.4 数值算例}{chapter.3}% 31
-\BOOKMARK [2][-]{subsection.3.4.1}{3.4.1 Colliding Flow}{section.3.4}% 32
-\BOOKMARK [1][-]{section.3.5}{3.5 Introduction}{chapter.3}% 33
-\BOOKMARK [1][-]{section.3.6}{3.6 Convergence results for Euler's method}{chapter.3}% 34
-\BOOKMARK [1][-]{section.3.7}{3.7 Proof of Theorem 3.1}{chapter.3}% 35
-\BOOKMARK [2][-]{subsection.3.7.1}{3.7.1 Technical lemmas}{section.3.7}% 36
-\BOOKMARK [2][-]{subsection.3.7.2}{3.7.2 Proof of Theorem 3.1}{section.3.7}% 37
-\BOOKMARK [1][-]{section.3.8}{3.8 A Preconditioned Schur Modification}{chapter.3}% 38
-\BOOKMARK [1][-]{section.3.9}{3.9 Numerical Experiments}{chapter.3}% 39
-\BOOKMARK [1][-]{section.3.10}{3.10 关于 Halley 法的注记}{chapter.3}% 40
-\BOOKMARK [0][-]{chapter.4}{第 4 章 \040移动网格有限元的多重网格预处理方法}{}% 41
-\BOOKMARK [1][-]{section.4.1}{4.1 时间格式的离散}{chapter.4}% 42
-\BOOKMARK [1][-]{section.4.2}{4.2 Fast Krylov Solver}{chapter.4}% 43
-\BOOKMARK [1][-]{section.4.3}{4.3 Moving Mesh Strategy}{chapter.4}% 44
-\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Step 1 Obtain monitor function}{section.4.3}% 45
-\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Step 2 Get a new logical mesh}{section.4.3}% 46
-\BOOKMARK [2][-]{subsection.4.3.3}{4.3.3 Step 3 Achieve mesh move direction in physical domain}{section.4.3}% 47
-\BOOKMARK [2][-]{subsection.4.3.4}{4.3.4 Step 4 Eusure the incompressible constraint interpolation}{section.4.3}% 48
-\BOOKMARK [1][-]{section.4.4}{4.4 Numerical Tests}{chapter.4}% 49
-\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1 driven cavity flow}{section.4.4}% 50
-\BOOKMARK [2][-]{subsection.4.4.2}{4.4.2 Backward step flow}{section.4.4}% 51
-\BOOKMARK [2][-]{subsection.4.4.3}{4.4.3 Flow over cylinder}{section.4.4}% 52
-\BOOKMARK [0][-]{chapter.5}{第 5 章 \040计算代数 Riccati 方程的修正 Newton 方法}{}% 53
-\BOOKMARK [0][-]{chapter*.6}{攻读学位期间取得的研究成果}{}% 54
-\BOOKMARK [0][-]{chapter*.7}{致 \040谢}{}% 55
-\BOOKMARK [0][-]{chapter*.8}{浙江大学学位论文独创性声明}{}% 56
-\BOOKMARK [0][-]{chapter*.9}{学位论文使用授权声明}{}% 57
+\BOOKMARK [1][-]{section.2.5}{2.5 预备引理}{chapter.2}% 17
+\BOOKMARK [0][-]{chapter.3}{第 3 章 \040基于4P1-P1元求解Navier-Stokes方程的移动网格方法}{}% 18
+\BOOKMARK [1][-]{section.3.1}{3.1 数据结构}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.2}{3.2 混合元近似}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 流体方程}{section.3.2}% 21
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Weak formulation}{section.3.2}% 22
+\BOOKMARK [1][-]{section.3.3}{3.3 移动网格策略}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.3.1}{3.3.1 Step 1 获取Monitor}{section.3.3}% 24
+\BOOKMARK [2][-]{subsection.3.3.2}{3.3.2 Step 2 获取新的逻辑网格}{section.3.3}% 25
+\BOOKMARK [2][-]{subsection.3.3.3}{3.3.3 Step 3 物理网格的移动方向}{section.3.3}% 26
+\BOOKMARK [2][-]{subsection.3.3.4}{3.3.4 Step 4 散度为0的插值}{section.3.3}% 27
+\BOOKMARK [1][-]{section.3.4}{3.4 数值算例}{chapter.3}% 28
+\BOOKMARK [2][-]{subsection.3.4.1}{3.4.1 Colliding Flow}{section.3.4}% 29
+\BOOKMARK [1][-]{section.3.5}{3.5 Proof of Theorem 3.1}{chapter.3}% 30
+\BOOKMARK [2][-]{subsection.3.5.1}{3.5.1 Technical lemmas}{section.3.5}% 31
+\BOOKMARK [2][-]{subsection.3.5.2}{3.5.2 Proof of Theorem 3.1}{section.3.5}% 32
+\BOOKMARK [1][-]{section.3.6}{3.6 A Preconditioned Schur Modification}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.7}{3.7 Numerical Experiments}{chapter.3}% 34
+\BOOKMARK [1][-]{section.3.8}{3.8 关于 Halley 法的注记}{chapter.3}% 35
+\BOOKMARK [0][-]{chapter.4}{第 4 章 \040移动网格有限元的多重网格预处理方法}{}% 36
+\BOOKMARK [1][-]{section.4.1}{4.1 时间格式的离散}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.2}{4.2 快速Krylov求解}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.3}{4.3 移动网格策略}{chapter.4}% 39
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 网格移动的流程}{section.4.3}% 40
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 用AMG 预处理求解\(4.48\)}{section.4.3}% 41
+\BOOKMARK [1][-]{section.4.4}{4.4 Numerical Tests}{chapter.4}% 42
+\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1 driven cavity flow}{section.4.4}% 43
+\BOOKMARK [2][-]{subsection.4.4.2}{4.4.2 Backward step flow}{section.4.4}% 44
+\BOOKMARK [2][-]{subsection.4.4.3}{4.4.3 Flow over cylinder}{section.4.4}% 45
+\BOOKMARK [0][-]{chapter.5}{第 5 章 \040计算代数 Riccati 方程的修正 Newton 方法}{}% 46
+\BOOKMARK [0][-]{chapter*.6}{攻读学位期间取得的研究成果}{}% 47
+\BOOKMARK [0][-]{chapter*.7}{致 \040谢}{}% 48
+\BOOKMARK [0][-]{chapter*.8}{浙江大学学位论文独创性声明}{}% 49
+\BOOKMARK [0][-]{chapter*.9}{学位论文使用授权声明}{}% 50

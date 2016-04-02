@@ -60,7 +60,7 @@
 \RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm,cases,algorithm,lscape}
 
 %% 吴 添加算法包。
-\RequirePackage{algorithm,algpseudocode}
+\RequirePackage{algorithm,algpseudocode, enumerate}
 
 %% graphics packages
 \RequirePackage{graphicx,subfigure,tikz}
