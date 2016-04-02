@@ -41,18 +41,18 @@
 \contentsline {section}{\numberline {3.10}关于\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces Halley\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 法的注记}{86}{section.3.10}
 \contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 4\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace {0.3em}}移动网格有限元的多重网格预处理方法}{91}{chapter.4}
 \contentsline {section}{\numberline {4.1}时间格式的离散}{92}{section.4.1}
-\contentsline {section}{\numberline {4.2}Fast Krylov Solver}{94}{section.4.2}
-\contentsline {section}{\numberline {4.3}Moving Mesh Strategy}{96}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Step 1 Obtain monitor function}{96}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Step 2 Get a new logical mesh}{97}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Step 3 Achieve mesh move direction in physical domain}{97}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Step 4 Eusure the incompressible constraint interpolation}{98}{subsection.4.3.4}
-\contentsline {section}{\numberline {4.4}Numerical Tests}{99}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}driven cavity flow}{100}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Backward step flow}{101}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.2}Fast Krylov Solver}{96}{section.4.2}
+\contentsline {section}{\numberline {4.3}Moving Mesh Strategy}{98}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Step 1 Obtain monitor function}{98}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Step 2 Get a new logical mesh}{98}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Step 3 Achieve mesh move direction in physical domain}{99}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Step 4 Eusure the incompressible constraint interpolation}{100}{subsection.4.3.4}
+\contentsline {section}{\numberline {4.4}Numerical Tests}{101}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}driven cavity flow}{101}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Backward step flow}{102}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3}Flow over cylinder}{104}{subsection.4.4.3}
-\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 5\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace {0.3em}}计算代数\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces Riccati\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 方程的修正\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces Newton\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 方法}{107}{chapter.5}
-\contentsline {chapter}{攻读学位期间取得的研究成果}{109}{chapter*.6}
-\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{111}{chapter*.7}
-\contentsline {chapter}{浙江大学学位论文独创性声明}{113}{chapter*.8}
-\contentsline {chapter}{学位论文使用授权声明}{113}{chapter*.9}
+\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 5\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace {0.3em}}计算代数\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces Riccati\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 方程的修正\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces Newton\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 方法}{109}{chapter.5}
+\contentsline {chapter}{攻读学位期间取得的研究成果}{111}{chapter*.6}
+\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{113}{chapter*.7}
+\contentsline {chapter}{浙江大学学位论文独创性声明}{115}{chapter*.8}
+\contentsline {chapter}{学位论文使用授权声明}{115}{chapter*.9}

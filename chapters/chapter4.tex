@@ -62,61 +62,128 @@
         \begin{algorithm}
             \caption{Peaceman-Rachford 格式}
             \begin{algorithmic}[1]
-                给定$\vec{u}^0, p^0, \theta \in [0, 1], \alpha \in (0, 1)$, 假设$\vec{u}^n$已知，通过以下求解$\vec{u}^{n + 1}$:                    \begin{eqnarray}    
+                给定$\vec{u}^0, p^0, \theta \in [0, 1], \alpha \in (0, 1) \beta \in (0, 1)$, 假设$\vec{u}^n$已知，通过以下求解$\vec{u}^{n + 1}$:
+                \begin{eqnarray}
                     \begin{aligned}
                         \frac{\vec{u}^{n + \theta} - \vec{u}^n}{\theta \delta t} - \alpha \nu \nabla^2\vec{u}^{n + \theta} + \vec{u}^* \cdot \nabla\vec{u}^{n + \theta}
-                        & = & \beta \nu \nabla^2\vec{u}^n - \nabla p^n \quad \mbox {在} \Omega \mbox{内}， \\
-                        \vec{u}^{n + \theta} & = \vec{g}^{n + \theta} & \quad \mbox{在} \partial \Omega \mbox{上}；                                 \label{eq::first_step_PR}
+                        & = \beta \nu \nabla^2\vec{u}^n - \nabla p^n \quad \mbox {在} \Omega \mbox{内},& \\
+                        \vec{u}^{n + \theta} & = \vec{g}^{n + \theta} \quad \mbox{在} \partial \Omega \mbox{上}:&                                 \label{eq::first_step_PR}
                     \end{aligned}
                \end{eqnarray}
-               \begin{eqnarray}     
+               \begin{eqnarray}
                     \begin{aligned}
-                        \frac{\vec{u}^{n + 1} - \vec{U}^{N + \theta}}{(1 - \theta)\delta t} - \beta \nu \nabla^2\vec{u}^{n + 1} + \nabla p^{n + 1}
-                        & = & \alpha \nu \nabla^2 \vec{u}^{n + \theta} - \vec{u}^* - \nabla \vec{u}^{n + \theta} \quad \mbox{在} \Omega \mbox{内}，\\
-                        \nabla \cdot \vec{u}^{n + 1} & = & 0 \quad \mbox{在} \Omega{内}，\\
-                        \vec{u}^{n + 1} & =  \vec{g}^{n + 1} & \mbox{在} \partial \Omega 上.
+                        \frac{\vec{u}^{n + 1} - \vec{u}^{N + \theta}}{(1 - \theta)\delta t} - \beta \nu \nabla^2\vec{u}^{n + 1} + \nabla p^{n + 1}
+                        & =  \alpha \nu \nabla^2 \vec{u}^{n + \theta} - \vec{u}^* - \nabla \vec{u}^{n + \theta} \quad \mbox{在} \Omega \mbox{内}&，\\
+                        \nabla \cdot \vec{u}^{n + 1} & =  0 \quad \mbox{在} \Omega \mbox{内},&\\
+                        \vec{u}^{n + 1} & = \vec{g}^{n + 1} \quad \mbox{在} \partial \Omega 上.&
                         \label{eq::second_step_PR}
-                    \end{aligned} 
-               \end{eqnarray}     
+                    \end{aligned}
+               \end{eqnarray}
             \end{algorithmic}
             \label{alg::Peaceman_Rachford}
          \end{algorithm}
-         在(\ref{alg::Peaceman_Rachford})中$\vec{u}^*$的取值要保证散度为0的条件，它实际上是先求解一个对流方程$\ref{eq::first_step_PR}$，然后
-         再求解一个广义的Stokes方程(\ref{eq::second_step_PR})。这个算法第一步计算的时候需要$p^0$的值，它可以在很小的时间步长情况下，全隐格式
-         向前发展一步得到。一般自然的，$\vec{u}^* = \vec{u}^n$, 这样在时间格式上只有一阶精度的。这种方法
-         不是无条件稳定的，并且需要比较小的时间步长。\cite{dean1993some}将两步Peaceman-Rachford推广到三步, 保持了当$t \leftarrow \infty$时的
-         数值稳定性：
+         在(\ref{alg::Peaceman_Rachford})中$\vec{u}^*$的取值要保证散度为0的条件，并且$\alpha + \beta = 1$。它实际上是先求解一个对流方程
+         (\ref{eq::first_step_PR})，然后再求解一个广义的Stokes方程(\ref{eq::second_step_PR})。这个算法第一步计算的时候需要$p^0$的值，它
+         可以在很小的时间步长情况下，全隐格式向前发展一步得到。一般自然的，$\vec{u}^* = \vec{u}^n$, 这样在时间格式上只有一阶精度的。这种
+         方法不是无条件稳定的，并且需要比较小的时间步长。当$\theta = \frac{1}{2}, \vec{u}^* = \vec{u}^{n + theta}$时，可以获得二阶精度，
+         这时候求解(\ref{eq::first_step_PR})变成了一个求解非线性的对流方程。详细内容可以参考(\cite{silvester1996fast})。\cite{dean1993some}将
+         两步Peaceman-Rachford推广到三步, 保持了当$t \leftarrow \infty$时的数值稳定性：
          \begin{algorithm}
              \caption{Glowinski $\Theta$格式}
             \begin{algorithmic}[1]
-                给定$\vec{u}^0, p^0, \theta \in [0, 1/2], \alpha \in (0, 1)$, 假设$\vec{u}^n$已知，通过以下求解$\vec{u}^{n + 1}$:
+                给定$\vec{u}^0, \theta \in [0, 1/2], \alpha \in (0, 1), \beta \in (0, 1)$, 假设$\vec{u}^n$已知，通过以下求解$\vec{u}^{n + 1}$:
                 \begin{eqnarray}
                     \begin{aligned}
                         \frac{\vec{u}^{n + \theta} - \vec{u}^n}{\theta \delta t} - \alpha \nu \nabla^2\vec{u}^{n + \theta} +
-                        \nabla p^{n + \theta}     
-                        & = &(1 - \alpha) \nu \nabla^2\vec{u}^n - \vec{u}^n \cdot \nabla\vec{u}^{n} \quad \mbox {在} \Omega \mbox{内}， \\
-                        \nabla \cdot \vec{u}^{n + \theta} & = & 0 \quad \mbox{在} \Omega \mbox{内}，
-                        \vec{u}^{n + \theta} & = & \vec{g}^{n + \theta} \quad \mbox{在} \partial \Omega \mbox{上}； \\
+                        \nabla p^{n + \theta}
+                        & = \beta \nu \nabla^2\vec{u}^n - \vec{u}^n \cdot \nabla\vec{u}^{n} \quad \mbox {在} \Omega \mbox{内}&， \\
+                        \nabla \cdot \vec{u}^{n + \theta} & =  0 \quad \mbox{在} \Omega \mbox{内},&\\
+                        \vec{u}^{n + \theta} & = \vec{g}^{n + \theta} \quad \mbox{在} \partial \Omega \mbox{上}:& \\
                     \end{aligned}
                     \label{eq::first_step_GL_theta}
+                \end{eqnarray}
+                \begin{eqnarray}
                     \begin{aligned}
-                        \frac{\vec{u}^{n + 1 - \theta} - \vec{u}^{n + \theta}}{(1 - 2\theta) \delta t} - (1 - \alpha) \nu \nabla^2\vec{u}^{n + 1 - \theta} + \vec{u}^* \cdot \nabla \vec{u}^{n + 1 -\theta} 
-                        & = & \alpha \nu \nabla^2\vec{u}^{n + \theta}- \nabla p^{n + \theta} \cdot \nabla\vec{u}^{n} \quad \mbox {在} \Omega \mbox{内}， \\
-                        \vec{u}^{n + 1 - \theta} & = & \vec{g}^{n + 1 - \theta} \quad \mbox{在} \partial \Omega \mbox{上}； \\
+                        \frac{\vec{u}^{n + 1 - \theta} - \vec{u}^{n + \theta}}{(1 - 2\theta) \delta t} - \beta \nu \nabla^2\vec{u}^{n + 1 - \theta} + \vec{u}^* \cdot \nabla \vec{u}^{n + 1 -\theta}
+                        & = \alpha \nu \nabla^2\vec{u}^{n + \theta}- \nabla p^{n + \theta} \cdot \nabla\vec{u}^{n} \quad \mbox {在} \Omega \mbox{内},& \\
+                        \vec{u}^{n + 1 - \theta} & = \vec{g}^{n + 1 - \theta} \quad \mbox{在} \partial \Omega \mbox{上}:& \\
                     \end{aligned}
                     \label{eq::second_step_GL_theta}
+                \end{eqnarray}
+                \begin{eqnarray}
                     \begin{aligned}
                         \frac{\vec{u}^{n + 1} - \vec{u}^{n + 1 - \theta}}{\theta \delta t} - \alpha \nu \nabla^2\vec{u}^{n + 1} +
                         \nabla p^{n + 1}
-                        & = &(1 - \alpha) \nu \nabla^2\vec{u}^{n + 1 - \theta} - \vec{u}^* \cdot \nabla\vec{u}^{n + 1 - \theta} \quad \mbox {在} \Omega \mbox{内}， \\
-                        \nabla \cdot \vec{u}^{n + 1} & = & 0 \quad \mbox{在} \Omega \mbox{内}，
-                        \vec{u}^{n + \theta} & = & \vec{g}^{n + \theta} \quad \mbox{在} \partial \Omega \mbox{上}； \\
+                        & = \beta \nu \nabla^2\vec{u}^{n + 1 - \theta} - \vec{u}^* \cdot \nabla\vec{u}^{n + 1 - \theta} \quad \mbox {在} \Omega \mbox{内}&， \\
+                        \nabla \cdot \vec{u}^{n + 1} & = 0 \quad \mbox{在} \Omega \mbox{内},&\\
+                        \vec{u}^{n + \theta} & = \vec{g}^{n + \theta} \quad \mbox{在} \partial \Omega \mbox{上}:& \\
                     \end{aligned}
                     \label{eq::third_step_GL_theta}
                 \end{eqnarray}
-            \end{algorithmic}                            
+            \end{algorithmic}
          \end{algorithm}
-              
+         这种算法需要在每个时间步中计算两个广义的Stokes方程(\ref{eq::second_step_GL_theta}) 和(\ref{eq::third_step_GL_theta}), 和一个非线性的对流
+         方程(\ref{eq::first_step_GL_theta})。当我们取$\alpha = \beta = 1/2$或者$\theta = 1 - 1/\sqrt(2), \alpha + \beta = 1$，当$t \leftarrow 
+         \infty$时，该格式时间上有二阶精度。特别的，当$\theta = 1 -1/\srqt{2}, \alpha = (1 -2\theta)/(1 - \theta), \beta = \theta/(1 - \theta)$时，
+         这种方法在时间上是有二阶精度的，并且是无条件稳定的。
+         (\cite{smith1997implicit})中提出了一种线性化$\Theta-$格式，它保持了二阶精度。它的想法是将对流方程(\ref{eq::second_step_GL_theta})中的对流项
+         \begin{equation}
+            \vec{u}^* = \frac{2\theta - 1}{\theta} \vec{u}^n + \frac{1- \theta}{\theta}\vec{u}^{n + \theta}.
+         \end{equation} 
+         从而使得非线性对流扩散方程变成了线性化的对流扩散方程。
+         我们将全隐格式的近似方法表述如下：
+         最简单的时间格式是一步有限差分离散，在如何处理非线性对流项上可以归纳为以下算法：
+        \begin{algorithm}
+            \caption{非线性隐式$\Theta$ 格式}
+            \begin{algorithmic}[1]
+                给定$\vec{u}^0, \theta \in [0, 1]$, 假设$\vec{u}^n$已知，通过以下求解$\vec{u}^{n + 1}$:
+                \begin{eqnarray}
+                    \frac{\vec{u}^{n + 1} - \vec{u}^n}{\delta t} - \nu \nabla^2\vec{u}^{n + \theta} + \vec{u}^* \cdot \nabla\vec{u}^{n + \theta}
+                    + \nabla p^{n + \theta} & = 0\quad \mbox {在} \Omega \mbox{内},& 
+                    \label{alg::nonlinear_Theta_moment}    \\ 
+                    \nabla \cdot \vec{u}^{n + \theta} & = 0 \quad \mbox{在} \Omega \mbox{内}&,
+                    \label{eq::nonlinear_theta_mass} \\
+                    \vec{u}^{n + \theta} & = \vec{g}^{n + \theta} \quad \mbox{在} \partial \Omega \mbox{上}.&
+               \end{eqnarray}
+            \end{algorithmic}
+            \label{alg::nonlinear_Theta}
+         \end{algorithm}
+         其中
+         \begin{eqnarray}
+            \vec{u}^{n + \theta} & = & \theta\vec{u}^{n + 1} + (1 - \theta)\vec{u}^n. \\
+            p^{n + \theta} & = & \theta p^{n + 1} - (1 - \theta)p^n. 
+         \end{eqnarray}
+         $\theta = 1$时，是将非线性项隐式化处理了。当$\vec{u}^{n + \theta} = \vec{u}^{n + 1}, \vec{u}^* = \vec{u}^{n + 1}$
+         格式变成了时间方向一阶精度的向后欧拉格式，当$\vec{u}^{n + \theta} = \vec{u}^{n + 1/2}, \vec{u}^* = \vec{u}^{n + 1/2}$时，
+         就是时间方向的二阶精度的Crank-Nicolson格式。但是这两种格式在每个时间步中都需要求解一个非线性问题，因此在计算效率上都不是
+         高效的。一种折中的办法是将$\vec{u}^{n + \theta} = \vec{u}^{n + 1}, \vec{u}^* = \vec{u}^{n},p^{n + \theta} = p^{n + 1}$,
+         这样虽然在时间上损失了一阶精度，但是时间离散格式还是无条件稳定的，因此我们本文中的方法就是采用的这种线性化策略。
+         我们来验证线性化向后欧拉方法的稳定性。不失一般性，我们取$\vev{g}^{n + 1} = \vec{0}$，对(\ref{eq::nonlinear_theta_moment})方程
+         两边同时乘上$\vec{u}^{n + 1}$，并在$\Omega$上做内积。我们可以通过选取基函数使得对流项：
+         \begin{equation}
+            \int_{\Omega}(\vec{u}^n \cdot \vec{u}^{n + 1}) \cdot \vec{u}^{n + 1} = 0.
+         \end{equation}   
+         并且对质量守恒方程(\ref{eq::nonlinear_theta_mass})关于$p^{n + 1}$做$L_2$内积
+         在这种线性化策略的基础上，一种保持时间上二阶精度的方法是$\theta = 1/2, \vec{u}^* = {3/2\vec{u}^n - 1/2\vec{u}^{n - 1}}$，
+         这是\cite{simo1994unconditional}中提出的。我们将这种两步方法表述如下：
+        \begin{algorithm}
+            \caption{Simo-Armero 格式}
+            \begin{algorithmic}[1]
+                给定$\vec{u}^0， \vec{u}^1, 通过以下求解$\vec{u}^{k}, k = 1, \cdots, n + 1$:
+                \begin{eqnarray}
+                    \begin{aligned}
+                        \frac{\vec{u}^{n + 1} - \vec{u}^n}{\delta t} - \nu \nabla^2\vec{u}^{n + 1/2} + (\frac{3}{2}\vec{u}^n - \frac{1}{2}\vec{u}^{n - 1}) \cdot \nabla\vec{u}^{n + 1/2}
+                        + \nabla p^{n + 1/2} & = 0\quad \mbox {在} \Omega \mbox{内},& \\
+                        \nabla \cdot \vec{u}^{n + 1/2} & = 0 \quad \mbox{在} \Omega \mbox{内},& \\
+                        \vec{u}^{n + 1/2} & = \vec{g}^{n + 1/2} \quad \mbox{在} \partial \Omega \mbox{上}.&
+                        \label{eq::simo_arero}
+                    \end{aligned}
+               \end{eqnarray}
+            \end{algorithmic}
+            \label{alg::simo_armero}
+         \end{algorithm}
+         
+         
         At time level discretization, we devide the time
    interval $[0, T]$ into $N$ steps with $\{ t_i\}_{i = 1}^N$. Let
    $\vec{u}^j$ and $p^j$ be the discrete approximation to

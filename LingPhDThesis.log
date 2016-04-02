@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2016.3.26)  2 APR 2016 00:00
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2016.3.26)  2 APR 2016 12:08
 entering extended mode
 **LingPhDThesis.tex
 (E:\PHD_thesis_template\LingPhDThesis.tex
@@ -2593,12 +2593,9 @@ Package natbib Warning: Citation `he2003two' on page 92 undefined on input line
  60.
 
 Missing character: There is no § in font cmr12!
-Missing character: There is no ¶ in font cmr12!
-Missing character: There is no § in font cmr12!
-Missing character: There is no § in font cmr12!
 Missing character: There is no þ in font cmr12!
 
-Overfull \hbox (41.05469pt too wide) in alignment at lines 72--80
+Overfull \hbox (14.70996pt too wide) in alignment at lines 73--81
  [][][] []
  []
 
@@ -2609,23 +2606,26 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81             \end{algorithmic}
+l.82             \end{algorithmic}
                                   
 ? 
 
+Package natbib Warning: Citation `silvester1996fast' on page 92 undefined on in
+put line 89.
+
+
 Package natbib Warning: Citation `dean1993some' on page 92 undefined on input l
-ine 87.
+ine 89.
 
 Missing character: There is no § in font cmr12!
-Missing character: There is no § in font cmr12!
-Missing character: There is no ¶ in font cmr12!
-Missing character: There is no § in font cmr12!
-Missing character: There is no ¶ in font cmr12!
-Missing character: There is no § in font cmr12!
-Missing character: There is no § in font cmr12!
-Missing character: There is no ¶ in font cmr12!
 
-Overfull \hbox (1104.44783pt too wide) in alignment at lines 93--116
+Overfull \hbox (74.567pt too wide) in alignment at lines 105--112
+ [][][] []
+ []
+
+Missing character: There is no § in font cmr12!
+
+Overfull \hbox (38.82751pt too wide) in alignment at lines 113--122
  [][][] []
  []
 
@@ -2636,96 +2636,150 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.117             \end{algorithmic}
+l.123             \end{algorithmic}
                                    
 ? 
-[92]
-
-Package natbib Warning: Citation `li2005multi' on page 93 undefined on input li
-ne 131.
-
 ! Undefined control sequence.
-l.136      \subfloat
+l.127 ...Ð¶þ½×¾«¶È¡£ÌØ±ðµÄ£¬µ±$\theta = 1 -1/\srqt
+                                                  {2}, \alpha = (1 -2\theta)...
+
+? 
+
+Package natbib Warning: Citation `smith1997implicit' on page 92 undefined on in
+put line 129.
+
+[92]
+Underfull \vbox (badness 5345) has occurred while \output is active []
+
+ [93]
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.149             \end{algorithmic}
+                                   
+? 
+
+Package natbib Warning: Citation `simo1994unconditional' on page 94 undefined o
+n input line 163.
+
+Missing character: There is no § in font cmr12!
+Missing character: There is no Ï in font cmr12!
+Missing character: There is no ± in font cmr12!
+Missing character: There is no ¦ in font cmr12!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.167 ...ec{u}^0£¬ \vec{u}^1, Í¨¹ýÒÔÏÂÇó½â$\vec{u}
+                                                  ^{k}, k = 1, \cdots, n + 1$:
+? 
+
+Overfull \hbox (68.1448pt too wide) in alignment at lines 168--176
+ [][][] []
+ []
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.177             \end{algorithmic}
+                                   
+? 
+
+Package natbib Warning: Citation `li2005multi' on page 94 undefined on input li
+ne 193.
+
+[94]
+! Undefined control sequence.
+l.198      \subfloat
                     [One time uniform refined mesh]{
 ? 
 ! Undefined control sequence.
-l.147      \subfloat
+l.209      \subfloat
                     [its hierarchy tree]{
 ? 
 
-Package natbib Warning: Citation `Wu2016moving' on page 93 undefined on input l
-ine 172.
-
-[93] [94]
-
-Package natbib Warning: Citation `elman2005finite' on page 95 undefined on inpu
-t line 264.
-
-
-Package natbib Warning: Citation `elman2005finite' on page 95 undefined on inpu
-t line 281.
+Package natbib Warning: Citation `Wu2016moving' on page 95 undefined on input l
+ine 234.
 
 [95]
 
 Package natbib Warning: Citation `elman2005finite' on page 96 undefined on inpu
-t line 315.
+t line 326.
+
+[96]
+
+Package natbib Warning: Citation `elman2005finite' on page 97 undefined on inpu
+t line 343.
 
 
-Package natbib Warning: Citation `elman2011fast' on page 96 undefined on input 
-line 316.
+Package natbib Warning: Citation `elman2005finite' on page 97 undefined on inpu
+t line 377.
 
 
-Package natbib Warning: Citation `elman2009boundary' on page 96 undefined on in
-put line 321.
+Package natbib Warning: Citation `elman2011fast' on page 97 undefined on input 
+line 378.
 
 
-Package natbib Warning: Citation `di2005moving' on page 96 undefined on input l
-ine 331.
+Package natbib Warning: Citation `elman2009boundary' on page 97 undefined on in
+put line 383.
 
-
-Package natbib Warning: Citation `di2005moving' on page 96 undefined on input l
-ine 335.
-
-
-Package natbib Warning: Citation `di2005moving' on page 96 undefined on input l
-ine 342.
-
-[96] [97]
+[97]
 
 Package natbib Warning: Citation `di2005moving' on page 98 undefined on input l
-ine 428.
+ine 393.
 
 
 Package natbib Warning: Citation `di2005moving' on page 98 undefined on input l
-ine 432.
+ine 397.
+
+
+Package natbib Warning: Citation `di2005moving' on page 98 undefined on input l
+ine 404.
 
 [98]
 
-Package natbib Warning: Citation `elman2005finite' on page 99 undefined on inpu
-t line 499.
+Package natbib Warning: Citation `di2005moving' on page 99 undefined on input l
+ine 490.
 
 
-Overfull \hbox (1.80228pt too wide) in paragraph at lines 496--504
+Package natbib Warning: Citation `di2005moving' on page 99 undefined on input l
+ine 494.
+
+[99]
+
+Package natbib Warning: Citation `elman2005finite' on page 100 undefined on inp
+ut line 561.
+
+
+Overfull \hbox (1.80228pt too wide) in paragraph at lines 558--566
 []\OT1/cmr/m/n/12.05 As we known, the schur com-ple-ment of ma-trix $\OMS/cmsy/
 m/n/12.05 M[]$ \OT1/cmr/m/n/12.05 is $\OML/cmm/m/it/12.05 M[] \OT1/cmr/m/n/12.0
 5 = \OML/cmm/m/it/12.05 B[]Q[]B[] \OT1/cmr/m/n/12.05 + \OML/cmm/m/it/12.05 B[]Q
 []B[]$\OT1/cmr/m/n/12.05 .
  []
 
+[100]
 
-Package natbib Warning: Citation `elman2009boundary' on page 99 undefined on in
-put line 516.
+Package natbib Warning: Citation `elman2009boundary' on page 101 undefined on i
+nput line 578.
 
 
-Underfull \hbox (badness 5274) in paragraph at lines 558--563
-[] \OT1/cmr/m/n/12.05 Solve Navier-Stokes sys-tem ([][]4.8[][]) to ob-tain nu-m
-er-i-cal so-lu-tions
+Underfull \hbox (badness 3668) in paragraph at lines 620--625
+[] \OT1/cmr/m/n/12.05 Solve Navier-Stokes sys-tem ([][]4.15[][]) to ob-tain nu-
+mer-i-cal so-lu-tions
  []
 
-[99] [100]
+[101]
 
 LaTeX Warning: File `picture/cavity_flow_data/moving_mesh.eps' not found on inp
-ut line 608.
+ut line 670.
 
 
 ! LaTeX Error: File `picture/cavity_flow_data/moving_mesh.eps' not found.
@@ -2734,7 +2788,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.608 ...picture/cavity_flow_data/moving_mesh.eps}
+l.670 ...picture/cavity_flow_data/moving_mesh.eps}
                                                   
 ? 
 
@@ -2745,14 +2799,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.608 ...picture/cavity_flow_data/moving_mesh.eps}
+l.670 ...picture/cavity_flow_data/moving_mesh.eps}
                                                   
 ? 
 File: picture/cavity_flow_data/moving_mesh.eps Graphic file (type eps)
 <picture/cavity_flow_data/moving_mesh.eps>
 
 LaTeX Warning: File `picture/cavity_flow_data/vortex.eps' not found on input li
-ne 609.
+ne 671.
 
 
 ! LaTeX Error: File `picture/cavity_flow_data/vortex.eps' not found.
@@ -2761,7 +2815,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.609 ...-90]{picture/cavity_flow_data/vortex.eps}
+l.671 ...-90]{picture/cavity_flow_data/vortex.eps}
                                                   
 ? 
 
@@ -2772,14 +2826,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.609 ...-90]{picture/cavity_flow_data/vortex.eps}
+l.671 ...-90]{picture/cavity_flow_data/vortex.eps}
                                                   
 ? 
 File: picture/cavity_flow_data/vortex.eps Graphic file (type eps)
 <picture/cavity_flow_data/vortex.eps>
 
 LaTeX Warning: File `picture/cavity_flow_data/streamline.eps' not found on inpu
-t line 618.
+t line 680.
 
 
 ! LaTeX Error: File `picture/cavity_flow_data/streamline.eps' not found.
@@ -2788,7 +2842,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.618 ...{picture/cavity_flow_data/streamline.eps}
+l.680 ...{picture/cavity_flow_data/streamline.eps}
                                                   
 ? 
 
@@ -2799,14 +2853,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.618 ...{picture/cavity_flow_data/streamline.eps}
+l.680 ...{picture/cavity_flow_data/streamline.eps}
                                                   
 ? 
 File: picture/cavity_flow_data/streamline.eps Graphic file (type eps)
 <picture/cavity_flow_data/streamline.eps>
 
 LaTeX Warning: File `picture/cavity_flow_data/NS_iterate_steps.eps' not found o
-n input line 627.
+n input line 689.
 
 
 ! LaTeX Error: File `picture/cavity_flow_data/NS_iterate_steps.eps' not found.
@@ -2815,7 +2869,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.627 ...re/cavity_flow_data/NS_iterate_steps.eps}
+l.689 ...re/cavity_flow_data/NS_iterate_steps.eps}
                                                   
 ? 
 
@@ -2826,54 +2880,51 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.627 ...re/cavity_flow_data/NS_iterate_steps.eps}
+l.689 ...re/cavity_flow_data/NS_iterate_steps.eps}
                                                   
 ? 
 File: picture/cavity_flow_data/NS_iterate_steps.eps Graphic file (type eps)
 <picture/cavity_flow_data/NS_iterate_steps.eps>
 ! Undefined control sequence.
-l.638            \toprule
+l.700            \toprule
                          
 ? 
 ! Undefined control sequence.
-l.639            \multirow
+l.701            \multirow
                           {2}{*}{pressure mesh}    & \multirow{2}{*}{time
 ? 
 ! Undefined control sequence.
-l.639 ...tirow{2}{*}{pressure mesh}    & \multirow
+l.701 ...tirow{2}{*}{pressure mesh}    & \multirow
                                                   {2}{*}{time
 ? 
 ! Undefined control sequence.
 <recently read> \midrule 
                          
-l.642 ... W_p^n$ & $F_p = A_p + W_p^n$ \\ \midrule
+l.704 ... W_p^n$ & $F_p = A_p + W_p^n$ \\ \midrule
                                                   
 ? 
 ! Undefined control sequence.
 <recently read> \midrule 
                          
-l.644            \\ \midrule
+l.706            \\ \midrule
                             
 ? 
 ! Undefined control sequence.
 <recently read> \midrule 
                          
-l.646            \\ \midrule
+l.708            \\ \midrule
                             
 ? 
 ! Undefined control sequence.
 <recently read> \bottomrule 
                             
-l.648            \\ \bottomrule
+l.710            \\ \bottomrule
                                
 ? 
-[101]
-Underfull \vbox (badness 2980) has occurred while \output is active []
-
- [102]
+[102] [103]
 
 LaTeX Warning: File `picture/L_shaped_flow_data/mesh.eps' not found on input li
-ne 682.
+ne 744.
 
 
 ! LaTeX Error: File `picture/L_shaped_flow_data/mesh.eps' not found.
@@ -2882,7 +2933,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.682 ...-90]{picture/L_shaped_flow_data/mesh.eps}
+l.744 ...-90]{picture/L_shaped_flow_data/mesh.eps}
                                                   
 ? 
 
@@ -2893,14 +2944,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.682 ...-90]{picture/L_shaped_flow_data/mesh.eps}
+l.744 ...-90]{picture/L_shaped_flow_data/mesh.eps}
                                                   
 ? 
 File: picture/L_shaped_flow_data/mesh.eps Graphic file (type eps)
 <picture/L_shaped_flow_data/mesh.eps>
 
 LaTeX Warning: File `picture/L_shaped_flow_data/streamline.eps' not found on in
-put line 684.
+put line 746.
 
 
 ! LaTeX Error: File `picture/L_shaped_flow_data/streamline.eps' not found.
@@ -2909,7 +2960,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.684 ...icture/L_shaped_flow_data/streamline.eps}
+l.746 ...icture/L_shaped_flow_data/streamline.eps}
                                                   
 ? 
 
@@ -2920,14 +2971,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.684 ...icture/L_shaped_flow_data/streamline.eps}
+l.746 ...icture/L_shaped_flow_data/streamline.eps}
                                                   
 ? 
 File: picture/L_shaped_flow_data/streamline.eps Graphic file (type eps)
 <picture/L_shaped_flow_data/streamline.eps>
 
 LaTeX Warning: File `picture/L_shaped_flow_data/iterate_steps.eps' not found on
- input line 692.
+ input line 754.
 
 
 ! LaTeX Error: File `picture/L_shaped_flow_data/iterate_steps.eps' not found.
@@ -2936,7 +2987,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.692 ...ure/L_shaped_flow_data/iterate_steps.eps}
+l.754 ...ure/L_shaped_flow_data/iterate_steps.eps}
                                                   
 ? 
 
@@ -2947,26 +2998,24 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.692 ...ure/L_shaped_flow_data/iterate_steps.eps}
+l.754 ...ure/L_shaped_flow_data/iterate_steps.eps}
                                                   
 ? 
 File: picture/L_shaped_flow_data/iterate_steps.eps Graphic file (type eps)
 <picture/L_shaped_flow_data/iterate_steps.eps>
 
-Package natbib Warning: Citation `cao1999anr' on page 103 undefined on input li
-ne 701.
+Package natbib Warning: Citation `cao1999anr' on page 104 undefined on input li
+ne 763.
 
+[104]
 
-Underfull \vbox (badness 4954) has occurred while \output is active []
+Package natbib Warning: Citation `milton1982album' on page 105 undefined on inp
+ut line 786.
 
- [103]
-
-Package natbib Warning: Citation `milton1982album' on page 104 undefined on inp
-ut line 724.
-
+[105]
 
 LaTeX Warning: File `picture/obstacle_flow_data/comparation_NS_iterate_step.eps
-' not found on input line 729.
+' not found on input line 791.
 
 
 ! LaTeX Error: File `picture/obstacle_flow_data/comparation_NS_iterate_step.eps
@@ -2976,7 +3025,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.729 ...low_data/comparation_NS_iterate_step.eps}
+l.791 ...low_data/comparation_NS_iterate_step.eps}
                                                   
 ? 
 
@@ -2987,7 +3036,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.729 ...low_data/comparation_NS_iterate_step.eps}
+l.791 ...low_data/comparation_NS_iterate_step.eps}
                                                   
 ? 
 File: picture/obstacle_flow_data/comparation_NS_iterate_step.eps Graphic file (
@@ -2995,7 +3044,7 @@ type eps)
 <picture/obstacle_flow_data/comparation_NS_iterate_step.eps>
 
 LaTeX Warning: File `picture/obstacle_flow_data/NS_iterate_steps.eps' not found
- on input line 739.
+ on input line 801.
 
 
 ! LaTeX Error: File `picture/obstacle_flow_data/NS_iterate_steps.eps' not found
@@ -3005,7 +3054,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.739 .../obstacle_flow_data/NS_iterate_steps.eps}
+l.801 .../obstacle_flow_data/NS_iterate_steps.eps}
                                                   
 ? 
 
@@ -3016,14 +3065,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.739 .../obstacle_flow_data/NS_iterate_steps.eps}
+l.801 .../obstacle_flow_data/NS_iterate_steps.eps}
                                                   
 ? 
 File: picture/obstacle_flow_data/NS_iterate_steps.eps Graphic file (type eps)
 <picture/obstacle_flow_data/NS_iterate_steps.eps>
 
 LaTeX Warning: File `picture/obstacle_flow_data/moving_iterate_steps.eps' not f
-ound on input line 740.
+ound on input line 802.
 
 
 ! LaTeX Error: File `picture/obstacle_flow_data/moving_iterate_steps.eps' not f
@@ -3033,7 +3082,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.740 ...tacle_flow_data/moving_iterate_steps.eps}
+l.802 ...tacle_flow_data/moving_iterate_steps.eps}
                                                   
 ? 
 
@@ -3044,7 +3093,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.740 ...tacle_flow_data/moving_iterate_steps.eps}
+l.802 ...tacle_flow_data/moving_iterate_steps.eps}
                                                   
 ? 
 File: picture/obstacle_flow_data/moving_iterate_steps.eps Graphic file (type ep
@@ -3052,7 +3101,7 @@ s)
 <picture/obstacle_flow_data/moving_iterate_steps.eps>
 
 LaTeX Warning: File `picture/obstacle_flow_data/mesh_t_2s.eps' not found on inp
-ut line 752.
+ut line 814.
 
 
 ! LaTeX Error: File `picture/obstacle_flow_data/mesh_t_2s.eps' not found.
@@ -3061,7 +3110,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.752 ...picture/obstacle_flow_data/mesh_t_2s.eps}
+l.814 ...picture/obstacle_flow_data/mesh_t_2s.eps}
                                                   
 ? 
 
@@ -3072,14 +3121,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.752 ...picture/obstacle_flow_data/mesh_t_2s.eps}
+l.814 ...picture/obstacle_flow_data/mesh_t_2s.eps}
                                                   
 ? 
 File: picture/obstacle_flow_data/mesh_t_2s.eps Graphic file (type eps)
 <picture/obstacle_flow_data/mesh_t_2s.eps>
 
 LaTeX Warning: File `picture/obstacle_flow_data/mesh_t_40s.eps' not found on in
-put line 760.
+put line 822.
 
 
 ! LaTeX Error: File `picture/obstacle_flow_data/mesh_t_40s.eps' not found.
@@ -3088,7 +3137,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.760 ...icture/obstacle_flow_data/mesh_t_40s.eps}
+l.822 ...icture/obstacle_flow_data/mesh_t_40s.eps}
                                                   
 ? 
 
@@ -3099,21 +3148,21 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.760 ...icture/obstacle_flow_data/mesh_t_40s.eps}
+l.822 ...icture/obstacle_flow_data/mesh_t_40s.eps}
                                                   
 ? 
 File: picture/obstacle_flow_data/mesh_t_40s.eps Graphic file (type eps)
-<picture/obstacle_flow_data/mesh_t_40s.eps>) [104] [105] [106]
-(E:\PHD_thesis_template\Chapters/chapter5.tex
-µÚ\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 5\hspace {0.25em plus
- 0.125em minus 0.08em}\ignorespaces ÕÂ
-) [107
+<picture/obstacle_flow_data/mesh_t_40s.eps>) [106] [107]
+(E:\PHD_thesis_template\Chapters/chapter5.tex [108
 
 
 
 ]
+µÚ\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 5\hspace {0.25em plus
+ 0.125em minus 0.08em}\ignorespaces ÕÂ
+) [109]
 No file LingPhDThesis.bbl.
-[108
+[110
 
 
 ] (E:\PHD_thesis_template\Chapters/publications.tex
@@ -3122,10 +3171,10 @@ Underfull \hbox (badness 1484) in paragraph at lines 23--25
 -der gamma-
  []
 
-) [109
+) [111
 
 
-] (E:\PHD_thesis_template\Chapters/thanks.tex [110
+] (E:\PHD_thesis_template\Chapters/thanks.tex [112
 
 
 
@@ -3140,7 +3189,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 12.05pt
 (hyperref)                replaced by space on input line 8.
 
-) [111] (E:\PHD_thesis_template\Chapters/statements.tex [112
+) [113] (E:\PHD_thesis_template\Chapters/statements.tex [114
 
 
 ]
@@ -3173,7 +3222,7 @@ Overfull \hbox (38.32639pt too wide) in paragraph at lines 8--126
 [][]$[]$ 
  []
 
-[113
+[115
 
 
 ]
@@ -3210,12 +3259,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17935 strings out of 495286
- 300895 string characters out of 3181610
- 369607 words of memory out of 3000000
- 20449 multiletter control sequences out of 15000+200000
+ 17947 strings out of 495286
+ 301127 string characters out of 3181610
+ 371811 words of memory out of 3000000
+ 20461 multiletter control sequences out of 15000+200000
  111569 words of font info for 384 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 54i,19n,51p,1099b,1008s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 54i,18n,51p,1099b,1008s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on LingPhDThesis.dvi (137 pages, 681780 bytes).
+Output written on LingPhDThesis.dvi (139 pages, 689648 bytes).
