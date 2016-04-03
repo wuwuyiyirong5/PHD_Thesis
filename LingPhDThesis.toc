@@ -1,51 +1,50 @@
 \let \CTEX@spaceChar \relax 
-\contentsline {chapter}{摘\CTEX@spaceChar \CTEX@spaceChar 要}{i}{chapter*.1}
-\contentsline {chapter}{Abstract}{iii}{chapter*.2}
-\contentsline {chapter}{目\CTEX@spaceChar \CTEX@spaceChar 录}{v}{chapter*.3}
+\contentsline {chapter}{摘\CTEX@spaceChar \CTEX@spaceChar 要}{i}{chapter*.3}
+\contentsline {chapter}{Abstract}{iii}{chapter*.4}
+\contentsline {chapter}{目\CTEX@spaceChar \CTEX@spaceChar 录}{v}{chapter*.5}
 \contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 1\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace {0.3em}}绪论}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}研究背景}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}迭代法介绍}{1}{section.1.2}
-\contentsline {section}{\numberline {1.3}矩阵函数}{5}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}矩阵平方根}{7}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}矩阵\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces $p$\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 次根}{10}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}代数\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces Riccati\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 方程}{16}{subsection.1.3.3}
-\contentsline {section}{\numberline {1.4}论文的组织}{16}{section.1.4}
-\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 2\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace {0.3em}}预备知识}{17}{chapter.2}
-\contentsline {section}{\numberline {2.1}混合有限元}{17}{section.2.1}
-\contentsline {section}{\numberline {2.2}几何遗传树结构}{20}{section.2.2}
-\contentsline {section}{\numberline {2.3}移动网格方法}{20}{section.2.3}
-\contentsline {section}{\numberline {2.4}预处理方法}{21}{section.2.4}
-\contentsline {section}{\numberline {2.5}预备引理}{21}{section.2.5}
-\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 3\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace {0.3em}}基于4P1-P1元求解Navier-Stokes方程的移动网格方法}{33}{chapter.3}
-\contentsline {section}{\numberline {3.1}数据结构}{34}{section.3.1}
-\contentsline {section}{\numberline {3.2}混合元近似}{35}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}流体方程}{35}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Weak formulation}{37}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}移动网格策略}{40}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Step 1 获取Monitor}{40}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Step 2 获取新的逻辑网格}{41}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Step 3 物理网格的移动方向}{41}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Step 4 散度为0的插值}{43}{subsection.3.3.4}
-\contentsline {section}{\numberline {3.4}数值算例}{45}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Colliding Flow}{45}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Proof of Theorem \ref {th:MatrixEMCon}}{48}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Technical lemmas}{48}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Proof of Theorem \ref {th:MatrixEMCon}}{61}{subsection.3.5.2}
-\contentsline {section}{\numberline {3.6}A Preconditioned Schur Modification}{62}{section.3.6}
-\contentsline {section}{\numberline {3.7}Numerical Experiments}{62}{section.3.7}
-\contentsline {section}{\numberline {3.8}关于\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces Halley\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 法的注记}{67}{section.3.8}
-\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 4\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace {0.3em}}移动网格有限元的多重网格预处理方法}{69}{chapter.4}
-\contentsline {section}{\numberline {4.1}时间格式的离散}{70}{section.4.1}
-\contentsline {section}{\numberline {4.2}快速Krylov求解}{74}{section.4.2}
-\contentsline {section}{\numberline {4.3}移动网格策略}{77}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}网格移动的流程}{77}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}用AMG 预处理求解(\ref {eq::full_discreted_update})}{78}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Numerical Tests}{79}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}driven cavity flow}{80}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Backward step flow}{82}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Flow over cylinder}{83}{subsection.4.4.3}
-\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 5\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace {0.3em}}计算代数\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces Riccati\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 方程的修正\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces Newton\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 方法}{87}{chapter.5}
-\contentsline {chapter}{攻读学位期间取得的研究成果}{89}{chapter*.6}
-\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{91}{chapter*.7}
-\contentsline {chapter}{浙江大学学位论文独创性声明}{93}{chapter*.8}
-\contentsline {chapter}{学位论文使用授权声明}{93}{chapter*.9}
+\contentsline {section}{\numberline {1.3}矩阵函数}{3}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}矩阵平方根}{4}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}矩阵\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces $p$\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 次根}{5}{subsection.1.3.2}
+\contentsline {section}{\numberline {1.4}论文的组织}{9}{section.1.4}
+\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 2\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace {0.3em}}预备知识}{11}{chapter.2}
+\contentsline {section}{\numberline {2.1}混合有限元}{11}{section.2.1}
+\contentsline {section}{\numberline {2.2}几何遗传树结构}{14}{section.2.2}
+\contentsline {section}{\numberline {2.3}移动网格方法}{14}{section.2.3}
+\contentsline {section}{\numberline {2.4}预处理方法}{15}{section.2.4}
+\contentsline {section}{\numberline {2.5}预备引理}{15}{section.2.5}
+\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 3\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace {0.3em}}基于4P1-P1元求解Navier-Stokes方程的移动网格方法}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}数据结构}{20}{section.3.1}
+\contentsline {section}{\numberline {3.2}混合元近似}{21}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}流体方程}{21}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Weak formulation}{23}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}移动网格策略}{26}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Step 1 获取Monitor}{26}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Step 2 获取新的逻辑网格}{27}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Step 3 物理网格的移动方向}{27}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Step 4 散度为0的插值}{29}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}数值算例}{31}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Colliding Flow}{31}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}喷射流}{32}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Navier-Stokes 流经过一个凹形台阶}{33}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}圆柱绕流}{33}{subsection.3.4.4}
+\contentsline {section}{\numberline {3.5}Proof of Theorem \ref {th:MatrixEMCon}}{41}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Technical lemmas}{41}{subsection.3.5.1}
+\contentsline {section}{\numberline {3.6}Numerical Experiments}{41}{section.3.6}
+\contentsline {section}{\numberline {3.7}关于\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces Halley\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 法的注记}{48}{section.3.7}
+\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 4\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace {0.3em}}移动网格有限元的多重网格预处理方法}{51}{chapter.4}
+\contentsline {section}{\numberline {4.1}时间格式的离散}{52}{section.4.1}
+\contentsline {section}{\numberline {4.2}快速Krylov求解}{56}{section.4.2}
+\contentsline {section}{\numberline {4.3}移动网格策略}{59}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}网格移动的流程}{59}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}用AMG 预处理求解(\ref {eq::full_discreted_update})}{60}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}数值算例}{61}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}方腔驱动流}{62}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Backward step flow}{63}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Flow over cylinder}{64}{subsection.4.4.3}
+\contentsline {chapter}{攻读学位期间取得的研究成果}{69}{chapter*.51}
+\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{71}{chapter*.52}
+\contentsline {chapter}{浙江大学学位论文独创性声明}{73}{chapter*.53}
+\contentsline {chapter}{学位论文使用授权声明}{73}{chapter*.54}

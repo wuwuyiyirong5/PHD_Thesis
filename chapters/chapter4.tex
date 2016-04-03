@@ -412,7 +412,7 @@
   \begin{equation}
     \frac{\partial p_h}{\partial n} = 0.
   \end{equation}
-  这就意味着我们在所有的边界$\partial \Oemga$上，对$F_p$不采取任何操作，$A_p$采取同样的操作。
+  这就意味着我们在所有的边界$\partial \Omega$上，对$F_p$不采取任何操作，$A_p$采取同样的操作。
   在本文中，我们将PCD预处理方法应用到移动网格有限元方法，来高效地求解Navier-Stokes问题\eqref{eq::linear_system}。
 \section{移动网格策略}
   \subsection{网格移动的流程}
@@ -510,7 +510,7 @@
    \end{equation}
    据我们所知，矩阵$\mathcal{M}^p$的schur补矩阵为：
    \begin{equation}
-    M_S = B_x Q_p^{-1} B_x^T + B_y Q_p^{-1} B_y^T. 
+    M_S = B_x Q_p^{-1} B_x^T + B_y Q_p^{-1} B_y^T.
    \end{equation}
    根据(\cite{elman2005finite}, 第5章)，对于满足LBB条件的混合元近似，当边界条件全部是封闭流体边界时，$M_S$是跟压力空间的刚度矩阵
    $A_p$谱等价的。因此我们可以用 $A_p$ 来作为schur补矩阵的近似矩阵。那么我们可以选取
@@ -525,14 +525,14 @@
      \right)
      \label{eq::updateSolution_precond}
    \end{equation}
-   
+
    来作为(\ref{mat::moving})的块预处理矩阵，其中 $M_S^* = A_p$ 或者 $M_S^* =
    \frac{1}{\nu} A_p$。我们选择不同的$M_S^*$来作为schur补矩阵的近似矩阵，
    来对比求解效率的差别。在我们的实际计算中，$\frac{1}{\nu}A_p$ 要比 $A_p$效率要高。
    对于入流/出流问题，$A_p$ 需要在Neumann边界上做出一些修改来提高计算效率。在出流边界
    $\partial \Omega_N$上，离散的压力 $p_h$ 需要满足一个齐次的Dirichlet边界条件。
    而在$\Omega_D$上，压力$p_h$要满足Neumann条件 $\frac{\partial p_h}{\partial n} = 0$，
-   那就意味着我们在Dirichlet边界上，对$A_p$不采取任何操作。细节可以参考\cite{elman2009boundary}。 
+   那就意味着我们在Dirichlet边界上，对$A_p$不采取任何操作。细节可以参考\cite{elman2009boundary}。
    注意到，一旦网格发生移动，所有的矩阵 $M, B_x^T, B_y^T, B_x, B_y, A_p$ 都需要重新构建。
 
    在我们的算法中，PCD预处理的GMRES作为求解线性系统(\ref{eq::linear_system})的求解器。
@@ -573,43 +573,28 @@
 %	SECTION 6
 % ----------------------------------------------------------------------------------------
 \section{数值算例}
-      We use three numerical tests to show our strategy.
-      In practical computation, we choose the solutions of steady
-      Stokes equations as the initial value of Navier-Stokes
-      equations. The initial physical domain
-      and logical domain in moving algorithm are the same. Moving mesh
-      and numerical solutions are shown in below. Our codes are all
-      based on the finite element package AFEPack.
+      我们用三个数值算例来展示我们的方法。在实际的计算过程中，我们采用稳态的Stokes方程的解作为Navier-Stokes方程的初始值，
+      边界条件设置跟Navier-Stokes方程一致。在我们的算法中，初始的物理区域和逻辑区域是一致的。网格的移动效果以及数值解在
+      下面展示出来。我们的代码是基于有限元包AFEPack。
 
-     \subsection{driven cavity flow}
-       We consider the benchmark problem: regularized cavity flow. Our
-       computional domain is $\Omega = [-1, 1] \times [-1, 1]$ and
-       viscosity is $\nu = 0.001$. Dirichlet boundary condition is
-       imposed on $\partial \Omega$. At the top boundary, $\vec{u} =
-       (1 - x^4, 0)^T$ while no-slip boundary condition is setted on
-       other parts of $\partial \Omega$.
+     \subsection{方腔驱动流}
+       我们考虑经典算例：正则化的方腔流。我们的计算区域是$\Omega = [-1, 1] \times [-1, 1]$，粘性系数是$\nu = 0.001$。Dirichlet
+       边界条件设置在所有的边界$\partial \Omega$上。在顶部边上，速度$\vec{u} = (1 - x^4, 0)^T$，无滑移条件设置在$\partial \Omega$
+       的其它部分。
 
-       In our moving strategy, (\ref{eq::monitor_vorticity}) is
-       selected as monitor function. Parameters $\alpha = 0.5, \beta =
-       2.0$ perform well. The moving mesh and vorticity contour
-       evoluting to steady state are shown in Figure
-       \ref{fig::cavity_flow_mesh}. It can be seen that mesh clusters
-       at top boundary and right boundary where have large value of
-       vorticity. Velocity streamline is shown in Figure
-       \ref{fig::cavity_flow_streamline}.
-       From Table \ref{tab::GMRES_steps_initial}, it requires less GMRES
-       iteration steps by choosing $F_p = A_p + W_p^n$ than $F_p = \nu
-       A_p + W_p^n$ in PCD preconditioning. GMRES iteration
-       counts of solving linear system (\ref{eq::linear_system}) as
-       time evoluting is shown in Figure \ref{fig::cavity_GMRES_steps}.
-       It requires $12-24$ iterations to converge, when the flow tends
-       to steady state, the number of iterations is $15 - 16$.
+       在我们的移动策略中，我们选取涡量(\ref{eq::monitor_vorticity})为控制函数。参数取成$\alpha = 0.5, \beta = 2.0$时网格移动效果
+       表现好。在图\ref{fig::cavity_flow_mesh}中展示的是发展到稳态的移动网格以及涡量的等高线。我们可以看出网格集中在顶部边和右边边界
+       ，这些地方都是涡量比较大的地方。速度的流速线如图\ref{fig::cavity_flow_streamline}。
+
+       从表\ref{tab::GMRES_steps_initial}中，我们得知在PCD预处理中，选取$F_p = A_p + W_p^n$ 比 $F_p = \nu A_p + W_p^n$ 需要的迭代步数
+       要少很多。在每个时间步，求解线性方程组的(\ref{eq::linear_system})的GMRES迭代步数如图\ref{fig::cavity_GMRES_steps}。它需要$12-24$
+       步迭代收敛，当流体趋于稳定的时候，迭代次数在$15-16$步。
 
 
        \begin{figure}[!htbp]
          \begin{center}
-             \includegraphics[width = 0.43\textwidth, angle = -90]{picture/cavity_flow_data/moving_mesh.eps}
-             \includegraphics[width = 0.43\textwidth, angle = -90]{picture/cavity_flow_data/vortex.eps}
+             \includegraphics[width = 0.43\textwidth, angle = -90]{picture/second/cavity_flow_data/moving_mesh.eps}
+             \includegraphics[width = 0.43\textwidth, angle = -90]{picture/second/cavity_flow_data/vortex.eps}
         \end{center}
         \caption{\small Cavity flow, left: mesh, right: vorticity
           contour, pressure mesh $40 \times 40$, $\nu = 0.001$.}
@@ -618,7 +603,7 @@
 
        \begin{figure}[!htbp]
          \begin{center}
-             \includegraphics[width = 0.43\textwidth, angle = -90]{picture/cavity_flow_data/streamline.eps}
+             \includegraphics[width = 0.43\textwidth, angle = -90]{picture/second/cavity_flow_data/streamline.eps}
         \end{center}
         \caption{\small Cavity flow: velocity streamline, pressure
           mesh $40 \times 40$, $\nu = 0.001$.}
@@ -627,7 +612,7 @@
 
        \begin{figure}[!htbp]
          \begin{center}
-             \includegraphics[width = 0.55\textwidth, angle = 0]{picture/cavity_flow_data/NS_iterate_steps.eps}
+             \includegraphics[width = 0.55\textwidth, angle = 0]{picture/second/cavity_flow_data/NS_iterate_steps.eps}
         \end{center}
         \caption{\small Cavity flow: GMRES step counts of solving
           (\ref{eq::linear_system}) with modified PCD preconditon,
@@ -638,17 +623,17 @@
        \begin{table}[!htbp]
          \centering
          \begin{tabular}{cccc}
-           \toprule
+           \hline
            \multirow{2}{*}{pressure mesh}    & \multirow{2}{*}{time
              step} & \multicolumn{2}{c}{GMRES step number} \\
            \cline{3-4}
-            &               & $F_p = \nu A_p + W_p^n$ & $F_p = A_p + W_p^n$ \\ \midrule
+            &               & $F_p = \nu A_p + W_p^n$ & $F_p = A_p + W_p^n$ \\ \hline
            $20 \times 20$   &   $0.00656$         &      $41$           &     $8$
-           \\ \midrule
+           \\ \hline
            $40 \times 40$   &   $0.00312$         &      $43$           &     $12$
-           \\ \midrule
+           \\ \hline
            $80 \times 80$   &   $0.00153$   &      $48$    &     $18$
-           \\ \bottomrule
+           \\ \hline
          \end{tabular}
          \caption{Cavity flow: GMRES step number of solving linear system
            (\ref{eq::linear_system}) with different $F_p$ in PCD
@@ -657,34 +642,23 @@
        \end{table}
    \subsection{Backward step flow}
 
-      This example models the envolution of flow over a backward step.
-      The length of the channel is $l = 5$. Poiseuille flow boundary
-      condition $\vec{u} = (1 - y^2, 0)^T$is imposed on the inflow
-      boundary $x = -1, y \in (0, -1)$. $\vec{u} = (0, 0)^T$ is imposed
-      on the top and bottom walls while a natrual condition on the
-      outflow boundary $x = 1, y \in (-1, 1)$. We choose viscosity
-      $\nu = 0.02$, then the flow tends to steady as $t \rightarrow
-      \infty$.
+      这个算例模拟的是流体经过一个向后的台阶。管道的长度是$l = 5$，在入流边界$x = -1, y \in (0, -1)$设置的是Poiseuille流条件
+      $\vec{u} = (1 - y^2, 0)^T$。在管道的顶端和底端设置的无滑移边界条件$\vec{u} = (0, 0)^T$，自然条件设置在出流边界$x = 5, y \in (-1, 1)$
+      上。我们选取粘性系数为$\nu = 0.02$，那么当$t \rightarrow \infty$时，流体趋向于稳态。
 
-      We choose (\ref{eq::monitor_vorticity}) as monitor function
-      with parameters $\alpha = 2.0, \beta = 2.0$. Singularities arise
-      at the concave corner where flow expanding, so there needs more
-      grids. In Figure \ref{fig::step_flow_mesh_streamline}, mesh
-      clusters near the concave corner consistent with our assumption.
 
-      Our computational time step length is near $0.008$ which
-      satisfing the CFL condition. GMRES iteration counts of solving
-      system (\ref{eq::linear_system}) and
-      (\ref{eq::full_discreted_update}) via time are shown in
-      Figure \ref{fig::GMRES_steps_total}. It requires less than 21
-      iteration steps in solving (\ref{eq::linear_system}).
+      我们选取(\ref{eq::monitor_vorticity})为控制函数，控制函数中的参数是$\alpha = 2.0, \beta = 2.0$。我们知道奇异性将会出现在流体扩展的拐角
+      处，因此这里需要更多的网格。在图 \ref{fig::step_flow_mesh_streamline}中，网格集中在凹进去的拐角处，这跟我们的设想一致。
+
+      要满足CFL条件，我们的计算时间步长在$0.008$左右。求解 (\ref{eq::linear_system}) 和 (\ref{eq::full_discreted_update})的GMRES迭代步数在图
+      \ref{fig::GMRES_steps_total} 中给出。从中可以发现求解 (\ref{eq::linear_system}) 需要少于$21$步迭代就能收敛。
 
       \begin{figure}[!htbp]
         \centering
         \includegraphics[width = 0.3\textwidth, angle =
-        -90]{picture/L_shaped_flow_data/mesh.eps}
+        -90]{picture/second/L_shaped_flow_data/mesh.eps}
         \includegraphics[width = 0.3\textwidth, angle =
-        -90]{picture/L_shaped_flow_data/streamline.eps}
+        -90]{picture/second/L_shaped_flow_data/streamline.eps}
         \caption{\small Top: moving mesh, bottom: velocity streamline
           in step flow at $t = 100s$, viscosity $\nu = 0.02$.}
         \label{fig::step_flow_mesh_streamline}
@@ -692,44 +666,28 @@
 
       \begin{figure}[!htbp]
         \centering
-        \includegraphics[width = 0.55\textwidth, angle = 0]{picture/L_shaped_flow_data/iterate_steps.eps}
+        \includegraphics[width = 0.55\textwidth, angle = 0]{picture/second/L_shaped_flow_data/iterate_steps.eps}
         \caption{\small Step flow: GMRES iteration counts via time, $\nu = 0.02$}
         \label{fig::GMRES_steps_total}
       \end{figure}
 
    \subsection{Flow over cylinder}
 
-      This example models the development of flow over an cylinder
-      along a retangular channel. This problem has been considered in
-      \cite{cao1999anr}. The center of cylinder is $(0, 0)$ and the
-      radius is $r = 0.3$. Let viscosity $\nu$  equal  $1 / 300$ and
-      the domain $\Omega = [-1, 5] \times [-1, 1]$. At the inflow
-      boundary $x = -1$, $\vec{u} = (1 - y^2, 0)^T$ with poiseuille
-      profile is imposed. On the top and bottom boundary of the
-      channel, condition $\vec{u} = (0, 0)^T$ is settled. Natural
-      condition is imposed on $x = 5$.
+      这个算例模拟的是流体在长方形的管道流中，流过一个圆形的障碍物。这个问题在\cite{cao1999anr}中考虑过，是以流函数形式计算的。
+      圆形障碍的圆心是$(0, 0)$，半径是$r = 0.3$，雷诺数是$Re = 600$，计算区域是 $\Omega = [-1, 5] \times [-1, 1]$。在入流边界
+      $x = -1$，设置具有poiseuille性质的边界条件 $\vec{u} = (1 - y^2, 0)^T$。在管道的上边界和下边界，设定条件$\vec{u} = (0, 0)^T$。
+      自然条件设置在出流边界 $x = 5$ 上。
+      
+      在我们的移动策略中，用户可以设置控制函数 (\ref{eq::monitor_vorticity}) 的参数$\alpha$ 和 $\beta$。$\alpha$ 的值越大，
+      网格聚集的程度就越大。从图 \ref{fig::cylinder_GMRES_steps}中，我们可以看出 $\alpha = 5, \beta = 2$ 时GMRES的迭代步数
+      要比 $\alpha = 1, \beta = 2$ 时的迭代次数多。当我们选择不同的PCD不同的$F_p$，GMRES迭代次数的比较在图 \ref{fig::cylinder_GMRES_steps_comparation}中给出。我们发现选择 $F_p = A + W_p^n$ 的计算效率要高于 $F_p = \nu A + W_p^n$。
 
-      In our moving strategy, parameters $\alpha$ and
-      $\beta$ in (\ref{eq::monitor_vorticity}) are user defined. The
-      value of $\alpha$ is greater, the degree of mesh clustering is
-      larger. From Figure \ref{fig::cylinder_GMRES_steps}, it can be
-      shown that the number of GMRES iteration step with $\alpha = 5$
-      is larger than $\alpha = 1.0$. Comparation of GMRES step counts
-      between different choice of $F_p$ are shown in Figure
-      \ref{fig::cylinder_GMRES_steps_comparation}, it is found that
-      the number of GMRES iteration steps will decrease more than 20 by
-      using $F_p = A + W_p^n$.
-
-      We show the moving mesh at $t = 2s$ in Figure
-      \ref{fig::cylinder_mesh_2s}. It can be seen that the mesh obviously
-      clusters around the cylinder. As we known, wall street phenomena
-      will occur as time evoluting when the flow has an appropriate
-      viscosity according to \cite{milton1982album}, just as the mesh
-      shown in Figure \ref{fig::cylinder_mesh_40s}.
+      在图 \ref{fig::cylinder_mesh_2s}中，展示了 $t = 2s$ 时的网格移动效果。可以发现，网格明显的聚集在圆形障碍物的周围。据我们所知，
+      当选取适当的雷诺数时，会出现涡街现象，参考\cite{milton1982album}一文，正如图 Figure \ref{fig::cylinder_mesh_40s}所展示的。
 
       \begin{figure}[!htbp]
         \begin{center}
-          \includegraphics[width = 0.55\textwidth]{picture/obstacle_flow_data/comparation_NS_iterate_step.eps}
+          \includegraphics[width = 0.55\textwidth]{picture/second/obstacle_flow_data/comparation_NS_iterate_step.eps}
         \end{center}
         \caption{\small Flow over cylinder: GMRES iteration counts of
                  solving(\ref{eq::linear_system}) with different $F_p$ in
@@ -739,8 +697,8 @@
 
       \begin{figure}[!htbp]
         \begin{center}
-          \includegraphics[width = 0.45\textwidth]{picture/obstacle_flow_data/NS_iterate_steps.eps}
-          \includegraphics[width = 0.45\textwidth]{picture/obstacle_flow_data/moving_iterate_steps.eps}
+          \includegraphics[width = 0.45\textwidth]{picture/second/obstacle_flow_data/NS_iterate_steps.eps}
+          \includegraphics[width = 0.45\textwidth]{picture/second/obstacle_flow_data/moving_iterate_steps.eps}
         \end{center}
         \caption{\small Flow over cylinder, left: GMRES iteration counts of
           solving (\ref{eq::linear_system}), right: GMRES iteration
@@ -752,7 +710,7 @@
 
       \begin{figure}[!htbp]
         \centering
-        \includegraphics[width = 0.3\textwidth, angle = -90]{picture/obstacle_flow_data/mesh_t_2s.eps}
+        \includegraphics[width = 0.3\textwidth, angle = -90]{picture/second/obstacle_flow_data/mesh_t_2s.eps}
         \caption{\small Flow over cylinder: moving mesh at $t = 2s$,
           viscosity $\nu = 1/300$}
         \label{fig::cylinder_mesh_2s}
@@ -760,7 +718,7 @@
 
       \begin{figure}[!htbp]
         \centering
-        \includegraphics[width = 0.3\textwidth, angle = -90]{picture/obstacle_flow_data/mesh_t_40s.eps}
+        \includegraphics[width = 0.3\textwidth, angle = -90]{picture/second/obstacle_flow_data/mesh_t_40s.eps}
         \caption{\small Flow over cylinder: moving mesh at $t = 40s$,
           viscosity $\nu = 1/300$.}
         \label{fig::cylinder_mesh_40s}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2016.3.26)  2 APR 2016 23:45
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2016.3.26)  3 APR 2016 17:15
 entering extended mode
 **LingPhDThesis.tex
 (E:\PHD_thesis_template\LingPhDThesis.tex
@@ -281,23 +281,51 @@ Document Style - pseudocode environments for use with the `algorithmicx' style
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks30
 )
-(E:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
+(E:\CTEX\MiKTeX\tex\latex\multirow\multirow.sty
+\bigstrutjot=\dimen117
+)
+(E:\CTEX\MiKTeX\tex\latex\caption\caption.sty
+Package: caption 2010/01/09 v3.1m Customizing captions (AR)
+
+(E:\CTEX\MiKTeX\tex\latex\caption\caption3.sty
+Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
+\captionmargin=\dimen118
+\captionmargin@=\dimen119
+\captionwidth=\dimen120
+\caption@indent=\dimen121
+\caption@parindent=\dimen122
+\caption@hangindent=\dimen123
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used on input line 1084.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\vskip \abovecaptionski
+p \sbox \@tempboxa {#1\CTEX@caption@delimiter #2}\ifdim \wd \@tempboxa >\hsize 
+#1\CTEX@caption@delimiter #2\par \else \global \@minipagefalse \hb@xt@ \hsize {
+\hfil \box \@tempboxa \hfil }\fi \vskip \belowcaptionskip .
+\c@ContinuedFloat=\count119
+Package caption Info: float package is loaded.
+) (E:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
-\Gin@req@height=\dimen117
-\Gin@req@width=\dimen118
+\Gin@req@height=\dimen124
+\Gin@req@width=\dimen125
 )
 (E:\CTEX\MiKTeX\tex\latex\subfigure\subfigure.sty
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip64
 \subfigcapskip=\skip65
-\subfigcaptopadj=\dimen119
+\subfigcaptopadj=\dimen126
 \subfigbottomskip=\skip66
-\subfigcapmargin=\dimen120
+\subfigcapmargin=\dimen127
 \subfiglabelskip=\skip67
-\c@subfigure=\count119
-\c@lofdepth=\count120
-\c@subtable=\count121
-\c@lotdepth=\count122
+\c@subfigure=\count120
+\c@lofdepth=\count121
+\c@subtable=\count122
+\c@lotdepth=\count123
 
 ****************************************
 * Local config file subfigure.cfg used *
@@ -327,18 +355,18 @@ Package: pgfsys 2008/02/07 v2.00 (rcs-revision 1.31)
 \pgfkeys@pathtoks=\toks32
 \pgfkeys@temptoks=\toks33
 )
-\pgf@x=\dimen121
-\pgf@y=\dimen122
-\pgf@xa=\dimen123
-\pgf@ya=\dimen124
-\pgf@xb=\dimen125
-\pgf@yb=\dimen126
-\pgf@xc=\dimen127
-\pgf@yc=\dimen128
-\c@pgf@counta=\count123
-\c@pgf@countb=\count124
-\c@pgf@countc=\count125
-\c@pgf@countd=\count126
+\pgf@x=\dimen128
+\pgf@y=\dimen129
+\pgf@xa=\dimen130
+\pgf@ya=\dimen131
+\pgf@xb=\dimen132
+\pgf@yb=\dimen133
+\pgf@xc=\dimen134
+\pgf@yc=\dimen135
+\c@pgf@counta=\count124
+\c@pgf@countb=\count125
+\c@pgf@countc=\count126
+\c@pgf@countd=\count127
 
 (E:\CTEX\MiKTeX\tex\generic\pgf\systemlayer\pgf.cfg
 File: pgf.cfg 2008/01/13  (rcs-revision 1.6)
@@ -350,12 +378,12 @@ File: pgfsys-dvips.def 2007/12/12  (rcs-revision 1.19)
 
 (E:\CTEX\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-common-postscript.def
 File: pgfsys-common-postscript.def 2008/02/07  (rcs-revision 1.18)
-\pgf@objectcount=\count127
+\pgf@objectcount=\count128
 )))
 (E:\CTEX\MiKTeX\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/01/23  (rcs-revision 1.6)
-\pgfsyssoftpath@smallbuffer@items=\count128
-\pgfsyssoftpath@bigbuffer@items=\count129
+\pgfsyssoftpath@smallbuffer@items=\count129
+\pgfsyssoftpath@bigbuffer@items=\count130
 )
 (E:\CTEX\MiKTeX\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
@@ -386,10 +414,10 @@ Package: pgfcore 2008/01/15 v2.00 (rcs-revision 1.6)
 )
 (E:\CTEX\MiKTeX\tex\generic\pgf\math\pgfmathparser.code.tex
 \pgfmath@stack=\toks34
-\c@pgfmath@parsecounta=\count130
-\c@pgfmath@parsecountb=\count131
-\c@pgfmath@parsecountc=\count132
-\pgfmath@parsex=\dimen129
+\c@pgfmath@parsecounta=\count131
+\c@pgfmath@parsecountb=\count132
+\c@pgfmath@parsecountc=\count133
+\pgfmath@parsex=\dimen136
 )
 (E:\CTEX\MiKTeX\tex\generic\pgf\math\pgfmathoperations.code.tex
 (E:\CTEX\MiKTeX\tex\generic\pgf\math\pgfmathtrig.code.tex)
@@ -397,47 +425,47 @@ Package: pgfcore 2008/01/15 v2.00 (rcs-revision 1.6)
 (E:\CTEX\MiKTeX\tex\generic\pgf\math\pgfmathbase.code.tex)))
 (E:\CTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2008/02/03  (rcs-revision 1.13)
-\pgf@picminx=\dimen130
-\pgf@picmaxx=\dimen131
-\pgf@picminy=\dimen132
-\pgf@picmaxy=\dimen133
-\pgf@pathminx=\dimen134
-\pgf@pathmaxx=\dimen135
-\pgf@pathminy=\dimen136
-\pgf@pathmaxy=\dimen137
-\pgf@xx=\dimen138
-\pgf@xy=\dimen139
-\pgf@yx=\dimen140
-\pgf@yy=\dimen141
-\pgf@zx=\dimen142
-\pgf@zy=\dimen143
+\pgf@picminx=\dimen137
+\pgf@picmaxx=\dimen138
+\pgf@picminy=\dimen139
+\pgf@picmaxy=\dimen140
+\pgf@pathminx=\dimen141
+\pgf@pathmaxx=\dimen142
+\pgf@pathminy=\dimen143
+\pgf@pathmaxy=\dimen144
+\pgf@xx=\dimen145
+\pgf@xy=\dimen146
+\pgf@yx=\dimen147
+\pgf@yy=\dimen148
+\pgf@zx=\dimen149
+\pgf@zy=\dimen150
 )
 (E:\CTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2008/02/13  (rcs-revision 1.14)
-\pgf@path@lastx=\dimen144
-\pgf@path@lasty=\dimen145
+\pgf@path@lastx=\dimen151
+\pgf@path@lasty=\dimen152
 )
 (E:\CTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2008/01/23  (rcs-revision 1.11)
-\pgf@shorten@end@additional=\dimen146
-\pgf@shorten@start@additional=\dimen147
+\pgf@shorten@end@additional=\dimen153
+\pgf@shorten@start@additional=\dimen154
 )
 (E:\CTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2008/01/15  (rcs-revision 1.26)
 \pgfpic=\box37
 \pgf@hbox=\box38
 \pgf@layerbox@main=\box39
-\pgf@picture@serial@count=\count133
+\pgf@picture@serial@count=\count134
 )
 (E:\CTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2007/12/12  (rcs-revision 1.8)
-\pgflinewidth=\dimen148
+\pgflinewidth=\dimen155
 )
 (E:\CTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2008/02/04  (rcs-revision 1.10)
-\pgf@pt@x=\dimen149
-\pgf@pt@y=\dimen150
-\pgf@pt@temp=\dimen151
+\pgf@pt@x=\dimen156
+\pgf@pt@y=\dimen157
+\pgf@pt@temp=\dimen158
 )
 (E:\CTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2006/10/11  (rcs-revision 1.2)
@@ -453,8 +481,8 @@ File: pgfcorearrows.code.tex 2007/06/07  (rcs-revision 1.8)
 )
 (E:\CTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2007/12/10  (rcs-revision 1.9)
-\pgf@max=\dimen152
-\pgf@sys@shading@range@num=\count134
+\pgf@max=\dimen159
+\pgf@sys@shading@range@num=\count135
 )
 (E:\CTEX\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2008/01/15  (rcs-revision 1.1)
@@ -480,8 +508,8 @@ File: pgfmoduleplot.code.tex 2008/01/15  (rcs-revision 1.1)
 )
 (E:\CTEX\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v2.00 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen153
-\pgf@nodesepend=\dimen154
+\pgf@nodesepstart=\dimen160
+\pgf@nodesepend=\dimen161
 )
 (E:\CTEX\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2007/07/23 v2.00 (rcs-revision 1.1)
@@ -489,37 +517,37 @@ Package: pgfcomp-version-1-18 2007/07/23 v2.00 (rcs-revision 1.1)
 (E:\CTEX\MiKTeX\tex\latex\pgf\utilities\pgffor.sty
 (E:\CTEX\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
 Package: pgffor 2007/11/07 v2.00 (rcs-revision 1.8)
-\pgffor@iter=\dimen155
-\pgffor@skip=\dimen156
+\pgffor@iter=\dimen162
+\pgffor@skip=\dimen163
 ))
 (E:\CTEX\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
 Package: tikz 2008/02/13 v2.00 (rcs-revision 1.27)
 
 (E:\CTEX\MiKTeX\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2007/03/09 v2.00 (rcs-revision 1.9)
-\pgf@plot@mark@count=\count135
-\pgfplotmarksize=\dimen157
+\pgf@plot@mark@count=\count136
+\pgfplotmarksize=\dimen164
 )
-\tikz@lastx=\dimen158
-\tikz@lasty=\dimen159
-\tikz@lastxsaved=\dimen160
-\tikz@lastysaved=\dimen161
-\tikzleveldistance=\dimen162
-\tikzsiblingdistance=\dimen163
+\tikz@lastx=\dimen165
+\tikz@lasty=\dimen166
+\tikz@lastxsaved=\dimen167
+\tikz@lastysaved=\dimen168
+\tikzleveldistance=\dimen169
+\tikzsiblingdistance=\dimen170
 \tikz@figbox=\box42
 \tikz@tempbox=\box43
-\tikztreelevel=\count136
-\tikznumberofchildren=\count137
-\tikznumberofcurrentchild=\count138
-\tikz@fig@count=\count139
+\tikztreelevel=\count137
+\tikznumberofchildren=\count138
+\tikznumberofcurrentchild=\count139
+\tikz@fig@count=\count140
 
 (E:\CTEX\MiKTeX\tex\generic\pgf\modules\pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2008/01/15  (rcs-revision 1.1)
-\pgfmatrixcurrentrow=\count140
-\pgfmatrixcurrentcolumn=\count141
-\pgf@matrix@numberofcolumns=\count142
+\pgfmatrixcurrentrow=\count141
+\pgfmatrixcurrentcolumn=\count142
+\pgf@matrix@numberofcolumns=\count143
 )
-\tikz@expandcount=\count143
+\tikz@expandcount=\count144
 
 (E:\CTEX\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths
 .code.tex
@@ -569,9 +597,9 @@ Package: hycolor 2009/12/12 v1.6 Color options of hyperref/bookmark (HO)
 (E:\CTEX\MiKTeX\tex\latex\oberdiek\xcolor-patch.sty
 Package: xcolor-patch 2009/12/12 xcolor patch
 ))
-\@linkdim=\dimen164
-\Hy@linkcounter=\count144
-\Hy@pagecounter=\count145
+\@linkdim=\dimen171
+\Hy@linkcounter=\count145
+\Hy@pagecounter=\count146
 
 (E:\CTEX\MiKTeX\tex\latex\hyperref\pd1enc.def
 File: pd1enc.def 2010/01/16 v6.80c Hyperref: PDFDocEncoding definition (HO)
@@ -605,9 +633,9 @@ Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
 (E:\CTEX\MiKTeX\tex\generic\oberdiek\bigintcalc.sty
 Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
 ))
-\Fld@menulength=\count146
-\Field@Width=\dimen165
-\Fld@charsize=\dimen166
+\Fld@menulength=\count147
+\Field@Width=\dimen172
+\Fld@charsize=\dimen173
 \Field@toks=\toks36
 Package hyperref Info: Hyper figures OFF on input line 4702.
 Package hyperref Info: Link nesting OFF on input line 4707.
@@ -620,18 +648,18 @@ Package hyperref Info: PDF/A mode OFF on input line 4732.
 (E:\CTEX\MiKTeX\tex\generic\oberdiek\atbegshi.sty
 Package: atbegshi 2009/12/02 v1.10 At begin shipout hook (HO)
 )
-\Hy@abspage=\count147
-\c@Item=\count148
-\c@Hfootnote=\count149
+\Hy@abspage=\count148
+\c@Item=\count149
+\c@Hfootnote=\count150
 )
 *hyperref using driver hdvipdfm*
 (E:\CTEX\MiKTeX\tex\latex\hyperref\hdvipdfm.def
 File: hdvipdfm.def 2010/01/16 v6.80c Hyperref driver for dvipdfm
 \pdfm@box=\box44
-\c@Hy@AnnotLevel=\count150
-\HyField@AnnotCount=\count151
-\Fld@listcount=\count152
-\c@bookmark@seq@number=\count153
+\c@Hy@AnnotLevel=\count151
+\HyField@AnnotCount=\count152
+\Fld@listcount=\count153
+\c@bookmark@seq@number=\count154
 
 (E:\CTEX\MiKTeX\tex\generic\oberdiek\rerunfilecheck.sty
 Package: rerunfilecheck 2009/12/18 v1.2 Rerun checks for auxiliary files (HO)
@@ -658,21 +686,21 @@ Package: natbib 2009/11/07 8.31a (PWD, AO)
 \bibhang=\skip71
 \bibsep=\skip72
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count154
+\c@NAT@ctr=\count155
 )
 (E:\CTEX\MiKTeX\tex\latex\ltxmisc\hypernat.sty
 Package: hypernat 2001/07/09 v1.0b hyperref and natbib compatibility (jb)
 ))
 (E:\PHD_thesis_template\ZJUThesis.cfg
 File: ZJUThesis.cfg 2014/02/19 v0.1i ZJUThesis configuration file
-\c@theorem=\count155
-\c@lemma=\count156
-\c@proposition=\count157
-\c@corollary=\count158
-\c@definition=\count159
-\c@example=\count160
-\c@remark=\count161
-\c@case=\count162
+\c@theorem=\count156
+\c@lemma=\count157
+\c@proposition=\count158
+\c@corollary=\count159
+\c@definition=\count160
+\c@example=\count161
+\c@remark=\count162
+\c@case=\count163
 ) (E:\PHD_thesis_template\isomath.tex)
 (E:\PHD_thesis_template\LingPhDThesis.aux
 (E:\PHD_thesis_template\Chapters/abstract.aux)
@@ -684,15 +712,6 @@ LaTeX Warning: Label `th:Conv_NM_Ian2006' multiply defined.
 (E:\PHD_thesis_template\Chapters/chapter3.aux
 
 LaTeX Warning: Label `eq::stokes' multiply defined.
-
-
-LaTeX Warning: Label `fun:f(z)' multiply defined.
-
-
-LaTeX Warning: Label `fun:r(z)' multiply defined.
-
-
-LaTeX Warning: Label `ineq:abs_r(zk)_3' multiply defined.
 
 ) (E:\PHD_thesis_template\Chapters/chapter4.aux
 
@@ -725,8 +744,7 @@ LaTeX Warning: Label `state::end' multiply defined.
 
 LaTeX Warning: Label `alg::solve' multiply defined.
 
-) (E:\PHD_thesis_template\Chapters/chapter5.aux)
-(E:\PHD_thesis_template\Chapters/publications.aux)
+) (E:\PHD_thesis_template\Chapters/publications.aux)
 (E:\PHD_thesis_template\Chapters/thanks.aux)
 (E:\PHD_thesis_template\Chapters/statements.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
@@ -809,6 +827,10 @@ LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: subfigure package is loaded.
+Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring ON on input line 27.
 
 (E:\CTEX\MiKTeX\tex\latex\hyperref\nameref.sty
@@ -820,7 +842,7 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 (E:\CTEX\MiKTeX\tex\generic\oberdiek\gettitlestring.sty
 Package: gettitlestring 2009/12/18 v1.3 Cleanup title references (HO)
 )
-\c@section@level=\count163
+\c@section@level=\count164
 )
 LaTeX Info: Redefining \ref on input line 27.
 LaTeX Info: Redefining \pageref on input line 27.
@@ -839,25 +861,10 @@ File: extended.enc 2008/12/29 4.8.2
 (E:\CTEX\MiKTeX\tex\latex\cjk\extended.chr
 File: extended.chr 2008/12/29 4.8.2
 )
-LaTeX Font Info:    Try loading font information for C19+rm on input line 40.
-
-(E:\CTEX\CTeX\tex\latex\ctex\fd\c19rm.fd
-File: c19rm.fd 2007/05/06 v0.8a ctex font definition file
-)
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[1
-
-] [2
-
-]
 LaTeX Font Info:    Try loading font information for C19+zhkai on input line 45
 .
- (E:\CTEX\CTeX\tex\latex\zhmetrics\c19zhkai.fd
+
+(E:\CTEX\CTeX\tex\latex\zhmetrics\c19zhkai.fd
 File: c19zhkai.fd 2009/09/23 4.8.2
 )
 Package CJKpunct Info: punctuation spaces for family 'zhkai' do not exist. Use 
@@ -881,14 +888,32 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 
 (E:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [3] [4] [5
+)
+Overfull \hbox (24.92464pt too wide) detected at line 45
+  \C19/zhkai/bx/n/16.06/44 ë[][]  \C19/zhkai/bx/n/16.06/64 [][]  \C19/zhkai/bx
+/n/16.06/39 à[][]  \C19/zhkai/bx/n/16.06/46 [][]  \C19/zhkai/bx/n/16.06/55 «[]
+[] |\C19/zhkai/bx/n/16.06/25 ![][]|  \C19/zhkai/bx/n/16.06/58 [][]  \C19/zhkai
+/bx/n/16.06/43 €[][]  \C19/zhkai/bx/n/16.06/62 â[][]  \C19/zhkai/bx/n/16.06/42 
+B[][]  \C19/zhkai/bx/n/16.06/46 [][]  \C19/zhkai/bx/n/16.06/55 «[][] 
+ []
 
-] [6
+[1
+
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2] [3
+
+] [4
+
+] [5] [6
 
 ] [7] [8
-
-] [9]
-[10
 
 
 ] (E:\PHD_thesis_template\Chapters/abstract.tex
@@ -904,9 +929,13 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 Package CJKpunct Info: punctuation spaces for family 'zhhei' do not exist. Use 
 family 'def' instead. on input line 10.
+LaTeX Font Info:    Try loading font information for C19+rm on input line 10.
+(E:\CTEX\CTeX\tex\latex\ctex\fd\c19rm.fd
+File: c19rm.fd 2007/05/06 v0.8a ctex font definition file
+)
 Package CJKpunct Info: punctuation spaces for family 'zhsong' do not exist. Use
  family 'def' instead. on input line 10.
-[1
+ [1
 
 
 
@@ -926,12 +955,16 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 12.05pt
 (hyperref)                replaced by space on input line 75.
 
-(E:\PHD_thesis_template\LingPhDThesis.toc [5] [6])
+(E:\PHD_thesis_template\LingPhDThesis.toc [5]
+
+LaTeX Warning: Reference `th:MatrixEMCon' on page vi undefined on input line 33
+.
+
+[6])
 \tf@toc=\write5
  [7] [8
 
-]
-(E:\PHD_thesis_template\LingPhDThesis.lot)
+] (E:\PHD_thesis_template\LingPhDThesis.lot)
 \tf@lot=\write6
  [9] [10
 
@@ -944,23 +977,33 @@ LaTeX Warning: Reference `set:R_NM' on page xi undefined on input line 10.
 LaTeX Warning: Reference `set:R_NM' on page xi undefined on input line 20.
 
 
-LaTeX Warning: Reference `set:R' on page xi undefined on input line 32.
-
-
-LaTeX Warning: Reference `set:R' on page xi undefined on input line 42.
-
-
-LaTeX Warning: Reference `it:CoupledEM' on page xi undefined on input line 43.
+LaTeX Warning: Reference `set:R_N_pra' on page xi undefined on input line 20.
 
 [11]
 
-LaTeX Warning: Reference `mat:Ae' on page xii undefined on input line 47.
+LaTeX Warning: Reference `set:R' on page xii undefined on input line 43.
 
 
-LaTeX Warning: Reference `set:R' on page xii undefined on input line 56.
+LaTeX Warning: Reference `set:R' on page xii undefined on input line 53.
 
 
-Overfull \hbox (3.75853pt too wide) in paragraph at lines 56--56
+LaTeX Warning: Reference `set:R_pra' on page xii undefined on input line 53.
+
+
+LaTeX Warning: Reference `it:CoupledEM' on page xii undefined on input line 54.
+
+
+
+LaTeX Warning: Reference `al:SE' on page xii undefined on input line 54.
+
+
+LaTeX Warning: Reference `mat:Ae' on page xii undefined on input line 58.
+
+
+LaTeX Warning: Reference `set:R' on page xii undefined on input line 67.
+
+
+Overfull \hbox (3.75853pt too wide) in paragraph at lines 67--67
  [][][] [][][]\OT1/cmr/m/n/12.05 The ap-prox-i-mat-ing re-gions of $\OMS/cmsy/m
 /n/12.05 R[]$ \OT1/cmr/m/n/12.05 de-fined in ([]) for $\OML/cmm/m/it/12.05 p \O
 T1/cmr/m/n/12.05 = 25\OML/cmm/m/it/12.05 ; \OT1/cmr/m/n/12.05 100\OML/cmm/m/it/
@@ -968,16 +1011,16 @@ T1/cmr/m/n/12.05 = 25\OML/cmm/m/it/12.05 ; \OT1/cmr/m/n/12.05 100\OML/cmm/m/it/
  []
 
 
-LaTeX Warning: Reference `set:R' on page xii undefined on input line 66.
+LaTeX Warning: Reference `set:R' on page xii undefined on input line 77.
 
 
-LaTeX Warning: Reference `set:R_H_pra' on page xii undefined on input line 66.
+LaTeX Warning: Reference `set:R_H_pra' on page xii undefined on input line 77.
 
 
-LaTeX Warning: Reference `set:R' on page xii undefined on input line 70.
+LaTeX Warning: Reference `set:R' on page xii undefined on input line 81.
 
 
-LaTeX Warning: Reference `set:R_H_pra' on page xii undefined on input line 70.
+LaTeX Warning: Reference `set:R_H_pra' on page xii undefined on input line 81.
 
 [12])
 \tf@lof=\write7
@@ -986,582 +1029,300 @@ LaTeX Warning: Reference `set:R_H_pra' on page xii undefined on input line 70.
 ] (E:\PHD_thesis_template\Chapters/chapter1.tex
 µ⁄\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 1\hspace {0.25em plus
  0.125em minus 0.08em}\ignorespaces ’¬
-
-Package natbib Warning: Citation `Traub1979' on page 1 undefined on input line 
-57.
-
-
-Package natbib Warning: Citation `Ypma1982' on page 1 undefined on input line 5
-7.
-
-
-Package natbib Warning: Citation `Smale1986' on page 1 undefined on input line 
-57.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 26.
+(E:\CTEX\MiKTeX\tex\latex\base\omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12.05> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 26.
 
 
-Package natbib Warning: Citation `Wang2000a' on page 1 undefined on input line 
-57.
+LaTeX Warning: Reference `eq:NewtonEquation' on page 1 undefined on input line 
+42.
 
 
-Package natbib Warning: Citation `Huang2004' on page 1 undefined on input line 
-57.
+LaTeX Warning: Reference `eq:NewtonEquation' on page 1 undefined on input line 
+54.
 
 
-Package natbib Warning: Citation `Proinov2009' on page 1 undefined on input lin
-e 57.
-
-
-Package natbib Warning: Citation `Ferreira2009b' on page 1 undefined on input l
-ine 57.
-
-
-Package natbib Warning: Citation `Ypma1982' on page 1 undefined on input line 6
-4.
-
-
-Package natbib Warning: Citation `Traub1979' on page 1 undefined on input line 
+LaTeX Warning: Reference `eq:NewtonEquation' on page 1 undefined on input line 
 64.
-
-
-Package natbib Warning: Citation `Smale1986' on page 1 undefined on input line 
-64.
-
-
-Package natbib Warning: Citation `Huang2004' on page 1 undefined on input line 
-64.
-
-
-Package natbib Warning: Citation `Wang2000a' on page 1 undefined on input line 
-64.
-
-
-Package natbib Warning: Citation `Proinov2009' on page 1 undefined on input lin
-e 64.
-
-
-Package natbib Warning: Citation `Ferreira2009b' on page 1 undefined on input l
-ine 64.
-
-
-Package natbib Warning: Citation `Traub1979' on page 1 undefined on input line 
-64.
-
-
-Package natbib Warning: Citation `Ypma1982' on page 1 undefined on input line 6
-4.
-
-
-Package natbib Warning: Citation `Smale1986' on page 1 undefined on input line 
-64.
-
-
-Package natbib Warning: Citation `Huang2004' on page 1 undefined on input line 
-71.
-
-
-Package natbib Warning: Citation `Ortega1970' on page 1 undefined on input line
- 78.
-
-
-Package natbib Warning: Citation `Dennis1996' on page 1 undefined on input line
- 78.
-
-
-Package natbib Warning: Citation `Deuflhard2004' on page 1 undefined on input l
-ine 78.
 
 [1
 
 
 ]
 
+Package natbib Warning: Citation `Kantorvich1982' on page 2 undefined on input 
+line 95.
+
+
 Package natbib Warning: Citation `Ortega1970' on page 2 undefined on input line
  99.
 
 
-Package natbib Warning: Citation `Traub1982' on page 2 undefined on input line 
+Package natbib Warning: Citation `Rokne1972' on page 2 undefined on input line 
 99.
 
 
-Package natbib Warning: Citation `Deuflhard2004' on page 2 undefined on input l
+Package natbib Warning: Citation `Rall1974' on page 2 undefined on input line 9
+9.
+
+
+Package natbib Warning: Citation `GraggTapia1974' on page 2 undefined on input 
+line 99.
+
+
+Package natbib Warning: Citation `Deuflhard1979' on page 2 undefined on input l
 ine 99.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 102.
 
-(E:\CTEX\MiKTeX\tex\latex\base\omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12.05> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 102.
- [2] [3]
-
-Package natbib Warning: Citation `Gutierrez1997a' on page 4 undefined on input 
-line 182.
+Package natbib Warning: Citation `Ypma1982' on page 2 undefined on input line 9
+9.
 
 
-Overfull \hbox (15.36742pt too wide) detected at line 188
-[]\OML/cmm/m/it/12.05 x[] \OT1/cmr/m/n/12.05 = \OML/cmm/m/it/12.05 x[] \OMS/cms
-y/m/n/12.05   [] \OML/cmm/m/it/12.05 F[]\OT1/cmr/m/n/12.05 (\OML/cmm/m/it/12.05
- x[]\OT1/cmr/m/n/12.05 )[]\OML/cmm/m/it/12.05 F\OT1/cmr/m/n/12.05 (\OML/cmm/m/i
-t/12.05 x[]\OT1/cmr/m/n/12.05 )\OML/cmm/m/it/12.05 ;  k \OT1/cmr/m/n/12.05 = 0\
-OML/cmm/m/it/12.05 ; \OT1/cmr/m/n/12.05 1\OML/cmm/m/it/12.05 ; [] ;
- []
+Package natbib Warning: Citation `Huang1993' on page 2 undefined on input line 
+99.
 
 
-Package natbib Warning: Citation `Kantorvich1982' on page 4 undefined on input 
-line 205.
+Package natbib Warning: Citation `Gutierrez1997a' on page 2 undefined on input 
+line 99.
 
 
-Package natbib Warning: Citation `Ortega1970' on page 4 undefined on input line
- 209.
+Package natbib Warning: Citation `Wang1999' on page 2 undefined on input line 9
+9.
 
 
-Package natbib Warning: Citation `Rokne1972' on page 4 undefined on input line 
-209.
+Package natbib Warning: Citation `Gutierrez2000' on page 2 undefined on input l
+ine 99.
 
 
-Package natbib Warning: Citation `Rall1974' on page 4 undefined on input line 2
-09.
+Package natbib Warning: Citation `Ezquerro2002' on page 2 undefined on input li
+ne 99.
 
 
-Package natbib Warning: Citation `GraggTapia1974' on page 4 undefined on input 
-line 209.
+Package natbib Warning: Citation `Smale1986' on page 2 undefined on input line 
+105.
 
 
-Package natbib Warning: Citation `Deuflhard1979' on page 4 undefined on input l
-ine 209.
+LaTeX Warning: Reference `th:SmaleGammaTh' on page 2 undefined on input line 11
+5.
 
 
-Package natbib Warning: Citation `Ypma1982' on page 4 undefined on input line 2
-09.
+Package natbib Warning: Citation `WangLi2001' on page 2 undefined on input line
+ 117.
 
 
-Package natbib Warning: Citation `Huang1993' on page 4 undefined on input line 
-209.
+Package natbib Warning: Citation `WangHan1997b' on page 2 undefined on input li
+ne 120.
+
+[2]
+
+LaTeX Warning: Reference `eq:JorCanForm' on page 3 undefined on input line 162.
 
 
-Package natbib Warning: Citation `Gutierrez1997a' on page 4 undefined on input 
-line 209.
+
+Package natbib Warning: Citation `Higham2008' on page 3 undefined on input line
+ 175.
 
 
-Package natbib Warning: Citation `Wang1999' on page 4 undefined on input line 2
-09.
+Package natbib Warning: Citation `Higham2008' on page 3 undefined on input line
+ 194.
+
+[3]
+
+Package natbib Warning: Citation `HornJohnson1991' on page 4 undefined on input
+ line 212.
 
 
-Package natbib Warning: Citation `Gutierrez2000' on page 4 undefined on input l
-ine 209.
+Package natbib Warning: Citation `Higham2008' on page 4 undefined on input line
+ 222.
 
 
-Package natbib Warning: Citation `Ezquerro2002' on page 4 undefined on input li
-ne 209.
+LaTeX Warning: Reference `eq:JorCanForm' on page 4 undefined on input line 224.
 
 
-Package natbib Warning: Citation `Smale1986' on page 4 undefined on input line 
-215.
+
+Package natbib Warning: Citation `Higham2008' on page 4 undefined on input line
+ 246.
 
 
-Package natbib Warning: Citation `WangLi2001' on page 4 undefined on input line
- 227.
+Package natbib Warning: Citation `Bjorck1983' on page 4 undefined on input line
+ 256.
+
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 260.
+
+Package natbib Warning: Citation `Bjorck1983' on page 4 undefined on input line
+ 260.
 
 
-Package natbib Warning: Citation `WangHan1997b' on page 4 undefined on input li
-ne 230.
+Package natbib Warning: Citation `Bjorck1983' on page 4 undefined on input line
+ 260.
+
+\c@newlist=\count165
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Package natbib Warning: Citation `Smale1986' on page 4 undefined on input line 
-233.
+Package natbib Warning: Citation `Higham1987' on page 4 undefined on input line
+ 285.
+
+
+Package natbib Warning: Citation `Higham1987' on page 4 undefined on input line
+ 285.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package natbib Warning: Citation `Higham2008' on page 4 undefined on input line
+ 335.
+
+
+LaTeX Warning: Reference `it:NM_MatSquRoot_original' on page 4 undefined on inp
+ut line 336.
 
 [4]
 
-Package natbib Warning: Citation `ChenLi2006' on page 5 undefined on input line
- 253.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 355.
 
 
-Package natbib Warning: Citation `Guo2007' on page 5 undefined on input line 25
-3.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 355.
 
 
-Package natbib Warning: Citation `LiShen2008' on page 5 undefined on input line
- 253.
+Package natbib Warning: Citation `Psarrakos2002' on page 5 undefined on input l
+ine 359.
 
 
-Package natbib Warning: Citation `ShenLi2009' on page 5 undefined on input line
- 253.
+Package natbib Warning: Citation `Smith2003' on page 5 undefined on input line 
+372.
 
 
-Package natbib Warning: Citation `ShenLi2010' on page 5 undefined on input line
- 253.
+Package natbib Warning: Citation `Higham2008' on page 5 undefined on input line
+ 376.
 
 
-Package natbib Warning: Citation `Ferreira2011c' on page 5 undefined on input l
-ine 253.
-
-
-Package natbib Warning: Citation `DedieuShub2000' on page 5 undefined on input 
-line 255.
-
-
-Package natbib Warning: Citation `DedieuKim2002' on page 5 undefined on input l
-ine 255.
-
-
-Package natbib Warning: Citation `Chen2008' on page 5 undefined on input line 2
-55.
-
-
-Package natbib Warning: Citation `LiHuWang2010' on page 5 undefined on input li
-ne 255.
-
-
-Package natbib Warning: Citation `Ferreira2011b' on page 5 undefined on input l
-ine 255.
-
-
-Package natbib Warning: Citation `XuLi2008' on page 5 undefined on input line 2
-55.
-
-
-Package natbib Warning: Citation `Candela1990a' on page 5 undefined on input li
-ne 269.
-
-
-Package natbib Warning: Citation `Candela1990b' on page 5 undefined on input li
-ne 269.
-
-
-Package natbib Warning: Citation `Ezquerro2005' on page 5 undefined on input li
-ne 269.
-
-
-Package natbib Warning: Citation `Gutierrez1997b' on page 5 undefined on input 
-line 269.
-
-
-Package natbib Warning: Citation `YeLi2006' on page 5 undefined on input line 2
-69.
-
-
-Package natbib Warning: Citation `YeLiShen2007' on page 5 undefined on input li
-ne 269.
-
-
-Package natbib Warning: Citation `Potra1989' on page 5 undefined on input line 
-277.
-
-
-Package natbib Warning: Citation `Jay2001' on page 5 undefined on input line 27
-7.
-
-
-Package natbib Warning: Citation `Ortega1970' on page 5 undefined on input line
- 277.
-
-
-Package natbib Warning: Citation `Rheinboldt1998' on page 5 undefined on input 
-line 277.
+Package natbib Warning: Citation `Iannazzo2006' on page 5 undefined on input li
+ne 379.
 
 [5]
 
-Package natbib Warning: Citation `Higham2008' on page 6 undefined on input line
- 346.
+LaTeX Warning: Reference `it:NM_MatpthRoot_original' on page 6 undefined on inp
+ut line 387.
 
 
-Package natbib Warning: Citation `HornJohnson1991' on page 6 undefined on input
- line 346.
-
-
-Package natbib Warning: Citation `Higham2008' on page 6 undefined on input line
- 348.
+Package natbib Warning: Citation `Iannazzo2008' on page 6 undefined on input li
+ne 391.
 
 [6]
 
-Package natbib Warning: Citation `Higham2008' on page 7 undefined on input line
- 367.
+LaTeX Warning: Reference `it:NM_MatpthRoot_original' on page 7 undefined on inp
+ut line 399.
 
 
-Package natbib Warning: Citation `HornJohnson1991' on page 7 undefined on input
- line 390.
+Package natbib Warning: Citation `Iannazzo2008' on page 7 undefined on input li
+ne 417.
 
 
-Package natbib Warning: Citation `Higham2008' on page 7 undefined on input line
- 400.
+Package natbib Warning: Citation `Iannazzo2008' on page 7 undefined on input li
+ne 417.
 
 
-Package natbib Warning: Citation `Higham2008' on page 7 undefined on input line
- 424.
+Package natbib Warning: Citation `GuoHigham2006' on page 7 undefined on input l
+ine 446.
+
+
+Package natbib Warning: Citation `GuoHigham2006' on page 7 undefined on input l
+ine 464.
+
+
+Package natbib Warning: Citation `GuoHigham2006' on page 7 undefined on input l
+ine 464.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [7]
 
-Package natbib Warning: Citation `Bjorck1983' on page 8 undefined on input line
- 448.
+Package natbib Warning: Citation `Iannazzo2008' on page 8 undefined on input li
+ne 506.
 
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 452.
 
-Package natbib Warning: Citation `Bjorck1983' on page 8 undefined on input line
- 452.
+Package natbib Warning: Citation `Guo2010' on page 8 undefined on input line 50
+6.
 
-\c@newlist=\count164
 
-Package natbib Warning: Citation `Higham1987' on page 8 undefined on input line
- 480.
+Package natbib Warning: Citation `Lin2010' on page 8 undefined on input line 50
+6.
 
 
-Package natbib Warning: Citation `Higham1987' on page 8 undefined on input line
- 484.
+Package natbib Warning: Citation `Iannazzo2008' on page 8 undefined on input li
+ne 508.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Package natbib Warning: Citation `Iannazzo2008' on page 8 undefined on input li
+ne 510.
 
-[8] [9]
 
-Package natbib Warning: Citation `Higham2008' on page 10 undefined on input lin
-e 552.
+Package natbib Warning: Citation `Guo2010' on page 8 undefined on input line 51
+9.
 
 
-Package natbib Warning: Citation `Higham1986' on page 10 undefined on input lin
-e 562.
+Package natbib Warning: Citation `Iannazzo2006' on page 8 undefined on input li
+ne 522.
 
+[8]
 
-Package natbib Warning: Citation `Higham2008' on page 10 undefined on input lin
-e 566.
+Package natbib Warning: Citation `Iannazzo2008' on page 9 undefined on input li
+ne 543.
 
 
-Package natbib Warning: Citation `Denman1976' on page 10 undefined on input lin
-e 567.
+Package natbib Warning: Citation `Iannazzo2008' on page 9 undefined on input li
+ne 543.
 
-
-Package natbib Warning: Citation `Higham2008' on page 10 undefined on input lin
-e 578.
-
-
-LaTeX Warning: Reference `it:NM' on page 10 undefined on input line 584.
-
-
-LaTeX Warning: Reference `it:HM' on page 10 undefined on input line 585.
-
-
-Package natbib Warning: Citation `Gomilko2012' on page 10 undefined on input li
-ne 589.
-
-
-Package natbib Warning: Citation `Laszkiewicz2009' on page 10 undefined on inpu
-t line 589.
-
-
-Package natbib Warning: Citation `Zietak2013' on page 10 undefined on input lin
-e 589.
-
-
-Package natbib Warning: Citation `Iannazzo2008' on page 10 undefined on input l
-ine 589.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 593.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 593.
-
-
-Package natbib Warning: Citation `Higham2008' on page 10 undefined on input lin
-e 604.
-
-
-Package natbib Warning: Citation `Psarrakos2002' on page 10 undefined on input 
-line 607.
-
-[10]
-
-Package natbib Warning: Citation `Smith2003' on page 11 undefined on input line
- 620.
-
-
-Package natbib Warning: Citation `Higham2008' on page 11 undefined on input lin
-e 642.
-
-
-Package natbib Warning: Citation `Smith2003' on page 11 undefined on input line
- 655.
-
-[11]
-
-Package natbib Warning: Citation `Hoskins1979' on page 12 undefined on input li
-ne 675.
-
-
-Package natbib Warning: Citation `Smith2003' on page 12 undefined on input line
- 678.
-
-
-Package natbib Warning: Citation `Iannazzo2006' on page 12 undefined on input l
-ine 681.
-
-
-Package natbib Warning: Citation `Iannazzo2006' on page 12 undefined on input l
-ine 683.
-
-
-Package natbib Warning: Citation `Iannazzo2008' on page 12 undefined on input l
-ine 695.
-
-
-Package natbib Warning: Citation `Iannazzo2008' on page 12 undefined on input l
-ine 697.
-
-
-Package natbib Warning: Citation `Guo2010' on page 12 undefined on input line 7
-09.
-
-
-Package natbib Warning: Citation `Guo2010' on page 12 undefined on input line 7
-11.
-
-
-Package natbib Warning: Citation `Smith2003' on page 12 undefined on input line
- 726.
-
-
-Package natbib Warning: Citation `Iannazzo2006' on page 12 undefined on input l
-ine 730.
-
-[12]
-
-Package natbib Warning: Citation `Iannazzo2008' on page 13 undefined on input l
-ine 743.
-
-
-Package natbib Warning: Citation `Iannazzo2008' on page 13 undefined on input l
-ine 750.
-
-
-Package natbib Warning: Citation `GuoHigham2006' on page 13 undefined on input 
-line 779.
-
-
-Package natbib Warning: Citation `GuoHigham2006' on page 13 undefined on input 
-line 797.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[13]
-
-Package natbib Warning: Citation `Iannazzo2008' on page 14 undefined on input l
-ine 839.
-
-
-Package natbib Warning: Citation `Guo2010' on page 14 undefined on input line 8
-39.
-
-
-Package natbib Warning: Citation `Lin2010' on page 14 undefined on input line 8
-39.
-
-
-Package natbib Warning: Citation `Iannazzo2008' on page 14 undefined on input l
-ine 841.
-
-
-Package natbib Warning: Citation `Iannazzo2008' on page 14 undefined on input l
-ine 843.
-
-
-Package natbib Warning: Citation `Guo2010' on page 14 undefined on input line 8
-52.
-
-
-Package natbib Warning: Citation `Iannazzo2006' on page 14 undefined on input l
-ine 855.
-
-[14]
-
-Package natbib Warning: Citation `Iannazzo2008' on page 15 undefined on input l
-ine 876.
-
-
-Package natbib Warning: Citation `GuoHigham2006' on page 15 undefined on input 
-line 909.
-
-
-Package natbib Warning: Citation `Guo2010' on page 15 undefined on input line 9
-09.
-
-
-Package natbib Warning: Citation `Iannazzo2006' on page 15 undefined on input l
-ine 909.
-
-
-Package natbib Warning: Citation `Iannazzo2008' on page 15 undefined on input l
-ine 909.
-
-
-Package natbib Warning: Citation `Lin2010' on page 15 undefined on input line 9
-09.
-
-
-Package natbib Warning: Citation `Zietak2013' on page 15 undefined on input lin
-e 909.
-
-
-Package natbib Warning: Citation `Guo2010' on page 15 undefined on input line 9
-10.
-
-
-LaTeX Warning: Reference `it:NM' on page 15 undefined on input line 911.
-
-
-Package natbib Warning: Citation `Iannazzo2008' on page 15 undefined on input l
-ine 914.
-
-
-LaTeX Warning: Reference `it:HM' on page 15 undefined on input line 915.
-
-)
-Underfull \vbox (badness 1442) has occurred while \output is active []
-
- [15]
-[16] (E:\PHD_thesis_template\Chapters/chapter2.tex
-µ⁄\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 2\hspace {0.25em plus
- 0.125em minus 0.08em}\ignorespaces ’¬
-
-Package natbib Warning: Citation `brezzi2012mixed' on page 17 undefined on inpu
-t line 13.
-
-[17
+) [9] (E:\PHD_thesis_template\Chapters/chapter2.tex [10
 
 
 
 ]
+µ⁄\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 2\hspace {0.25em plus
+ 0.125em minus 0.08em}\ignorespaces ’¬
 
-Package natbib Warning: Citation `brezzi2012mixed' on page 18 undefined on inpu
+Package natbib Warning: Citation `brezzi2012mixed' on page 11 undefined on inpu
+t line 13.
+
+[11]
+
+Package natbib Warning: Citation `brezzi2012mixed' on page 12 undefined on inpu
 t line 56.
 
 
-Package natbib Warning: Citation `brenner2007mathematical' on page 18 undefined
+Package natbib Warning: Citation `brenner2007mathematical' on page 12 undefined
  on input line 56.
 
 
-Package natbib Warning: Citation `cuvelier1986finite' on page 18 undefined on i
+Package natbib Warning: Citation `cuvelier1986finite' on page 12 undefined on i
 nput line 57.
 
 
-Package natbib Warning: Citation `bercovier1979error' on page 18 undefined on i
+Package natbib Warning: Citation `bercovier1979error' on page 12 undefined on i
 nput line 91.
 
-[18]
+[12]
 
-Package natbib Warning: Citation `bercovier1979error' on page 19 undefined on i
+Package natbib Warning: Citation `bercovier1979error' on page 13 undefined on i
 nput line 98.
 
 
-Package natbib Warning: Citation `li2005multi' on page 19 undefined on input li
+Package natbib Warning: Citation `li2005multi' on page 13 undefined on input li
 ne 139.
 
-[19]
+[13]
 
-Package natbib Warning: Citation `li2005multi' on page 20 undefined on input li
+Package natbib Warning: Citation `li2005multi' on page 14 undefined on input li
 ne 146.
 
 
@@ -1573,37 +1334,24 @@ Overfull \hbox (2.62195pt too wide) in paragraph at lines 160--188
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package natbib Warning: Citation `budd2009adaptivity' on page 20 undefined on i
+Package natbib Warning: Citation `budd2009adaptivity' on page 14 undefined on i
 nput line 197.
 
 
-Package natbib Warning: Citation `huang2011book' on page 20 undefined on input 
+Package natbib Warning: Citation `huang2011book' on page 14 undefined on input 
 line 197.
 
 
-Package natbib Warning: Citation `tang2007book' on page 20 undefined on input l
+Package natbib Warning: Citation `tang2007book' on page 14 undefined on input l
 ine 197.
 
 
-Package natbib Warning: Citation `boor1974goodII' on page 20 undefined on input
+Package natbib Warning: Citation `boor1974goodII' on page 14 undefined on input
  line 199.
 
-[20]
-
-LaTeX Warning: Reference `set:R_NM' on page 21 undefined on input line 222.
-
-
-LaTeX Warning: Reference `set:R_hat_NM' on page 21 undefined on input line 223.
-
-
-
-LaTeX Warning: Reference `it:NM' on page 21 undefined on input line 226.
-
-
-LaTeX Warning: Reference `it:NM' on page 21 undefined on input line 229.
-
+[14]
 File: figures/fig_NM_ConvReg_p25m20.eps Graphic file (type eps)
-<figures/fig_NM_ConvReg_p25m20.eps>
+ <figures/fig_NM_ConvReg_p25m20.eps>
 File: figures/fig_NM_ConvReg_p25m100.eps Graphic file (type eps)
  <figures/fig_NM_ConvReg_p25m100.eps>
 File: figures/fig_NM_ConvReg_p25m500.eps Graphic file (type eps)
@@ -1625,213 +1373,102 @@ File: figures/fig_NM_ConvReg_p400m500.eps Graphic file (type eps)
 
 <figures/fig_NM_ConvReg_p400m500.eps>
 
-LaTeX Warning: Reference `set:R_NM' on page 21 undefined on input line 251.
+LaTeX Warning: Reference `set:R_NM' on page 15 undefined on input line 238.
 
 
-LaTeX Warning: Reference `set:R_NM' on page 21 undefined on input line 251.
+LaTeX Warning: Reference `set:R_NM' on page 15 undefined on input line 238.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[21]
 
-LaTeX Warning: Reference `set:D0_NM' on page 22 undefined on input line 279.
-
-
-LaTeX Warning: Reference `it:NM_fun' on page 22 undefined on input line 280.
-
-[22]
-
-LaTeX Warning: Reference `fun:phi(z)_NM' on page 23 undefined on input line 284
-.
-
-
-LaTeX Warning: Reference `set:D1_NM' on page 23 undefined on input line 297.
-
-
-LaTeX Warning: Reference `ser:Sm(z)_NM' on page 23 undefined on input line 298.
-
-
-
-LaTeX Warning: Reference `it:NM_fun' on page 23 undefined on input line 309.
-
-
-LaTeX Warning: Reference `fun:phi1(z)_series' on page 23 undefined on input lin
-e 330.
-
-
-LaTeX Warning: Reference `fun:phi1(z)_series' on page 23 undefined on input lin
-e 354.
-
-[23]
-Overfull \hbox (25.82245pt too wide) in paragraph at lines 384--384
+Overfull \hbox (43.66371pt too wide) in paragraph at lines 287--287
 [] 
  []
 
+[15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Reference `it:NM' on page 24 undefined on input line 425.
+ [16]
 
-[24]
+LaTeX Warning: Reference `ineq:NM_abs_r(zk)_2' on page 17 undefined on input li
+ne 290.
 
-LaTeX Warning: Reference `set:D2_NM' on page 25 undefined on input line 507.
-
-
-LaTeX Warning: Reference `it:NM' on page 25 undefined on input line 508.
-
-[25]
-Overfull \hbox (43.66371pt too wide) in paragraph at lines 576--576
-[] 
- []
-
-
-LaTeX Warning: Reference `set:R11' on page 26 undefined on input line 611.
-
-
-LaTeX Warning: Reference `set:R12' on page 26 undefined on input line 611.
-
-
-LaTeX Warning: Reference `lem:ScalarNMCon1' on page 26 undefined on input line 
-613.
-
-[26]
-
-LaTeX Warning: Reference `set:R_NM' on page 27 undefined on input line 625.
-
-
-LaTeX Warning: Reference `it:NM' on page 27 undefined on input line 626.
-
-
-LaTeX Warning: Reference `eq:f(X)=0' on page 27 undefined on input line 639.
-
-
-LaTeX Warning: Reference `set:D0_NM' on page 27 undefined on input line 659.
-
-
-LaTeX Warning: Reference `it:NM_fun' on page 27 undefined on input line 660.
-
-
-LaTeX Warning: Reference `fun:phi(z)_NM' on page 27 undefined on input line 668
-.
-
-
-LaTeX Warning: Reference `it:NM_fun' on page 27 undefined on input line 678.
-
-
-LaTeX Warning: Reference `set:D0_NM' on page 27 undefined on input line 716.
-
-
-LaTeX Warning: Reference `it:NM' on page 27 undefined on input line 717.
-
-[27]
-
-LaTeX Warning: Reference `set:D1_NM' on page 28 undefined on input line 733.
-
-
-LaTeX Warning: Reference `fun:phi(z)_NM' on page 28 undefined on input line 741
-.
-
-
-LaTeX Warning: Reference `set:D1_NM' on page 28 undefined on input line 788.
-
-
-LaTeX Warning: Reference `it:NM' on page 28 undefined on input line 789.
-
-
-LaTeX Warning: Reference `fun:phi(z)_NM' on page 28 undefined on input line 803
-.
-
-[28]
-
-LaTeX Warning: Reference `set:D0_NM' on page 29 undefined on input line 851.
-
-
-LaTeX Warning: Reference `set:D2_NM' on page 29 undefined on input line 851.
-
-
-LaTeX Warning: Reference `it:NM' on page 29 undefined on input line 852.
-
-
-LaTeX Warning: Reference `fun:phi(z)_NM' on page 29 undefined on input line 868
-.
-
-
-LaTeX Warning: Reference `it:NM' on page 29 undefined on input line 880.
-
-[29]
-
-LaTeX Warning: Reference `set:D2_NM' on page 30 undefined on input line 938.
-
-
-LaTeX Warning: Reference `set:R_NM' on page 30 undefined on input line 960.
-
-[30]
 File: figures/fig_NM_PraConvReg_p3m20.eps Graphic file (type eps)
- <figures/fig_NM_PraConvReg_p3m20.eps>
+<figures/fig_NM_PraConvReg_p3m20.eps>
 File: figures/fig_NM_PraConvReg_p5m20.eps Graphic file (type eps)
-
-<figures/fig_NM_PraConvReg_p5m20.eps>
+ <figures/fig_NM_PraConvReg_p5m20.eps>
 File: figures/fig_NM_PraConvReg_p11m20.eps Graphic file (type eps)
- <figures/fig_NM_PraConvReg_p11m20.eps>
+
+<figures/fig_NM_PraConvReg_p11m20.eps>
 File: figures/fig_NM_PraConvReg_p20m20.eps Graphic file (type eps)
-
-<figures/fig_NM_PraConvReg_p20m20.eps>
+ <figures/fig_NM_PraConvReg_p20m20.eps>
 File: figures/fig_NM_PraConvReg_p50m20.eps Graphic file (type eps)
- <figures/fig_NM_PraConvReg_p50m20.eps>
+
+<figures/fig_NM_PraConvReg_p50m20.eps>
 File: figures/fig_NM_PraConvReg_p100m20.eps Graphic file (type eps)
+ <figures/fig_NM_PraConvReg_p100m20.eps>
 
-<figures/fig_NM_PraConvReg_p100m20.eps>
-
-LaTeX Warning: Reference `set:R_NM' on page 31 undefined on input line 981.
+LaTeX Warning: Reference `set:R_NM' on page 17 undefined on input line 358.
 
 
-LaTeX Warning: Reference `set:R_NM' on page 31 undefined on input line 981.
+LaTeX Warning: Reference `set:R_N_pra' on page 17 undefined on input line 358.
 
-) [31] (E:\PHD_thesis_template\Chapters/chapter3.tex [32
+
+LaTeX Warning: Reference `set:R_NM' on page 17 undefined on input line 358.
+
+
+LaTeX Warning: Reference `set:R_N_pra' on page 17 undefined on input line 358.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [17] [18] (E:\PHD_thesis_template\Chapters/chapter3.tex
+µ⁄\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 3\hspace {0.25em plus
+ 0.125em minus 0.08em}\ignorespaces ’¬
+
+Package natbib Warning: Citation `danaila2014newton' on page 19 undefined on in
+put line 14.
+
+
+Package natbib Warning: Citation `ebeida2009unsteady' on page 19 undefined on i
+nput line 14.
+
+
+Package natbib Warning: Citation `berrone2009space' on page 19 undefined on inp
+ut line 15.
+
+
+Package natbib Warning: Citation `zheng2010posteriori' on page 19 undefined on 
+input line 17.
+
+
+Package natbib Warning: Citation `di2005moving' on page 19 undefined on input l
+ine 18.
+
+
+Package natbib Warning: Citation `di2005moving' on page 19 undefined on input l
+ine 19.
+
+
+Package natbib Warning: Citation `bercovier1979error' on page 19 undefined on i
+nput line 22.
+
+
+Package natbib Warning: Citation `li2005multi' on page 19 undefined on input li
+ne 36.
+
+
+Package natbib Warning: Citation `di2005moving' on page 19 undefined on input l
+ine 43.
+
+[19
 
 
 
 ]
-µ⁄\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 3\hspace {0.25em plus
- 0.125em minus 0.08em}\ignorespaces ’¬
 
-Package natbib Warning: Citation `danaila2014newton' on page 33 undefined on in
-put line 14.
-
-
-Package natbib Warning: Citation `ebeida2009unsteady' on page 33 undefined on i
-nput line 14.
-
-
-Package natbib Warning: Citation `berrone2009space' on page 33 undefined on inp
-ut line 15.
-
-
-Package natbib Warning: Citation `zheng2010posteriori' on page 33 undefined on 
-input line 17.
-
-
-Package natbib Warning: Citation `di2005moving' on page 33 undefined on input l
-ine 18.
-
-
-Package natbib Warning: Citation `di2005moving' on page 33 undefined on input l
-ine 19.
-
-
-Package natbib Warning: Citation `bercovier1979error' on page 33 undefined on i
-nput line 22.
-
-
-Package natbib Warning: Citation `li2005multi' on page 33 undefined on input li
-ne 36.
-
-
-Package natbib Warning: Citation `di2005moving' on page 33 undefined on input l
-ine 43.
-
-[33]
-
-Package natbib Warning: Citation `li2005multi' on page 34 undefined on input li
+Package natbib Warning: Citation `li2005multi' on page 20 undefined on input li
 ne 52.
 
 
@@ -1849,13 +1486,13 @@ rm/m/n/12.05/64  \C19/rm/m/n/12.05/63 K \C19/rm/m/n/12.05/58  \C19/rm/m/n/12.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
-[35]
+ [20]
+[21]
 Missing character: There is no ß in font cmr12!
 Missing character: There is no ß in font cmr12!
 Missing character: There is no ß in font cmr12!
 
-Overfull \hbox (46.15128pt too wide) in paragraph at lines 145--149
+Overfull \hbox (46.15128pt too wide) in paragraph at lines 148--152
 []\C19/rm/m/n/12.05/54 X \C19/rm/m/n/12.05/43 J \C19/rm/m/n/12.05/37 > \C19/rm/
 m/n/12.05/46 . \C19/rm/m/n/12.05/54  \C19/rm/m/n/12.05/37 ‹ \C19/rm/m/n/12.05/
 55 ¥\OT1/cmr/m/n/12.05 Direchlet\C19/rm/m/n/12.05/37 > \C19/rm/m/n/12.05/46 . \
@@ -1868,222 +1505,167 @@ mr/m/n/12.05 Navier-Stokes\C19/rm/m/n/12.05/58 Ø \C19/rm/m/n/12.05/57 K\OT1/cmr
 C19/rm/m/n/12.05/40 
  []
 
-[36] [37]
-Overfull \hbox (57.05391pt too wide) detected at line 253
+[22] [23]
+Overfull \hbox (57.05391pt too wide) detected at line 256
 [][] []
  []
 
-[38]
+[24]
 
-Package natbib Warning: Citation `di2005moving' on page 39 undefined on input l
-ine 426.
+Package natbib Warning: Citation `di2005moving' on page 25 undefined on input l
+ine 429.
 
-[39] [40]
+[25] [26]
 
-Package natbib Warning: Citation `di2005moving' on page 41 undefined on input l
-ine 460.
+Package natbib Warning: Citation `di2005moving' on page 27 undefined on input l
+ine 463.
 
-[41]
+[27]
 
-Package natbib Warning: Citation `di2005moving' on page 42 undefined on input l
-ine 538.
+Package natbib Warning: Citation `di2005moving' on page 28 undefined on input l
+ine 541.
 
-[42]
+[28]
 
-Package natbib Warning: Citation `gunzburger2012finite' on page 43 undefined on
- input line 616.
+Package natbib Warning: Citation `gunzburger2012finite' on page 29 undefined on
+ input line 619.
 
-[43] [44]
+[29] [30]
 
-Package natbib Warning: Citation `bercovier1979error' on page 45 undefined on i
-nput line 689.
-
-
-LaTeX Warning: Reference `tab::colliding_uniform_error' on page 45 undefined on
- input line 692.
+Package natbib Warning: Citation `bercovier1979error' on page 31 undefined on i
+nput line 692.
 
 
-LaTeX Warning: Reference `tab::colliding_uniform_div_error' on page 45 undefine
-d on input line 693.
+LaTeX Warning: Reference `tab::colliding_uniform_error' on page 31 undefined on
+ input line 695.
 
 
-Overfull \hbox (27.01425pt too wide) in paragraph at lines 733--745
+LaTeX Warning: Reference `tab::colliding_uniform_div_error' on page 31 undefine
+d on input line 696.
+
+
+Overfull \hbox (27.01425pt too wide) in paragraph at lines 736--748
+ [][][] 
+ []
+
+File: picture/first/collidingFlow/mesh_move_direction.eps Graphic file (type ep
+s)
+<picture/first/collidingFlow/mesh_move_direction.eps>
+File: picture/first/collidingFlow/pressure_contour.eps Graphic file (type eps)
+
+<picture/first/collidingFlow/pressure_contour.eps> [31]
+File: picture/first/collidingFlow/uniform20_error.eps Graphic file (type eps)
+
+<picture/first/collidingFlow/uniform20_error.eps>
+File: picture/first/collidingFlow/moving20_error.eps Graphic file (type eps)
+
+<picture/first/collidingFlow/moving20_error.eps>
+File: picture/first/collidingFlow/uniform_mesh20.eps Graphic file (type eps)
+
+<picture/first/collidingFlow/uniform_mesh20.eps>
+File: picture/first/collidingFlow/moving_mesh20.eps Graphic file (type eps)
+
+<picture/first/collidingFlow/moving_mesh20.eps>
+
+Package natbib Warning: Citation `milton1982album' on page 32 undefined on inpu
+t line 817.
+
+
+Package natbib Warning: Citation `milton1982album' on page 32 undefined on inpu
+t line 828.
+
+File: picture/first/jet_flow_data/mesh_t12s.eps Graphic file (type eps)
+<picture/first/jet_flow_data/mesh_t12s.eps>
+File: picture/first/jet_flow_data/contour_t12s.eps Graphic file (type eps)
+
+<picture/first/jet_flow_data/contour_t12s.eps>
+Overfull \hbox (6.63765pt too wide) in paragraph at lines 831--833
+ [][] 
+ []
+
+
+Overfull \hbox (6.63765pt too wide) in paragraph at lines 831--833
+ [] 
+ []
+
+[32]
+File: picture/first/jet_flow_data/mesh_t27s.eps Graphic file (type eps)
+ <picture/first/jet_flow_data/mesh_t27s.eps>
+File: picture/first/jet_flow_data/contour_t27s.eps Graphic file (type eps)
+
+<picture/first/jet_flow_data/contour_t27s.eps>
+Overfull \hbox (6.63765pt too wide) in paragraph at lines 840--842
+ [][] 
+ []
+
+
+Overfull \hbox (6.63765pt too wide) in paragraph at lines 840--842
+ [] 
+ []
+
+
+Package natbib Warning: Citation `zheng2010posteriori' on page 33 undefined on 
+input line 851.
+
+File: picture/first/step_flow_data/initial_mesh40_001.eps Graphic file (type ep
+s)
+<picture/first/step_flow_data/initial_mesh40_001.eps>
+Overfull \hbox (37.09679pt too wide) in paragraph at lines 865--866
+ [][] 
+ []
+
+File: picture/first/step_flow_data/mesh_t_05.eps Graphic file (type eps)
+<picture/first/step_flow_data/mesh_t_05.eps>
+Overfull \hbox (31.66794pt too wide) in paragraph at lines 873--875
+ [][][] 
+ []
+
+File: picture/first/step_flow_data/mesh_t_1s.eps Graphic file (type eps)
+<picture/first/step_flow_data/mesh_t_1s.eps>
+Overfull \hbox (31.66794pt too wide) in paragraph at lines 881--883
+ [][][] 
+ []
+
+File: picture/first/step_flow_data/mesh_t_1_5s.eps Graphic file (type eps)
+<picture/first/step_flow_data/mesh_t_1_5s.eps>
+Overfull \hbox (31.66794pt too wide) in paragraph at lines 889--891
+ [][][] 
+ []
+
+File: picture/first/step_flow_data/mesh_t_2s.eps Graphic file (type eps)
+<picture/first/step_flow_data/mesh_t_2s.eps>
+Overfull \hbox (31.66794pt too wide) in paragraph at lines 897--899
+ [][][] 
+ []
+
+File: picture/first/step_flow_data/contour_streamline_t_2s.eps Graphic file (ty
+pe eps)
+<picture/first/step_flow_data/contour_streamline_t_2s.eps>
+Overfull \hbox (31.01157pt too wide) in paragraph at lines 905--907
  [][][] 
  []
 
 
-LaTeX Warning: File `../picture_collidingFlow/mesh_move_direction.eps' not foun
-d on input line 784.
+Package natbib Warning: Citation `cao1999anr' on page 33 undefined on input lin
+e 913.
+
+[33]
+
+Package natbib Warning: Citation `cao1999anr' on page 34 undefined on input lin
+e 922.
+
+File: picture/first/obstacle_flow_data/initial_mesh.eps Graphic file (type eps)
+
+<picture/first/obstacle_flow_data/initial_mesh.eps>
+File: picture/first/obstacle_flow_data/mesh_t_24_5s.eps Graphic file (type eps)
 
 
-! LaTeX Error: File `../picture_collidingFlow/mesh_move_direction.eps' not foun
-d.
+<picture/first/obstacle_flow_data/mesh_t_24_5s.eps>
+File: picture/first/obstacle_flow_data/mesh_t_23s.eps Graphic file (type eps)
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.784 ...re_collidingFlow/mesh_move_direction.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in ../picture_collidingFlow/mes
-h_move_direction.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.784 ...re_collidingFlow/mesh_move_direction.eps}
-                                                  
-? 
-File: ../picture_collidingFlow/mesh_move_direction.eps Graphic file (type eps)
-<../picture_collidingFlow/mesh_move_direction.eps>
-
-LaTeX Warning: File `../picture_collidingFlow/pressure_contour.eps' not found o
-n input line 785.
-
-
-! LaTeX Error: File `../picture_collidingFlow/pressure_contour.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.785 ...cture_collidingFlow/pressure_contour.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in ../picture_collidingFlow/pre
-ssure_contour.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.785 ...cture_collidingFlow/pressure_contour.eps}
-                                                  
-? 
-File: ../picture_collidingFlow/pressure_contour.eps Graphic file (type eps)
-<../picture_collidingFlow/pressure_contour.eps> [45]
-
-LaTeX Warning: File `../picture_collidingFlow/uniform20_error.eps' not found on
- input line 794.
-
-
-! LaTeX Error: File `../picture_collidingFlow/uniform20_error.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.794 ...icture_collidingFlow/uniform20_error.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in ../picture_collidingFlow/uni
-form20_error.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.794 ...icture_collidingFlow/uniform20_error.eps}
-                                                  
-? 
-File: ../picture_collidingFlow/uniform20_error.eps Graphic file (type eps)
-<../picture_collidingFlow/uniform20_error.eps>
-
-LaTeX Warning: File `../picture_collidingFlow/moving20_error.eps' not found on 
-input line 795.
-
-
-! LaTeX Error: File `../picture_collidingFlow/moving20_error.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.795 ...picture_collidingFlow/moving20_error.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in ../picture_collidingFlow/mov
-ing20_error.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.795 ...picture_collidingFlow/moving20_error.eps}
-                                                  
-? 
-File: ../picture_collidingFlow/moving20_error.eps Graphic file (type eps)
-<../picture_collidingFlow/moving20_error.eps>
-
-LaTeX Warning: File `../picture_collidingFlow/uniform_mesh20.eps' not found on 
-input line 805.
-
-
-! LaTeX Error: File `../picture_collidingFlow/uniform_mesh20.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.805 ...picture_collidingFlow/uniform_mesh20.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in ../picture_collidingFlow/uni
-form_mesh20.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.805 ...picture_collidingFlow/uniform_mesh20.eps}
-                                                  
-? 
-File: ../picture_collidingFlow/uniform_mesh20.eps Graphic file (type eps)
-<../picture_collidingFlow/uniform_mesh20.eps>
-
-LaTeX Warning: File `../picture_collidingFlow/moving_mesh20.eps' not found on i
-nput line 806.
-
-
-! LaTeX Error: File `../picture_collidingFlow/moving_mesh20.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.806 .../picture_collidingFlow/moving_mesh20.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in ../picture_collidingFlow/mov
-ing_mesh20.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.806 .../picture_collidingFlow/moving_mesh20.eps}
-                                                  
-? 
-File: ../picture_collidingFlow/moving_mesh20.eps Graphic file (type eps)
-<../picture_collidingFlow/moving_mesh20.eps>
-
-LaTeX Warning: Reference `set:R' on page 46 undefined on input line 826.
-
-
-LaTeX Warning: Reference `it:EM' on page 46 undefined on input line 828.
-
-
-LaTeX Warning: Reference `set:R_hat' on page 46 undefined on input line 831.
-
+<picture/first/obstacle_flow_data/mesh_t_23s.eps>
 File: figures/fig_EM_ConvReg_p25m20.eps Graphic file (type eps)
+
 <figures/fig_EM_ConvReg_p25m20.eps>
 File: figures/fig_EM_ConvReg_p25m100.eps Graphic file (type eps)
  <figures/fig_EM_ConvReg_p25m100.eps>
@@ -2106,246 +1688,66 @@ File: figures/fig_EM_ConvReg_p400m500.eps Graphic file (type eps)
 
 <figures/fig_EM_ConvReg_p400m500.eps>
 
-LaTeX Warning: Reference `set:R' on page 46 undefined on input line 851.
+LaTeX Warning: Reference `set:R' on page 34 undefined on input line 976.
 
 
-LaTeX Warning: Reference `set:R' on page 46 undefined on input line 851.
+LaTeX Warning: Reference `set:R' on page 34 undefined on input line 976.
 
 
-LaTeX Warning: Float too large for page by 0.23909pt on input line 852.
+LaTeX Warning: Float too large for page by 5.27513pt on input line 977.
 
-[46]
-
-LaTeX Warning: Reference `set:D0' on page 47 undefined on input line 873.
-
-
-LaTeX Warning: Reference `set:R' on page 47 undefined on input line 879.
-
-
-LaTeX Warning: Reference `set:D2' on page 47 undefined on input line 887.
-
-
-LaTeX Warning: Reference `set:R' on page 47 undefined on input line 903.
-
-
-LaTeX Warning: Reference `it:EM' on page 47 undefined on input line 904.
-
-[47]
 File: figures/fig_EM_PraConvReg_p100m20.eps Graphic file (type eps)
- <figures/fig_EM_PraConvReg_p100m20.eps>
+<figures/fig_EM_PraConvReg_p100m20.eps>
 
-LaTeX Warning: Reference `set:R' on page 48 undefined on input line 919.
-
-
-LaTeX Warning: Reference `set:R' on page 48 undefined on input line 919.
+LaTeX Warning: Reference `set:R' on page 34 undefined on input line 994.
 
 
-LaTeX Warning: Reference `it:EM' on page 48 undefined on input line 930.
+LaTeX Warning: Reference `set:R_pra' on page 34 undefined on input line 994.
 
 
-Package natbib Warning: Citation `Cardoso2011' on page 48 undefined on input li
-ne 938.
+LaTeX Warning: Reference `set:R' on page 34 undefined on input line 994.
 
 
-LaTeX Warning: Reference `fun:phi(z)' on page 48 undefined on input line 940.
+LaTeX Warning: Reference `set:R_pra' on page 34 undefined on input line 994.
 
 
-LaTeX Warning: Reference `set:D0' on page 48 undefined on input line 945.
-
-[48] [49]
-
-LaTeX Warning: Reference `set:D0' on page 50 undefined on input line 967.
+LaTeX Warning: Reference `th:MatrixEMCon' on page 34 undefined on input line 10
+00.
 
 
-LaTeX Warning: Reference `it:EM_fun' on page 50 undefined on input line 968.
-
-
-LaTeX Warning: Reference `fun:phi(z)' on page 50 undefined on input line 973.
-
-
-Overfull \hbox (40.46901pt too wide) in alignment at lines 974--982
+Overfull \hbox (38.36104pt too wide) in alignment at lines 1009--1017
  [][] []
  []
 
 
-LaTeX Warning: Reference `set:D1' on page 50 undefined on input line 984.
+Underfull \vbox (badness 8000) has occurred while \output is active []
 
-[50]
-
-LaTeX Warning: Reference `it:EM_fun' on page 51 undefined on input line 994.
-
-
-Overfull \hbox (4.05379pt too wide) detected at line 1020
-[]\OML/cmm/m/it/12.05 r\OT1/cmr/m/n/12.05 (\OML/cmm/m/it/12.05 E\OT1/cmr/m/n/12
-.05 (\OML/cmm/m/it/12.05 z\OT1/cmr/m/n/12.05 )\OML/cmm/m/it/12.05 ; \OT1/cmr/m
-/n/12.05 ) = 1 \OMS/cmsy/m/n/12.05   [][]  \OT1/cmr/m/n/12.05 (1 \OMS/cmsy/m/n
-/12.05   \OML/cmm/m/it/12.05 r\OT1/cmr/m/n/12.05 (\OML/cmm/m/it/12.05 z; \OT1/
-cmr/m/n/12.05 )) = \OML/cmm/m/it/12.05 \OT1/cmr/m/n/12.05 (\OML/cmm/m/it/12.05
- r\OT1/cmr/m/n/12.05 (\OML/cmm/m/it/12.05 z; \OT1/cmr/m/n/12.05 ))\OML/cmm/m/i
-t/12.05 ;
- []
-
-[51]
-Overfull \hbox (12.60004pt too wide) in paragraph at lines 1069--1069
-[] 
- []
-
-
-Package natbib Warning: Citation `Cardoso2011' on page 52 undefined on input li
-ne 1094.
-
-
-LaTeX Warning: Reference `it:EM' on page 52 undefined on input line 1102.
-
-[52]
-
-LaTeX Warning: Reference `set:D2' on page 53 undefined on input line 1157.
-
-
-LaTeX Warning: Reference `it:EM' on page 53 undefined on input line 1158.
-
-[53]
-
-LaTeX Warning: Reference `set:R1' on page 54 undefined on input line 1217.
-
-
-LaTeX Warning: Reference `set:R2' on page 54 undefined on input line 1218.
-
-
-LaTeX Warning: Reference `it:EM' on page 54 undefined on input line 1219.
-
-[54]
-
-LaTeX Warning: Reference `it:EM_fun' on page 55 undefined on input line 1296.
-
-
-Overfull \hbox (12.49754pt too wide) in paragraph at lines 1310--1310
-[] 
- []
-
-[55] [56]
-
-LaTeX Warning: Reference `it:EM' on page 57 undefined on input line 1400.
-
-[57]
-
-LaTeX Warning: Reference `set:R' on page 58 undefined on input line 1461.
-
-
-LaTeX Warning: Reference `it:EM' on page 58 undefined on input line 1462.
-
-
-LaTeX Warning: Reference `fun:R(X)' on page 58 undefined on input line 1474.
-
-
-LaTeX Warning: Reference `set:D0' on page 58 undefined on input line 1476.
-
-
-LaTeX Warning: Reference `it:EM_fun' on page 58 undefined on input line 1477.
-
-
-LaTeX Warning: Reference `it:EM_fun' on page 58 undefined on input line 1487.
-
-
-Overfull \hbox (20.80714pt too wide) in paragraph at lines 1500--1500
-[] 
- []
-
-[58]
-
-LaTeX Warning: Reference `set:D0' on page 59 undefined on input line 1534.
-
-
-LaTeX Warning: Reference `it:EM' on page 59 undefined on input line 1536.
-
-
-LaTeX Warning: Reference `eq:f(X)=0' on page 59 undefined on input line 1536.
-
-
-LaTeX Warning: Reference `ineq:norm_R(E(X))_1' on page 59 undefined on input li
-ne 1558.
-
-[59]
-
-LaTeX Warning: Reference `fun:R(X)' on page 60 undefined on input line 1565.
-
-
-LaTeX Warning: Reference `set:D1' on page 60 undefined on input line 1569.
-
-
-LaTeX Warning: Reference `it:EM' on page 60 undefined on input line 1570.
-
-
-LaTeX Warning: Reference `eq:f(X)=0' on page 60 undefined on input line 1571.
-
-
-LaTeX Warning: Reference `fun:phi(z)' on page 60 undefined on input line 1581.
-
-
-LaTeX Warning: Reference `ineq:norm_R(E(X))_1' on page 60 undefined on input li
-ne 1585.
-
-
-LaTeX Warning: Reference `lem:norm_R(E(X))_R(X)' on page 60 undefined on input 
-line 1586.
-
-
-LaTeX Warning: Reference `lem:norm_R(E(X))_R(X)' on page 60 undefined on input 
-line 1592.
-
-
-LaTeX Warning: Reference `fun:R(X)' on page 60 undefined on input line 1608.
-
-
-LaTeX Warning: Reference `set:D0' on page 60 undefined on input line 1611.
-
-
-LaTeX Warning: Reference `set:D2' on page 60 undefined on input line 1612.
-
-
-LaTeX Warning: Reference `it:EM' on page 60 undefined on input line 1613.
-
-
-LaTeX Warning: Reference `eq:f(X)=0' on page 60 undefined on input line 1614.
-
-
-LaTeX Warning: Reference `it:EM' on page 60 undefined on input line 1628.
-
-[60]
-
-Package natbib Warning: Citation `Higham2008' on page 61 undefined on input lin
-e 1654.
-
-
-LaTeX Warning: Reference `it:EM' on page 61 undefined on input line 1666.
-
-
-LaTeX Warning: Reference `lem:MatIteConLem' on page 61 undefined on input line 
-1668.
-
-[61]
-
-LaTeX Warning: Reference `it:CoupledEM' on page 62 undefined on input line 1728
-.
-
-
-LaTeX Warning: Reference `it:CoupledEM' on page 62 undefined on input line 1747
-.
-
+ [34]
+[35] [36] [37] [38] [39] [40]
 File: figures/fig_relerr_coupledEM_1.eps Graphic file (type eps)
-<figures/fig_relerr_coupledEM_1.eps>
+ <figures/fig_relerr_coupledEM_1.eps>
 File: figures/fig_relerr_coupledEM_2.eps Graphic file (type eps)
- <figures/fig_relerr_coupledEM_2.eps>
+
+<figures/fig_relerr_coupledEM_2.eps>
 File: figures/fig_relerr_coupledEM_Schur_3.eps Graphic file (type eps)
 
 <figures/fig_relerr_coupledEM_Schur_3.eps>
 
-LaTeX Warning: Reference `it:CoupledEM' on page 62 undefined on input line 1771
+LaTeX Warning: Reference `it:CoupledEM' on page 41 undefined on input line 1034
 .
 
 
-LaTeX Warning: Reference `it:CoupledEM' on page 62 undefined on input line 1771
+LaTeX Warning: Reference `al:SE' on page 41 undefined on input line 1034.
+
+
+LaTeX Warning: Reference `it:CoupledEM' on page 41 undefined on input line 1034
 .
+
+
+LaTeX Warning: Reference `al:SE' on page 41 undefined on input line 1034.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: figures/fig_relerr_se_spn_sn_sh_p12.eps Graphic file (type eps)
 <figures/fig_relerr_se_spn_sn_sh_p12.eps>
@@ -2356,7 +1758,10 @@ File: figures/fig_relerr_se_spn_sn_sh_p30.eps Graphic file (type eps)
 
 <figures/fig_relerr_se_spn_sn_sh_p30.eps>
 
-LaTeX Warning: Reference `mat:Ae' on page 62 undefined on input line 1781.
+LaTeX Warning: Reference `mat:Ae' on page 41 undefined on input line 1044.
+
+
+LaTeX Warning: Reference `mat:Ae' on page 41 undefined on input line 1044.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -2374,33 +1779,36 @@ File: figures/fig_cputime_se.eps Graphic file (type eps)
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package natbib Warning: Citation `Guo2010' on page 62 undefined on input line 1
-800.
+Package natbib Warning: Citation `Guo2010' on page 41 undefined on input line 1
+063.
 
 
-Package natbib Warning: Citation `Iannazzo2008' on page 62 undefined on input l
-ine 1800.
+Package natbib Warning: Citation `Iannazzo2008' on page 41 undefined on input l
+ine 1063.
 
-[62]
 
-LaTeX Warning: Reference `eq:RelResErr' on page 63 undefined on input line 1817
+LaTeX Warning: Reference `eq:RelResErr' on page 41 undefined on input line 1080
 .
 
 
+LaTeX Warning: Reference `al:SE' on page 41 undefined on input line 1081.
+
+[41] [42]
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[63] [64] [65]
-Overfull \hbox (136.18967pt too wide) in paragraph at lines 1876--1905
+[43] [44] [45] [46]
+Overfull \hbox (136.18967pt too wide) in paragraph at lines 1139--1168
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 76.65132pt on input line 1910.
+LaTeX Warning: Float too large for page by 82.26051pt on input line 1173.
 
-[66]
+[47]
 File: figures/fig_HM_ConvReg_p25m20.eps Graphic file (type eps)
  <figures/fig_HM_ConvReg_p25m20.eps>
 File: figures/fig_HM_ConvReg_p25m100.eps Graphic file (type eps)
@@ -2424,10 +1832,10 @@ File: figures/fig_HM_ConvReg_p400m500.eps Graphic file (type eps)
 
 <figures/fig_HM_ConvReg_p400m500.eps>
 
-LaTeX Warning: Reference `set:R' on page 67 undefined on input line 1945.
+LaTeX Warning: Reference `set:R' on page 48 undefined on input line 1208.
 
 
-LaTeX Warning: Reference `set:R' on page 67 undefined on input line 1945.
+LaTeX Warning: Reference `set:R' on page 48 undefined on input line 1208.
 
 File: figures/fig_HM_PraConvReg_p7m20.eps Graphic file (type eps)
 <figures/fig_HM_PraConvReg_p7m20.eps>
@@ -2437,20 +1845,20 @@ File: figures/fig_HM_PraConvReg_p100m20.eps Graphic file (type eps)
 
 <figures/fig_HM_PraConvReg_p100m20.eps>
 
-LaTeX Warning: Reference `set:R' on page 67 undefined on input line 1966.
+LaTeX Warning: Reference `set:R' on page 48 undefined on input line 1229.
 
 
-LaTeX Warning: Reference `set:R_H_pra' on page 67 undefined on input line 1966.
+LaTeX Warning: Reference `set:R_H_pra' on page 48 undefined on input line 1229.
 
 
 
-LaTeX Warning: Reference `set:R' on page 67 undefined on input line 1966.
+LaTeX Warning: Reference `set:R' on page 48 undefined on input line 1229.
 
 
-LaTeX Warning: Reference `set:R_H_pra' on page 67 undefined on input line 1966.
+LaTeX Warning: Reference `set:R_H_pra' on page 48 undefined on input line 1229.
 
 
-[67
+[48
 
 
 ]
@@ -2460,145 +1868,145 @@ File: figures/fig_HM_PraConvReg.eps Graphic file (type eps)
 
 <figures/fig_HM_PraConvReg.eps>
 
-LaTeX Warning: Reference `set:R' on page 68 undefined on input line 1987.
+LaTeX Warning: Reference `set:R' on page 49 undefined on input line 1250.
 
 
-LaTeX Warning: Reference `set:R_H_pra' on page 68 undefined on input line 1987.
+LaTeX Warning: Reference `set:R_H_pra' on page 49 undefined on input line 1250.
 
 
 
-LaTeX Warning: Reference `set:R' on page 68 undefined on input line 1987.
+LaTeX Warning: Reference `set:R' on page 49 undefined on input line 1250.
 
 
-LaTeX Warning: Reference `set:R_H_pra' on page 68 undefined on input line 1987.
+LaTeX Warning: Reference `set:R_H_pra' on page 49 undefined on input line 1250.
 
 
-) [68] (E:\PHD_thesis_template\Chapters/chapter4.tex
-µ⁄\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 4\hspace {0.25em plus
- 0.125em minus 0.08em}\ignorespaces ’¬
-
-Package natbib Warning: Citation `li2001mesh' on page 69 undefined on input lin
-e 33.
-
-
-Package natbib Warning: Citation `di2005' on page 69 undefined on input line 33
-.
-
-
-Package natbib Warning: Citation `cao1999adaptive' on page 69 undefined on inpu
-t line 34.
-
-
-Package natbib Warning: Citation `cao2003moving' on page 69 undefined on input 
-line 35.
-
-
-Package natbib Warning: Citation `di2005moving' on page 69 undefined on input l
-ine 35.
-
-
-Package natbib Warning: Citation `di2007level' on page 69 undefined on input li
-ne 35.
-
-
-Package natbib Warning: Citation `di2007moving' on page 69 undefined on input l
-ine 35.
-
-
-Package natbib Warning: Citation `li2001PHDthesis' on page 69 undefined on inpu
-t line 36.
-
-
-Package natbib Warning: Citation `li2006moving' on page 69 undefined on input l
-ine 36.
-
-
-Package natbib Warning: Citation `Winslow1966NUMERICAL' on page 69 undefined on
- input line 36.
-
-
-Package natbib Warning: Citation `dvinsky1991adaptive' on page 69 undefined on 
-input line 37.
-
-
-Package natbib Warning: Citation `li2001mesh' on page 69 undefined on input lin
-e 38.
-
-
-Package natbib Warning: Citation `di2005moving' on page 69 undefined on input l
-ine 39.
-
-
-Package natbib Warning: Citation `bercovier1979error' on page 69 undefined on i
-nput line 41.
-
-
-Package natbib Warning: Citation `xu1992iterative' on page 69 undefined on inpu
-t line 46.
-
-
-Package natbib Warning: Citation `shen1999schur' on page 69 undefined on input 
-line 46.
-
-
-Package natbib Warning: Citation `he2003' on page 69 undefined on input line 46
-.
-
-
-Package natbib Warning: Citation `benzi2005numerical' on page 69 undefined on i
-nput line 48.
-
-
-Package natbib Warning: Citation `bai2005inexact' on page 69 undefined on input
- line 49.
-
-
-Package natbib Warning: Citation `bai2006structured' on page 69 undefined on in
-put line 49.
-
-
-Package natbib Warning: Citation `elman2007least' on page 69 undefined on input
- line 49.
-
-
-Package natbib Warning: Citation `elman2009boundary' on page 69 undefined on in
-put line 49.
-
-
-Package natbib Warning: Citation `benzi2006augmented' on page 69 undefined on i
-nput line 50.
-
-
-Package natbib Warning: Citation `benzi2011relaxed' on page 69 undefined on inp
-ut line 50.
-
-
-Package natbib Warning: Citation `boyle2007hsl' on page 69 undefined on input l
-ine 51.
-
-
-Package natbib Warning: Citation `boyle2010hsl_mi20' on page 69 undefined on in
-put line 52.
-
-
-Package natbib Warning: Citation `benzi2011relaxed' on page 69 undefined on inp
-ut line 53.
-
-[69
+) [49] (E:\PHD_thesis_template\Chapters/chapter4.tex [50
 
 
 
 ]
+µ⁄\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 4\hspace {0.25em plus
+ 0.125em minus 0.08em}\ignorespaces ’¬
 
-Package natbib Warning: Citation `elman2005finite' on page 70 undefined on inpu
+Package natbib Warning: Citation `li2001mesh' on page 51 undefined on input lin
+e 33.
+
+
+Package natbib Warning: Citation `di2005' on page 51 undefined on input line 33
+.
+
+
+Package natbib Warning: Citation `cao1999adaptive' on page 51 undefined on inpu
+t line 34.
+
+
+Package natbib Warning: Citation `cao2003moving' on page 51 undefined on input 
+line 35.
+
+
+Package natbib Warning: Citation `di2005moving' on page 51 undefined on input l
+ine 35.
+
+
+Package natbib Warning: Citation `di2007level' on page 51 undefined on input li
+ne 35.
+
+
+Package natbib Warning: Citation `di2007moving' on page 51 undefined on input l
+ine 35.
+
+
+Package natbib Warning: Citation `li2001PHDthesis' on page 51 undefined on inpu
+t line 36.
+
+
+Package natbib Warning: Citation `li2006moving' on page 51 undefined on input l
+ine 36.
+
+
+Package natbib Warning: Citation `Winslow1966NUMERICAL' on page 51 undefined on
+ input line 36.
+
+
+Package natbib Warning: Citation `dvinsky1991adaptive' on page 51 undefined on 
+input line 37.
+
+
+Package natbib Warning: Citation `li2001mesh' on page 51 undefined on input lin
+e 38.
+
+
+Package natbib Warning: Citation `di2005moving' on page 51 undefined on input l
+ine 39.
+
+
+Package natbib Warning: Citation `bercovier1979error' on page 51 undefined on i
+nput line 41.
+
+
+Package natbib Warning: Citation `xu1992iterative' on page 51 undefined on inpu
+t line 46.
+
+
+Package natbib Warning: Citation `shen1999schur' on page 51 undefined on input 
+line 46.
+
+
+Package natbib Warning: Citation `he2003' on page 51 undefined on input line 46
+.
+
+
+Package natbib Warning: Citation `benzi2005numerical' on page 51 undefined on i
+nput line 48.
+
+
+Package natbib Warning: Citation `bai2005inexact' on page 51 undefined on input
+ line 49.
+
+
+Package natbib Warning: Citation `bai2006structured' on page 51 undefined on in
+put line 49.
+
+
+Package natbib Warning: Citation `elman2007least' on page 51 undefined on input
+ line 49.
+
+
+Package natbib Warning: Citation `elman2009boundary' on page 51 undefined on in
+put line 49.
+
+
+Package natbib Warning: Citation `benzi2006augmented' on page 51 undefined on i
+nput line 50.
+
+
+Package natbib Warning: Citation `benzi2011relaxed' on page 51 undefined on inp
+ut line 50.
+
+
+Package natbib Warning: Citation `boyle2007hsl' on page 51 undefined on input l
+ine 51.
+
+
+Package natbib Warning: Citation `boyle2010hsl_mi20' on page 51 undefined on in
+put line 52.
+
+
+Package natbib Warning: Citation `benzi2011relaxed' on page 51 undefined on inp
+ut line 53.
+
+[51]
+
+Package natbib Warning: Citation `elman2005finite' on page 52 undefined on inpu
 t line 56.
 
 
-Package natbib Warning: Citation `peaceman1955numerical' on page 70 undefined o
+Package natbib Warning: Citation `peaceman1955numerical' on page 52 undefined o
 n input line 60.
 
 
-Package natbib Warning: Citation `he2003two' on page 70 undefined on input line
+Package natbib Warning: Citation `he2003two' on page 52 undefined on input line
  61.
 
 Missing character: There is no ˛ in font cmr12!
@@ -2618,11 +2026,11 @@ l.83             \end{algorithmic}
                                   
 ? 
 
-Package natbib Warning: Citation `silvester1996fast' on page 70 undefined on in
+Package natbib Warning: Citation `silvester1996fast' on page 52 undefined on in
 put line 90.
 
 
-Package natbib Warning: Citation `dean1993some' on page 70 undefined on input l
+Package natbib Warning: Citation `dean1993some' on page 52 undefined on input l
 ine 90.
 
 
@@ -2646,13 +2054,13 @@ l.124             \end{algorithmic}
                                    
 ? 
 
-Package natbib Warning: Citation `smith1997implicit' on page 70 undefined on in
+Package natbib Warning: Citation `smith1997implicit' on page 52 undefined on in
 put line 130.
 
-[70]
+[52]
 Underfull \vbox (badness 5345) has occurred while \output is active []
 
- [71]
+ [53]
 
 ! LaTeX Error: Something's wrong--perhaps a missing \item.
 
@@ -2664,12 +2072,12 @@ l.149             \end{algorithmic}
                                    
 ? 
 
-LaTeX Warning: Reference `eq::nonlinear_theta_moment' on page 72 undefined on i
+LaTeX Warning: Reference `eq::nonlinear_theta_moment' on page 54 undefined on i
 nput line 162.
 
-[72]
+[54]
 
-Package natbib Warning: Citation `simo1994unconditional' on page 73 undefined o
+Package natbib Warning: Citation `simo1994unconditional' on page 55 undefined o
 n input line 194.
 
 Missing character: There is no ß in font cmr12!
@@ -2689,28 +2097,28 @@ l.208             \end{algorithmic}
                                    
 ? 
 
-Package natbib Warning: Citation `li2005multi' on page 73 undefined on input li
+Package natbib Warning: Citation `li2005multi' on page 55 undefined on input li
 ne 213.
 
 
-LaTeX Warning: Reference `fig::hgeometry_tree' on page 73 undefined on input li
+LaTeX Warning: Reference `fig::hgeometry_tree' on page 55 undefined on input li
 ne 214.
 
-[73]
+[55]
 Overfull \hbox (2.62195pt too wide) in paragraph at lines 234--262
 [][][] [] 
  []
 
-[74]
+[56]
 
-Package natbib Warning: Citation `elman2005finite' on page 75 undefined on inpu
+Package natbib Warning: Citation `elman2005finite' on page 57 undefined on inpu
 t line 324.
 
 
-Package natbib Warning: Citation `elman2005finite' on page 75 undefined on inpu
+Package natbib Warning: Citation `elman2005finite' on page 57 undefined on inpu
 t line 338.
 
-[75]
+[57]
 Overfull \hbox (16.2392pt too wide) in paragraph at lines 385--388
 []\C19/rm/m/n/12.05/56 ß \C19/rm/m/n/12.05/52 Ÿ \C19/rm/m/n/12.05/64 • \C19/rm/
 m/n/12.05/36 ù \C19/rm/m/n/12.05/43 π \C19/rm/m/n/12.05/48 ¸ \C19/rm/m/n/12.05/
@@ -2724,30 +2132,25 @@ T1/cmr/m/n/12.05 possion\C19/rm/m/n/12.05/58 Ø
  []
 
 
-Package natbib Warning: Citation `elman2005finite' on page 76 undefined on inpu
+Package natbib Warning: Citation `elman2005finite' on page 58 undefined on inpu
 t line 398.
 
 
-Package natbib Warning: Citation `elman2011fast' on page 76 undefined on input 
+Package natbib Warning: Citation `elman2011fast' on page 58 undefined on input 
 line 399.
 
 
-Package natbib Warning: Citation `elman2009boundary' on page 76 undefined on in
+Package natbib Warning: Citation `elman2009boundary' on page 58 undefined on in
 put line 404.
 
-[76]
-! Undefined control sequence.
-l.415   ’‚æÕ“‚Œ∂◊≈Œ“√«‘⁄À˘”–µƒ±ﬂΩÁ$\partial \Oemga
-                                                  $…œ£¨∂‘$F_p$≤ª≤…»°»Œ∫Œ≤Ÿ◊˜...
+[58]
 
-? 
-
-Package natbib Warning: Citation `di2005moving' on page 77 undefined on input l
+Package natbib Warning: Citation `di2005moving' on page 59 undefined on input l
 ine 420.
 
-[77]
+[59]
 
-Package natbib Warning: Citation `di2005moving' on page 78 undefined on input l
+Package natbib Warning: Citation `di2005moving' on page 60 undefined on input l
 ine 453.
 
 
@@ -2755,407 +2158,97 @@ Overfull \hbox (1.10358pt too wide) in alignment at lines 481--493
  [][][] []
  []
 
-[78]
+[60]
 
-Package natbib Warning: Citation `elman2005finite' on page 79 undefined on inpu
+Package natbib Warning: Citation `elman2005finite' on page 61 undefined on inpu
 t line 515.
 
 
-Package natbib Warning: Citation `elman2009boundary' on page 79 undefined on in
+Package natbib Warning: Citation `elman2009boundary' on page 61 undefined on in
 put line 535.
 
-[79]
-
-LaTeX Warning: File `picture/cavity_flow_data/moving_mesh.eps' not found on inp
-ut line 611.
-
-
-! LaTeX Error: File `picture/cavity_flow_data/moving_mesh.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.611 ...picture/cavity_flow_data/moving_mesh.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in picture/cavity_flow_data/mov
-ing_mesh.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.611 ...picture/cavity_flow_data/moving_mesh.eps}
-                                                  
-? 
-File: picture/cavity_flow_data/moving_mesh.eps Graphic file (type eps)
-<picture/cavity_flow_data/moving_mesh.eps>
-
-LaTeX Warning: File `picture/cavity_flow_data/vortex.eps' not found on input li
-ne 612.
-
-
-! LaTeX Error: File `picture/cavity_flow_data/vortex.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.612 ...-90]{picture/cavity_flow_data/vortex.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in picture/cavity_flow_data/vor
-tex.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.612 ...-90]{picture/cavity_flow_data/vortex.eps}
-                                                  
-? 
-File: picture/cavity_flow_data/vortex.eps Graphic file (type eps)
-<picture/cavity_flow_data/vortex.eps>
-
-LaTeX Warning: File `picture/cavity_flow_data/streamline.eps' not found on inpu
-t line 621.
-
-
-! LaTeX Error: File `picture/cavity_flow_data/streamline.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.621 ...{picture/cavity_flow_data/streamline.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in picture/cavity_flow_data/str
-eamline.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.621 ...{picture/cavity_flow_data/streamline.eps}
-                                                  
-? 
-File: picture/cavity_flow_data/streamline.eps Graphic file (type eps)
-<picture/cavity_flow_data/streamline.eps>
-
-LaTeX Warning: File `picture/cavity_flow_data/NS_iterate_steps.eps' not found o
-n input line 630.
-
-
-! LaTeX Error: File `picture/cavity_flow_data/NS_iterate_steps.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.630 ...re/cavity_flow_data/NS_iterate_steps.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in picture/cavity_flow_data/NS_
-iterate_steps.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.630 ...re/cavity_flow_data/NS_iterate_steps.eps}
-                                                  
-? 
-File: picture/cavity_flow_data/NS_iterate_steps.eps Graphic file (type eps)
-<picture/cavity_flow_data/NS_iterate_steps.eps>
-! Undefined control sequence.
-l.641            \toprule
-                         
-? 
-! Undefined control sequence.
-l.642            \multirow
-                          {2}{*}{pressure mesh}    & \multirow{2}{*}{time
-? 
-! Undefined control sequence.
-l.642 ...tirow{2}{*}{pressure mesh}    & \multirow
-                                                  {2}{*}{time
-? 
-! Undefined control sequence.
-<recently read> \midrule 
-                         
-l.645 ... W_p^n$ & $F_p = A_p + W_p^n$ \\ \midrule
-                                                  
-? 
-! Undefined control sequence.
-<recently read> \midrule 
-                         
-l.647            \\ \midrule
-                            
-? 
-! Undefined control sequence.
-<recently read> \midrule 
-                         
-l.649            \\ \midrule
-                            
-? 
-! Undefined control sequence.
-<recently read> \bottomrule 
-                            
-l.651            \\ \bottomrule
-                               
-? 
-[80] [81]
-
-LaTeX Warning: File `picture/L_shaped_flow_data/mesh.eps' not found on input li
-ne 685.
-
-
-! LaTeX Error: File `picture/L_shaped_flow_data/mesh.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.685 ...-90]{picture/L_shaped_flow_data/mesh.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in picture/L_shaped_flow_data/m
-esh.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.685 ...-90]{picture/L_shaped_flow_data/mesh.eps}
-                                                  
-? 
-File: picture/L_shaped_flow_data/mesh.eps Graphic file (type eps)
-<picture/L_shaped_flow_data/mesh.eps>
-
-LaTeX Warning: File `picture/L_shaped_flow_data/streamline.eps' not found on in
-put line 687.
-
-
-! LaTeX Error: File `picture/L_shaped_flow_data/streamline.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.687 ...icture/L_shaped_flow_data/streamline.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in picture/L_shaped_flow_data/s
-treamline.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.687 ...icture/L_shaped_flow_data/streamline.eps}
-                                                  
-? 
-File: picture/L_shaped_flow_data/streamline.eps Graphic file (type eps)
-<picture/L_shaped_flow_data/streamline.eps>
-
-LaTeX Warning: File `picture/L_shaped_flow_data/iterate_steps.eps' not found on
- input line 695.
-
-
-! LaTeX Error: File `picture/L_shaped_flow_data/iterate_steps.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.695 ...ure/L_shaped_flow_data/iterate_steps.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in picture/L_shaped_flow_data/i
-terate_steps.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.695 ...ure/L_shaped_flow_data/iterate_steps.eps}
-                                                  
-? 
-File: picture/L_shaped_flow_data/iterate_steps.eps Graphic file (type eps)
-<picture/L_shaped_flow_data/iterate_steps.eps>
-
-Package natbib Warning: Citation `cao1999anr' on page 82 undefined on input lin
-e 704.
-
-
-Underfull \vbox (badness 3872) has occurred while \output is active []
-
- [82]
-Underfull \vbox (badness 1147) has occurred while \output is active []
-
- [83]
-
-Package natbib Warning: Citation `milton1982album' on page 84 undefined on inpu
-t line 727.
-
-
-LaTeX Warning: File `picture/obstacle_flow_data/comparation_NS_iterate_step.eps
-' not found on input line 732.
-
-
-! LaTeX Error: File `picture/obstacle_flow_data/comparation_NS_iterate_step.eps
-' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.732 ...low_data/comparation_NS_iterate_step.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in picture/obstacle_flow_data/c
-omparation_NS_iterate_step.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.732 ...low_data/comparation_NS_iterate_step.eps}
-                                                  
-? 
-File: picture/obstacle_flow_data/comparation_NS_iterate_step.eps Graphic file (
-type eps)
-<picture/obstacle_flow_data/comparation_NS_iterate_step.eps>
-
-LaTeX Warning: File `picture/obstacle_flow_data/NS_iterate_steps.eps' not found
- on input line 742.
-
-
-! LaTeX Error: File `picture/obstacle_flow_data/NS_iterate_steps.eps' not found
-.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.742 .../obstacle_flow_data/NS_iterate_steps.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in picture/obstacle_flow_data/N
-S_iterate_steps.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.742 .../obstacle_flow_data/NS_iterate_steps.eps}
-                                                  
-? 
-File: picture/obstacle_flow_data/NS_iterate_steps.eps Graphic file (type eps)
-<picture/obstacle_flow_data/NS_iterate_steps.eps>
-
-LaTeX Warning: File `picture/obstacle_flow_data/moving_iterate_steps.eps' not f
-ound on input line 743.
-
-
-! LaTeX Error: File `picture/obstacle_flow_data/moving_iterate_steps.eps' not f
-ound.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.743 ...tacle_flow_data/moving_iterate_steps.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in picture/obstacle_flow_data/m
-oving_iterate_steps.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.743 ...tacle_flow_data/moving_iterate_steps.eps}
-                                                  
-? 
-File: picture/obstacle_flow_data/moving_iterate_steps.eps Graphic file (type ep
+[61]
+Overfull \hbox (29.01997pt too wide) in paragraph at lines 589--592
+$\OML/cmm/m/it/12.05 W[]$ \C19/rm/m/n/12.05/60 I \C19/rm/m/n/12.05/61 á \C19/rm
+/m/n/12.05/40  S \C19/rm/m/n/12.05/39 ì \C19/rm/m/n/12.05/37 ⁄ \C19/rm/m/n/12.
+05/55 Í \C19/rm/m/n/12.05/61 á \C19/rm/m/n/12.05/55  \C19/rm/m/n/12.05/43 È \C
+19/rm/m/n/12.05/40 ı|\C19/rm/m/n/12.05/25 "| \C19/rm/m/n/12.05/63 3 \C19/rm/m/n
+/12.05/50 z \C19/rm/m/n/12.05/42 á \C19/rm/m/n/12.05/55 û \C19/rm/m/n/12.05/45 
+m \C19/rm/m/n/12.05/37 ⁄|\C19/rm/m/n/12.05/26 ß| \C19/rm/m/n/12.05/53 ¶ \C19/rm
+/m/n/12.05/46 ) \C19/rm/m/n/12.05/59 Ç \C19/rm/m/n/12.05/60 5 \C19/rm/m/n/12.05
+/41 ê \C19/rm/m/n/12.05/38 ß \C19/rm/m/n/12.05/65 | \C19/rm/m/n/12.05/40 \OT1/
+cmr/m/n/12.05 ([][]4.22[][])\C19/rm/m/n/12.05/40 \OT1/cmr/m/n/12.05 GMRES\C19/
+rm/m/n/12.05/40 S
+ []
+
+File: picture/second/cavity_flow_data/moving_mesh.eps Graphic file (type eps)
+<picture/second/cavity_flow_data/moving_mesh.eps>
+File: picture/second/cavity_flow_data/vortex.eps Graphic file (type eps)
+
+<picture/second/cavity_flow_data/vortex.eps>
+File: picture/second/cavity_flow_data/streamline.eps Graphic file (type eps)
+
+<picture/second/cavity_flow_data/streamline.eps>
+File: picture/second/cavity_flow_data/NS_iterate_steps.eps Graphic file (type e
+ps)
+
+<picture/second/cavity_flow_data/NS_iterate_steps.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [62]
+Underfull \vbox (badness 1281) has occurred while \output is active []
+
+ [63]
+Overfull \hbox (55.05576pt too wide) in paragraph at lines 653--655
+[][]\C19/rm/m/n/12.05/61 á \C19/rm/m/n/12.05/49 ˜ \C19/rm/m/n/12.05/65 v\OT1/cm
+r/m/n/12.05 CFL\C19/rm/m/n/12.05/57 ^ \C19/rm/m/n/12.05/45 á|\C19/rm/m/n/12.05/
+26 ß| \C19/rm/m/n/12.05/58 ∑ \C19/rm/m/n/12.05/50 Ç \C19/rm/m/n/12.05/40  \C19
+/rm/m/n/12.05/45 O \C19/rm/m/n/12.05/56 é \C19/rm/m/n/12.05/55 û \C19/rm/m/n/12
+.05/45 m \C19/rm/m/n/12.05/37 ⁄ \C19/rm/m/n/12.05/38  \C19/rm/m/n/12.05/63 3$\
+OT1/cmr/m/n/12.05 0\OML/cmm/m/it/12.05 :\OT1/cmr/m/n/12.05 008$\C19/rm/m/n/12.0
+5/65 Ü \C19/rm/m/n/12.05/62 m|\C19/rm/m/n/12.05/25 "| \C19/rm/m/n/12.05/53 ¶ \C
+19/rm/m/n/12.05/46 )\OT1/cmr/m/n/12.05 ([][]4.22[][]) \C19/rm/m/n/12.05/43 ⁄\OT
+1/cmr/m/n/12.05 ([][]4.48[][])\C19/rm/m/n/12.05/40 \OT1/cmr/m/n/12.05 GMRES\C1
+9/rm/m/n/12.05/40 S
+ []
+
+File: picture/second/L_shaped_flow_data/mesh.eps Graphic file (type eps)
+<picture/second/L_shaped_flow_data/mesh.eps>
+File: picture/second/L_shaped_flow_data/streamline.eps Graphic file (type eps)
+
+<picture/second/L_shaped_flow_data/streamline.eps>
+File: picture/second/L_shaped_flow_data/iterate_steps.eps Graphic file (type ep
 s)
-<picture/obstacle_flow_data/moving_iterate_steps.eps>
 
-LaTeX Warning: File `picture/obstacle_flow_data/mesh_t_2s.eps' not found on inp
-ut line 755.
+<picture/second/L_shaped_flow_data/iterate_steps.eps>
 
+Package natbib Warning: Citation `cao1999anr' on page 64 undefined on input lin
+e 676.
 
-! LaTeX Error: File `picture/obstacle_flow_data/mesh_t_2s.eps' not found.
+[64] [65]
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.755 ...picture/obstacle_flow_data/mesh_t_2s.eps}
-                                                  
-? 
+Package natbib Warning: Citation `milton1982album' on page 66 undefined on inpu
+t line 686.
 
-! LaTeX Error: Cannot determine size of graphic in picture/obstacle_flow_data/m
-esh_t_2s.eps (no BoundingBox).
+File: picture/second/obstacle_flow_data/comparation_NS_iterate_step.eps Graphic
+ file (type eps)
+<picture/second/obstacle_flow_data/comparation_NS_iterate_step.eps>
+File: picture/second/obstacle_flow_data/NS_iterate_steps.eps Graphic file (type
+ eps)
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.755 ...picture/obstacle_flow_data/mesh_t_2s.eps}
-                                                  
-? 
-File: picture/obstacle_flow_data/mesh_t_2s.eps Graphic file (type eps)
-<picture/obstacle_flow_data/mesh_t_2s.eps>
+<picture/second/obstacle_flow_data/NS_iterate_steps.eps>
+File: picture/second/obstacle_flow_data/moving_iterate_steps.eps Graphic file (
+type eps)
 
-LaTeX Warning: File `picture/obstacle_flow_data/mesh_t_40s.eps' not found on in
-put line 763.
+<picture/second/obstacle_flow_data/moving_iterate_steps.eps>
+File: picture/second/obstacle_flow_data/mesh_t_2s.eps Graphic file (type eps)
 
+<picture/second/obstacle_flow_data/mesh_t_2s.eps>
+File: picture/second/obstacle_flow_data/mesh_t_40s.eps Graphic file (type eps)
 
-! LaTeX Error: File `picture/obstacle_flow_data/mesh_t_40s.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.763 ...icture/obstacle_flow_data/mesh_t_40s.eps}
-                                                  
-? 
-
-! LaTeX Error: Cannot determine size of graphic in picture/obstacle_flow_data/m
-esh_t_40s.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.763 ...icture/obstacle_flow_data/mesh_t_40s.eps}
-                                                  
-? 
-File: picture/obstacle_flow_data/mesh_t_40s.eps Graphic file (type eps)
-<picture/obstacle_flow_data/mesh_t_40s.eps>) [84] [85]
-(E:\PHD_thesis_template\Chapters/chapter5.tex [86
-
-
-
-]
-µ⁄\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 5\hspace {0.25em plus
- 0.125em minus 0.08em}\ignorespaces ’¬
-) [87]
+<picture/second/obstacle_flow_data/mesh_t_40s.eps>) [66] [67]
 No file LingPhDThesis.bbl.
-[88
+[68
 
 
 ] (E:\PHD_thesis_template\Chapters/publications.tex
@@ -3164,10 +2257,10 @@ Underfull \hbox (badness 1484) in paragraph at lines 23--25
 -der gamma-
  []
 
-) [89
+) [69
 
 
-] (E:\PHD_thesis_template\Chapters/thanks.tex [90
+] (E:\PHD_thesis_template\Chapters/thanks.tex [70
 
 
 
@@ -3182,7 +2275,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 12.05pt
 (hyperref)                replaced by space on input line 8.
 
-) [91] (E:\PHD_thesis_template\Chapters/statements.tex [92
+) [71] (E:\PHD_thesis_template\Chapters/statements.tex [72
 
 
 ]
@@ -3211,30 +2304,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--43
  []
 
 )
-Overfull \hbox (38.32639pt too wide) in paragraph at lines 8--126
+Overfull \hbox (38.32639pt too wide) in paragraph at lines 8--125
 [][]$[]$ 
  []
 
-[93
+[73
 
 
 ]
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 129.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 129.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 128.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 128.
 (E:\PHD_thesis_template\LingPhDThesis.aux
 (E:\PHD_thesis_template\Chapters/abstract.aux)
 (E:\PHD_thesis_template\Chapters/chapter1.aux)
 (E:\PHD_thesis_template\Chapters/chapter2.aux)
 (E:\PHD_thesis_template\Chapters/chapter3.aux)
 (E:\PHD_thesis_template\Chapters/chapter4.aux)
-(E:\PHD_thesis_template\Chapters/chapter5.aux)
 (E:\PHD_thesis_template\Chapters/publications.aux)
 (E:\PHD_thesis_template\Chapters/thanks.aux)
 (E:\PHD_thesis_template\Chapters/statements.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 129.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 128.
 
 
 Package rerunfilecheck Warning: File `LingPhDThesis.out' has changed.
@@ -3242,8 +2334,8 @@ Package rerunfilecheck Warning: File `LingPhDThesis.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `LingPhDThesis.out':
-(rerunfilecheck)             Before: 01E56AD23F8524764590D545675ED83C;9073
-(rerunfilecheck)             After:  207552FB2ECE3F16CB122C57B5496B77;3439.
+(rerunfilecheck)             Before: 9739B8F6DF31DC2B86DB0D0E546AE0AB;8255
+(rerunfilecheck)             After:  228A0D5CF45C15AF076640D8202BB0C1;3322.
 
 LaTeX Warning: There were undefined references.
 
@@ -3252,12 +2344,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17955 strings out of 495286
- 301254 string characters out of 3181610
- 367181 words of memory out of 3000000
- 20465 multiletter control sequences out of 15000+200000
- 112856 words of font info for 388 fonts, out of 3000000 for 9000
+ 18685 strings out of 495286
+ 315380 string characters out of 3181610
+ 377815 words of memory out of 3000000
+ 21185 multiletter control sequences out of 15000+200000
+ 107174 words of font info for 369 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 54i,18n,51p,1099b,1008s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 54i,18n,51p,1113b,1005s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on LingPhDThesis.dvi (117 pages, 558500 bytes).
+Output written on LingPhDThesis.dvi (95 pages, 418660 bytes).

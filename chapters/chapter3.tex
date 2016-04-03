@@ -71,7 +71,8 @@
 
    \begin{algorithm}
      \caption{构建速度单元和压力单元间的索引}
-     \begin{algorithmic}[1]
+     \begin{algorithmic}[n]
+%     \begin{list}[1]
        \State \text{achieveiterator} $\gets$ \text{irregualerMeshV.beginActiveElement()}
        \State \text{enditerator} $\gets$ \text{irregualerMeshV.endActiveElement()}
 
@@ -98,8 +99,10 @@
            \EndWhile
        \EndWhile
      \end{algorithmic}
+%     \end{list}
      \label{alg::index}
    \end{algorithm}
+
 
 \section{混合元近似}
     \subsection{流体方程}
@@ -781,8 +784,8 @@
           致的。所以选取$G_1$为控制函数是合理的。
           \begin{figure}[ht]
             \begin{center}
-              \includegraphics[width = 0.43\textwidth, angle = -90]{../picture_collidingFlow/mesh_move_direction.eps}
-              \includegraphics[width = 0.43\textwidth, angle = -90]{../picture_collidingFlow/pressure_contour.eps}
+              \includegraphics[width = 0.43\textwidth, angle = -90]{picture/first/collidingFlow/mesh_move_direction.eps}
+              \includegraphics[width = 0.43\textwidth, angle = -90]{picture/first/collidingFlow/pressure_contour.eps}
               \caption{\small 左：$m = \frac{1}{G_1}$的等高线和网格移
                 动方向；右：压力等高线和速度的流速线 $\alpha = 0.002, \beta = 2.0$.}
               \label{fig::mesh_move_direction}
@@ -791,8 +794,8 @@
 
           \begin{figure}[ht]
             \begin{center}
-              \includegraphics[width = 0.43\textwidth, angle = -90]{../picture_collidingFlow/uniform20_error.eps}
-              \includegraphics[width = 0.43\textwidth, angle = -90]{../picture_collidingFlow/moving20_error.eps}
+              \includegraphics[width = 0.43\textwidth, angle = -90]{picture/first/collidingFlow/uniform20_error.eps}
+              \includegraphics[width = 0.43\textwidth, angle = -90]{picture/first/collidingFlow/moving20_error.eps}
               \caption{\small 速度$L^2$误差分布，左：均匀网格；右：移动网格 $\alpha = 0.002, \beta = 2.0$.}
               \label{fig::uniform_vs_moving_err}
             \end{center}
@@ -802,13 +805,147 @@
 
           \begin{figure}[ht]
             \begin{center}
-              \includegraphics[width = 0.43\textwidth, angle = -90]{../picture_collidingFlow/uniform_mesh20.eps}
-              \includegraphics[width = 0.43\textwidth, angle = -90]{../picture_collidingFlow/moving_mesh20.eps}
+              \includegraphics[width = 0.43\textwidth, angle = -90]{picture/first/collidingFlow/uniform_mesh20.eps}
+              \includegraphics[width = 0.43\textwidth, angle = -90]{picture/first/collidingFlow/moving_mesh20.eps}
               \caption{\small 网格对比，左：均匀网格$20 \times 20$；右：移动网格 $\alpha = 0.002, \beta = 2.0$.}
               \label{fig::uniform_vs_moving_mesh}
             \end{center}
           \end{figure}
 
+     \subsection{喷射流}
+
+       这个算例模拟的是一个很细的流体喷射入一个静止的流场，这种现象可以参考\cite{milton1982album}, 一本有趣的画册。
+       我们的计算区域是$\Omega = [0, 12] \times [-3, 3]$ 并且粘性系数是$\nu = 0.0005$。自然条件设置在出流边界$x = 12$上，
+       同时入流边$x = 0, y \in [-0.1, 0.1]$上设置Poiseuille流条件：
+       \begin{equation}
+         u_x = 1 - 100 y^2, u_y = 0.
+       \end{equation}
+       无滑移边界条件设置在$\partial \Omega$的其余部分。
+
+       在移动网格策略中，我们选取 (\ref{eq::monitor_vorticity})作为控制函数，参数$\alpha = 2.0, \beta = 2.0$。
+       据我们所知，当细流喷射到静止的流场中，会产生两个对称的涡。为了提高计算精度，在入射流周围需要更多的网格。
+       从图\ref{fig::jetting_flow_mesht12s}中可以看出，网格集中在涡量值比较大的地方。随着时间的发展，流体的不
+       稳定现象会出现，这跟\cite{milton1982album}中的物理现象是一致的。
+       \begin{figure}[!htbp]
+         \begin{center}
+             \includegraphics[width = 0.53\textwidth, angle = -90]{picture/first/jet_flow_data/mesh_t12s.eps}
+             \includegraphics[width = 0.53\textwidth, angle = -90]{picture/first/jet_flow_data/contour_t12s.eps}
+        \end{center}
+        \caption{\small Jetting flow: top: mesh, bottom: vorticity contour at t = 12s.}
+        \label{fig::jetting_flow_mesht12s}
+       \end{figure}
+
+       \begin{figure}[!htbp]
+         \begin{center}
+             \includegraphics[width = 0.53\textwidth, angle = -90]{picture/first/jet_flow_data/mesh_t27s.eps}
+             \includegraphics[width = 0.53\textwidth, angle = -90]{picture/first/jet_flow_data/contour_t27s.eps}
+        \end{center}
+        \caption{\small Jetting flow: top: mesh, bottom: vorticity contour at t = 27s.}
+        \label{fig::jetting_flow_mesht27s}
+       \end{figure}
+
+
+   \subsection{Navier-Stokes 流经过一个凹形台阶}
+
+
+      我们考虑\cite{zheng2010posteriori}中的算例，Navier-Stokes 流体以$Re = 1000$经过一个凹形的台阶，计算区域是
+      $\Omega = (0, 4) \times (0, 1)/(1.2, 1.6) \times (0, 0.4)$，在上下边界上，设置$\vec{u} = (0, 0)^T$的边界条件。
+      入流边上的边界条件为$\vec{u} = (4 y (1 - y), 0)$，出流边是自然边界条件。
+      
+      我们选取涡量作为控制函数，控制函数的参数是 $\alpha = 0.4, \beta = 2.0$。众所周知，在这个问题中流体在凹进去的角上，
+      会出现奇异性。从图\ref{fig::step_initial_mesh}中可以看出，初始的网格集中在凹进去的边上。$t = 0.5s, t = 1s \text{, and } t = 2s$
+      时刻的网格以及涡量的等高线在图\ref{fig::step_flow_05s}，\ref{fig::step_flow_1s} 和 \ref{fig::step_flow_2s}中展示出
+      来。我们发现，我们的网格跟涡的结构是一致的。
+
+      $t = 2s$时，压力的等高线以及速度的流速线在图\ref{fig::step_flow_contour_streamline_2s}中给出。我们可以看出，在拐角处，压力的
+      等高线是平滑的。
+      
+      \begin{figure}[!htbp]
+        \begin{center}
+        \includegraphics[width = 0.55\textwidth, angle = -90]{picture/first/step_flow_data/initial_mesh40_001.eps}
+        \caption{\small Top: initial uniform mesh; bottom: initial moving mesh.}
+        \label{fig::step_initial_mesh}
+        \end{center}
+      \end{figure}
+
+      \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width = 0.55\textwidth, angle = -90]{picture/first/step_flow_data/mesh_t_05.eps}
+        \caption{\small Top: moving mesh; bottom: contour of vorticity
+          at t = 0.5s}
+        \label{fig::step_flow_05s}
+      \end{figure}
+
+      \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width = 0.55\textwidth, angle = -90]{picture/first/step_flow_data/mesh_t_1s.eps}
+        \caption{\small Top: moving mesh; bottom: contour of vorticity
+          at t = 1s}
+        \label{fig::step_flow_1s}
+      \end{figure}
+
+      \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width = 0.55\textwidth, angle = -90]{picture/first/step_flow_data/mesh_t_1_5s.eps}
+        \caption{\small Top: moving mesh; bottom: contour of vorticity
+          at t = 1.5s}
+        \label{fig::step_flow_1_5s}
+      \end{figure}
+
+      \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width = 0.55\textwidth, angle = -90]{picture/first/step_flow_data/mesh_t_2s.eps}
+        \caption{\small Top: moving mesh; bottom: contour of vorticity
+          at t = 2s}
+        \label{fig::step_flow_2s}
+      \end{figure}
+
+      \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width = 0.55\textwidth, angle = -90]{picture/first/step_flow_data/contour_streamline_t_2s.eps}
+        \caption{\small Top: pressure contour; bottom: velocity streamline
+          at t = 2s}
+        \label{fig::step_flow_contour_streamline_2s}
+      \end{figure}
+
+   \subsection{圆柱绕流}
+
+      这个是经典算例，在一个长方形的管道中，流体流过一个圆柱。在\cite{cao1999anr}中，作者用移动有限元方法来求解这个
+      模型。圆柱圆心是$(0, 0)$，半径是$r = 0.3$。粘性系数是 $\nu = 0.003$，计算区域是 $\Omega = [-1, 5] \times [-1, 1]$。
+      Poiseuille流 $u = 1 - y^2, v = 0$ 设置在入流边界 $x = -1$。边界条件 $u = v = 0$ 施加在管道的上下边界。出流边界 $x = 5$
+      是自然边界条件。
+      
+      如果我们关注流体的细微结构，因此需要在小结构上有高分辨率。为了抓住涡的结构，在我们的移动策略中，(\ref{eq::monitor_vorticity})
+      作为控制函数是一个很好的选择。具体的参数是 $\alpha$ 和 $\beta$ 分别为 $1.0$， $2.0$。
+
+      在图\ref{fig::cylinder_initial_mesh} 和 图 \ref{fig::cylinder_mesh_t24_5s} 中，展示了网格和涡的等高线的变化。从中可以看出，
+      我们的网格可以抓住涡的结构，并且我们的网格质量比 \cite{cao1999anr}中要好。
+      当我们改变雷诺数为 $Re = 2000$ 时，从图\ref{fig::cylinder_mesh_t23s}中可以看出，网格和涡量的结构并不像 $Re = 2000/3$ 时那么明显。
+      
+      \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width = 0.6\textwidth, angle = -90]{picture/first/obstacle_flow_data/initial_mesh.eps}
+        \caption{\small Top: uniform mesh; bottom: initial
+          moving mesh, viscosity $\nu = 0.003$.}
+        \label{fig::cylinder_initial_mesh}
+      \end{figure}
+
+      \begin{figure}[!htbp]
+       \begin{center}
+         \includegraphics[width = 0.6\textwidth, angle = -90]{picture/first/obstacle_flow_data/mesh_t_24_5s.eps}
+       \end{center}
+       \caption{\small Top: moving mesh; bottom: vorticity contour at
+         $t = 24.5s$, viscosity $\nu = 0.003$.}
+       \label{fig::cylinder_mesh_t24_5s}
+     \end{figure}
+
+     \begin{figure}[!htbp]
+       \centering
+       \includegraphics[width = 0.6\textwidth, angle = -90]{picture/first/obstacle_flow_data/mesh_t_23s.eps}
+       \caption{\small Top: moving mesh; bottom: vorticity contour at
+         $t = 23s$, viscosity $\nu = 0.001$.}
+       \label{fig::cylinder_mesh_t23s}
+     \end{figure}
 
 
 
@@ -818,18 +955,6 @@
 
 
 
-
-
-
-\begin{theorem}
-\label{th:MatrixEMCon} If all eigenvalues of $A \in \CS^{n \times
-n}$ are in $\MCR$ defined in $(\ref{set:R})$ and all zero
-eigenvalues of $A$ are semisimple, then the matrix sequence
-$\{X_k\}$ generated by Euler's method $(\ref{it:EM})$ starting from
-$X_0 = \I$ converges to the principal $p$th root $A^{1/p}$.
-Moreover, if all eigenvalues are in $\widehat{\MCR}\backslash\{0\}$
-defined in $(\ref{set:R_hat})$, then the convergence is cubic.
-\end{theorem}
 
 
 
@@ -851,62 +976,12 @@ the red and blue regions denote the set $\{z\in\CS: 1-z \in
 \MCD_2\}$, respectively. }\label{fig:EM_ConvReg}
 \end{figure}
 
-
-\begin{remark}
-Figure \ref{fig:EM_ConvReg} plots the approximating region of $\MCR$
-with nine cases in the complex plane, where the red and blue regions
-denote the sets $\{z\in\CS: 1-z \in \overline{\MCD}_1\}$ and
-$\{z\in\CS: 1 - z \in \MCD_0 \bigcap \MCD_2\}$, respectively. Since
-$$
-\sum_{j = 1}^m c_j^1(1-z)^{j-1} \to \frac{\phi_1(1-z)}{1-z}, \ \ \ n
-\to \infty,
-$$
-for each $z \in \{z\in\CS: 1-z \in \MCD_0\}$ by Lemma
-\ref{lem:RatFunTayExp} in Section 3.1, we can see from Figure
-\ref{fig:EM_ConvReg} that approximating regions ((a)-(c), (d)-(f),
-(g)-(i)) are almost the same for a fixed $p$ when $m=20, 100, 500$,
-respectively. To this end, it suffices to choose $m=20$ in practical
-numerical computation.
-\end{remark}
-
-\begin{remark}
-The set $\MCD_0$ defined in (\ref{set:D0}) can be enlarged as
-$$
-\left\{z \in \CS: \frac{1}{p}|z|\left|1 + \frac{1}{2}(1 -
-\frac{1}{p})z\right|<1 \right\}.
-$$
-However, this improvement does not affect the convergence region
-$\MCR$ defined in (\ref{set:R}). So, for convenience, we still use
-$\MCD_0$ in our convergence analysis in Section 3.
-\end{remark}
-
-
-\begin{remark}
-In practice,  it is not feasible to check whether a eigenvalue
-$\lambda$ belongs to $\MCR$. This is due to the computational cost
-of (\ref{set:D2}) may be large even if we only choose $m=20$. Thus,
-based on the observation from Figure \ref{fig:EM_ConvReg}, we now
-give a new convergence region which allows us to determine easily
-whether a eigenvalue belongs to it. Define
-\begin{equation}
-\label{set:R_pra} \MCR_{\text{E}} := \MCD_3 \bigcup \MCD_4,
-\end{equation}
 where
 \begin{align*}
 \MCD_3 & := \{z \in \CS: 1-z \in \overline{\MCD}_1 \},\\
 \MCD_4 & := \left\{z \in \CS: |\arg(z)| < \frac{\pi}{4}, |1-z| <
 \frac{31}{24}\right\}.
 \end{align*}
-In view of $p(\sqrt{2p - 1} - 1)/(p-1) > 31/24$ for any $p \geq 2$,
-one has that $\MCD_4 \subset \MCD_0$. In Figure
-\ref{fig:EM_PraConvReg_p100n20}, for $p=100, m=20$, we present the
-the regions $\MCR$ and $\MCR_{\text{E}}$ defined in (\ref{set:R})
-and (\ref{set:R_pra}), respectively, of Euler's method (\ref{it:EM})
-for computing the $p$th root of a matrix. We can observe that the
-new region $\MCR_{\text{E}}$ is acceptable approximation to $\MCR$.
-So instead of using $\MCR$, in Sections 4 and 5, we will use
-$\MCR_{\text{E}}$ in our algorithm and numerical experiments.
-\end{remark}
 
 
 \begin{figure}[t!]
@@ -924,53 +999,13 @@ the approximate convergence regions $\MCR_{\text{E}}$ defined in
 
 \section{Proof of Theorem \ref{th:MatrixEMCon}}
 
-
-In this section, we will prove Theorem \ref{th:MatrixEMCon}, the
-results on convergence and convergence order for Euler's method
-(\ref{it:EM}).
-
-
 \subsection{Technical lemmas}
 
 
 
 
-\begin{lemma}[\cite{Cardoso2011}]
-\label{lem:RatFunTayExp} The Maclaurin series of the function
-$\phi(z)$ defined by $(\ref{fun:phi(z)})$ has the form
-\begin{equation}
-\label{eq:phi(t)_series_form} \phi(z) = \sum_{j = 0}^\infty c_j z^j,
-\ \ \ z \in \MCD_0,
-\end{equation}
-where $\MCD_0$ is defined in $(\ref{set:D0})$, and the coefficients
-$c_j = \phi^{(j)}(0)/j!$ satisfying $c_j
-> 0$ for all $j \geq 3$ and $\sum\limits_{j = 3}^\infty c_j = 1$.
-\end{lemma}
 
 
-
-For a complex number $\lambda \in \CS$, let
-\begin{equation}
-\label{fun:f(z)} f(z) := z^p - \lambda, \ \ \ z \in \CS
-\end{equation}
-and
-\begin{equation}
-\label{fun:r(z)} r(z,\lambda) := 1 - \lambda z^{-p}, \ \ \ z \in
-\CS\backslash\{0\}.
-\end{equation}
-
-
-\begin{lemma}
-\label{lem:r(E(z))_r(z)} Let $r(z,\lambda)$ be defined in
-$(\ref{fun:r(z)})$. If $r(z,\lambda) \in \mathcal
-{D}_0\backslash\{1\}$ for some $z \in \CS\backslash\{0\}$, where
-$\MCD_0$ is defined in $(\ref{set:D0})$, then $E(z)$ generated by
-the scalar case of $(\ref{it:EM_fun})$ for $f(z)$ defined in
-$(\ref{fun:f(z)})$ exists and
-\begin{equation}
-\label{eq:r(E(z))_1} r(E(z),\lambda) = \phi(r(z,\lambda)),
-\end{equation}
-where $\phi$ is defined by $(\ref{fun:phi(z)})$. Moreover, we have
 \begin{numcases}{}
 |r(E(z),\lambda)| < |r(z,\lambda)|^3, &
 if \ $r(z,\lambda) \in \overline{\MCD}_1\backslash\{0,1\}$,\ \ \  \label{ineq:abs_r(E(z))_1}\\
@@ -980,778 +1015,6 @@ if \ $r(z,\lambda) \in \overline{\MCD}_1\backslash\{0,1\}$,\ \ \  \label{ineq:ab
 \  $r(z,\lambda) \in \mathcal {D}_0\backslash\{1\}$,
 \label{ineq:abs_r(E(z))_2}
 \end{numcases}
-where $\overline{\MCD}_1$ is the closure of $\MCD_1$ defined in
-$(\ref{set:D1})$, and $S_m(u)$ is the $m$th partial sum of the
-series $(\ref{eq:phi(t)_series_form})$ for each $u \in \mathcal
-{D}_0$ satisfying $|u| > |r(z,\lambda)|$, $m \geq 3$.
-\end{lemma}
-
-
-
-
-\begin{proof}
-For any $z \in \CS\backslash\{0\}$, $E(z)$ exists by
-(\ref{it:EM_fun}). Furthermore, when
- $r(z,\lambda) \in \MCD_0\backslash\{0,1\}$, since
-\begin{eqnarray*}
-\lefteqn{\frac{1}{2p^2}  \left|(2 p^2 - 3 p + 1) + 2(2 p - 1)
-\lambda z^{-p} - (p - 1)(\lambda z^{-p})^2\right|} \nonumber\\
-& = &  \left|\frac{2p^2 - 3p + 1}{2p^2} + \frac{2p -
-1}{p^2}(1 - r(z,\lambda)) - \frac{p - 1}{2p^2}(1 - r(z,\lambda))^2\right| \nonumber \\
-& = &  \left|1 - \frac{1}{p} r(z,\lambda) -
-\frac{1}{2}\left(\frac{1}{p} -
-\frac{1}{p^2}\right)r^2(z,\lambda)\right| \nonumber \\
-& > & 1 - \left[\frac{1}{p} |r(z,\lambda)| +
-\frac{1}{2}\left(\frac{1}{p} -
-\frac{1}{p^2}\right)|r(z,\lambda)|^2\right]\\
-&>& 0,\label{eq:zk+1}
-\end{eqnarray*}
-we know
-\begin{equation*}
-\label{eq:E(z)} E(z) = \frac{1}{2p^2} z \left[(2 p^2 - 3 p + 1) +
-2(2 p - 1) \lambda z^{-p} - (p - 1)(\lambda z^{-p})^2\right] \neq 0
-\end{equation*}
-and
-\begin{equation}
-\label{eq:r(E(z))} r(E(z),\lambda) = 1 - \left[1 - \frac{1}{p}
-r(z,\lambda) - \frac{1}{2}\left(\frac{1}{p} -
-\frac{1}{p^2}\right)r^2(z,\lambda)\right]^{-p}\cdot(1 -
-r(z,\lambda)) = \phi(r(z,\lambda)),
-\end{equation}
-i.e., (\ref{eq:r(E(z))_1}) holds. (\ref{eq:r(E(z))}) shows that
-$r(E(z),\lambda) \neq 1$ when $r(z,\lambda) \neq 1$.
-
-If $r(z,\lambda) \in \overline{\MCD}_1\backslash\{0,1\} \subset
-\MCD_0$, then, by (\ref{eq:phi(t)_series_form}) in Lemma
-\ref{lem:RatFunTayExp} and (\ref{eq:r(E(z))}), one has that
-\begin{align}
-|r(E(z),\lambda)|  = |\phi(r(z,\lambda))| & = |r(z,\lambda)|^3 \cdot
-\left| \sum_{j =
-3}^\infty c_j r^{j-3}(z,\lambda) \right| \nonumber\\
-& \leq |r(z,\lambda)|^3 \left[|c_3 + c_4 r(z,\lambda)| + \sum_{j =
-5}^\infty c_j |r(z,\lambda)|^{j-3}
-\right] \nonumber\\
-& < |r(z,\lambda)|^3 \sum_{j = 3}^\infty c_j = |r(z,\lambda)|^3 \nonumber\\
-& \leq |r(z,\lambda)| \label{ineq:abs_r(E(z))}
-\end{align}
-from Lemma \ref{lem:RatFunTayExp} and the fact that $|c_3 + c_4 w| <
-c_3 + c_4$ for all $w \in \overline{\MCD}_1\backslash\{1\}$. Thus,
-(\ref{ineq:abs_r(E(z))_1}) is proved.
-
-If $r(z,\lambda) \in \mathcal {D}_0\backslash\{1\}$, based on
-(\ref{eq:phi(t)_series_form}) in Lemma \ref{lem:RatFunTayExp} and
-(\ref{eq:r(E(z))}) again, we have
-\begin{align*}
-r(E(z),\lambda)  = \phi(r(z,\lambda)) = \sum_{j=3}^\infty c_j
-r^j(z,\lambda) = \left[\sum_{j=3}^\infty c_j u^{j-3}
-\left(\frac{r(z,\lambda)}{u}\right)^{j-3}\right] \cdot
-r^3(z,\lambda)
-\end{align*}
-holds for any $u \in \CS\backslash\{0\}$. Since, for any $m \geq 3$,
-\begin{align*}
-\sum_{j=3}^m c_j u^{j-3} \left(\frac{r(z,\lambda)}{u}\right)^{j-3} &
-= \sum_{j=3}^{m-1} \left(\sum_{\ell=3}^j c_\ell
-u^{\ell-3}\right)\left(1 -
-\frac{r(z,\lambda)}{u}\right)\left(\frac{r(z,\lambda)}{u}\right)^{j-3}\\
-& \ \ \ + \left(\sum_{\ell = 3}^m c_\ell u^{\ell-3}\right)\cdot
-\left(\frac{r(z,\lambda)}{u}\right)^{m-3}
-\end{align*}
-by Abel transformation, we have
-\begin{align*}
-\left|\sum_{j=3}^m c_j u^{j-3}
-\left(\frac{r(z,\lambda)}{u}\right)^{j-3}\right| & \leq \sup_{3\leq
-j \leq m-1} \left\{\left|\sum_{\ell=3}^j c_\ell
-u^{\ell-3}\right|\right\} \cdot \left|1 -
-\frac{r(z,\lambda)}{u}\right| \cdot \sum_{j=3}^{m-1}
-\left|\frac{r(z,\lambda)}{u}\right|^{j-3}\\
-& \ \ \ + \left|\frac{S_m(u)}{u^3} \right|\cdot
-\left|\frac{r(z,\lambda)}{u}\right|^{m-3}, \ \ \ m >3.
-\end{align*}
-Then, letting $m \to \infty$ in the above inequality, it follows
-that
-\begin{align*}
-|r(E(z),\lambda)|  & \leq \sup_{m \geq 3} \left\{\left|\sum_{j=3}^m
-c_j u^{j-3}\right|\right\} \cdot \left|1 -
-\frac{r(z,\lambda)}{u}\right| \cdot
-\sum_{m=3}^\infty \left|\frac{r(z,\lambda)}{u}\right|^{m-3}\cdot |r(z,\lambda)|^3 \\
-& = \sup_{m \geq 3} \left\{\left|\frac{S_m(u)}{u^3}\right|\right\}
-\cdot \frac{\left|1 - \frac{r(z,\lambda)}{u}\right|}{1 -
-\left|\frac{r(z,\lambda)}{u}\right|} \cdot |r(z,\lambda)|^3 \\
-& = \sup_{m \geq 3} \left\{\left|\frac{S_m(u)}{u^3}\right|\right\}
-\cdot \frac{|u| + |r(z,\lambda)|}{|u| - \left|r(z,\lambda)\right|}
-\cdot |r(z,\lambda)|^3
-\end{align*}
-for any $r(z,\lambda) \in \mathcal {D}_0\backslash\{1\}$ and any $u
-\in \mathcal {D}_0$ subject to $|u|
-> |r(z,\lambda)|$, which verifies (\ref{ineq:abs_r(E(z))_2}). The
-proof is completed.
-\end{proof}
-
-
-
-Based on Lemma \ref{lem:r(E(z))_r(z)}, we have the following lemma
-which is more refined than the one obtained in \cite[Corollary
-3.1]{Cardoso2011}.
-
-
-\begin{lemma}
-\label{lem:r(z)_convergence1} Let $r(z,\lambda)$ be defined in
-$(\ref{fun:r(z)})$. If $r(z_0,\lambda) \in
-\overline{\MCD}_1\backslash\{0,1\}$ for some $z_0 \in
-\CS\backslash\{0\}$, then the sequence $\{z_k\}$ starting from $z_0$
-generated by the scalar case of $(\ref{it:EM})$ for solving
-$(\ref{fun:f(z)})$ exists,
-\begin{equation}
-\label{ineq:abs_r(zk)_1} |r(z_k,\lambda)| \leq q_1^{3^{k-1}}(z_0), \
-\ \ k = 1, 2, \ldots,
-\end{equation}
-where
-\begin{equation}
-\label{cons:q1(z0)} q_1(z_0) = q_1(z_0,\lambda) :=
-\left|\sum_{j=3}^\infty c_j r^{j-1}(z_0,\lambda)\right| < 1,
-\end{equation}
-and so $|r(z_k,\lambda)| \to 0$ with order $3$ as $k \to \infty$.
-\end{lemma}
-
-\begin{proof}
-For $z_0$ chosen, $q_1(z_0) < 1$ follows from the same arguments
-used in (\ref{ineq:abs_r(E(z))}). By (\ref{ineq:abs_r(E(z))_1}) in
-Lemma \ref{lem:r(E(z))_r(z)}, $z_1 = E(z_0)$ exists and
-$$
-|r(z_1,\lambda)| = q_1(z_0)|r(z_0,\lambda)| \leq q_1(z_0) < 1.
-$$
-Suppose that $z_k$ exists and (\ref{ineq:abs_r(zk)_1}) holds for
-some $k \geq 1$, then by Lemma \ref{lem:r(E(z))_r(z)} again,
-$z_{k+1} = E(z_k)$ exists and
-\begin{equation*}
-|r(z_{k+1},\lambda)| < |r(z_{k},\lambda)|^3  \leq
-\left[q_1^{3^{k-1}}(z_0)\right]^3 = q_1^{3^{k}}(z_0).
-\end{equation*}
-Thus, (\ref{ineq:abs_r(zk)_1}) holds for $k+1$. By induction,
-$\{z_k\}$ exists and (\ref{ineq:abs_r(zk)_1}) holds. Furthermore,
-$r(z_k,\lambda) \to 0$ with order $3$ as $k \to \infty$, which
-completes the proof.
-\end{proof}
-
-
-
-The following lemma says that, besides in $
-\overline{\MCD}_1\backslash\{0,1\}$, it also guarantees
-$r(z_k,\lambda)$ converges cubically to 0 as $k \to \infty$ when
-$r(z_0,\lambda) \in \MCD_2 \bigcap \MCD_0\backslash\{1\}$ for some
-$z_0 \in \CS\backslash\{0\}$.
-
-\begin{lemma}
-\label{lem:r(z)_convergence2} 我们   Let $r(z,\lambda)$ be defined
-in $(\ref{fun:r(z)})$. For any $z_0 \in \CS\backslash\{0\}$
-satisfying $r(z_0,\lambda) \in \MCD_2 \bigcap \MCD_0\backslash\{1\}$
-and
-\begin{equation}
-\label{cons:q2(z0)} q_2(z_0) = q_2(z_0,\lambda) := \sqrt{\sup_{m
-\geq 3}
-\left\{\frac{|S_m(r(z_0,\lambda))|}{|r(z_0,\lambda)|}\right\} \cdot
-\frac{|r(z_0,\lambda)|
-+|\phi(r(z_0,\lambda))|}{\big||r(z_0,\lambda)| -
-|\phi(r(z_0,\lambda))|\big|}} < 1,
-\end{equation}
-where $\MCD_2$ is defined in $(\ref{set:D2})$, the sequence
-$\{z_k\}$ generated by the scalar form of $(\ref{it:EM})$ starting
-from $z_0$ for solving $(\ref{fun:f(z)})$ exists,
-\begin{equation}
-\label{ineq:abs_r(zk)_2} |r(z_k,\lambda)| \leq q_2^{3^k-1}(z_0)
-\cdot |r(z_0,\lambda)|, \ \ \ k = 0, 1, \ldots,
-\end{equation}
-and so $|r(z_k,\lambda)| \to 0$ with order $3$ as $k \to \infty$.
-\end{lemma}
-
-\begin{proof}
-For $z_0$ chosen, we have $r(z_0) \in \mathcal
-{D}_0\backslash\{1\}$. So, $z_1 = E(z_0)$ exists and $z_1 \neq 0$ by
-Lemma \ref{lem:r(E(z))_r(z)}. Recall that $S_m(r(z_0)) \to
-\phi(r(z_0))$ as $k\to\infty$ implies
-$$
-\left|\frac{\phi(r(z_0))}{r(z_0)}\right| \leq \sup_{m\geq3}
-\left\{\left|\frac{S_m(r(z_0))}{r(z_0)}\right|\right\} <
-q_2^2(z_0)<1,
-$$
-by (\ref{cons:q2(z0)}), we have
-$$
-|r(z_1)| = |\phi(r(z_0))| =
-\left|\frac{\phi(r(z_0))}{r(z_0)}r(z_0)\right| <
-q_2^2(z_0)\cdot|r(z_0)|,
-$$
-and (\ref{ineq:abs_r(zk)_2}) holds for $k=1$.  Assume $z_0, z_1,
-\ldots, z_k$ exist and satisfy (\ref{ineq:abs_r(zk)_2}). Then
-$$
-|r(z_k)| \leq q_2^2(z_0)|r(z_0)|< |r(z_0)| < \frac{p}{p-1}
-(\sqrt{2p-1}-1).
-$$
-So, by Lemma \ref{lem:r(E(z))_r(z)} with $u = r(z_0)$, $z_{k+1} =
-E(z_k)$ exists, $z_{k+1} \neq 0$ and
-\begin{align*}
-|r(z_{k+1})| & = |\phi(r(z_k))| \\
-& \leq \sup_{m \geq 3}
-\left\{\frac{|S_m(r(z_0))|}{|r(z_0)|^3}\right\}\cdot \frac{|r(z_0)|
-+|\phi(r(z_0))|}{\big||r(z_0)| -
-|\phi(r(z_0))|\big|} \cdot |r(z_k)|^3 \\
-& \leq \sup_{m \geq 3}
-\left\{\frac{|S_m(r(z_0))|}{|r(z_0)|^3}\right\}\cdot \frac{|r(z_0)|
-+|\phi(r(z_0))|}{\big||r(z_0)| - |\phi(r(z_0))|\big|}
-\left[q_2^{3^k-1}(z_0)\right]^3\cdot|r(z_0)|^3 \\
-& = \sup_{m \geq 3}
-\left\{\frac{|S_m(r(z_0))|}{|r(z_0)|}\right\}\cdot \frac{|r(z_0)|
-+|\phi(r(z_0))|}{\big||r(z_0)| - |\phi(r(z_0))|\big|} \cdot
-[q_2(z_0)]^{3^{k+1}-3} \cdot
-|r(z_0)| \\
-& = [q_2(z_0)]^{3^{k+1}-1} \cdot |r(z_0)|,
-\end{align*}
-which shows (\ref{ineq:abs_r(zk)_2}) by induction. The proof is
-completed.
-\end{proof}
-
-
-
-
-\begin{lemma}
-\label{lem:ScalarEMCon1} For any $\lambda \in \MCR_1 \bigcup
-\MCR_2$, where $\MCR_1$ and $\MCR_2$ are defined by $(\ref{set:R1})$
-and $(\ref{set:R2})$, respectively, the sequence $\{z_k(\lambda)\}$
-generated by scalar Euler iteration $(\ref{it:EM})$ with some $z_0
-\in \CS\backslash\{0\}$ for solving $(\ref{fun:f(z)})$ converges to
-the principal $p$th root $\lambda^{1/p}$. Moreover, if $\lambda \neq
-0$, then the convergence order is $3$.
-\end{lemma}
-
-
-\begin{proof}
-We prove this lemma by four steps as follows.
-
-Step 1. Suppose $\MCR_c$ is any closed domain in $\MCR_1$ or
-$\MCR_2$ and that $0 \not\in \MCR_c$. We will prove in this step
-$\{z_k(\lambda)\}$ converges uniformly to $z(\lambda)$, a $p$th root
-of each $\lambda \in \MCR_c$, and that $z(\lambda)$ exists for each
-$\lambda \in \MCR_1\bigcup\MCR_2$.
-
-We write $r(z_k,\lambda) \triangleq r(z_k(\lambda),\lambda)$ for
-short below. Since $ \sum\limits_{j=3}^\infty c_j r^j(z_0,\lambda)$
-is analytic for each $\lambda \in \MCR_1\bigcup\MCR_2$ and $\MCR_c
-\subset \MCR_1\bigcup\MCR_2$ is bounded, there is a
-$\widehat{\lambda} \in
-\partial\MCR_c$ such that
-\begin{equation}
-\label{eq:max_mod_1} \left|\sum_{j=3}^\infty c_j
-r^j(z_0,\widehat{\lambda})\right| = \max_{\lambda \in
-\MCR_c}\left|\sum_{j=3}^\infty c_j r^j(z_0,\lambda)\right|
-\end{equation}
-by the theorem of maximum modulus of analytic function. Let
-$$
-q(z_0) := \left\{
-\begin{array}{ll}
-\displaystyle \max_{\lambda \in \MCR_c}q_1(z_0,\lambda), & \mbox{if
-$\MCR_c
-\subset \MCR_1$,} \\
-\displaystyle \max_{\lambda \in \MCR_c}q_2(z_0,\lambda), & \mbox{if
-$\MCR_c \subset \MCR_2$},
-\end{array}
-\right.
-$$
-where $q_1(z_0,\lambda)$ and $q_2(z_0,\lambda)$ are defined in
-(\ref{cons:q1(z0)}) and (\ref{cons:q2(z0)}), respectively. Then
-$$
-q(z_0) = \left\{
-\begin{array}{ll}
-q_1(z_0,\widehat{\lambda}) < 1, & \mbox{if $\MCR_c
-\subset \MCR_1$,} \\
-q_2(z_0,\widehat{\lambda}) < 1, & \mbox{if $\MCR_c \subset \MCR_2$},
-\end{array}
-\right.
-$$
-and
-\begin{equation}
-\label{ineq:abs_r(zk)} |r(z_k, \lambda)| \leq \left\{
-\begin{array}{ll}
-q^{3^{k-1}}(z_0), & \mbox{if $\MCR_c
-\subset \MCR_1$,} \\
-q^{3^k-1}(z_0) \cdot r_*, & \mbox{if $\MCR_c \subset \MCR_2$},
-\end{array} \ \ \ k = 1,2,\ldots, \lambda \in \MCR_c
-\right.
-\end{equation}
-by (\ref{eq:max_mod_1}), Lemmas \ref{lem:r(z)_convergence1} and
-\ref{lem:r(z)_convergence2}, where $r_* := \max\limits_{\lambda \in
-\MCR_c}|r(z_0,\lambda)|$ is a positive real independent on $\lambda
-\in \MCR_c$. It follows $\{r(z_k, \lambda)\}$ converges uniformly to
-0 with order 3 as $k \to \infty$ for all $\lambda \in \MCR_c$ and
-that identities
-\begin{equation}
-\label{eq:zkp} z_k^p = \frac{\lambda}{1 - r(z_k,\lambda)}, \ \ \
-\lambda \in \MCR_c, \ k = 0, 1, \ldots
-\end{equation}
-give the sequence $\{z_k(\lambda)\}$ is bounded uniformly for all
-$\lambda \in \MCR_c$. Thus, there is a $M > 0$, independent on $k$
-and $\lambda \in \MCR_c$, such that
-\begin{equation}
-\label{ineq:abs_bounded_M} \frac{1}{2p^2} |z_k(\lambda)| |2p + (p -
-1)r(z_k, \lambda)| \leq M, \ \ k \geq 0, \lambda \in \MCR_c.
-\end{equation}
-By (\ref{it:EM_fun}) and (\ref{ineq:abs_bounded_M}),
-\begin{align*}
-|z_{k + 1}(\lambda) - z_k(\lambda)| & = \left|
-\frac{1}{2p^2}z_k(\lambda) \left[(3p - 1) - 2(2p
-- 1)\lambda z_k^{-p}(\lambda) + (p - 1)\lambda^2 z_k^{-2p}(\lambda)\right]\right| \\
-& = \left| \frac{1}{2p^2}z_k(\lambda) \left[(1 - p) + 2(2p - 1)
-r(z_k, \lambda) + (p -
-1) (1 - r(z_k, \lambda))^2\right]\right| \\
-& = \left| \frac{1}{2p^2}z_k(\lambda) \left[ 2p r(z_k, \lambda) + (p
--
-1)r(z_k, \lambda)^2\right] \right| \\
-& = \frac{1}{2p^2} |z_k(\lambda)| |r(z_k, \lambda)| |2p + (p - 1)r(z_k, \lambda)| \\
-& \leq M |r(z_k, \lambda)|, \ \ \ \lambda \in \MCR_c, \ k =0, 1,
-\ldots,
-\end{align*}
-which and (\ref{ineq:abs_r(zk)}) conclude that $\{z_{k + 1}(\lambda)
-- z_k(\lambda)\}$ is majoriant by a geometrical sequence which
-converges to zero and independent on $\lambda \in \MCR_c$. So,
-$\{z_k(\lambda)\}$ is a Cauchy sequence for each $\lambda \in
-\MCR_c$ and there is $z(\lambda)$ defined on $\MCR_c$ such that
-$z_k(\lambda)$ converges uniformly to $z(\lambda)$ for all $\lambda
-\in \MCR_c$. Let $k \to \infty$ in (\ref{eq:zkp}), we have
-$$
-z^p(\lambda) = \lambda, \ \ \ \lambda \in \MCR_c.
-$$
-That is, $z(\lambda)$ is a $p$th root of $\lambda \in \MCR_c$.
-
-
-Step 2. Since for any $\lambda \in \MCR_1 \bigcup \MCR_2$, there is
-a closed domain of $\MCR_1$ or $\MCR_2$ such that $\lambda$ belongs
-to it. By Step 1, $z(\lambda)$ exists for each $\lambda \in
-\MCR_1\bigcup \MCR_2$. In this step, we will show $z(\lambda)$
-obtained in Step 1 is analytic in $\Int(\MCR_1)$, the interior of
-$\MCR_1$, and $\MCR_2$. Therefore, $z(\lambda)$ located in a
-single-valued branch of root function in $\Int(\MCR_1)$ and
-$\MCR_2$.
-
-In fact, by the definition of $z_k(\lambda), \lambda \in
-\MCR_1\bigcup\MCR_2$, we have $z_k(\lambda)$ is analytic in
-$\Int(\MCR_1)$ or $\MCR_2$. Since $\{z_k(\lambda)\}$ converges
-uniformly to $z(\lambda)$ by Step 1, $z_k(\lambda)$ is analytic in
-$\Int(\MCR_1)$ and $\MCR_2$ by Weierstrass theorem, seperately.
-Recall that $z(\lambda)$ is a $p$th root of $\lambda \in
-\Int(\MCR_1)$ or $\MCR_2$, we get $z(\lambda)$ located in a
-single-valued branch of root function for $\lambda \in \Int(\MCR_1)$
-or $\lambda \in \MCR_2$, seperately.
-
-
-Step 3. In this step, we will show that $z(\lambda) \to
-z(\lambda_0)$ as $\lambda \to \lambda_0$ from the inner side of
-$\MCR_1$, where $\lambda_0 \in \partial\MCR_1$ and $\lambda_0 \neq
-0$.
-
-It is clear that $|r(z_0, \lambda_0)| < 1$ for any $\lambda_0 \in
-\partial\MCR_1$ and $\lambda_0 \neq 0$. Then, there is $\delta_0 >
-0$ such that closed domain $\overline{O}(\lambda_0, \delta_0)
-\bigcap \MCR_1$ does not contains 0 and 1, where
-$\overline{O}(\lambda_0, \delta_0) := \{\lambda \in \CS: |\lambda -
-\lambda_0| \leq \delta_0\}$. By Step 1, $\{z_k(\lambda)\}$ converges
-uniformly to $z(\lambda)$ for any $\lambda$ in
-$\overline{O}(\lambda_0, \delta_0) \bigcap \MCR_1$. So, for any
-$\varepsilon > 0$, there exists $K > 0$ such that for all $k \geq K$
-and $\lambda \in \overline{O}(\lambda_0, \delta_0) \bigcap \MCR_1$,
-\begin{equation}
-\label{ineq:abs_zk-z_1} |z_k(\lambda) - z(\lambda)| <
-\frac{\varepsilon}{3}.
-\end{equation}
-Since $z_k(\lambda)$ is analytic in $\MCR_1$ derives $z_k(\lambda)$
-is continuous in $\overline{O}(\lambda_0, \delta_0) \bigcap \MCR_1$,
-there exists $0 < \delta_1 < \delta_0$ such that
-$\overline{O}(\lambda_0, \delta_1) \subset \overline{O}(\lambda_0,
-\delta_0)$ and
-\begin{equation}
-\label{ineq:abs_zk-z_2} |z_k(\lambda) - z_k(\lambda_0)| <
-\frac{\varepsilon}{3}, \ \ \ \forall \ \lambda \in
-\overline{O}(\lambda_0, \delta_1)\bigcap \MCR_1.
-\end{equation}
-Thus, for all $\lambda$ in $\overline{O}(\lambda_0, \delta_1)\bigcap
-\MCR_1$, we have
-$$
-|z(\lambda) - z(\lambda_0)| \leq |z(\lambda) - z_k(\lambda)| +
-|z_k(\lambda) - z_k(\lambda_0)| + |z_k(\lambda_0) - z(\lambda_0)| <
-\frac{\varepsilon}{3} + \frac{\varepsilon}{3} +
-\frac{\varepsilon}{3} = \varepsilon
-$$
-by (\ref{ineq:abs_zk-z_1}) and (\ref{ineq:abs_zk-z_2}). That is,
-$z(\lambda)$ is continuous at $\lambda = \lambda_0$. The
-arbitrariness of $\lambda_0$ completes the proof of Step 3.
-
-
-Step 4. This is the last step of the proof.
-
-By Step 2, $z(\lambda)$ is analytic in $\Int(\MCR_1)$ and it is
-located in a single-valued branch of $p$th root function. Since
-$z_k(1) \equiv 1$ for all $k$ implies $z(1) = 1$, we have that
-$z(\lambda)$ located in the single-valued branch containing 1. That
-is, $z(\lambda)$ is the principal $p$th root of each $\lambda$ in
-$\Int(\MCR_1)$. Since $z(\lambda) \to z(\lambda_0)$ as $\lambda \to
-\lambda_0 \ (\lambda \in \Int(\MCR_1))$ for each $\lambda_0 \in
-\partial\MCR_1$ by Step 3, we get $z(\lambda_0)$ is also the principal $p$th
-root of $\lambda_0 \in \partial\MCR_1$.
-
-By now, we have proved that $z(\lambda)$ is the principal $p$th root
-of each $\lambda \in \MCR_1$ except $\lambda = 0$. When $\lambda =
-0$, we have by (\ref{it:EM}) that
-$$
-z_k(0) = \frac{2p^2 - 3p + 1}{2p^2} z_{k-1}(0) = \left(\frac{2p^2 -
-3p + 1}{2p^2}\right)^k z_0, \ \ k = 0, 1, 2, \ldots.
-$$
-So, $\{z_k(0)\}$ converges to 0, the principal $p$th root of 0,
-linearly. Therefore, $z(\lambda)$ is the principal $p$th root of
-each $\lambda \in \MCR_1$.
-
-By Step 2 again, $z(\lambda)$ is analytic and locates in a
-single-valued branch of $p$th root function for each $\lambda \in
-\MCR_2$. Now, we can see that, if we can show $\MCR_2$ contains some
-part of $\partial\MCR_1$, then the single-valued branch of
-$z(\lambda)$ for $\lambda \in \MCR_2$ is the same branch of
-$z(\lambda)$ for $\lambda \in \MCR_1$, which deduces that
-$z(\lambda)$ is the principle $p$th root of $\lambda \in \MCR_1
-\bigcup\MCR_2$. So, what we need to do is to prove $\MCR_2$ contains
-some part of $\partial\MCR_1$.
-
-Set $\lambda_0 = z_0^p$ and define
-$$
-S_m(z_0,\lambda) := \sum\limits_{j=3}^m c_jr^{j-1}(z_0,\lambda), \ \
-\ S_\infty(z_0,\lambda) := \sum\limits_{j=3}^\infty
-c_jr^{j-1}(z_0,\lambda), \ \ \ m \geq 3, \lambda \in \partial\MCR_1.
-$$
-Clearly, $S_\infty(z_0,\lambda)$ is continuous with respect to
-$\lambda$ on $\partial\MCR_1$ and
-\begin{equation}
-\label{ineq:S(z0,lambda0)} 0 = \left|S_\infty(z_0,\lambda_0)\right|
-= \min_{\lambda \in
-\partial\MCR_1}\left|S_\infty(z_0,\lambda)\right| \leq
-\left|S_\infty(z_0,\lambda)\right| \leq 1, \ \ \ \forall \ \lambda
-\in
-\partial\MCR_1.
-\end{equation}
-Since $|S_m(z_0,\lambda)|<1$ holds for all $\lambda \in
-\MCR_1\bigcup\MCR_2$, we can choose $M < 1$ be a real satisfying
-$$
-\sup_{m\geq3}\left|S_m(z_0,\lambda)\right| < M, \ \ \ \lambda \in
-\partial\MCR_1.
-$$
-By (\ref{ineq:S(z0,lambda0)}), there is $\delta > 0$ such that once
-$|\lambda - \lambda_0| < \delta$, then
-$$
- \left|S_\infty(z_0,\lambda)\right| <
- \frac{\frac{1}{M}-1}{\frac{1}{M} + 1},
-$$
-or equivalently,
-$$
-q_2(z_0,\lambda) = \sup_{m\geq 3}|S_m(z_0,\lambda)|\cdot
-\frac{1+|S_\infty(z_0,\lambda)|}{1-|S_\infty(z_0,\lambda)|} < M
-\cdot \frac{1}{M} = 1.
-$$
-Therefore, $\MCR_2$ contains some part of $\partial\MCR_1$. The
-proof is completed.
-\end{proof}
-
-
-
-\begin{corollary}
-\label{cor:zk_convergence1} For any $\lambda \in \MCR$ defined in
-$(\ref{set:R})$, the sequence $\{z_k(\lambda)\}$ generated by scalar
-Euler iteration $(\ref{it:EM})$ with $z_0 = 1$ for solving
-$(\ref{fun:f(z)})$ converges to the principal $p$th root
-$\lambda^{1/p}$. Moreover, if $\lambda \neq 0$, then the convergence
-order is $3$.
-\end{corollary}
-
-
-
-
-\begin{lemma}
-\label{lem:R(E(X))_R(X)} Let $X \in \CS^{n\times n}$ be a
-nonsingular matrix commuting with $A$ and $R(X)$ be defined in
-$(\ref{fun:R(X)})$. If the spectrum $\sigma(R(X)) \subset \mathcal
-{D}_0$ for some nonsingular matrix $X \in \CS^{n \times n}$, where
-$\mathcal {D}_0$ is defined in $(\ref{set:D0})$, then $E(X)$
-generated by $(\ref{it:EM_fun})$ is nonsingular, commutes with $A$
-and
-\begin{equation}
-\label{eq:r(E(X))} R(E(X)) = \I - \left[\I - \frac{1}{p} R(X) -
-\frac{1}{2}\left(\frac{1}{p} -
-\frac{1}{p^2}\right)R^2(X)\right]^{-p}\cdot(\I - R(X)) = \phi(R(X)).
-\end{equation}
-\end{lemma}
-
-\begin{proof}
-Clearly, $E(X)$ given by (\ref{it:EM_fun}) exists for any
-nonsingular matrix $X \in \CS^{n \times n}$. Since $\sigma(R(X))
-\subset \mathcal {D}_0\backslash\{0\}$, we get
-\begin{align*}
-\rho\left(\frac{1}{p} R(X) + \frac{1}{2}\left(\frac{1}{p} -
-\frac{1}{p^2}\right)R^2(X)\right) & \leq \frac{1}{p}\cdot\rho(R(X))
-+
-\frac{1}{2}\left(\frac{1}{p} - \frac{1}{p^2}\right)\rho^2(R(X)) \\
-& = \frac{1}{p} \cdot
-\rho(R(X)) \cdot \left(1 + \frac{p-1}{2p}\rho(R(X))\right) \\
-& < \frac{1}{p} \cdot \frac{p}{p-1} \left(\sqrt{2p-1} - 1\right)
-\cdot \left(1 + \frac{\sqrt{2p-1} - 1}{2} \right) \\
-& = 1.
-\end{align*}
-Here, the first inequality follows from $\frac{1}{p} R(X) +
-\frac{1}{2}(\frac{1}{p} - \frac{1}{p^2})R^2(X)$ is a polynomial of
-the matrix $R(X)$. So
-$$
-\I - \frac{1}{p} R(X) - \frac{1}{2}\left(\frac{1}{p} -
-\frac{1}{p^2}\right)R^2(X)
-$$
-is nonsingular by Neumann Lemma. It follows that
-\begin{align*}
-E(X) & = \frac{1}{2p^2} X \left[(2 p^2 - 3 p + 1)\I + 2(2 p - 1)
-AX^{-p} - (p - 1)(AX)^2\right] \\
-& = X \left[\frac{2p^2 - 3p + 1}{2p^2}\I + \frac{2p -
-1}{p^2}(\I - R(X)) - \frac{p - 1}{2p^2}(1 - R(X))^2\right] \\
-& = X \left[\I - \frac{1}{p} R(X) - \frac{1}{2}\left(\frac{1}{p} -
-\frac{1}{p^2}\right)R^2(X)\right]
-\end{align*}
-is also nonsingular and commutes with $A$, and
-\begin{equation*}
-R(E(X)) = \I - \left[\I - \frac{1}{p} R(X) -
-\frac{1}{2}\left(\frac{1}{p} -
-\frac{1}{p^2}\right)R^2(X)\right]^{-p}\cdot(\I - R(X)) = \phi(R(X))
-\end{equation*}
-by the assumption of $X$ commutes with $A$. This completes the
-proof.
-\end{proof}
-
-
-
-Thanks to Lemma \ref{lem:R(E(X))_R(X)}, we have
-
-\begin{corollary}
-\label{cor:E(Xk)} If $X_0 \in \CS^{n \times n}$ commutes with $A$
-and  the spectrum $\sigma(R(X_0)) \subset \mathcal {D}_0$, where
-$\mathcal {D}_0$ is defined in $(\ref{set:D0})$, then the sequence
-$\{X_k\}$ starting from $X_0$ generated by Euler's method
-$(\ref{it:EM})$ for solving $(\ref{eq:f(X)=0})$ exists.
-\end{corollary}
-
-
-
-
-\begin{proof}
-It follows from Lemma \ref{lem:R(E(X))_R(X)} that $R(E(X))$ exists.
-Since the spectrum $\sigma(R(X)) \subset \mathcal {D}_1$, the
-spectral radius of $R(X)$ is less than 1. So, there is a
-sub-multiplicative matrix norm $\|\cdot\|$ such that $\|R(X)\| < 1$.
-Note that, for any $u \in (0,1)$,  It follows from Lemma
-\ref{lem:RatFunTayExp} that
-$$
-\frac{\phi(u)}{u^3} = \sum_{j=3}^\infty c_j u^{j-3} <
-\sum_{j=3}^\infty c_j = 1.
-$$
-Thus, this together with (\ref{eq:r(E(X))}) gives that
-\begin{equation*}
-\|R(E(X))\|  = \|\phi(R(X))\| \leq \phi(\|R(X)\|) =
-\frac{\phi(\|R(X)\|)}{\|R(X)\|^3}\|R(X)\|^3 < \|R(X)\|^3,
-\end{equation*}
-which shows (\ref{ineq:norm_R(E(X))_1}). The proof is completed.
-\end{proof}
-
-
-
-\begin{lemma}
-\label{lem:R(X)_convergence1} Let $R(X)$  be defined in
-$(\ref{fun:R(X)})$. Suppose the spectrum $\sigma(R(X_0)) \subset
-\mathcal {D}_1\backslash\{0\}$ for some nonsingular matrix $X_0 \in
-\CS^{n \times n}$ and that $\|R(X_0)\| < 1$ for a sub-multiplicative
-matrix norm $\|\cdot\|$, where $\mathcal {D}_1$ is defined in
-$(\ref{set:D1})$. Let $\{X_k\}$ be the sequence  starting from $X_0$
-generated by Euler's method $(\ref{it:EM})$ for solving
-$(\ref{eq:f(X)=0})$. Then we have
-\begin{equation}
-\label{ineq:norm_R(Xk)_1} \|R(X_k)\| \leq q^{3^k-1}(X_0) \cdot
-\|R(X_0)\|, \ \ \ k = 1, 2, \ldots,
-\end{equation}
-where
-\begin{equation}
-\label{cons:q(X0)} q(X_0) :=
-\sqrt{\frac{\phi(\|R(X_0)\|)}{\|R(X_0)\|}} < 1
-\end{equation}
-and $\phi$ is defined by $(\ref{fun:phi(z)})$.
-\end{lemma}
-
-\begin{proof}
-For $X_0$ chosen, by (\ref{ineq:norm_R(E(X))_1}) in Lemma
-\ref{lem:norm_R(E(X))_R(X)}, we have
-$$
-\|R(X_1)\| \leq \frac{\phi(\|R(X_0)\|)}{\|R(X_0)\|^3} \|R(X_0)\|^3 =
-q^2(X_0) \cdot \|R(X_0)\|.
-$$
-If (\ref{ineq:norm_R(Xk)_1}) holds for some $k \geq 1$, then by
-Lemma \ref{lem:norm_R(E(X))_R(X)} again, one has that
-\begin{align*}
-\|R(X_{k+1})\| & \leq
-\frac{\phi(\|R(X_k)\|)}{\|R(X_k)\|^3}\|R(X_k)\|^3\\
-& \leq \frac{\phi(\|R(X_0)\|)}{\|R(X_0)\|^3}
-\left[q^{3^k-1}(X_0)\right]^3 \cdot \|R(X_0)\|^3\\
-& = [q(X_0)]^{3^{k+1}-1}\cdot\|R(X_0)\|.
-\end{align*}
-Thus, by induction, (\ref{ineq:norm_R(Xk)_1}) holds for all $k \geq
-1$. This completes the proof.
-\end{proof}
-
-
-
-\begin{lemma}
-\label{lem:R(X)_convergence2} Let $R(X)$  be defined in
-$(\ref{fun:R(X)})$. If the spectrum $\sigma(R(X_0)) \subset \mathcal
-{D}_2 \bigcap \mathcal {D}_0\backslash\{0\}$ for some nonsingular
-matrix $X_0 \in \CS^{n \times n}$, where $\mathcal {D}_0$ and
-$\mathcal {D}_2$ are defined in $(\ref{set:D0})$ and
-$(\ref{set:D2})$, respectively. Let $\{X_k\}$ be the sequence
-starting from $X_0$ generated by Euler's method $(\ref{it:EM})$ for
-solving $(\ref{eq:f(X)=0})$. Then, there exists $\widehat{N} > 0$
-such that
-\begin{equation}
-\label{ineq:norm_R(Xk)_2} \|R(X_k)\| \leq
-[q(X_{\widehat{N}})]^{3^{k-\widehat{N}}-1} \cdot
-\|R(X_{\widehat{N}})\|, \ \ \ \forall \ k
-> \widehat{N},
-\end{equation}
-where $q(X_{\widehat{N}})$ is defined as $q(X_0)$ in
-$(\ref{cons:q(X0)})$ by substituting $X_{\widehat{N}}$ for $X_0$.
-\end{lemma}
-
-\begin{proof}
-For any $r(z_0) \in \sigma(R(X_0))$, let $\{z_k\}$ be the sequence
- generated by the scalar form of (\ref{it:EM}) starting from $z_0$. It
-follows from Lemma \ref{lem:r(z)_convergence2} that there exists $N
-> 0$ such that $|r(z_N)| < 1$. Then, we can get from Lemma
-\ref{lem:r(z)_convergence1} that
-\begin{equation*}
-\label{ineq:abs_r(zk)_3} |r(z_k)| < |r(z_N)|^{3^{k-N}}, \ \ \
-\forall \ k > N.
-\end{equation*}
-Define
-$$
-\widehat{N} := \max_{r(z_0) \in \sigma(R(X_0))} \{N: \text{choose a
-}N
-> 0 \text{ such that } |r(z_N)| < 1\}.
-$$
-Then, there exists a sub-multiplicative matrix norm $\|\cdot\|$ such
-that $\|X_{\widehat{N}}\| < 1$. Thus, (\ref{ineq:norm_R(Xk)_2})
-follows from Lemma \ref{lem:R(X)_convergence1}. This completes the
-proof.
-\end{proof}
-
-
-
-\subsection{Proof of Theorem \ref{th:MatrixEMCon}}
-
-
-
-\begin{lemma}[\cite{Higham2008}]
-
-\end{lemma}
-
-
-Now, we can prove Theorem \ref{th:MatrixEMCon} by applying the above
-lemma together with the lemmas proposed in Section 3.1.
-
-
-
-\begin{proof}[The proof of Theorem $\ref{th:MatrixEMCon}$]
-By Corollary \ref{cor:E(Xk)}, the matrix sequence $\{X_k\}$
-generated by Euler's method (\ref{it:EM}) starting from $X_0 = \I$
-is well defined when the eigenvalues of $A$ are in $\mathcal {R}
-\subset \mathcal {D}_0$. Thanks to Lemma \ref{lem:MatIteConLem},
-$\{X_k\}$ converges to the principal $p$th root of $A$ follows from
-Corollary \ref{cor:zk_convergence1}. The first part of theorem is
-completed.
-
-For the second part, let $X_* = A^{1/p}$ and $E_k = X_k - X_*$ for
-$k \geq 0$. Due to the commutativity of $X_k$ and $X_*$, we have
-\begin{align}
-R(X_k) & = \I - AX_k^{-p} = (X_k^p - X_*^p)X_k^{-p} \nonumber\\
-& = (X_k - X_*)\left(X_k^{p - 1} + X_k^{p - 2}X_* + \cdots +
-X_k X_*^{p - 2} + X_*^{p - 1}\right)X_k^{-p} \nonumber\\
-& = E_k \left(X_k^{p - 1} + X_k^{p - 2}X_* + \cdots + X_k X_*^{p -
-2} + X_*^{p - 1}\right) X_k^{-p}, \ \ \forall \ k \geq 0
-\label{eq:R(Xk)}
-\end{align}
-Set
-$$
-Y_k := \sum_{i = 1}^p X_k^{p - i} X_*^{i - 1} = X_k^{p - 1} + X_k^{p
-- 2}X_* + \cdots + X_k X_*^{p - 2} + X_*^{p - 1}.
-$$
-Since $X_k$ converges to $A^{1/p}$ and all the eigenvalues of
-$A^{1/p}$ are not in $\RS^-$, there exists nonnegative integer $N
-> 0$ such that the eigenvalues $X_k$ are not in $\RS^-$ for all $k
-\geq N$. Thus, the eigenvalues of $Y_k$ are also not in $\RS^-$ and
-so $Y_k$ is nonsingular for $k \geq N$. Then, it follows from
-(\ref{eq:R(Xk)}) that
-\begin{equation}
-\label{eq:Ek+1} E_{k + 1} = R(X_{k + 1}) X_{k + 1}^p Y_{k + 1}^{-1},
-\ \ k \geq N.
-\end{equation}
-Thanks to (\ref{ineq:norm_R(Xk)_1}) and (\ref{ineq:norm_R(Xk)_2}) in
-Lemmas \ref{lem:R(X)_convergence1} and \ref{lem:R(X)_convergence2},
-respectively, there exists  $K_0 > 0$ such that $\|R(X_{k + 1})\| <
-\|R(X_{k})\|^3$ for any $k \geq K_0$. It follows from
-(\ref{eq:R(Xk)}) and (\ref{eq:Ek+1}) that
-\begin{align}
-\|E_{k + 1}\| & \leq \|R(X_{k + 1})\| \|X_{k + 1}\|^p \|Y_{k + 1}^{-1}\| \nonumber\\
-& <  \|R(X_k)\|^3 \|X_{k + 1}\|^p \|Y_{k + 1}^{-1}\| \nonumber\\
-& \leq \left(\|X_k^{-1}\|^p\|X_{k + 1}\|^p \|Y_k\|\|Y_{k +
-1}^{-1}\|\right) \|E_k\|^3, \ \ \forall \ k \geq K_0.
-\label{ineq_norm_Ek+1}
-\end{align}
-Thus $\{X_k\}$ is convergent guarantees that $\|X_k^{-1}\|^p\|X_{k +
-1}\|^p \|Y_k\|\|Y_{k + 1}^{-1}\|$ is bounded for all $k \geq K_0$.
-(\ref{ineq_norm_Ek+1}) concludes that the local convergence order is
-3. This completes the proof.
-\end{proof}
-
-
-
-
-\section{A Preconditioned Schur Modification}
-
-
-
-
-
-\begin{algorithm}
-\floatname{algorithm}{算法}
-\caption{Schur-Euler algorithm using
-(\ref{it:CoupledEM}) for computing $A^{1/p}$} \label{al:SE} Given $A
-\in \CS^{n \times n}$ with no nonpositive real eigenvalues, an
-integer $p = 2^{k_0}q$ with $k_0 \geq 0$ and $q$ odd. This algorithm
-computes $A^{1/p}$ via a Schur decomposition and Euler iteration.
-%\newcounter{newlist}
-\begin{list}{\arabic{newlist}.}{\usecounter{newlist}
-\setlength{\rightmargin}{0em}\setlength{\leftmargin}{1.2em}}
-\item
-Compute the Schur decomposition of $A = QRQ^*$;
-\item
-If $q = 1$, then $k_1 = k_0$; else choose the smallest $k_1 \geq
-k_0$ such that for each eigenvalue $\lambda$ of $A$,
-$\lambda^{1/2^{k_1}} \in \MCR_{\text{E}}$ defined in
-(\ref{set:R_pra});
-\item
-Compute $B = R^{1/2^{k_1}}$ by taking the square root $k_1$ times;
-if $q = 1$, then set $X = QB\tran{Q}$; else continue;
-\item
-Compute $C = B^{1/q}$ by using the coupled Euler iteration
-(\ref{it:CoupledEM}) and set $X = Q C^{2^{k_1 - k_0}} \tran{Q}$.
-\end{list}
-\end{algorithm}
-
-
-
-
-
 
 
 
