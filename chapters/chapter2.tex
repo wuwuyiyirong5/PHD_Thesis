@@ -213,26 +213,100 @@
 
 
 \section{预处理方法}
+    我们将分别对Stokes方程和Navier-Stokes方程，介绍预处理的方法。
+    \subsection{针对Stokes方程}
+        我们通过选取有限元空间基函数对\eqref{eq::weak_form_stokes}进行离散，可以得到一个线性方程租，我们定义这个线性方程组的
+        系数矩阵为：
+        \begin{equation}
+            K = \left[
+                \begin{array}{ll}
+                 \vec{A} & B^T\\
+                 B & -C
+                \end{array}
+                \right]
+        \end{equation}
+        其中如果用满足LBB条件的混合元做近似，则 $C = 0$。因为本文中我们选取的是满足LBB条件的$4P1-P1$元，所以我们下面均考虑 $C = 0$ 的情形。令 $\vec{v}_h \in X_h$ 和 $q_h \in P_h$，$X_h$ 和 $P_h$ 是在第一节中提到的有限元空间。我们先来定义 $\vec{v}_h, q_h$ 的范数：
+        \begin{align}
+            ||\nabla \vec{v}_h|| := <\vec{A}\vec{v}, \vec{v}>^{1/2}, \\
+            ||q_h|| := <Qq, q>^{1/2}.
+            \label{eq::norm}
+        \end{align}
+        其中$\vec{v}$ 和 $\vec{q}$ 是速度和压力变量在基函数$\{\vec{\phi}_j \}_{j = 1}^{n_u}$ 和 $\{\vec{\psi}_k \}_{k = 1}^{n_p}$ 下的系数。这里的 $\vec{A}$ 是离散的向量形式的刚度矩阵：
+        \begin{eqnarray}
+            \vec{A} = [a_{ij}], \quad a_ij = \int_\Omega \nabla \vec{\phi}_i : \nabla \vec{\phi}_j, \qquad i,j = 1, \cdots, n_u 
+        \end{eqnarray}
+        并且 $Q$ 是压力质量矩阵：
+        \begin{equation}
+            Q = [q_{kl}],\quad q_{kl} = \int_\Omega \psi_k \psi_l, \qquad k,l = 1, \cdots, n_p.
+        \end{equation}
+        我们用标准的分量形式的向量基函数，在二维问题情形中
+        \begin{equation}
+            <\vec{A}\vec{v}, \vec{v}> \equiv <A\vec{v}_x, \vec{v}_x> + <A\vec{v}_y, \vec{v}_y>,
+        \end{equation}
+        其中 $A$ 是 $n \times n$ 的拉普拉斯矩阵。
+        我们称矩阵 $B \vec{A}^{-1} B^T$ 为压力Schur补。我们考虑$Q^{-1}B\vec{A}^{-1}B^T$ 的特征值的范围。我们先考虑边界全部是Dirichlet边界的流体问题，我们先给出一些定义。
+        \begin{definition}
+            \label{def::min_angle_cond}对于一系列的三角网格$\{\mathcal{T}_h\}$，如果存在一个最小的角度
+            $\theta_* > 0$，使得$\mathcal{T}_h$中的所有单元满足$\theta_{T} > \theta_*$，那么$\mathcal{T}_h$称作是形正则的。
+        \end{definition}
+        \begin{proposition}
+            \label{pro::bound_mass} 对于$\mathbb{R}^2$ 空间中的具有形正则性质的一个剖分，$\vec{P}_1$是建立在这个剖分上的一个近似，那么质量矩阵$Q$以如下的形式近似
+            数量单位矩阵:
+            \begin{equation}
+                c\uline{h}^2 \leq \frac{<Q\vec{v}, \vec{v}>}{<\vec{v}, \vec{v}>} \leq Ch^2
+                \label{eq::bound_mass}
+            \end{equation}
+            对所有的$\vec{v} \in \mathbb{R}^n$。这里$\uline{h} = \min_{\bigtriangleup_k \in \mathcal{T}_h} h_k$ 并且 $h = \max_{\bigtriangleup_k \in \mathcal{T}_h} h_k$。常数$c$ 和 $C$ 都是跟$\uline{h}$ 和 $h$ 无关的。
+        \end{proposition}
+        对于$\mathcal{R}^2$空间的一个拟一致剖分，并且它的单元都是形正则的，那么界限 \eqref{eq::bound_mass} 可以简化为:
+        \begin{equation}
+            c h^2 \leq \frac{<Q \vec{v}, \vec{v}>}{<\vec{v}, \vec{v}>} \leq C h^2 \quad \mbox{对所有的} \vec{v} \in \mathbb{R}^n.
+            \label{eq::bound_mass_simpify}
+        \end{equation}
+        
+        \begin{definition}[拟一致剖分]
+            \label{theo_quasi_uni_subd}对于一系列的三角网格$\{\mathcal{T}_h\}$，如果存在着一个常读$\rho > 0$ 使得对于$\{\mathcal{T}_h\}$中的每一个网格，都有 $\uline{h} \geq \rho h$，那么我们就称 $\{\mathcal{T}_h\}$ 是拟一致的。
+        \end{definition}
+        
+        \begin{theorem}
+            \label{theo_mass_spectrual_eq} 对于 $\partial \Omega = \partial \Omega_D$ 的流体问题，用满足LBB的混合元近似并且 $\mathbb{R}^2$上的拟一致的剖分是形正则的，则
+            压力Schur补矩阵$B \vec{A}^{-1} B^T$ 谱等价于压力质量矩阵$Q$:
+            \begin{equation}
+                \gamma^2 \leq \frac{(B \vec{A}^{-1} B^T \vec{q}, \vec{q})}{Q\vec{q},\vec{q}} \quad \mbox{对所有的} \vec{q} \in \mathbb{R}^{n_p} \mbox{使得} \vec{q} \neq \vec{1}.
+            \end{equation}
+            inf-sup 常量$\gamma$ 被限制在$0$以外，并且跟网格尺度$h$无关。并且有效的条件数满足
+            \begin{equation}
+                \kappa(B\vec{A}^{-1}B^T) \leq C/(c\gamma^2),
+            \end{equation}
+            其中$c$ 和 $C$ 是\eqref{eq::bound_mass_simpify}中的常数。  
+        \end{theorem}
+        
+        \begin{proof}
+            我们先来证明下界。离散inf-sup稳定性条件的代数表示：
+            \begin{equation}
+                \gamma \leq \min_{q_h \neq \mbox{constant}} \max_{\vec{v}_h \neq \vec{0}} \frac{|(q_h, \nabla \cdot \vec{v}_h)|}{||\nabla \vec{v}_h|| ||q_h||}.
+            \end{equation}
+            特别的，运用\eqref{eq::norm}中的矩阵范数，并且有$|(q_h, \nabla \cdot \vec{v}_h)| = (q, B\vec{v})$, 我们有：
+            \begin{align}
+                \gamma & \leq  \min_{\vec{q} \neq \vec{1}} \max_{\vec{v} \neq \vec{0}} \frac{|<q, B\vec{v}>|}{<\vec{A}\vec{v}, \vec{v}>^{1/2} <Q\vec{q}, \vec{q}>^{1/2}} &\\  \notag
+                & =  \min_{\vec{q} \neq \vec{1}} \frac{1}{<Q\vec{q}, \vec{q}>^{1/2}} \max_{\vec{w} = \vec{A}^{1/2}\vec{v} \neq \vec{0}} \frac{|<\vec{q}, B \vec{A}^{-1/2} \vec{w}>|}{<\vec{w}, \vec{w}^{1/2}>} &\\ \notag
+                & =  \min_{\vec{q} \neq \vec{1}} \frac{1}{<Q\vec{q}, \vec{q}>^{1/2}} \max_{\vec{w} \neq \vec{0}} \frac{|<\vec{A}^{-1/2}B^Tq, \vec{w}>|}{<\vec{w}, \vec{w}>^{1/2}} &\\ \notag
+                & =  \min_{\vec{q} \neq \vec{1}} \frac{<\vec{A}^{-1/2}B^Tq, \vec{A}^{-1/2}B^Tq>^{1/2}}{<Q\vec{q}, \vec{q}>^{1/2}} &\\ \notag
+                & = \min_{\vec{q} \neq \vec{1}} \frac{<B \vec{A}^{-1}B^T\vec{q}, \vec{q}>}{<Q\vec{q}, \vec{q}>^{1/2}}&
+            \end{align}
+        \end{proof}
 
+        \begin{eqnarray}
+        \end{eqnarray}
 
+        \begin{equation}
+        \end{equation}
 
 
 \begin{figure}[h!]
 \centering
 \subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_ConvReg_p25m20.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_ConvReg_p25m100.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_ConvReg_p25m500.eps}}\\
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_ConvReg_p100m20.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_ConvReg_p100m100.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_ConvReg_p100m500.eps}}\\
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_ConvReg_p400m20.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_ConvReg_p400m100.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_ConvReg_p400m500.eps}}\\
-%\caption{The approximating regions of $\MCR_1$ defined in
-%(\ref{set:R_NM}) for $p = 25, 100, 400$ and $m = 20, 100, 500$,
-%where the red and blue regions denote the sets $\{z\in\CS: 1-z \in
-%\overline{\MCD}_1\}$ and $\{z\in \CS: 1-z \in \MCD_{0,1} \bigcap
-%\MCD_{2,1}\}$, respectively. }
+
 \caption{由~(\ref{set:R_NM})~给出的~$\MCR_1$~在九种不同情形~($p$~分别取~25,
 100, 400~及~$m$~分别取~20, 100, 500)~下的近似域,
 其中红色域表示集合~$\{z\in\CS: 1-z \in \overline{\MCD}_1\}$},
@@ -244,51 +318,6 @@
 
 
 \section{预备引理}
-
-
-\begin{align*}
-|r(E(z),\lambda)|  & \leq \sup_{m \geq 2} \left\{\left|\sum_{j=2}^m
-c_{1,j} u^{j-2}\right|\right\} \cdot \left|1 -
-\frac{r(z,\lambda)}{u}\right| \cdot
-\sum_{m=2}^\infty \left|\frac{r(z,\lambda)}{u}\right|^{m-2}\cdot |r(z,\lambda)|^2 \\
-& = \sup_{m \geq 2}
-\left\{\left|\frac{S_{1,m}(u)}{u^2}\right|\right\} \cdot
-\frac{\left|1 - \frac{r(z,\lambda)}{u}\right|}{1 -
-\left|\frac{r(z,\lambda)}{u}\right|} \cdot |r(z,\lambda)|^2 \\
-& = \sup_{m \geq 2}
-\left\{\left|\frac{S_{1,m}(u)}{u^2}\right|\right\} \cdot \frac{|u| +
-|r(z,\lambda)|}{|u| - \left|r(z,\lambda)\right|} \cdot
-|r(z,\lambda)|^2.
-\end{align*}
-
-
-
-
-\begin{align*}
-|r(z_{k+1},\lambda)| & = |\phi(r(z_k,\lambda))| \\
-& \leq \sup_{m \geq 2}
-\left\{\frac{|S_{1,m}(r(z_0,\lambda))|}{|r(z_0,\lambda)|^2}\right\}\cdot
-\frac{|r(z_0,\lambda)|
-+|\phi_1(r(z_0,\lambda))|}{\Big||r(z_0,\lambda)| -
-|\phi(r(z_0,\lambda))|\Big|} \cdot |r(z_k,\lambda)|^2 \\
-& \leq \sup_{m \geq 2}
-\left\{\frac{|S_{1,m}(r(z_0,\lambda))|}{|r(z_0,\lambda)|^2}\right\}\cdot
-\frac{|r(z_0,\lambda)|
-+|\phi_1(r(z_0,\lambda))|}{\Big||r(z_0,\lambda)| -
-|\phi_1(r(z_0,\lambda))|\Big|}
-\left[q_2^{2^k-1}(z_0)\right]^2\cdot|r(z_0,\lambda)|^2 \\
-& = \sup_{m \geq 2}
-\left\{\frac{|S_{1,m}(r(z_0,\lambda))|}{|r(z_0,\lambda)|}\right\}\cdot
-\frac{|r(z_0,\lambda)|
-+|\phi_1(r(z_0,\lambda))|}{\Big||r(z_0,\lambda)| -
-|\phi_1(r(z_0,\lambda))|\Big|} \cdot [q_2(z_0)]^{2^{k+1}-2} \cdot
-|r(z_0,\lambda)| \\
-& = [q_2(z_0)]^{2^{k+1}-1} \cdot |r(z_0)|,
-\end{align*}
-%which shows (\ref{ineq:NM_abs_r(zk)_2}) by induction. The proof is
-%completed.
-由此, 根据归纳法知~(\ref{ineq:NM_abs_r(zk)_2})~得证. 证完.
-
 
 
 
@@ -325,37 +354,12 @@ C^{2^{k_1 - k_0}} \tran{Q}$.
 \end{list}
 \end{algorithm}
 
-\begin{remark}
-
-\begin{align}
-\MCD_3 & := \{z \in \CS: 1-z \in \overline{\MCD}_1 \},\label{set:D3}\\
-\MCD_4 & := \left\{
-\begin{array}{ll}
-\displaystyle \left\{z\in\CS:
-\left|\frac{8}{5}-z\right|<\frac{6}{5}\right\},
-& p=2,3,4,\\
-\displaystyle \left\{z\in\CS: |\arg(z)|<\frac{\pi}{6},
-\left|\frac{5p-13}{4(p-3)} - z\right| <
-\frac{43p-105}{48(p-3)}\right\}, & p\geq5. \nonumber
-\end{array}
-\right.
-\end{align}
-\end{remark}
 
 
 \begin{figure}[h!]
 \centering
 \subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_PraConvReg_p3m20.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_PraConvReg_p5m20.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_PraConvReg_p11m20.eps}}\\
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_PraConvReg_p20m20.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_PraConvReg_p50m20.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_PraConvReg_p100m20.eps}}\\
-\caption{For fixed $m=20$ and $p=2,5,11,20,50,100$, the actual
-convergence regions $\MCR_1$ defined in (\ref{set:R_NM}) (the union
-of the red and blue parts) and the approximate convergence regions
-$\MCR_1^{\text{N}}$ defined in (\ref{set:R_N_pra}) (the yellow
-parts).}\label{fig:NM_PraConvReg}
+
 \end{figure}
 
 

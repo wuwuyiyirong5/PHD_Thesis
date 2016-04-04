@@ -176,7 +176,7 @@
         \end{equation}
         但由于流函数形式(\ref{eq::stream_line})在三维空间没有一般形式，所以流函数形式只在二维。我们还是研究(\ref{eq::NS_system})中的原始
         变量形式。
-    \subsection{Weak formulation}
+    \subsection{弱形式}
         我们定义解和检验空间如下：
         \begin{eqnarray}
             \mathbf{H}_E^1 & := & \left\{ \vec{u} \in \mathcal{H}^1(\Omega)^d \big|
@@ -381,47 +381,104 @@
      \caption{左: $p$ 单元; 右: 与压力单元对应的4个速度$v$单元 }
      \label{fig::matrix_assemble}
    \end{figure}
+   \section{预处理策略}
+      在我们的求解Navier-Stokes方程的算法中，我们用稳态的Stokes方程的解作为初始值，因此在这一部分中，我们考虑针对
+      Stokes 方程的预处理方法。我们写出\eqref{eq::stokes}的$4P1-P1$近似的离散弱形式：寻找 $(\vec{u}_h, p_h) \in X_E^h \times P_h$
+      使得
+       \begin{equation}
+         \begin{aligned}
+           \nu \int_\Omega \nabla \vec{u}_h : \nabla \vec{v}_h  
+           - \int_\Omega p_h \left( \nabla \cdot \vec{v}_h
+           \right) & = \int_\Omega \vec{f} \cdot \vec{v}_h, \quad
+           \forall \vec{v}_h \in \mathbf{X}_0^h,&  \\
+           \int_\Omega q_h \left( \nabla \cdot \vec{u}_h \right) & = 0,
+           \quad \forall q_h \in P^h.&
+           \label{eq::discreted_weak_stokes}
+         \end{aligned}
+       \end{equation}
+      同样的，令 $\{\phi_j \}_{j = 1}^n$ 和 $\{\psi_k\}_{k = 1}^m$ 分别为 $X_E^h$ 和$\times P_h$的基函数。则数值解
+      $\vec{u}_h^{(n + 1)} = (u_{xh}^{(n + 1)}, u_{yh}^{(n + 1)}), p_h$ 可以写成如下形式：
+      \begin{equation}
+         u_{xh}^{(n + 1)} = \sum_{j = 1}^n u_j \phi_j, \quad u_{yh}^{(n +
+         1)} = \sum_{j = 1}^n v_j \phi_j, \quad p_h^{(n + 1)} = \sum_{k
+         = 1}^m p_k \psi_k \notag
+      \end{equation}
+      将$u_{xh}^{(n + 1)}, u_{yh}^{(n + 1)}, p_h^{(n + 1)}$带入离散弱形式
+      (\ref{eq::time_discreted_weak}) 中，可以
+      得到线性方程组
+       \begin{equation}
+         \left[
+           \begin{array}{lll}
+             \nu A & 0 & B_x^T \\
+             0 & \nu A  & B_y^T \\
+             B_x & B_y & 0
+           \end{array}
+         \right]
+         \left[
+           \begin{array}{c}
+              u_x \\
+              u_y \\
+              p
+           \end{array}
+         \right] =
+         \left[
+           \begin{array}{c}
+             \hat{f}_x \\
+             \hat{f}_y \\
+             \hat{g}
+           \end{array}
+         \right],
+         \label{eq::linear_system_stokes}
+       \end{equation}
+     为简便起见，我们令(\ref{eq::linear_system_stokes})中的右端项分别取为
+     $\hat{f}_x = 0, \hat{f}_y = 0, \hat{g} = 0$。我们选用MINRES(极小化残差方法)来求解\eqref{eq::linear_system_stokes}，通常情况下，
+     我们要为MINRES选择一个有效的预处理子。在\cite{elman2005finite}中，提出压力空间的质量矩阵:
+     \begin{equation}
+        Q  =  [Q_{ij}], \quad q_{ij} = \int_\Omega \nabla \psi_i \cdot \nabla \psi_j  \notag 
+     \end{equation}
+     可以作为schur补$S = B_x A^{-1} B_x^T + B_y A^{-1} B_y^T$的近似矩阵。在实际的计算中，压力质量矩阵的对角阵$\hat{Q} = diag(Q)$，就能
+     有比较好的效果。因此，我们选取对角块矩阵$K$
+       \begin{equation}
+         K = \left[
+               \begin{array}{lll}
+                 \nu A & 0 & 0 \\
+                 0 & \nu A  & 0 \\
+                 0 & 0 & \hat{Q}
+               \end{array}
+             \right]
+       \end{equation}
+       作为(\eqref{eq::linear_system_stokes})的系数矩阵$M$的近似。
+       \begin{equation}
+         M = \left[
+               \begin{array}{lll}
+                 \nu A & 0 & B_x^T \\
+                 0 & \nu A  & B_y^T \\
+                 B_x & B_y & 0
+               \end{array}
+             \right],
+       \end{equation}
+   在预处理过程中，我们需要对矩阵$K$求逆，即完成 $V_{dst} = K^{-1} V_{src}$的操作，
+   其中$V_{dst}, V_{src}$ 分别为
+   \begin{equation}
+      V_{dst} = (V_{dst}^x, V_{dst}^y, V_{dst}^p)^T,\quad V_{src} = (V_{src}^x, V_{src}^y, V_{src}^p)^T.
+   \end{equation}
+   我们不是直接求解 $V_{dst} = K^{-1} V_{src}$，而是把$K$分成三个对角块 $(0, 0)$，$(1, 1)$ 和 $(2, 2)$块，
+   然后每个块进行单独求解。我们用应用在possion问题的代数多重网格求解器来求解
+   \begin{eqnarray}
+      \nu A V_{des}^x = V_{src}^x, \notag \\
+      \nu A V_{des}^y = V_{src}^y. \notag
+   \end{eqnarray}
+   对于 $(2, 2)$ 块，
+   \begin{equation}
+      V_{dst}^p = \frac{V_{src}^p}{diag(\hat{Q})}
+   \end{equation}
+   那么我们就得到了$V_{dst}$。
+
+\section{移动网格策略}
 
    我们主要的想法是有两套网格，速度网格和压力网格，速度网格可以由压力
    网格加密一次得到。因此我们对压力网格进行移动，然后对移动完的压力网
    格全局加密一次，即可实现对速度网格的同步移动。
-   为了更好的说明我们的数值方法，我们将算法的流程图如Algorithm(\ref{alg::solve})所示.
-   \begin{algorithm}
-     \caption{移动网格方法来求解Navier Stokes方程}
-     \begin{algorithmic}[1]
-       \State 在初始速度网格$\triangle_v^{(0)}$和压力网格
-       $\triangle_p^{(0)}$上，求解$t = t_n$时刻Stokes方程(\ref{eq::stokes}), 获
-       得数值解$\vec{u}_h^{(0)}, p_h^{(0)}$.
-       \While {$t_n < T$}
-             \State 在压力网格$\triangle_p^{(n)}$上，用$\vec{u}_h^{(n)},
-                    p_h^{(n)}$来计算控制函数, 并通过求解
-                    (\ref{eq::logical}), 获得$\vec{\xi}^*$. \label{state::monitor}
-             \State 判断$\parallel \vec{\xi}^* -
-                    \vec{\xi}^{(0)} \parallel_{L^2}$ 是否小于容忍量
-                    $\epsilon$, 如果是迭代结束，否则，继续做
-                    \ref{state::start} - \ref{state::end}.
-             \State 用$\vec{\xi}^* - \vec{\xi}^{(0)}$两者之差来计算
-                    网格$\triangle_p^{(n)}$的移动量$\delta \vec{x}$.
-                    \label{state::start}
-             \State 利用\ref{state::start}中$\delta \vec{x}$, 在速度网格
-                    $\triangle_v^{(n)}$上求解更新数值解的方程
-                    (\ref{eq::continous_update}), 得到新网格上的中间量
-                    $\vec{u}_{h, *}^{(n)}, p_{h, *}^{(n)}$.
-             \State 更新$\triangle_p^{(n)}$, 通过几何遗传树结构，来
-                    同步$\triangle_v^{(n)}$, 得到新的$\triangle_p^{(n
-                    + 1)}$和$\triangle_v^{(n + 1)}$
-             \State 回到\ref{state::monitor}. \label{state::end}
-             \State 在$\triangle_v^{(n + 1)}$和$\triangle_p^{(n + 1)}$
-                    上求解Navier-Stokes方程
-                    (\ref{eq::linear_system}).从而真正获得$t = t_{n +
-                      1}$时刻的数值解$\vec{u}_h^{(n + 1)}, p_h^{(n +
-                      1)}$.
-             \State $n = n + 1$
-        \EndWhile
-     \end{algorithmic}
-     \label{alg::solve}
-   \end{algorithm}
-\section{移动网格策略}
 
    在 $t = t_{n + 1}$ 时刻， 用上一章的方法可以得到有限元解
    $(\vec{u}_h^{(n + 1)}, p_h^{(n + 1)})$. 下面的问题是如何用新的数值
@@ -679,6 +736,43 @@
       *}^{(n)}$是在新的网格上$t = t_{n + 1}$时刻更新的解。但这组解不能
     当作外部Navier-Stokes方程的解。需要在新网格上重新求解Navier-Stokes
     方程，得到的解才是我们想要的解。
+   为了更好的说明我们的数值方法，我们将算法的流程图如Algorithm(\ref{alg::solve})所示.
+   \begin{algorithm}
+     \caption{移动网格方法来求解Navier Stokes方程}
+     \begin{algorithmic}[1]
+       \State 在初始速度网格$\triangle_v^{(0)}$和压力网格
+       $\triangle_p^{(0)}$上，求解$t = t_n$时刻Stokes方程(\ref{eq::stokes}), 获
+       得数值解$\vec{u}_h^{(0)}, p_h^{(0)}$.
+       \While {$t_n < T$}
+             \State 在压力网格$\triangle_p^{(n)}$上，用$\vec{u}_h^{(n)},
+                    p_h^{(n)}$来计算控制函数, 并通过求解
+                    (\ref{eq::logical}), 获得$\vec{\xi}^*$. \label{state::monitor}
+             \State 判断$\parallel \vec{\xi}^* -
+                    \vec{\xi}^{(0)} \parallel_{L^2}$ 是否小于容忍量
+                    $\epsilon$, 如果是迭代结束，否则，继续做
+                    \ref{state::start} - \ref{state::end}.
+             \State 用$\vec{\xi}^* - \vec{\xi}^{(0)}$两者之差来计算
+                    网格$\triangle_p^{(n)}$的移动量$\delta \vec{x}$.
+                    \label{state::start}
+             \State 利用\ref{state::start}中$\delta \vec{x}$, 在速度网格
+                    $\triangle_v^{(n)}$上求解更新数值解的方程
+                    (\ref{eq::continous_update}), 得到新网格上的中间量
+                    $\vec{u}_{h, *}^{(n)}, p_{h, *}^{(n)}$.
+             \State 更新$\triangle_p^{(n)}$, 通过几何遗传树结构，来
+                    同步$\triangle_v^{(n)}$, 得到新的$\triangle_p^{(n
+                    + 1)}$和$\triangle_v^{(n + 1)}$
+             \State 回到\ref{state::monitor}. \label{state::end}
+             \State 在$\triangle_v^{(n + 1)}$和$\triangle_p^{(n + 1)}$
+                    上求解Navier-Stokes方程
+                    (\ref{eq::linear_system}).从而真正获得$t = t_{n +
+                      1}$时刻的数值解$\vec{u}_h^{(n + 1)}, p_h^{(n +
+                      1)}$.
+             \State $n = n + 1$
+        \EndWhile
+     \end{algorithmic}
+     \label{alg::solve}
+   \end{algorithm}
+
     \section{数值算例}
        \subsection{Colliding Flow}
           这个例子为稳态Stokes方程的精确解，粘性系数$\nu = 1.0$:
@@ -851,7 +945,7 @@
       我们考虑\cite{zheng2010posteriori}中的算例，Navier-Stokes 流体以$Re = 1000$经过一个凹形的台阶，计算区域是
       $\Omega = (0, 4) \times (0, 1)/(1.2, 1.6) \times (0, 0.4)$，在上下边界上，设置$\vec{u} = (0, 0)^T$的边界条件。
       入流边上的边界条件为$\vec{u} = (4 y (1 - y), 0)$，出流边是自然边界条件。
-      
+
       我们选取涡量作为控制函数，控制函数的参数是 $\alpha = 0.4, \beta = 2.0$。众所周知，在这个问题中流体在凹进去的角上，
       会出现奇异性。从图\ref{fig::step_initial_mesh}中可以看出，初始的网格集中在凹进去的边上。$t = 0.5s, t = 1s \text{, and } t = 2s$
       时刻的网格以及涡量的等高线在图\ref{fig::step_flow_05s}，\ref{fig::step_flow_1s} 和 \ref{fig::step_flow_2s}中展示出
@@ -859,7 +953,7 @@
 
       $t = 2s$时，压力的等高线以及速度的流速线在图\ref{fig::step_flow_contour_streamline_2s}中给出。我们可以看出，在拐角处，压力的
       等高线是平滑的。
-      
+
       \begin{figure}[!htbp]
         \begin{center}
         \includegraphics[width = 0.55\textwidth, angle = -90]{picture/first/step_flow_data/initial_mesh40_001.eps}
@@ -914,14 +1008,14 @@
       模型。圆柱圆心是$(0, 0)$，半径是$r = 0.3$。粘性系数是 $\nu = 0.003$，计算区域是 $\Omega = [-1, 5] \times [-1, 1]$。
       Poiseuille流 $u = 1 - y^2, v = 0$ 设置在入流边界 $x = -1$。边界条件 $u = v = 0$ 施加在管道的上下边界。出流边界 $x = 5$
       是自然边界条件。
-      
+
       如果我们关注流体的细微结构，因此需要在小结构上有高分辨率。为了抓住涡的结构，在我们的移动策略中，(\ref{eq::monitor_vorticity})
       作为控制函数是一个很好的选择。具体的参数是 $\alpha$ 和 $\beta$ 分别为 $1.0$， $2.0$。
 
       在图\ref{fig::cylinder_initial_mesh} 和 图 \ref{fig::cylinder_mesh_t24_5s} 中，展示了网格和涡的等高线的变化。从中可以看出，
       我们的网格可以抓住涡的结构，并且我们的网格质量比 \cite{cao1999anr}中要好。
       当我们改变雷诺数为 $Re = 2000$ 时，从图\ref{fig::cylinder_mesh_t23s}中可以看出，网格和涡量的结构并不像 $Re = 2000/3$ 时那么明显。
-      
+
       \begin{figure}[!htbp]
         \centering
         \includegraphics[width = 0.6\textwidth, angle = -90]{picture/first/obstacle_flow_data/initial_mesh.eps}
@@ -961,14 +1055,7 @@
 \begin{figure}[p!]
 \centering
 \subfigure[]{\includegraphics[width=0.3\textwidth]{fig_EM_ConvReg_p25m20.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_EM_ConvReg_p25m100.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_EM_ConvReg_p25m500.eps}}\\
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_EM_ConvReg_p100m20.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_EM_ConvReg_p100m100.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_EM_ConvReg_p100m500.eps}}\\
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_EM_ConvReg_p400m20.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_EM_ConvReg_p400m100.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_EM_ConvReg_p400m500.eps}}\\
+
 \caption{The approximating regions of $\mathcal {R}$ defined in
 (\ref{set:R}) for $p = 25, 100, 400$ and $m = 20, 100, 500$, where
 the red and blue regions denote the set $\{z\in\CS: 1-z \in
@@ -976,30 +1063,7 @@ the red and blue regions denote the set $\{z\in\CS: 1-z \in
 \MCD_2\}$, respectively. }\label{fig:EM_ConvReg}
 \end{figure}
 
-where
-\begin{align*}
-\MCD_3 & := \{z \in \CS: 1-z \in \overline{\MCD}_1 \},\\
-\MCD_4 & := \left\{z \in \CS: |\arg(z)| < \frac{\pi}{4}, |1-z| <
-\frac{31}{24}\right\}.
-\end{align*}
 
-
-\begin{figure}[t!]
-\begin{center}
-\scalebox{0.75}[0.75]{\includegraphics{fig_EM_PraConvReg_p100m20.eps}}\\
-\end{center}
-\caption{For $p=100, m=20$, the actual convergence regions $\MCR$
-defined in (\ref{set:R}) (the union of the red and blue parts) and
-the approximate convergence regions $\MCR_{\text{E}}$ defined in
-(\ref{set:R_pra}) of Euler's method (the yellow parts).}
-\label{fig:EM_PraConvReg_p100n20}
-\end{figure}
-
-
-
-\section{Proof of Theorem \ref{th:MatrixEMCon}}
-
-\subsection{Technical lemmas}
 
 
 
@@ -1018,68 +1082,21 @@ if \ $r(z,\lambda) \in \overline{\MCD}_1\backslash\{0,1\}$,\ \ \  \label{ineq:ab
 
 
 
-\section{Numerical Experiments}
-
-
-
 
 
 \begin{figure}[h]
 \centering
 \subfigure[]{\includegraphics[width=0.32\textwidth]{fig_relerr_coupledEM_1.eps}}
-\subfigure[]{\includegraphics[width=0.32\textwidth]{fig_relerr_coupledEM_2.eps}}
-\subfigure[]{\includegraphics[width=0.32\textwidth]{fig_relerr_coupledEM_Schur_3.eps}}
+
 \caption{(a) and (b) show the relative error for the $p$th root
 $A^{1/p}$ by using coupled Euler iteration (\ref{it:CoupledEM}); (c)
 is the result of Algorithm \ref{al:SE}.}\label{fig:relerr_CEM}
 \end{figure}
 
 
-\begin{figure}[h]
-\centering
-\subfigure[$p=12$]{\includegraphics[width=0.32\textwidth]{fig_relerr_se_spn_sn_sh_p12.eps}}
-\subfigure[$p=15$]{\includegraphics[width=0.32\textwidth]{fig_relerr_se_spn_sn_sh_p15.eps}}
-\subfigure[$p=30$]{\includegraphics[width=0.32\textwidth]{fig_relerr_se_spn_sn_sh_p30.eps}}
-\caption{The relative errors for the four algorithms on matrix
-(\ref{mat:Ae}).}\label{fig:relerr_Ae}
-\end{figure}
 
 
 
-
-\begin{figure}[h]
-\centering
-\subfigure[]{\includegraphics[width=0.42\textwidth]{fig_cputime_psn.eps}}
-\subfigure[]{\includegraphics[width=0.42\textwidth]{fig_cputime_sn.eps}} \\
-\subfigure[]{\includegraphics[width=0.42\textwidth]{fig_cputime_sh.eps}}
-\subfigure[]{\includegraphics[width=0.42\textwidth]{fig_cputime_se.eps}}
-\caption{The CPU time (in seconds) required by using the four
-Algorithms to compute the principal $p$th root of $15 \times 15$
-Frank matrix for $p = 10:300$.}\label{fig:cputime}
-\end{figure}
-
-
-TEST 4. Consider the following two matrices which take from
-\cite{Guo2010} and \cite{Iannazzo2008}, respectively.
-$$
-S_1 = \left[\begin{array}{rrrr} 0.44 & - 0.88 & - 0.38 & - 0.50 \\
-0.68 & 2.15 & 0.48 & 0.11 \\
-0.61 & 0.77 & 2.14 & 1.04 \\
-- 0.16 & - 0.30 & - 0.67 & 1.33
-\end{array}\right], \ \ \
-S_2 = \left[\begin{array}{ccc} - 1 & - 2 & 2 \\
-- 4 & - 6 & 6 \\
-- 4 & - 16 & 13 \end{array}\right].
-$$
-Let $A_1 = S_1^5$ and $A_2 = S_2^{15}$. The eigenvalues of $A_1$ are
-$15.2477, 0.2724 \pm 16.0066 \,\textup{i}, 1.1030$ and of $A_2$ are
-$1, 2, 3$. We now compute $A_1^{1/5}$ and $A_2^{1/15}$ using the
-four algorithms. The computational results are given in Table
-\ref{tab:test3}. The relative error is computed by $\|X - S\|/\|S\|$
-and the relative residuals is computed by using
-(\ref{eq:RelResErr}). As is shown in Table \ref{tab:test3},
-Algorithm \ref{al:SE} has a less pronounced advantage for computing
-$A_1^{1/5}$ and $A_2^{1/15}$.
 
 \begin{table}[h]
 \begin{center}
@@ -1173,79 +1190,3 @@ Frank matrix by using the four Algorithms. }
 \end{table}
 \end{landscape}
 
-
-
-
-
-
-
-
-
-
-
-
-\section{关于~Halley~法的注记}
-
-
-
-
-
-\begin{figure}[t!]
-\centering
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_HM_ConvReg_p25m20.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_HM_ConvReg_p25m100.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_HM_ConvReg_p25m500.eps}}\\
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_HM_ConvReg_p100m20.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_HM_ConvReg_p100m100.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_HM_ConvReg_p100m500.eps}}\\
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_HM_ConvReg_p400m20.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_HM_ConvReg_p400m100.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_HM_ConvReg_p400m500.eps}}\\
-\caption{The approximating regions of $\MCR_2$ defined in
-(\ref{set:R}) for $p = 25, 100, 400$ and $m = 20, 100, 500$, where
-the red and blue regions denote the sets $\{z\in\CS: 1-z \in
-\overline{\MCD}_1\}$ and $\{z\in \CS: 1-z \in \MCD_{0,2} \bigcap
-\MCD_{2,2}\}$, respectively. }\label{fig:HM_ConvReg}
-\end{figure}
-
-
-\begin{remark}
-\end{remark}
-
-
-
-
-
-
-\begin{figure}[t!]
-\centering
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_HM_PraConvReg_p7m20.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_HM_PraConvReg_p20m20.eps}}
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_HM_PraConvReg_p100m20.eps}}\\
-\caption{For fixed $m=20$ and $p=7,20,100$, the actual convergence
-regions $\MCR_2$ defined in (\ref{set:R}) (the union of the red and
-blue parts) and the approximate convergence regions
-$\MCR_2^{\text{H}}$ defined in (\ref{set:R_H_pra}) (the yellow
-parts).}\label{fig:HM_PraConvReg}
-\end{figure}
-
-
-
-
-\begin{remark}
-\end{remark}
-
-
-\begin{figure}[t!]
-\centering
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_HM_ConvReg_p100m20_Iannazzo.eps}}
-\quad\quad\quad\quad
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_HM_PraConvReg.eps}}\\
-\caption{(a) The convergence region $\MCR_2$ defined in
-(\ref{set:R}) with $p=100$ and $m=20$ (the union of the red and blue
-parts) and the the disk of center 8/5 and radius 1 given by Iannazzo
-(the yellow parts); (b) the feasible region $\MCR_2^{\text{H}}$
-defined in (\ref{set:R_H_pra}) (the red part) and the disk of center
-8/5 and radius 1 (the blue
-part).}\label{fig:HM_PraConvRegVSIannazzo}
-\end{figure}
