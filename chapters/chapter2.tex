@@ -233,7 +233,7 @@
         \end{align}
         其中$\vec{v}$ 和 $\vec{q}$ 是速度和压力变量在基函数$\{\vec{\phi}_j \}_{j = 1}^{n_u}$ 和 $\{\vec{\psi}_k \}_{k = 1}^{n_p}$ 下的系数。这里的 $\vec{A}$ 是离散的向量形式的刚度矩阵：
         \begin{eqnarray}
-            \vec{A} = [a_{ij}], \quad a_ij = \int_\Omega \nabla \vec{\phi}_i : \nabla \vec{\phi}_j, \qquad i,j = 1, \cdots, n_u 
+            \vec{A} = [a_{ij}], \quad a_ij = \int_\Omega \nabla \vec{\phi}_i : \nabla \vec{\phi}_j, \qquad i,j = 1, \cdots, n_u
         \end{eqnarray}
         并且 $Q$ 是压力质量矩阵：
         \begin{equation}
@@ -258,29 +258,40 @@
             \end{equation}
             对所有的$\vec{v} \in \mathbb{R}^n$。这里$\uline{h} = \min_{\bigtriangleup_k \in \mathcal{T}_h} h_k$ 并且 $h = \max_{\bigtriangleup_k \in \mathcal{T}_h} h_k$。常数$c$ 和 $C$ 都是跟$\uline{h}$ 和 $h$ 无关的。
         \end{proposition}
+
+        \begin{definition}[拟一致剖分]
+            \label{theo_quasi_uni_subd}对于一系列的三角网格$\{\mathcal{T}_h\}$，如果存在着一个常读$\rho > 0$ 使得对于$\{\mathcal{T}_h\}$中的每一个网格，都有 $\uline{h} \geq \rho h$，那么我们就称 $\{\mathcal{T}_h\}$ 是拟一致的。
+        \end{definition}
+
         对于$\mathcal{R}^2$空间的一个拟一致剖分，并且它的单元都是形正则的，那么界限 \eqref{eq::bound_mass} 可以简化为:
         \begin{equation}
             c h^2 \leq \frac{<Q \vec{v}, \vec{v}>}{<\vec{v}, \vec{v}>} \leq C h^2 \quad \mbox{对所有的} \vec{v} \in \mathbb{R}^n.
             \label{eq::bound_mass_simpify}
         \end{equation}
+        \eqref{eq::bound_mass_simpify} 是跟空间的维数有关的。对于 $\mathbb{R}^3$ 中的一个区域，进行拟一致剖分，则这个剖分上的所有四面体单元，对应有界：
+        \begin{equation}
+            c h^3 \leq \frac{<Q \vec{v}, \vec{v}>}{<\vec{v}, \vec{v}>} \leq C h^3 \quad \mbox{对所有的} \vec{v} \in \mathbb{R}^n.
+            \label{eq::bound_mass_R3}
+        \end{equation}
         
-        \begin{definition}[拟一致剖分]
-            \label{theo_quasi_uni_subd}对于一系列的三角网格$\{\mathcal{T}_h\}$，如果存在着一个常读$\rho > 0$ 使得对于$\{\mathcal{T}_h\}$中的每一个网格，都有 $\uline{h} \geq \rho h$，那么我们就称 $\{\mathcal{T}_h\}$ 是拟一致的。
-        \end{definition}
+        \begin{remark}
+            如果剖分是拟一致的，那么对于任意近似$\vec{P}_m, \vec{Q}_m, m \geq 2$，有界性 \eqref{eq::bound_mass_simpify} 都成立，但是 $c$ 和 $C$ 都跟 $m$ 有关。
+        \end{remark}
         
         \begin{theorem}
             \label{theo_mass_spectrual_eq} 对于 $\partial \Omega = \partial \Omega_D$ 的流体问题，用满足LBB的混合元近似并且 $\mathbb{R}^2$上的拟一致的剖分是形正则的，则
             压力Schur补矩阵$B \vec{A}^{-1} B^T$ 谱等价于压力质量矩阵$Q$:
             \begin{equation}
                 \gamma^2 \leq \frac{(B \vec{A}^{-1} B^T \vec{q}, \vec{q})}{Q\vec{q},\vec{q}} \quad \mbox{对所有的} \vec{q} \in \mathbb{R}^{n_p} \mbox{使得} \vec{q} \neq \vec{1}.
+                \label{eq::lower_uper_bound}    
             \end{equation}
             inf-sup 常量$\gamma$ 被限制在$0$以外，并且跟网格尺度$h$无关。并且有效的条件数满足
             \begin{equation}
                 \kappa(B\vec{A}^{-1}B^T) \leq C/(c\gamma^2),
             \end{equation}
-            其中$c$ 和 $C$ 是\eqref{eq::bound_mass_simpify}中的常数。  
+            其中$c$ 和 $C$ 是\eqref{eq::bound_mass_simpify}中的常数。
         \end{theorem}
-        
+
         \begin{proof}
             我们先来证明下界。离散inf-sup稳定性条件的代数表示：
             \begin{equation}
@@ -292,17 +303,80 @@
                 & =  \min_{\vec{q} \neq \vec{1}} \frac{1}{<Q\vec{q}, \vec{q}>^{1/2}} \max_{\vec{w} = \vec{A}^{1/2}\vec{v} \neq \vec{0}} \frac{|<\vec{q}, B \vec{A}^{-1/2} \vec{w}>|}{<\vec{w}, \vec{w}^{1/2}>} &\\ \notag
                 & =  \min_{\vec{q} \neq \vec{1}} \frac{1}{<Q\vec{q}, \vec{q}>^{1/2}} \max_{\vec{w} \neq \vec{0}} \frac{|<\vec{A}^{-1/2}B^Tq, \vec{w}>|}{<\vec{w}, \vec{w}>^{1/2}} &\\ \notag
                 & =  \min_{\vec{q} \neq \vec{1}} \frac{<\vec{A}^{-1/2}B^Tq, \vec{A}^{-1/2}B^Tq>^{1/2}}{<Q\vec{q}, \vec{q}>^{1/2}} &\\ \notag
-                & = \min_{\vec{q} \neq \vec{1}} \frac{<B \vec{A}^{-1}B^T\vec{q}, \vec{q}>}{<Q\vec{q}, \vec{q}>^{1/2}}&
+                & = \min_{\vec{q} \neq \vec{1}} \frac{<B \vec{A}^{-1}B^T\vec{q}, \vec{q}>}{<Q\vec{q}, \vec{q}>^{1/2}}& \notag
             \end{align}
+            因为它的极大值在$\vec{w} = \pm \vec{A}^{-1/2}B^T \vec{q}$。因此，我们可以看到
+            \begin{equation}
+                \gamma^2 = \min_{\vec{q} \neq \vec{1}} \frac{<B\vec{A}^{-1}B^T \vec{q}, \vec{q}>}{<Q\vec{q}, \vec{q}>},
+                \label{eq::lower_bound}
+            \end{equation}
+            则下界得证。
+            现在我们来证明上界，上界是由微分算子的性质得到的。首先，应用cauchy-Schwarz不等式，我们有
+            \begin{equation}
+                |(q_h, \nabla \cdot \vec{v}_h)| \leq ||q_h|| ||\nabla \cdot \vec{v}_h||. 
+                \label{eq::cauchy_schwarz_inequality}
+            \end{equation}
+            第二，注意到 $\vec{v}_h \in \mathcal{H}_0^1$(因为$\partial \Omega  = \partial \Omega_D$)，将 $\vec{v}_h$ 带入到下列等式中：
+            \begin{equation}
+                \int){\Omega} \nabla \vec{w} : \vec{v} \equiv \int_{\Omega} (\nabla \cdot \vec{w})(\nabla \vec{v}) + \int_{\Omega} (\nabla \times \vec{w}) : (\nabla \times \vec{v}),
+            \end{equation}
+            其中这个等式是对任意属于Sobolev空间
+            \begin{equation}
+                \mathcal{H}_0^1 = \{ \vec{u} \in \mathcal{H}^1(\Omega) | \vec{u} = \vec{0} \mbox{在} \partial \Omega \mbox{上} \},
+            \end{equation}
+            中的任意函数$\vec{w}, \vec{v}$ 都成立的，因此我们有
+            \begin{equation}
+                ||\nabla \vec{v}_h||^2 = ||\nabla \vec{v}_h||^2 + ||\nabla \times \vec{v}_h||^2 \geq ||\nabla \vec{v}_h||^2.
+                \label{eq::identiy_v_h}
+            \end{equation}
+            最后，结合 \eqref{eq::cauchy_schwarz_inequality} 和 \eqref{eq::identiy_v_h}，我们得到
+            \begin{equation}
+                \frac{|(q_h, \nabla \cdot \vec{v}_h)|}{||\nabla \vec{v}_h|| ||q_h||} \leq 1.
+            \end{equation}
+            将上式展开成矩阵形式，如推导 \eqref{eq::lower_bound} 中类似，可以得到 \eqref{eq::lower_uper_bound} 中的上界。
+            运用 \eqref{eq::bound_mass} 中的质量矩阵条件数的有界性，我们可以得到 Schur 补矩阵的条件数有界
+            \begin{equation}
+                \gamma^2 \frac{<Q\vec{q}, \vec{q}>}{<\vec{q}, \vec{q}>} \leq \frac{<B \vec{A}^{-1}B^T \vec{q}, \vec{q}>}{\vec{q}, \vec{q}} \leq \frac{<Q \vec{q}, \vec{q}>}{\vec{q}, \vec{q}}
+            \end{equation}
         \end{proof}
 
-        \begin{eqnarray}
-        \end{eqnarray}
-
+        \begin{remark}
+            在 $\mathbb{R}^3$ 中的拟一致剖分上的四面体单元，如果是稳定的混合元近似，那么Schur
+            补矩阵的有界性同样成立。质量矩阵的有界性由 \ref{eq::bound_mass_R3} 中给出。
+        \end{remark}
+        
+        同样地，对于边界中包含 Neumann 条件的流体问题，特征值的界在命题 \ref{pro::schur_bound_neumann} 中给出。
+        
+        \begin{proposition}
+            \label{pro::schur_bound_neumann}对任意 $\int_{\partial \Omega_N} ds \neq 0$ 的流体问题，用一个一致稳定混合元近似去离散，并且这个有限元近似是建立在 $\mathbb{R}^2$ 上的一个形正则、拟一致的剖分上，那么压力Schur补矩阵满足
+            \begin{equation}
+                \gamma_N^2 \leq \frac{<B\vec{A}B^T \vec{q}, \vec{q}>}{<Q\vec{q}, \vec{q}>} \leq 2 \quad \mbox{对所有的 } \vec{q} \in \mathbb{R}^{n_p}.
+            \end{equation}
+            常数 $\gamma_N$ 是不为$0$的有界常数，并且跟网格尺度 $h$ 无关。 
+        \end{proposition}
+        对于 $P_2-P_1, Q_2-Q_1$ 混合元近似，是满足inf-sup条件的，即存在一个不为 $0$ 的inf-sup常量 $\delta$，使得
         \begin{equation}
+            \delta \leq \min_{q_h \neq \mbox{constant}} \max_{\vec{v}_h \neq \vec{0}} \frac{|(q_h, \nabla \cdot \vec{v}_h)|}{||\vec{v}_h|| ||\nabla q_h||}.
+            \label{eq::inf_sup_p2p1}
         \end{equation}
-
-
+        我们是在 $L^(\Omega)$ 空间中估计速度，在 $\mathcal{H}^1{\Omega}$ 中估计压力，这跟一般的inf-sup条件有些相反。我们先来定义速度质量矩阵 $\heiti{Q}$，
+        \begin{equation}
+            \heiti{Q} = [\heti{q}_{ij}], \quad \heiti{q}_{ij} = \int_{\Omega} \vec{\phi}_i \cdot \vec{\phi}_j, \qquad i,j = 1, \cdots, n_u, 
+        \end{equation}
+        和压力的刚度矩阵 $A_p$，
+        \begin{equation}
+            A_p = [a_{kl}], \quad a_{jl} = \int_{\Omega} \nabla \psi_k \cdot \psi_l, \qquad i,j = 1, \cdots, n_p.
+        \end{equation}
+        那么按照 \eqref{eq::lower_bound} 的推导，则 \eqref{eq::inf_sup_p2p1} 可以重新写为
+        \begin{equation}
+            \delta^2 = \min_{\vec{q} \neq \vec{1}} \frac{<B \heiti{Q}^{-1} B^T \vec{q}, \vec{q}>}{<A_p\vec {q}, \vec{q}>}.
+        \end{equation}
+        矩阵$B \heiti{Q}^{-1} B^T$ 通常被叫做一致压力泊松矩阵，详见 \cite{gresho1998incompressible}。对于封闭流体的边界条件，这个矩阵是奇异的，其他情况下，是
+        不奇异的。计算 $P_1-P_1$ 近似的最大最小特征值，我们发现在均匀网格上，并且对封闭流体的边界条件，有
+        \begin{equation}
+            \frac{1}{2} < \frac{<B \heiti{Q}^{-1} B^T \vec{q}, \vec{q}>}{<A_p \vec{q}, \vec{q}>} \leq 1 \quad \mbox{对所有的 } \vec{q} \in \mathbb{R}^{n_p}, \vec{q} \neq \vec{1}.  
+        \end{equation}
+        
 \begin{figure}[h!]
 \centering
 \subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_ConvReg_p25m20.eps}}
