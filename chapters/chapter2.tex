@@ -224,6 +224,7 @@
                  B & -C
                 \end{array}
                 \right]
+            \label{eq::coffient_stokes}
         \end{equation}
         其中如果用满足LBB条件的混合元做近似，则 $C = 0$。因为本文中我们选取的是满足LBB条件的$4P1-P1$元，所以我们下面均考虑 $C = 0$ 的情形。令 $\vec{v}_h \in X_h$ 和 $q_h \in P_h$，$X_h$ 和 $P_h$ 是在第一节中提到的有限元空间。我们先来定义 $\vec{v}_h, q_h$ 的范数：
         \begin{align}
@@ -273,17 +274,17 @@
             c h^3 \leq \frac{<Q \vec{v}, \vec{v}>}{<\vec{v}, \vec{v}>} \leq C h^3 \quad \mbox{对所有的} \vec{v} \in \mathbb{R}^n.
             \label{eq::bound_mass_R3}
         \end{equation}
-        
+
         \begin{remark}
             如果剖分是拟一致的，那么对于任意近似$\vec{P}_m, \vec{Q}_m, m \geq 2$，有界性 \eqref{eq::bound_mass_simpify} 都成立，但是 $c$ 和 $C$ 都跟 $m$ 有关。
         \end{remark}
-        
+
         \begin{theorem}
-            \label{theo_mass_spectrual_eq} 对于 $\partial \Omega = \partial \Omega_D$ 的流体问题，用满足LBB的混合元近似并且 $\mathbb{R}^2$上的拟一致的剖分是形正则的，则
+            \label{theo::mass_spectrual_eq} 对于 $\partial \Omega = \partial \Omega_D$ 的流体问题，用满足LBB的混合元近似并且 $\mathbb{R}^2$上的拟一致的剖分是形正则的，则
             压力Schur补矩阵$B \vec{A}^{-1} B^T$ 谱等价于压力质量矩阵$Q$:
             \begin{equation}
-                \gamma^2 \leq \frac{(B \vec{A}^{-1} B^T \vec{q}, \vec{q})}{Q\vec{q},\vec{q}} \quad \mbox{对所有的} \vec{q} \in \mathbb{R}^{n_p} \mbox{使得} \vec{q} \neq \vec{1}.
-                \label{eq::lower_uper_bound}    
+                \gamma^2 \leq \frac{<B \vec{A}^{-1} B^T \vec{q}, \vec{q}>}{<Q\vec{q},\vec{q}>} \leq 1 \quad \mbox{对所有的} \vec{q} \in \mathbb{R}^{n_p} \mbox{使得} \vec{q} \neq \vec{1}.
+                \label{eq::lower_uper_bound}
             \end{equation}
             inf-sup 常量$\gamma$ 被限制在$0$以外，并且跟网格尺度$h$无关。并且有效的条件数满足
             \begin{equation}
@@ -313,7 +314,7 @@
             则下界得证。
             现在我们来证明上界，上界是由微分算子的性质得到的。首先，应用cauchy-Schwarz不等式，我们有
             \begin{equation}
-                |(q_h, \nabla \cdot \vec{v}_h)| \leq ||q_h|| ||\nabla \cdot \vec{v}_h||. 
+                |(q_h, \nabla \cdot \vec{v}_h)| \leq ||q_h|| ||\nabla \cdot \vec{v}_h||.
                 \label{eq::cauchy_schwarz_inequality}
             \end{equation}
             第二，注意到 $\vec{v}_h \in \mathcal{H}_0^1$(因为$\partial \Omega  = \partial \Omega_D$)，将 $\vec{v}_h$ 带入到下列等式中：
@@ -344,15 +345,16 @@
             在 $\mathbb{R}^3$ 中的拟一致剖分上的四面体单元，如果是稳定的混合元近似，那么Schur
             补矩阵的有界性同样成立。质量矩阵的有界性由 \ref{eq::bound_mass_R3} 中给出。
         \end{remark}
-        
+
         同样地，对于边界中包含 Neumann 条件的流体问题，特征值的界在命题 \ref{pro::schur_bound_neumann} 中给出。
-        
+
         \begin{proposition}
-            \label{pro::schur_bound_neumann}对任意 $\int_{\partial \Omega_N} ds \neq 0$ 的流体问题，用一个一致稳定混合元近似去离散，并且这个有限元近似是建立在 $\mathbb{R}^2$ 上的一个形正则、拟一致的剖分上，那么压力Schur补矩阵满足
+            \label{pro::schur_bound_neumann}对任意 $\int_{\partial \Omega_N} ds \neq 0$ 的流体问题，用一个一致稳定混合元近似去离散，并且这个有限元近似是建立在 $\mathbb{R}^d$ 上的一个形正则、拟一致的剖分上，那么压力Schur补矩阵满足
             \begin{equation}
-                \gamma_N^2 \leq \frac{<B\vec{A}B^T \vec{q}, \vec{q}>}{<Q\vec{q}, \vec{q}>} \leq 2 \quad \mbox{对所有的 } \vec{q} \in \mathbb{R}^{n_p}.
+                \gamma_N^2 \leq \frac{<B\vec{A}^{-1}B^T \vec{q}, \vec{q}>}{<Q\vec{q}, \vec{q}>} \leq \Gamma^2 \quad \mbox{对所有的 } \vec{q} \in \mathbb{R}^{n_p}.
+                \label{eq::schur_bound_neumann}
             \end{equation}
-            常数 $\gamma_N$ 是不为$0$的有界常数，并且跟网格尺度 $h$ 无关。 
+            其中常数 $\gamma_N$ 是不为$0$的有界常数，并且跟网格尺度 $h$ 无关，$\Gamma < \sqrt{d}$ $d$ 是空间维数。
         \end{proposition}
         对于 $P_2-P_1, Q_2-Q_1$ 混合元近似，是满足inf-sup条件的，即存在一个不为 $0$ 的inf-sup常量 $\delta$，使得
         \begin{equation}
@@ -361,7 +363,7 @@
         \end{equation}
         我们是在 $L^(\Omega)$ 空间中估计速度，在 $\mathcal{H}^1{\Omega}$ 中估计压力，这跟一般的inf-sup条件有些相反。我们先来定义速度质量矩阵 $\heiti{Q}$，
         \begin{equation}
-            \heiti{Q} = [\heti{q}_{ij}], \quad \heiti{q}_{ij} = \int_{\Omega} \vec{\phi}_i \cdot \vec{\phi}_j, \qquad i,j = 1, \cdots, n_u, 
+            \heiti{Q} = [\heiti{q}_{ij}], \quad \heiti{q}_{ij} = \int_{\Omega} \vec{\phi}_i \cdot \vec{\phi}_j, \qquad i,j = 1, \cdots, n_u,
         \end{equation}
         和压力的刚度矩阵 $A_p$，
         \begin{equation}
@@ -374,30 +376,158 @@
         矩阵$B \heiti{Q}^{-1} B^T$ 通常被叫做一致压力泊松矩阵，详见 \cite{gresho1998incompressible}。对于封闭流体的边界条件，这个矩阵是奇异的，其他情况下，是
         不奇异的。计算 $P_1-P_1$ 近似的最大最小特征值，我们发现在均匀网格上，并且对封闭流体的边界条件，有
         \begin{equation}
-            \frac{1}{2} < \frac{<B \heiti{Q}^{-1} B^T \vec{q}, \vec{q}>}{<A_p \vec{q}, \vec{q}>} \leq 1 \quad \mbox{对所有的 } \vec{q} \in \mathbb{R}^{n_p}, \vec{q} \neq \vec{1}.  
+            \frac{1}{2} < \frac{<B \heiti{Q}^{-1} B^T \vec{q}, \vec{q}>}{<A_p \vec{q}, \vec{q}>} \leq 1 \quad \mbox{对所有的 } \vec{q} \in \mathbb{R}^{n_p}, \vec{q} \neq \vec{1}.
         \end{equation}
+
+        我们考虑 \eqref{eq::coffient_stokes} 的块对角预处理矩阵
+        \begin{equation}
+            M = \left[
+                \begin{array}{ll}
+                 \vec{P} & 0\\
+                 0 & T
+                \end{array}
+                \right]
+            \label{eq::coffient_stokes}
+        \end{equation}
+        其中$\vec{P} \in \mathbb{R}^{n_u \times n_u}$ 和 $T \in \mathbb{R}^{n_p \times n_p}$ 都是对称正定矩阵。我们要到 $\eqref{eq::coffient_stokes}$ 的一个好的近似，意味着我们要找到合适的 $\vec{P}$ 近似 $\vec{A}$ 并且近似Schur补 $B \vec{A}^{-1} B^T$ 的矩阵 $T$。从定理 \ref{theo::mass_spectrual_eq} 我们知道，压力的质量矩阵 $Q$ 在合适的边界条件下是谱等价于Schur补矩阵的。因此我们可以选择 $T = Q$，并且先令 $\vec{P} = \vec{A}$。我们考虑广义的特征值问题
+        \begin{equation}
+            \left[
+            \begin{array}{ll}
+                A & B^T \\
+                B & 0  \\
+            \end{array}
+            \right]
+            \left[
+            \begin{array}{l}
+                \vec{u} \\
+                \vec{p} \\
+            \end{array}
+            \right] = \lambda
+            \left[
+            \begin{array}{ll}
+                \vec{A} &   0 \\
+                0       &   Q \\
+            \end{array}
+            \right]
+            \left[
+                \begin{array}{l}
+                    \vec{u} \\
+                    \vec{p} \\
+                \end{array}
+            \right]
+        \end{equation}
+        通过简单的计算可以知道特征值 $\lambda$ 位于
+        \begin{equation}
+            [ \frac{1 - \sqrt{1 + 4 \Gamma^2}}{2}, \frac{1 - \sqrt{1 + 4 \gamma^2}}{2} ] \cup \{1\} \cup [ \frac{1 + \sqrt{1 + 4 \gamma^2}}{2}, \frac{1 + \sqrt{1 + 4\Gamma^2}}{2}].
+        \end{equation}
+        其中 $\gamma$ 和 $\Gamma$ 是 \eqref{eq::lower_uper_bound} 和 \eqref{eq::schur_bound_neumann} 中的上下界，跟网格尺度 $h$ 无关的常量。
+        因此，我们可以知道，如果用预处理的MINRES来求解的话，会很快速收敛，并且与离散的网格尺度没有关系。
+     
+        在 \cite{elman2005finite} 中指出，在不影响MINRES收敛的前提下，可以考虑用比 $T = \mbox{diag}(Q)$ 来作为Schur补矩阵的近似。并给出了 $T = Q$ 和 $T = \mbox{diag}(Q)$ 的界
+        \begin{lemma}
+            如果在 $\mathbb{R}$ 上的一个剖分上，压力空间用 $P_1$ 元近似，选取 $T = \mbox{diag}(Q)$，那么
+            有
+            \begin{equation}
+                \theta^2 \leq \frac{<Q\vec{q}, \vec{q}>}{<T\vec{q}, \vec{q}>} \leq \Theta^2
+                \quad \mbox{对所有的 } \vec{q} \in \mathbb{R}^{n_p},
+            \end{equation}
+            成立，其中 $\theta = 1/\sqrt{2}$ 和 $\Theta = \sqrt{2}$，都与网格尺度 $h$ 无关。
+        \end{lemma}
+
+
+        下面考虑如何更好的近似 $\vec{A}$。
+        \begin{lemma}
+            在求解线性系统 $\vec{A}\vec{u} = \vec{f}$ 中，不动点迭代
+            \begin{equation}
+                \vec{u}^{(i + 1)} = (\vec{I} - \vec{P}^{-1}\vec{A}) \vec{u}^{i} + \vec{P}^{-1} \vec{f}
+            \end{equation}
+            的迭代误差满足
+            \begin{equation}
+                ||\vec{u} - \vec{u}^{(i + 1)}||_A \leq \rho ||\vec{u} - \vec{u}^{(i)}||_A,
+                \label{eq::iteration_error}
+            \end{equation}
+            其中压缩比例 $\rho < 1$， 那么
+            \begin{equation}
+                1 - \rho \leq \frac{<\vec{A}\vec{v}, \vec{v}>}{<\vec{P}\vec{v}, \vec{v}>} \leq
+                1 + \rho \quad \mbox{对所有的 } \vec{v}.
+            \end{equation}
+        \end{lemma}
+        \begin{proof}
+            因为精确解 $\vec{u}$ 满足
+            \begin{equation}
+                \vec{u} = (\vec{I} - \vec{P}^{-1}\vec{A})\vec{u} + \vec{P}^{-1} \vec{f}, \notag
+            \end{equation}
+            \eqref{eq::iteration_error} 可以表述为
+            \begin{equation*}
+                <\vec{A}(\vec{I} - \vec{P}^{-1}\vec{A})\vec{e}, (\vec{I} - \vec{P}^{-1}\vec{A})\vec{e}> \leq \rho^2 <\vec{A}\vec{e}, \vec{e}>
+            \end{equation*}
+            对任意的 $\vec{e} = \vec{u} - \vec{u}^{(i)}$，令 $\vec{v} = \vec{A}^{1/2}\vec{e}$, 那么上式可以重新写成
+            \begin{equation*}
+                <(\vec{I} - \vec{A}^{1/2}\vec{P}^{-1} \vec{A}^{1/2})\vec{v}, (\vec{I} - \vec{A}^{1/2}\vec{P}^{-1} \vec{A}^{1/2})\vec{v}> \leq \rho^2 <\vec{v}, \vec{v}>
+            \end{equation*}
+            对所有的 $\vec{v}$。因此
+            \begin{equation}
+                -\rho <\vec{v}, \vec{v}> \leq <(\vec{I} - \vec{A}^{1/2}\vec{P}^{-1} \vec{A}^{1/2})\vec{v}, \vec{v})> \leq \rho <\vec{v}, \vec{v}>, \notag
+            \end{equation}
+            则我们可以得到
+            \begin{equation}
+                1 - \rho \leq \frac{<\vec{A}\vec{v}, \vec{v}>}{<\vec{P}\vec{v}, \vec{v}>} \leq
+                1 + \rho
+            \end{equation}
+            对所有的 $\vec{v}$。
+        \end{proof}
+        (\cite{elman2005finite}, 第4章)中指出，我们可以用一个单层多重网格循环来表示 $P$，虽然迭代次数
+        会额外增加一些。但是用对角块直接做预处理矩阵，MINRES的迭代步数会随着 $h$ 的减小而增加。
         
-\begin{figure}[h!]
-\centering
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_ConvReg_p25m20.eps}}
-
-\caption{由~(\ref{set:R_NM})~给出的~$\MCR_1$~在九种不同情形~($p$~分别取~25,
-100, 400~及~$m$~分别取~20, 100, 500)~下的近似域,
-其中红色域表示集合~$\{z\in\CS: 1-z \in \overline{\MCD}_1\}$},
-而蓝色域表示集合~$\{z\in \CS: 1-z \in \MCD_{0,1}
-\bigcap\MCD_{2,1}\}.$\label{fig:NM_ConvReg}
-\end{figure}
-
-
-
-
-\section{预备引理}
-
-
-
-
-
-
+    \subsection{针对Navier-Stokes方程}
+        用稳定的混合元近似Navier-Stokes方程，会得到与Stokes方程中类似的线性系统，我们考虑它的系数矩阵：
+        \begin{equation}
+            \left[
+            \begin{array}{ll}
+                \vec{F} & B^T \\
+                B & 0 \\            
+            \end{array} 
+            \right]           
+        \end{equation}
+        其中 $F$ 包含对流项矩阵，不是对称的。我们可以用Krylov子空间方法中的GMRES来求解线性系统。在本文中，我们
+        仅考虑Ossen系统，即
+        \begin{equation}
+            \left[
+            \begin{array}{ll}
+                \nu \vec{A} + \vec{N} & B^T \\
+                B & 0 \\ 
+            \end{array}
+            \right]
+            \left[
+            \begin{array}{l}
+            \vec{u} \\
+            \vec{p} \\
+            \end{array}    
+            \right] = 
+            \left[
+            \begin{array}{l}
+            \vec{f} \\
+            \vec{0} \\
+            \end{array}
+            \right],
+            \label{eq::ossen_system}
+        \end{equation}
+        其中 $\vec{A}$ 是速度空间的向量形式的刚度矩阵，以及 $\vec{N}$ 是向量形式的对流矩阵，分别定义如下：
+        \begin{eqnarray}
+            \vec{A} = [\vec{a}_{ij}], \quad \vec{a}_{ij} = \int_{\Omega}\nabla \vec{\phi}_i \cdot \vec{\phi}_j, \\
+            \vec{N} = [\vec{n}_{ij}], \quad \vec{n}_{ij} = \int_{\Omega}(\vec{u}_h \cdot \vec{\phi}_i) \cdot \vec{\phi}_j.
+        \end{eqnarray}
+        Elman 在 \cite{elman2005finite} 中指出，在求解 \eqref{eq::ossen_system} 时，用 块三角矩阵做预处理比块对角矩阵做预处理，迭代次数会减半。详见()我们选择用块三角矩阵
+        \begin{equation}
+            M = \left[
+                \begin{array}{ll}
+                    \vec{M}_{\vec{F}} & B^T \\
+                    0 & -M_S \\ 
+                \end{array}      
+                \right]
+        \end{equation}
+        作为预处理矩阵。
+        
 
 
 
@@ -429,12 +559,6 @@ C^{2^{k_1 - k_0}} \tran{Q}$.
 \end{algorithm}
 
 
-
-\begin{figure}[h!]
-\centering
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_PraConvReg_p3m20.eps}}
-
-\end{figure}
 
 
 

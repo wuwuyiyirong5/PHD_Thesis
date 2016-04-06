@@ -125,62 +125,7 @@ Smale~点估计理论：该理论是由~Smale~于~1986~年提出，由~$\alpha-$理论
 
 
 
-\begin{definition}[$Q$~收敛阶]
-\label{def:Q-orderConv} 设序列~$\{x_k\}$~收敛到~$x^*$~． 如果存在~$q
-\geqslant 1$~及常数~$c \geqslant 0$~和~$N \geqslant 0$~使得当~$k
-\geqslant N$~时有~$ \|x^* - x_{k+1}\| \leqslant c\|x^* - x_k\|^q$，
-则称序列~$\{x_n\}$~具有~$Q$~收敛阶至少为~$q$．特别地，当~$q =
-2$~时称为~(至少)~$Q$~平方收敛，$q = 3$~时称为~(至少)~$Q$~立方收敛．
-\end{definition}
-
-
-
-
-
-
 \section{矩阵函数}
-
-\begin{definition}
-\label{def:fun_spectrum} 对于任意函数~$f$, 如果
-$$
-f^{(j)}(\lambda_\ell), \ \ \ j = 0, \ldots, n_\ell-1,\ \ell =
-1,\ldots, r
-$$
-的值都存在, 则称~$f$~在~$A$~的谱上有定义.
-\end{definition}
-
-\begin{definition}
-\label{def:MatFun} 设函数~$f$~在矩阵~$A \in \CS^{n\times
-n}$~的谱上有定义, 且有~Jordan~典范形~(\ref{eq:JorCanForm}), 则有
-\begin{equation}
-\label{eq:MatFun} f(A) := Zf(J)Z^{-1} = Z\diag(f(J_k))Z^{-1},
-\end{equation}
-其中
-$$
-f(J_k) = \left[\begin{array}{cccc} f(\lambda_k) & f'(\lambda_k) & \cdots & \displaystyle \frac{f^{(m_k-1)}(\lambda_k)}{(m_k-1)!} \\
- & f(\lambda_k) & \ddots & \vdots\\
- &  & \ddots & f'(\lambda_k) \\
- &  &  & f(\lambda_k) \end{array}\right].
-$$
-\end{definition}
-
-\begin{theorem}[{\cite[定理~1.13]{Higham2008}}]
-\label{th:MatFunProperty} 设函数~$f$~在矩阵~$A\in\CS^{n\times
-n}$~的谱上有定义, 则有如下性质：
-\begin{enumerate}
-\item[\textup{(i)}]
-$f(A)$~与~$A$~可交换, 即~$f(A)A = Af(A)$;
-\item[\textup{(ii)}]
-$f(\tran{A})= \tran{f(A)}$;
-\item[\textup{(iii)}]
-$f(XAX^{-1}) = Xf(A)X^{-1}$;
-\item[\textup{(iv)}]
-$f(A)$~的全部特征值分别为~$f(\lambda_\ell)$,  其中~$\lambda_\ell,
-\ell = 1,\ldots,n$~为~$A$~的特征值;
-\item[\textup{(v)}]
-如果~$X$~与~$A$~可交换, 那么~$X$~与~$f(A)$~可交换.
-\end{enumerate}
-\end{theorem}
 
 
 \begin{theorem}[{\cite[定理~1.15]{Higham2008}}]
@@ -202,35 +147,11 @@ n}$~的谱上有定义.
 \subsection{矩阵平方根}
 
 \begin{theorem}[\cite{HornJohnson1991}]
-\label{th:MatSquRoot_Existence} 矩阵~$A\in\CS^{n\times
-n}$~存在一个平方根的充要条件是如下定义的递增的整数数列~$d_1,
-d_2,\ldots$~没有两项都是相同的奇数：
-$$
-d_\ell = \dim(\nspace(A^\ell)) - \dim(\nspace(A^{\ell-1})), \ \ \
-\ell = 1,2,\ldots.
-$$
+
 \end{theorem}
 
 \begin{theorem}[矩阵平方根的分类, \cite{Higham2008}]
-\label{th:MatSquRoot_Classification} 设非奇异矩阵~$A\in\CS^{n\times
-n}$~的~Jordan~典范形由~$(\ref{eq:JorCanForm})$~给出,
-其所有不同的特征值数为~$r$.  如果~$r\leq s$,
-那么~$A$~有~$2^r$~准平方根, 由如下式子给出：
-$$
-X_j = Z \diag(L_1^{(j_1)},L_2^{(j_2)},\ldots,L_s^{j_s})Z^{-1},\ \ \
-j = 1, 2, \ldots, 2^r,
-$$
-其中~$j_k = 1$~或~$2$, 当~$\lambda_\ell = \lambda_k$~时~$j_\ell =
-j_k,\ k=1,2,\ldots,s$. 特别地, 如果~$r<s$, 那么~$A$~存在非准平方根,
-其形式为
-$$
-X_j(U) =
-ZU\diag(L_1^{(j_1)},L_2^{(j_2)},\ldots,L_s^{j_s})U^{-1}Z^{-1}, \ \ \
-j=2^r+1, \ldots, 2^s,
-$$
-其中~$j_k = 1$~或~$2$, $U$~为任意的与~$J$~可交换的非奇异矩阵,
-且对于每一个 ~$j$, 存在~$\ell$~和~$k$, 使得当~$j_\ell\neq
-j_k$~时~$\lambda_\ell = \lambda_k$.
+
 \end{theorem}
 
 
@@ -329,79 +250,13 @@ $$
 的初始点~$X_0$~与矩阵~$A$~可交换,
 且所产生的序列~$\{X_k\}$~是有定义的. 则对于所有的~$k\geq1$,
 $X_k$~与~$A$~都是可交换的,  且此时~Newton~法的迭代格式为：
-\begin{equation}
-\label{it:NM_MatSquRoot} X_{k+1} = \frac{1}{2}(X_k+X_k^{-1}A).
-\end{equation}
-\end{lemma}
 
-\begin{equation}
-\label{it:NM_MatSquRoot_Coupled} \left\{
-\begin{array}{ll}
-\displaystyle X_{k + 1} = \frac{1}{2}(X_k + Y_k^{-1}), & X_0 =
-A, \\
-\displaystyle Y_{k + 1} = \frac{1}{2}(Y_k + X_k^{-1}), & Y_0 = \I.
-\end{array} \right.
-\end{equation}
 
 
 \subsection{矩阵~$p$~次根}
 
 
 
-\begin{theorem}[矩阵~$p$~次根的存在性, {\cite{Psarrakos2002}}]
-\label{th:MatpthRoor_existence} 定义如下的整数列~$\{d_k\}$：
-$$
-d_k = \dim(\nspace(A^k)) - \dim(\nspace(A^{k-1})),\quad
-k=1,2,\ldots.
-$$
-矩阵~$A\in\CS^{n\times n}$~存在~$p$~次根的充要条件是
-对于任一整数~$\nu\geq0$,
-数列~$\{d_k\}$~中至多只有一个元素处于~$p\nu$~与~$p(\nu+1)$~之间.
-\end{theorem}
-
-
-
-\begin{theorem}[矩阵~$p$~次根的分类~\cite{Smith2003}]
-\end{theorem}
-
-
-\begin{theorem}[{\cite[定理~7.2]{Higham2008}}]
-\end{theorem}
-
-\begin{theorem}[\cite{Iannazzo2006}]
-\label{th:Conv_NM_Ian2006} 给定矩阵~$A\in\CS^{n\times
-n}$，设其谱为~$\sigma(A)$。若~$\sigma(A) \subset \MCE_1$, 其中
-\begin{equation}
-\label{set:ConvReg_NM_Ian2006} \MCE_1 := \{z\in\CS: \Real{z}
->0, |z| \leq 1\},
-\end{equation}
-则以~$X_0 = \I$~为初始点的
-~Newton~法~$(\ref{it:NM_MatpthRoot_original})$~
-所产生的矩阵序列~$\{X_k\}$~收敛于矩阵~$A$~的主~$p$~次根~$A^{1/p}$.
-\end{theorem}
-
-\begin{theorem}[\cite{Iannazzo2008}]
-\label{th:Conv_NM_Ian2006} 给定矩阵~$A\in\CS^{n\times
-n}$，设其谱为~$\sigma(A)$。若~$\sigma(A) \subset \MCE_2$, 其中
-\begin{equation}
-\label{set:ConvReg_NM_Ian08} \MCE_2 := \left\{z\in\CS: |z|\leq 2,
-|\arg(z)|< \frac{\pi}{4}\right\},
-\end{equation}
-则以~$X_0 = \I$~为初始点的
-~Newton~法~$(\ref{it:NM_MatpthRoot_original})$~
-所产生的矩阵序列~$\{X_k\}$~收敛于矩阵~$A$~的主~$p$~次根~$A^{1/p}$.
-\end{theorem}
-
-
-\begin{equation}
-\label{it:NM_MatpthRoot_Coupled} \left\{
-\begin{array}{ll}
-\displaystyle X_{k + 1} = X_k \left(\frac{(p-1)\I + N_k}{p}\right),
-& X_0 = \I, \\
-\displaystyle N_{k + 1} = \left(\frac{(p-1)\I + N_k}{p}\right)^{- p}
-N_k, & N_0 = A.
-\end{array} \right.
-\end{equation}
 
 \begin{algorithm}[h!]
 \floatname{algorithm}{算法}
@@ -434,21 +289,6 @@ R^{1/{2^{k_1}}}$.
 \end{algorithm}
 
 
-Guo $\&$ Higham
-\cite{GuoHigham2006}~给出了一种含参数的对偶~Newton~法：
-\begin{equation}
-\label{it:NM_MatpthRoot_ParCoupled} \left\{
-\begin{array}{ll}
-\displaystyle X_{k + 1} = \left(\frac{(p+1)\I -
-N_k}{p}\right)^{-1}X_k,
-& X_0 = c\I, \\
-\displaystyle N_{k + 1} = \left(\frac{(p+1)\I - N_k}{p}\right)^p
-N_k, & \displaystyle N_0 = \frac{1}{c^p}A.
-\end{array} \right.
-\end{equation}
-显然，当~$N_k \to \I$~时~$X_k \to
-A^{1/p}$。此外，也给出了计算矩阵主~$p$~次根的算法
-~\ref{al:MatpthRoot_ParSchurNewton_GuoHig06}：
 
 \begin{algorithm}[h!]
 \floatname{algorithm}{算法}
@@ -485,49 +325,6 @@ R^{1/{2^{k_1}}}$.
 \end{list}
 \end{algorithm}
 
-
-Halley~法是计算矩阵主~$p$~次根的另一种重要的迭代法。
-类似于~Newton~法，若初始点~$X_0$~与矩阵~$A$~可交换，
-则可得如下的计算矩阵主~$p$~次根的简化~Halley~法：
-\begin{equation}
-\label{it:HM_MatpthRoot_original} X_{k+1} = X_k\left((p+1)X_k^p +
-(p-1)A\right)^{-1} \left((p-1)X_k^p + (p+1)A\right), \quad AX_0 =
-X_0A.
-\end{equation}
-特别地，初始点取为~$X_0 =
-\I$~是研究时主要考虑的情形，如~\cite{Iannazzo2008,Guo2010,Lin2010}。
-关于~Halley~(\ref{it:HM_MatpthRoot_original})~法的收敛性， Iannazzo
-\cite{Iannazzo2008}~得到了如下的结果：
-
-\begin{theorem}[\cite{Iannazzo2008}]
-\label{th:Conv_HM_Ian08} 给定矩阵~$A\in\CS^{n\times
-n}$，设其谱为~$\sigma(A)$。若~$\sigma(A) \subset \{z\in \CS:
-\Real{z}>0\}$, 则以~$X_0 = \I$~为初始点的
-~Halley~法~$(\ref{it:HM_MatpthRoot_original})$~
-所产生的矩阵序列~$\{X_k\}$~收敛于矩阵~$A$~的主~$p$~次根~$A^{1/p}$.
-\end{theorem}
-
-
-Guo~在~\cite{Guo2010}~中进一步证明了当 ~$\sigma(A) \subset \{z\in
-\CS:
-\Real{z}>0\}$~时~Halley~法~(\ref{it:HM_MatpthRoot_original})~是三阶收敛的。
-应用在\cite{Iannazzo2006}中对Newton法稳定性的分析方法可知，
-Halley~法~(\ref{it:HM_MatpthRoot_original})~同样在数值计算中是不稳定的。
-故类似于~Newton~法，可引入如下的具有数值稳定的对偶形式的~Halley~法：
-\begin{equation}
-\label{it:HM_MatpthRoot_Coupled} \left\{
-\begin{array}{ll}
-\displaystyle X_{k+1} = X_k\left((p+1)\I + (p-1)N_k\right)^{-1}
-\left((p-1)\I + (p+1)N_k\right),
-& X_0 = \I, \\
-\displaystyle N_{k + 1}  = N_k\left((p+1)\I + (p-1)N_k\right)^{-1}
-\left((p-1)\I + (p+1)N_k\right), & \displaystyle N_0 = A.
-\end{array} \right.
-\end{equation}
-显然，当~$N_k \to \I$~时~$X_k \to
-A^{1/p}$。算法~\ref{al:MatpthRoot_SchurHalley_Ian08}~
-给出了应用对偶~Halley~法~(\ref{it:HM_MatpthRoot_Coupled})~
-来计算~$A$~的主~$p$~次根~$A^{1/p}$。
 
 \begin{algorithm}[h!]
 \floatname{algorithm}{算法}
