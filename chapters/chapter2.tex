@@ -224,6 +224,7 @@
                  B & -C
                 \end{array}
                 \right]
+            \label{eq::coffient_stokes}
         \end{equation}
         å…¶ä¸­å¦‚æœç”¨æ»¡è¶³LBBæ¡ä»¶çš„æ··åˆå…ƒåšè¿‘ä¼¼ï¼Œåˆ™ $C = 0$ã€‚å› ä¸ºæœ¬æ–‡ä¸­æˆ‘ä»¬é€‰å–çš„æ˜¯æ»¡è¶³LBBæ¡ä»¶çš„$4P1-P1$å…ƒï¼Œæ‰€ä»¥æˆ‘ä»¬ä¸‹é¢å‡è€ƒè™‘ $C = 0$ çš„æƒ…å½¢ã€‚ä»¤ $\vec{v}_h \in X_h$ å’Œ $q_h \in P_h$ï¼Œ$X_h$ å’Œ $P_h$ æ˜¯åœ¨ç¬¬ä¸€èŠ‚ä¸­æåˆ°çš„æœ‰é™å…ƒç©ºé—´ã€‚æˆ‘ä»¬å…ˆæ¥å®šä¹‰ $\vec{v}_h, q_h$ çš„èŒƒæ•°ï¼š
         \begin{align}
@@ -279,10 +280,17 @@
         \end{remark}
 
         \begin{theorem}
+<<<<<<< HEAD
             \label{theo_mass_spectrual_eq} å¯¹äº $\partial \Omega = \partial \Omega_D$ çš„æµä½“é—®é¢˜ï¼Œç”¨æ»¡è¶³LBBçš„æ··åˆå…ƒè¿‘ä¼¼å¹¶ä¸” $\mathbb{R}^2$ä¸Šçš„æ‹Ÿä¸€è‡´çš„å‰–åˆ†æ˜¯å½¢æ­£åˆ™çš„ï¼Œåˆ™
             å‹åŠ›Schurè¡¥çŸ©é˜µ$B \vec{A}^{-1} B^T$ è°±ç­‰ä»·äºå‹åŠ›è´¨é‡çŸ©é˜µ$Q$:
             \begin{equation}
                 \gamma^2 \leq \frac{(B \vec{A}^{-1} B^T \vec{q}, \vec{q})}{Q\vec{q},\vec{q}} \quad \mbox{å¯¹æ‰€æœ‰çš„} \vec{q} \in \mathbb{R}^{n_p} \mbox{ä½¿å¾—} \vec{q} \neq \vec{1}.
+=======
+            \label{theo::mass_spectrual_eq} ¶ÔÓÚ $\partial \Omega = \partial \Omega_D$ µÄÁ÷ÌåÎÊÌâ£¬ÓÃÂú×ãLBBµÄ»ìºÏÔª½üËÆ²¢ÇÒ $\mathbb{R}^2$ÉÏµÄÄâÒ»ÖÂµÄÆÊ·ÖÊÇĞÎÕıÔòµÄ£¬Ôò
+            Ñ¹Á¦Schur²¹¾ØÕó$B \vec{A}^{-1} B^T$ Æ×µÈ¼ÛÓÚÑ¹Á¦ÖÊÁ¿¾ØÕó$Q$:
+            \begin{equation}
+                \gamma^2 \leq \frac{<B \vec{A}^{-1} B^T \vec{q}, \vec{q}>}{<Q\vec{q},\vec{q}>} \leq 1 \quad \mbox{¶ÔËùÓĞµÄ} \vec{q} \in \mathbb{R}^{n_p} \mbox{Ê¹µÃ} \vec{q} \neq \vec{1}.
+>>>>>>> 729dd2b5659eab8b22e3815e435b18bc8fd3a836
                 \label{eq::lower_uper_bound}
             \end{equation}
             inf-sup å¸¸é‡$\gamma$ è¢«é™åˆ¶åœ¨$0$ä»¥å¤–ï¼Œå¹¶ä¸”è·Ÿç½‘æ ¼å°ºåº¦$h$æ— å…³ã€‚å¹¶ä¸”æœ‰æ•ˆçš„æ¡ä»¶æ•°æ»¡è¶³
@@ -345,6 +353,7 @@
             è¡¥çŸ©é˜µçš„æœ‰ç•Œæ€§åŒæ ·æˆç«‹ã€‚è´¨é‡çŸ©é˜µçš„æœ‰ç•Œæ€§ç”± \ref{eq::bound_mass_R3} ä¸­ç»™å‡ºã€‚
         \end{remark}
 
+<<<<<<< HEAD
         åŒæ ·åœ°ï¼Œå¯¹äºè¾¹ç•Œä¸­åŒ…å« Neumann æ¡ä»¶çš„æµä½“é—®é¢˜ï¼Œç‰¹å¾å€¼çš„ç•Œåœ¨å‘½é¢˜ \ref{pro::schur_bound_neumann} ä¸­ç»™å‡ºã€‚
 
         \begin{proposition}
@@ -353,6 +362,17 @@
                 \gamma_N^2 \leq \frac{<B\vec{A}B^T \vec{q}, \vec{q}>}{<Q\vec{q}, \vec{q}>} \leq 2 \quad \mbox{å¯¹æ‰€æœ‰çš„ } \vec{q} \in \mathbb{R}^{n_p}.
             \end{equation}
             å¸¸æ•° $\gamma_N$ æ˜¯ä¸ä¸º$0$çš„æœ‰ç•Œå¸¸æ•°ï¼Œå¹¶ä¸”è·Ÿç½‘æ ¼å°ºåº¦ $h$ æ— å…³ã€‚
+=======
+        Í¬ÑùµØ£¬¶ÔÓÚ±ß½çÖĞ°üº¬ Neumann Ìõ¼şµÄÁ÷ÌåÎÊÌâ£¬ÌØÕ÷ÖµµÄ½çÔÚÃüÌâ \ref{pro::schur_bound_neumann} ÖĞ¸ø³ö¡£
+
+        \begin{proposition}
+            \label{pro::schur_bound_neumann}¶ÔÈÎÒâ $\int_{\partial \Omega_N} ds \neq 0$ µÄÁ÷ÌåÎÊÌâ£¬ÓÃÒ»¸öÒ»ÖÂÎÈ¶¨»ìºÏÔª½üËÆÈ¥ÀëÉ¢£¬²¢ÇÒÕâ¸öÓĞÏŞÔª½üËÆÊÇ½¨Á¢ÔÚ $\mathbb{R}^d$ ÉÏµÄÒ»¸öĞÎÕıÔò¡¢ÄâÒ»ÖÂµÄÆÊ·ÖÉÏ£¬ÄÇÃ´Ñ¹Á¦Schur²¹¾ØÕóÂú×ã
+            \begin{equation}
+                \gamma_N^2 \leq \frac{<B\vec{A}^{-1}B^T \vec{q}, \vec{q}>}{<Q\vec{q}, \vec{q}>} \leq \Gamma^2 \quad \mbox{¶ÔËùÓĞµÄ } \vec{q} \in \mathbb{R}^{n_p}.
+                \label{eq::schur_bound_neumann}
+            \end{equation}
+            ÆäÖĞ³£Êı $\gamma_N$ ÊÇ²»Îª$0$µÄÓĞ½ç³£Êı£¬²¢ÇÒ¸úÍø¸ñ³ß¶È $h$ ÎŞ¹Ø£¬$\Gamma < \sqrt{d}$ $d$ ÊÇ¿Õ¼äÎ¬Êı¡£
+>>>>>>> 729dd2b5659eab8b22e3815e435b18bc8fd3a836
         \end{proposition}
         å¯¹äº $P_2-P_1, Q_2-Q_1$ æ··åˆå…ƒè¿‘ä¼¼ï¼Œæ˜¯æ»¡è¶³inf-supæ¡ä»¶çš„ï¼Œå³å­˜åœ¨ä¸€ä¸ªä¸ä¸º $0$ çš„inf-supå¸¸é‡ $\delta$ï¼Œä½¿å¾—
         \begin{equation}
@@ -361,7 +381,11 @@
         \end{equation}
         æˆ‘ä»¬æ˜¯åœ¨ $L^(\Omega)$ ç©ºé—´ä¸­ä¼°è®¡é€Ÿåº¦ï¼Œåœ¨ $\mathcal{H}^1{\Omega}$ ä¸­ä¼°è®¡å‹åŠ›ï¼Œè¿™è·Ÿä¸€èˆ¬çš„inf-supæ¡ä»¶æœ‰äº›ç›¸åã€‚æˆ‘ä»¬å…ˆæ¥å®šä¹‰é€Ÿåº¦è´¨é‡çŸ©é˜µ $\heiti{Q}$ï¼Œ
         \begin{equation}
+<<<<<<< HEAD
             \heiti{Q} = [\heti{q}_{ij}], \quad \heiti{q}_{ij} = \int_{\Omega} \vec{\phi}_i \cdot \vec{\phi}_j, \qquad i,j = 1, \cdots, n_u,
+=======
+            \heiti{Q} = [\heiti{q}_{ij}], \quad \heiti{q}_{ij} = \int_{\Omega} \vec{\phi}_i \cdot \vec{\phi}_j, \qquad i,j = 1, \cdots, n_u,
+>>>>>>> 729dd2b5659eab8b22e3815e435b18bc8fd3a836
         \end{equation}
         å’Œå‹åŠ›çš„åˆšåº¦çŸ©é˜µ $A_p$ï¼Œ
         \begin{equation}
@@ -374,6 +398,7 @@
         çŸ©é˜µ$B \heiti{Q}^{-1} B^T$ é€šå¸¸è¢«å«åšä¸€è‡´å‹åŠ›æ³Šæ¾çŸ©é˜µï¼Œè¯¦è§ \cite{gresho1998incompressible}ã€‚å¯¹äºå°é—­æµä½“çš„è¾¹ç•Œæ¡ä»¶ï¼Œè¿™ä¸ªçŸ©é˜µæ˜¯å¥‡å¼‚çš„ï¼Œå…¶ä»–æƒ…å†µä¸‹ï¼Œæ˜¯
         ä¸å¥‡å¼‚çš„ã€‚è®¡ç®— $P_1-P_1$ è¿‘ä¼¼çš„æœ€å¤§æœ€å°ç‰¹å¾å€¼ï¼Œæˆ‘ä»¬å‘ç°åœ¨å‡åŒ€ç½‘æ ¼ä¸Šï¼Œå¹¶ä¸”å¯¹å°é—­æµä½“çš„è¾¹ç•Œæ¡ä»¶ï¼Œæœ‰
         \begin{equation}
+<<<<<<< HEAD
             \frac{1}{2} < \frac{<B \heiti{Q}^{-1} B^T \vec{q}, \vec{q}>}{<A_p \vec{q}, \vec{q}>} \leq 1 \quad \mbox{å¯¹æ‰€æœ‰çš„ } \vec{q} \in \mathbb{R}^{n_p}, \vec{q} \neq \vec{1}.
         \end{equation}
 
@@ -395,9 +420,160 @@
 
 
 
+=======
+            \frac{1}{2} < \frac{<B \heiti{Q}^{-1} B^T \vec{q}, \vec{q}>}{<A_p \vec{q}, \vec{q}>} \leq 1 \quad \mbox{¶ÔËùÓĞµÄ } \vec{q} \in \mathbb{R}^{n_p}, \vec{q} \neq \vec{1}.
+        \end{equation}
+>>>>>>> 729dd2b5659eab8b22e3815e435b18bc8fd3a836
+
+        ÎÒÃÇ¿¼ÂÇ \eqref{eq::coffient_stokes} µÄ¿é¶Ô½ÇÔ¤´¦Àí¾ØÕó
+        \begin{equation}
+            M = \left[
+                \begin{array}{ll}
+                 \vec{P} & 0\\
+                 0 & T
+                \end{array}
+                \right]
+            \label{eq::coffient_stokes}
+        \end{equation}
+        ÆäÖĞ$\vec{P} \in \mathbb{R}^{n_u \times n_u}$ ºÍ $T \in \mathbb{R}^{n_p \times n_p}$ ¶¼ÊÇ¶Ô³ÆÕı¶¨¾ØÕó¡£ÎÒÃÇÒªµ½ $\eqref{eq::coffient_stokes}$ µÄÒ»¸öºÃµÄ½üËÆ£¬ÒâÎ¶×ÅÎÒÃÇÒªÕÒµ½ºÏÊÊµÄ $\vec{P}$ ½üËÆ $\vec{A}$ ²¢ÇÒ½üËÆSchur²¹ $B \vec{A}^{-1} B^T$ µÄ¾ØÕó $T$¡£´Ó¶¨Àí \ref{theo::mass_spectrual_eq} ÎÒÃÇÖªµÀ£¬Ñ¹Á¦µÄÖÊÁ¿¾ØÕó $Q$ ÔÚºÏÊÊµÄ±ß½çÌõ¼şÏÂÊÇÆ×µÈ¼ÛÓÚSchur²¹¾ØÕóµÄ¡£Òò´ËÎÒÃÇ¿ÉÒÔÑ¡Ôñ $T = Q$£¬²¢ÇÒÏÈÁî $\vec{P} = \vec{A}$¡£ÎÒÃÇ¿¼ÂÇ¹ãÒåµÄÌØÕ÷ÖµÎÊÌâ
+        \begin{equation}
+            \left[
+            \begin{array}{ll}
+                A & B^T \\
+                B & 0  \\
+            \end{array}
+            \right]
+            \left[
+            \begin{array}{l}
+                \vec{u} \\
+                \vec{p} \\
+            \end{array}
+            \right] = \lambda
+            \left[
+            \begin{array}{ll}
+                \vec{A} &   0 \\
+                0       &   Q \\
+            \end{array}
+            \right]
+            \left[
+                \begin{array}{l}
+                    \vec{u} \\
+                    \vec{p} \\
+                \end{array}
+            \right]
+        \end{equation}
+        Í¨¹ı¼òµ¥µÄ¼ÆËã¿ÉÒÔÖªµÀÌØÕ÷Öµ $\lambda$ Î»ÓÚ
+        \begin{equation}
+            [ \frac{1 - \sqrt{1 + 4 \Gamma^2}}{2}, \frac{1 - \sqrt{1 + 4 \gamma^2}}{2} ] \cup \{1\} \cup [ \frac{1 + \sqrt{1 + 4 \gamma^2}}{2}, \frac{1 + \sqrt{1 + 4\Gamma^2}}{2}].
+        \end{equation}
+        ÆäÖĞ $\gamma$ ºÍ $\Gamma$ ÊÇ \eqref{eq::lower_uper_bound} ºÍ \eqref{eq::schur_bound_neumann} ÖĞµÄÉÏÏÂ½ç£¬¸úÍø¸ñ³ß¶È $h$ ÎŞ¹ØµÄ³£Á¿¡£
+        Òò´Ë£¬ÎÒÃÇ¿ÉÒÔÖªµÀ£¬Èç¹ûÓÃÔ¤´¦ÀíµÄMINRESÀ´Çó½âµÄ»°£¬»áºÜ¿ìËÙÊÕÁ²£¬²¢ÇÒÓëÀëÉ¢µÄÍø¸ñ³ß¶ÈÃ»ÓĞ¹ØÏµ¡£
+     
+        ÔÚ \cite{elman2005finite} ÖĞÖ¸³ö£¬ÔÚ²»Ó°ÏìMINRESÊÕÁ²µÄÇ°ÌáÏÂ£¬¿ÉÒÔ¿¼ÂÇÓÃ±È $T = \mbox{diag}(Q)$ À´×÷ÎªSchur²¹¾ØÕóµÄ½üËÆ¡£²¢¸ø³öÁË $T = Q$ ºÍ $T = \mbox{diag}(Q)$ µÄ½ç
+        \begin{lemma}
+            Èç¹ûÔÚ $\mathbb{R}$ ÉÏµÄÒ»¸öÆÊ·ÖÉÏ£¬Ñ¹Á¦¿Õ¼äÓÃ $P_1$ Ôª½üËÆ£¬Ñ¡È¡ $T = \mbox{diag}(Q)$£¬ÄÇÃ´
+            ÓĞ
+            \begin{equation}
+                \theta^2 \leq \frac{<Q\vec{q}, \vec{q}>}{<T\vec{q}, \vec{q}>} \leq \Theta^2
+                \quad \mbox{¶ÔËùÓĞµÄ } \vec{q} \in \mathbb{R}^{n_p},
+            \end{equation}
+            ³ÉÁ¢£¬ÆäÖĞ $\theta = 1/\sqrt{2}$ ºÍ $\Theta = \sqrt{2}$£¬¶¼ÓëÍø¸ñ³ß¶È $h$ ÎŞ¹Ø¡£
+        \end{lemma}
 
 
-
+        ÏÂÃæ¿¼ÂÇÈçºÎ¸üºÃµÄ½üËÆ $\vec{A}$¡£
+        \begin{lemma}
+            ÔÚÇó½âÏßĞÔÏµÍ³ $\vec{A}\vec{u} = \vec{f}$ ÖĞ£¬²»¶¯µãµü´ú
+            \begin{equation}
+                \vec{u}^{(i + 1)} = (\vec{I} - \vec{P}^{-1}\vec{A}) \vec{u}^{i} + \vec{P}^{-1} \vec{f}
+            \end{equation}
+            µÄµü´úÎó²îÂú×ã
+            \begin{equation}
+                ||\vec{u} - \vec{u}^{(i + 1)}||_A \leq \rho ||\vec{u} - \vec{u}^{(i)}||_A,
+                \label{eq::iteration_error}
+            \end{equation}
+            ÆäÖĞÑ¹Ëõ±ÈÀı $\rho < 1$£¬ ÄÇÃ´
+            \begin{equation}
+                1 - \rho \leq \frac{<\vec{A}\vec{v}, \vec{v}>}{<\vec{P}\vec{v}, \vec{v}>} \leq
+                1 + \rho \quad \mbox{¶ÔËùÓĞµÄ } \vec{v}.
+            \end{equation}
+        \end{lemma}
+        \begin{proof}
+            ÒòÎª¾«È·½â $\vec{u}$ Âú×ã
+            \begin{equation}
+                \vec{u} = (\vec{I} - \vec{P}^{-1}\vec{A})\vec{u} + \vec{P}^{-1} \vec{f}, \notag
+            \end{equation}
+            \eqref{eq::iteration_error} ¿ÉÒÔ±íÊöÎª
+            \begin{equation*}
+                <\vec{A}(\vec{I} - \vec{P}^{-1}\vec{A})\vec{e}, (\vec{I} - \vec{P}^{-1}\vec{A})\vec{e}> \leq \rho^2 <\vec{A}\vec{e}, \vec{e}>
+            \end{equation*}
+            ¶ÔÈÎÒâµÄ $\vec{e} = \vec{u} - \vec{u}^{(i)}$£¬Áî $\vec{v} = \vec{A}^{1/2}\vec{e}$, ÄÇÃ´ÉÏÊ½¿ÉÒÔÖØĞÂĞ´³É
+            \begin{equation*}
+                <(\vec{I} - \vec{A}^{1/2}\vec{P}^{-1} \vec{A}^{1/2})\vec{v}, (\vec{I} - \vec{A}^{1/2}\vec{P}^{-1} \vec{A}^{1/2})\vec{v}> \leq \rho^2 <\vec{v}, \vec{v}>
+            \end{equation*}
+            ¶ÔËùÓĞµÄ $\vec{v}$¡£Òò´Ë
+            \begin{equation}
+                -\rho <\vec{v}, \vec{v}> \leq <(\vec{I} - \vec{A}^{1/2}\vec{P}^{-1} \vec{A}^{1/2})\vec{v}, \vec{v})> \leq \rho <\vec{v}, \vec{v}>, \notag
+            \end{equation}
+            ÔòÎÒÃÇ¿ÉÒÔµÃµ½
+            \begin{equation}
+                1 - \rho \leq \frac{<\vec{A}\vec{v}, \vec{v}>}{<\vec{P}\vec{v}, \vec{v}>} \leq
+                1 + \rho
+            \end{equation}
+            ¶ÔËùÓĞµÄ $\vec{v}$¡£
+        \end{proof}
+        (\cite{elman2005finite}, µÚ4ÕÂ)ÖĞÖ¸³ö£¬ÎÒÃÇ¿ÉÒÔÓÃÒ»¸öµ¥²ã¶àÖØÍø¸ñÑ­»·À´±íÊ¾ $P$£¬ËäÈ»µü´ú´ÎÊı
+        »á¶îÍâÔö¼ÓÒ»Ğ©¡£µ«ÊÇÓÃ¶Ô½Ç¿éÖ±½Ó×öÔ¤´¦Àí¾ØÕó£¬MINRESµÄµü´ú²½Êı»áËæ×Å $h$ µÄ¼õĞ¡¶øÔö¼Ó¡£
+        
+    \subsection{Õë¶ÔNavier-Stokes·½³Ì}
+        ÓÃÎÈ¶¨µÄ»ìºÏÔª½üËÆNavier-Stokes·½³Ì£¬»áµÃµ½ÓëStokes·½³ÌÖĞÀàËÆµÄÏßĞÔÏµÍ³£¬ÎÒÃÇ¿¼ÂÇËüµÄÏµÊı¾ØÕó£º
+        \begin{equation}
+            \left[
+            \begin{array}{ll}
+                \vec{F} & B^T \\
+                B & 0 \\            
+            \end{array} 
+            \right]           
+        \end{equation}
+        ÆäÖĞ $F$ °üº¬¶ÔÁ÷Ïî¾ØÕó£¬²»ÊÇ¶Ô³ÆµÄ¡£ÎÒÃÇ¿ÉÒÔÓÃKrylov×Ó¿Õ¼ä·½·¨ÖĞµÄGMRESÀ´Çó½âÏßĞÔÏµÍ³¡£ÔÚ±¾ÎÄÖĞ£¬ÎÒÃÇ
+        ½ö¿¼ÂÇOssenÏµÍ³£¬¼´
+        \begin{equation}
+            \left[
+            \begin{array}{ll}
+                \nu \vec{A} + \vec{N} & B^T \\
+                B & 0 \\ 
+            \end{array}
+            \right]
+            \left[
+            \begin{array}{l}
+            \vec{u} \\
+            \vec{p} \\
+            \end{array}    
+            \right] = 
+            \left[
+            \begin{array}{l}
+            \vec{f} \\
+            \vec{0} \\
+            \end{array}
+            \right],
+            \label{eq::ossen_system}
+        \end{equation}
+        ÆäÖĞ $\vec{A}$ ÊÇËÙ¶È¿Õ¼äµÄÏòÁ¿ĞÎÊ½µÄ¸Õ¶È¾ØÕó£¬ÒÔ¼° $\vec{N}$ ÊÇÏòÁ¿ĞÎÊ½µÄ¶ÔÁ÷¾ØÕó£¬·Ö±ğ¶¨ÒåÈçÏÂ£º
+        \begin{eqnarray}
+            \vec{A} = [\vec{a}_{ij}], \quad \vec{a}_{ij} = \int_{\Omega}\nabla \vec{\phi}_i \cdot \vec{\phi}_j, \\
+            \vec{N} = [\vec{n}_{ij}], \quad \vec{n}_{ij} = \int_{\Omega}(\vec{u}_h \cdot \vec{\phi}_i) \cdot \vec{\phi}_j.
+        \end{eqnarray}
+        Elman ÔÚ \cite{elman2005finite} ÖĞÖ¸³ö£¬ÔÚÇó½â \eqref{eq::ossen_system} Ê±£¬ÓÃ ¿éÈı½Ç¾ØÕó×öÔ¤´¦Àí±È¿é¶Ô½Ç¾ØÕó×öÔ¤´¦Àí£¬µü´ú´ÎÊı»á¼õ°ë¡£Ïê¼û()ÎÒÃÇÑ¡ÔñÓÃ¿éÈı½Ç¾ØÕó
+        \begin{equation}
+            M = \left[
+                \begin{array}{ll}
+                    \vec{M}_{\vec{F}} & B^T \\
+                    0 & -M_S \\ 
+                \end{array}      
+                \right]
+        \end{equation}
+        ×÷ÎªÔ¤´¦Àí¾ØÕó¡£
+        
 
 
 
@@ -429,12 +605,6 @@ C^{2^{k_1 - k_0}} \tran{Q}$.
 \end{algorithm}
 
 
-
-\begin{figure}[h!]
-\centering
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_NM_PraConvReg_p3m20.eps}}
-
-\end{figure}
 
 
 

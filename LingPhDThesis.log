@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2016.4.7)  16 APR 2016 20:32
+=======
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2016.3.26)  6 APR 2016 17:17
+>>>>>>> 729dd2b5659eab8b22e3815e435b18bc8fd3a836
 entering extended mode
 **LingPhDThesis.tex
 (E:\PHD_thesis_template\LingPhDThesis.tex
@@ -701,9 +705,13 @@ File: ZJUThesis.cfg 2014/02/19 v0.1i ZJUThesis configuration file
 \c@remark=\count160
 \c@case=\count161
 ) (E:\PHD_thesis_template\isomath.tex)
+<<<<<<< HEAD
 (E:\PHD_thesis_template\LingPhDThesis.aux
 (E:\PHD_thesis_template\Chapters/abstract.aux)
 (E:\PHD_thesis_template\Chapters/chapter2.aux))
+=======
+(E:\PHD_thesis_template\LingPhDThesis.aux)
+>>>>>>> 729dd2b5659eab8b22e3815e435b18bc8fd3a836
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
@@ -822,6 +830,9 @@ LaTeX Info: Redefining \pageref on input line 27.
 \@outlinefile=\write4
 \AtBeginShipoutBox=\box45
 
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
 (E:\CTEX\MiKTeX\tex\latex\cjk\standard.bdg
 File: standard.bdg 2008/12/29 4.8.2
 )
@@ -831,6 +842,7 @@ File: extended.enc 2008/12/29 4.8.2
 (E:\CTEX\MiKTeX\tex\latex\cjk\extended.chr
 File: extended.chr 2008/12/29 4.8.2
 )
+<<<<<<< HEAD
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.64998pt.
@@ -932,3 +944,42 @@ PDF statistics:
  20 named destinations out of 1000 (max. 500000)
  29 words of extra memory for PDF output out of 10000 (max. 10000000)
 
+=======
+LaTeX Font Info:    Try loading font information for C19+zhkai on input line 45
+.
+
+(E:\CTEX\CTeX\tex\latex\zhmetrics\c19zhkai.fd
+File: c19zhkai.fd 2009/09/23 4.8.2
+)
+Package CJKpunct Info: punctuation spaces for family 'zhkai' do not exist. Use 
+family 'def' instead. on input line 45.
+File: figures/ZJU.eps Graphic file (type eps)
+ <figures/ZJU.eps>
+File: figures/ZJULOGO.eps Graphic file (type eps)
+
+<figures/ZJULOGO.eps>
+LaTeX Font Info:    Try loading font information for C19+zhhei on input line 45
+.
+ (E:\CTEX\CTeX\tex\latex\zhmetrics\c19zhhei.fd
+File: c19zhhei.fd 2009/09/23 4.8.2
+)
+Package CJKpunct Info: punctuation spaces for family 'zhhei' do not exist. Use 
+family 'def' instead. on input line 45.
+
+! Undefined control sequence.
+\CAST@value@Title ...非线性矩阵方程的数�
+                                                  �算法研究
+l.45  \maketitle
+                
+? X
+ 
+Here is how much of TeX's memory you used:
+ 16422 strings out of 495286
+ 268671 string characters out of 3181610
+ 332441 words of memory out of 3000000
+ 19193 multiletter control sequences out of 15000+200000
+ 14940 words of font info for 53 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 54i,5n,51p,475b,658s stack positions out of 5000i,500n,10000p,200000b,50000s
+No pages of output.
+>>>>>>> 729dd2b5659eab8b22e3815e435b18bc8fd3a836

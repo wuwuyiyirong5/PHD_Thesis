@@ -1,0 +1,51 @@
+<<<<<<< HEAD
+=======
+\let \CTEX@spaceChar \relax 
+\contentsline {chapter}{摘\CTEX@spaceChar \CTEX@spaceChar 要}{i}{chapter*.3}
+\contentsline {chapter}{Abstract}{iii}{chapter*.4}
+\contentsline {chapter}{目\CTEX@spaceChar \CTEX@spaceChar 录}{v}{chapter*.5}
+\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 1\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace {0.3em}}绪论}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}研究背景}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}迭代法介绍}{1}{section.1.2}
+\contentsline {section}{\numberline {1.3}矩阵函数}{3}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}矩阵平方根}{3}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}矩阵\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces $p$\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 次根}{3}{subsection.1.3.2}
+\contentsline {section}{\numberline {1.4}论文的组织}{3}{section.1.4}
+\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 2\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace {0.3em}}预备知识}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}混合有限元}{9}{section.2.1}
+\contentsline {section}{\numberline {2.2}几何遗传树结构}{12}{section.2.2}
+\contentsline {section}{\numberline {2.3}移动网格方法}{12}{section.2.3}
+\contentsline {section}{\numberline {2.4}预处理方法}{13}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}针对Stokes方程}{13}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}针对Navier-Stokes方程}{19}{subsection.2.4.2}
+\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 3\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace {0.3em}}基于4P1-P1元求解Navier-Stokes方程的移动网格方法}{21}{chapter.3}
+\contentsline {section}{\numberline {3.1}数据结构}{22}{section.3.1}
+\contentsline {section}{\numberline {3.2}混合元近似}{23}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}流体方程}{23}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}弱形式}{25}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}预处理策略}{27}{section.3.3}
+\contentsline {section}{\numberline {3.4}移动网格策略}{29}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Step 1 获取Monitor}{29}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Step 2 获取新的逻辑网格}{30}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Step 3 物理网格的移动方向}{30}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Step 4 散度为0的插值}{32}{subsection.3.4.4}
+\contentsline {section}{\numberline {3.5}数值算例}{34}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Colliding Flow}{34}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}喷射流}{35}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Navier-Stokes 流经过一个凹形台阶}{36}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}圆柱绕流}{37}{subsection.3.5.4}
+\contentsline {chapter}{\numberline {第\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 4\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 章\hspace {0.3em}}移动网格有限元的多重网格预处理方法}{47}{chapter.4}
+\contentsline {section}{\numberline {4.1}时间格式的离散}{48}{section.4.1}
+\contentsline {section}{\numberline {4.2}快速Krylov求解}{52}{section.4.2}
+\contentsline {section}{\numberline {4.3}移动网格策略}{55}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}网格移动的流程}{55}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}用AMG 预处理求解(\ref {eq::full_discreted_update})}{56}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}数值算例}{57}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}方腔驱动流}{57}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Backward step flow}{58}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Flow over cylinder}{60}{subsection.4.4.3}
+\contentsline {chapter}{攻读学位期间取得的研究成果}{65}{chapter*.39}
+\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{67}{chapter*.40}
+\contentsline {chapter}{浙江大学学位论文独创性声明}{69}{chapter*.41}
+\contentsline {chapter}{学位论文使用授权声明}{69}{chapter*.42}
+>>>>>>> 729dd2b5659eab8b22e3815e435b18bc8fd3a836

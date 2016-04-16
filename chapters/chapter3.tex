@@ -1043,33 +1043,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-\begin{figure}[p!]
-\centering
-\subfigure[]{\includegraphics[width=0.3\textwidth]{fig_EM_ConvReg_p25m20.eps}}
-
-\caption{The approximating regions of $\mathcal {R}$ defined in
-(\ref{set:R}) for $p = 25, 100, 400$ and $m = 20, 100, 500$, where
-the red and blue regions denote the set $\{z\in\CS: 1-z \in
-\overline{\MCD}_1\}$ and  $\{z\in\CS: 1-z \in \MCD_0 \bigcap
-\MCD_2\}$, respectively. }\label{fig:EM_ConvReg}
-\end{figure}
-
-
-
-
-
-
-
-
 \begin{numcases}{}
 |r(E(z),\lambda)| < |r(z,\lambda)|^3, &
 if \ $r(z,\lambda) \in \overline{\MCD}_1\backslash\{0,1\}$,\ \ \  \label{ineq:abs_r(E(z))_1}\\
@@ -1079,22 +1052,6 @@ if \ $r(z,\lambda) \in \overline{\MCD}_1\backslash\{0,1\}$,\ \ \  \label{ineq:ab
 \  $r(z,\lambda) \in \mathcal {D}_0\backslash\{1\}$,
 \label{ineq:abs_r(E(z))_2}
 \end{numcases}
-
-
-
-
-
-\begin{figure}[h]
-\centering
-\subfigure[]{\includegraphics[width=0.32\textwidth]{fig_relerr_coupledEM_1.eps}}
-
-\caption{(a) and (b) show the relative error for the $p$th root
-$A^{1/p}$ by using coupled Euler iteration (\ref{it:CoupledEM}); (c)
-is the result of Algorithm \ref{al:SE}.}\label{fig:relerr_CEM}
-\end{figure}
-
-
-
 
 
 
@@ -1123,70 +1080,4 @@ the four Algorithms. } \label{tab:test3}
 \end{table}
 
 
-
-\begin{table}[h]
-\begin{center}
-\begin{tabular}{cc@{\hspace{0.7cm}}c@{\hspace{0.7cm}}c@{\hspace{0.7cm}}c@{\hspace{0.7cm}}c@{\hspace{0.7cm}}c}
-\hline
-& Algorithm & CPU time (s)& iter & $k_1$ & $\rho(X)$ & err($X$) \\
-\hline
-$p = 5$ \\
-& PSN & 2.34e-03 & 5 & 3 & 8.68e-15 & 3.11e-12 \\
-& SN & 2.97e-03 & 5 & 2 & 8.62e-15 & 3.08e-12 \\
-& SH & 3.13e-03 & 3 & 2 & 8.54e-15 & 3.06e-12 \\
-& SE & 1.41e-03 & 3 & 2 & 8.52e-15 & 3.05e-12 \\
-$p = 7$ \\
-& PSN & 5.00e-03 & 5 & 3 & 1.45e-14 & 3.83e-12 \\
-& SN & 4.22e-03 & 4 & 2 & 1.50e-14 & 3.96e-12 \\
-& SH & 4.38e-03 & 3 & 2 & 1.55e-14 & 4.07e-12 \\
-& SE & 4.06e-03 & 4 & 2 & 1.47e-14 & 3.87e-12 \\
-\hline
-\end{tabular}
-\end{center}
-\caption{Results for a random nonnormal matrix by using the four
-Algorithms. } \label{tab:test4}
-\end{table}
-
-
-
-\begin{landscape}
-\begin{table}
-\begin{center}
-%\begin{tabular}{cc|c@{\hspace{0.7cm}}c@{\hspace{0.7cm}}c@{\hspace{0.7cm}}c@{\hspace{0.7cm}}c}
-\begin{tabular}{cccccccccccccccccc}
-\hline
-& \multicolumn{4}{c}{$p = 18$} &&& \multicolumn{4}{c}{$p = 33$} &&& \multicolumn{4}{c}{$p = 81$}\\
-\cline{2-6} \cline{8-12} \cline{14-18}
-& CPU time & iter & $k_1$ & $\rho(X)$ & err($X$)&& CPU time & iter & $k_1$ & $\rho(X)$ & err($X$) && CPU time & iter & $k_1$ & $\rho(X)$ & err($X$)\\
-\hline
- \\
- \multicolumn{6}{l}{Hilbert matrix ($7 \times 7$)} \\
- \\
-PSN & 1.06e-02 & 5 & 5 & 1.31e-14 & 6.47e-14 & & 1.06e-02 & 5 & 5 & 3.77e-14 & 2.12e-13 && 1.05e-02 & 5 & 5 & 6.77e-14 & 4.30e-13\\
-SN & 8.44e-03 & 6 & 4 & 6.09e-15 & 3.01e-14 & & 8.59e-03 & 6 & 4 & 1.65e-14 & 9.31e-14 && 8.59e-02 & 6 & 4 & 2.63e-14 & 1.67e-13\\
-SH & 8.59e-03 & 4 & 4 & 1.34e-15 & 6.60e-15 & & 8.59e-03 & 4 & 4 & 2.43e-14 & 1.37e-13 && 8.59e-03 & 4 & 4 & 2.51e-14 & 1.60e-13\\
-SE & 7.03e-03 & 5 & 3 & 3.19e-15 & 1.57e-14 & & 8.44e-03 & 4 & 4 & 4.53e-15 & 2.55e-14 && 8.44e-03 & 4 & 4 & 2.45e-14 & 1.56e-13\\
- \\
-\multicolumn{6}{l}{Prolate matrix ($10 \times 10$)}\\
- \\
-PSN & 2.16e-02 & 5 & 5 & 3.96e-15 & 3.45e-14 & & 2.03e-02 & 5 & 5 & 1.33e-14 & 1.03e-13 && 2.31e-02 & 4 & 5 & 3.79e-14 & 3.64e-13\\
-SN & 1.81e-02 & 6 & 4 & 1.29e-15 & 1.12e-14 & & 1.81e-02 & 6 & 4 & 5.74e-15 & 5.26e-14 && 1.77e-02 & 6 & 4 & 9.05e-15 & 8.70e-14\\
-SH & 1.72e-02 & 4 & 4 & 1.84e-15 & 1.61e-14 & & 1.59e-02 & 4 & 4 & 1.03e-14 & 9.47e-14 && 1.81e-02 & 4 & 4 & 2.55e-14 & 2.45e-13\\
-SE & 1.23e-02 & 4 & 3 & 1.29e-15 & 1.13e-14 & & 1.33e-02 & 4 & 3 & 3.41e-15 & 3.13e-14 && 1.25e-02 & 4 & 3 & 1.08e-14 & 1.04e-13\\
- \\
-\multicolumn{6}{l}{Frank matrix ($12 \times 12$)}\\
- \\
-PSN & 2.31e-02 & 5 & 4 & 1.46e-15 & 1.54e-08 & & 2.39e-02 & 5 & 4 & 7.65e-15 & 2.51e-08 && 2.44e-02 & 5 & 4 & 1.17e-13 & 6.58e-08\\
-SN & 1.69e-02 & 6 & 3 & 1.46e-15 & 1.55e-08 & & 1.67e-02 & 6 & 3 & 5.06e-15 & 1.66e-08 && 1.70e-02 & 6 & 3 & 1.15e-13 & 6.45e-08\\
-SH & 1.77e-02 & 4 & 3 & 1.52e-15 & 1.61e-08 & & 1.67e-02 & 4 & 3 & 8.09e-15 & 2.65e-08 && 1.80e-02 & 4 & 3 & 8.24e-14 & 4.73e-08\\
-SE & 1.63e-02 & 4 & 3 & 1.17e-15 & 1.24e-08 & & 1.80e-02 & 4 & 3 & 7.45e-15 & 2.44e-08 && 1.78e-02 & 4 & 3 & 1.07e-13 & 6.00e-08\\
-\hline
-\end{tabular}
-\end{center}
-\caption{Results for computing principal $p$th root of $7 \times 7$
-Hilbert matrix, $10 \times 10$ Prolate matrix and $12 \times 12$
-Frank matrix by using the four Algorithms. }
-\label{tab:relres_err_it}
-\end{table}
-\end{landscape}
 
