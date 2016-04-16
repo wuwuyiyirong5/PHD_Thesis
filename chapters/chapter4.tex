@@ -1,11 +1,11 @@
 %%---------------------------------------------------------------------------%%
-%%------------ µÚËÄÕÂ£º´úÊı~Riccati~·½³ÌµÄ~ULM~·½·¨ ---------------------------%%
+%%------------ ç¬¬å››ç« ï¼šä»£æ•°~Riccati~æ–¹ç¨‹çš„~ULM~æ–¹æ³• ---------------------------%%
 %%---------------------------------------------------------------------------%%
 
 
-\chapter{ÒÆ¶¯Íø¸ñÓĞÏŞÔªµÄ¶àÖØÍø¸ñÔ¤´¦Àí·½·¨}
+\chapter{ç§»åŠ¨ç½‘æ ¼æœ‰é™å…ƒçš„å¤šé‡ç½‘æ ¼é¢„å¤„ç†æ–¹æ³•}
     \label{chapter:AMG_preconditioner}
-    Ô­Ê¼±äÁ¿ĞÎÊ½µÄ²»¿ÉÑ¹Navier-Stokes·½³Ì
+    åŸå§‹å˜é‡å½¢å¼çš„ä¸å¯å‹Navier-Stokesæ–¹ç¨‹
     \begin{equation}
       \begin{array}{rcl}
          \partial_t \vec{u} - \nu \nabla^2 \vec{u} +
@@ -15,8 +15,8 @@
       \end{array}
       \label{eq::NS}
     \end{equation}
-    $\partial \Omega = \partial \Omega_D \bigcup \partial \Omega_N$ÉÏµÄ
-    ±ß½çÌõ¼şÒÔ¼°³õÖµÌõ¼ş:
+    $\partial \Omega = \partial \Omega_D \bigcup \partial \Omega_N$ä¸Šçš„
+    è¾¹ç•Œæ¡ä»¶ä»¥åŠåˆå€¼æ¡ä»¶:
     \begin{equation}
       \begin{array}{ll}
         \vec{u} = \vec{w},& \mbox{ on } \partial \Omega_D \times [0,
@@ -27,87 +27,87 @@
       \end{array}
       \label{eq::bc}
     \end{equation}
-    ÆäÖĞ $\Omega \in \mathcal{R}^d,(d = 2, 3)$ ÊÇ¼ÆËãÇøÓò£¬
-    $[0,T]$ ÊÇÊ±¼äÇø¼ä, $\vec{u}$ÊÇËÙ¶È±äÁ¿²¢ÇÒ³£Á¿$p$ÊÇÑ¹Á¦£¬ $\vec{n}$ ÊÇ±ß½ç
-    $\partial \Omega$ÉÏµÄÍâ·¨Ïò·½Ïò£¬ $\nu > 0$ ÊÇÕ³ĞÔ¶¯Á¦Ñ§ÏµÊı¡£
-    ÎÒÃÇÓÃ\cite{li2001mesh} ºÍ \cite{di2005}ÖĞÌá³öµÄÒÆ¶¯Íø¸ñÓĞÏŞÔª·½·¨Çó½â(\ref{eq::NS}) ºÍ (\ref{eq::bc})¡£
-    ¹ıÈ¥¼¸Ê®Äê£¬ºÜ¶àÈËÔÚÒÆ¶¯Íø¸ñÒÆ¶¯Íø¸ñ·½·¨ÉÏ×ö³öÁËºÜ¶à¹¤×÷(\cite{cao1999adaptive}¡¢
-    \cite{cao2003moving}¡¢\cite{di2005moving}¡¢\cite{di2007level}¡¢\cite{di2007moving}¡¢
-    \cite{li2001PHDthesis}¡¢\cite{li2006moving})¡£Winslow \cite{Winslow1966NUMERICAL} Ìá³öÁË
-    ÓÃÒÆ¶¯Íø¸ñ·½·¨Çó½âÍÖÔ²·½³Ì¡£×÷ÎªWinslowµÄ¹¤×÷µÄÍØÕ¹, Dvinsky \cite{dvinsky1991adaptive}
-    Ìá³öÁËµ÷ºÍº¯ÊıÀíÂÛ¿ÉÒÔÓÃÀ´²úÉúÍø¸ñ¡£ÊÕµ½Dvinsky¹¤×÷µÄÆô·¢, L1, Tang and Zhang \cite{li2001mesh}
-    Ìá³öÁË»ùÓÚµ÷ºÍÓ³ÉäµÄÒÆ¶¯Íø¸ñÓĞÏŞÔª·½·¨¡£Û¡\cite{di2005moving}°ÑÕâÖÖÒÆ¶¯Íø¸ñ²ßÂÔÓ¦ÓÃµ½Çó½âÔ­Ê¼
-    ±äÁ¿ĞÎÊ½µÄ²»¿ÉÑ¹Navier-Stokes·½³Ì¡£ÎÄÖĞÔÚÒÆ¶¯Íø¸ñ²ßÂÔÖĞÌá³öÁË±£³ÖÉ¢¶ÈµÄ²åÖµ·½·¨£¬ÕâÊÇÍ¨¹ı
-    Çó½âÒ»¸öÀàËÆÏßĞÔ»¯µÄNavier-Stokes·½³Ì¡£ÎÒÃÇÔÚÉÏÒ»ÕÂÖĞ£¬Ìáµ½ÁËÎÒÃÇ½«$4P1-P1$ÔªÓ¦ÓÃµ½ÒÆ¶¯Íø¸ñ    ÓĞÏŞÔª·½·¨ÉÏ¡£$4P1-P1$Ôª×ÔÈ»Âú×ãLBB(inf-sup)Ìõ¼ş£¬ÔÚ\cite{bercovier1979error}¸ø³öÁË$P1isop2P1$
-    ÔªµÄÎó²îÊÕÁ²½×£¬ËÙ¶È$L^2$Îó²îÊÇ¶ş½×ÊÕÁ²£¬Ñ¹Á¦ÊÇÒ»½×ÊÕÁ²¡£$4P1-P1$¸ú$P1isoP2P1$Ôª¾ßÓĞÏàÍ¬µÄ
-    Êı¾İ½á¹¹£¬µ«ÊÇ$4P1-P1$ÔªÖĞµÄËÙ¶Èµ¥ÔªÉÏµÄ»ùº¯ÊıÈ«²¿Î»ÓÚÒ»¸öËÙ¶Èµ¥ÔªÉÏ£¬ÔÚËÙ¶Èµ¥ÔªºÍÑ¹Á¦µ¥Ôª
-    ½øĞĞÆ´×°µÄÊ±ºò£¬Ö»Òª½¨Á¢ËÙ¶Èµ¥ÔªºÍÑ¹Á¦µ¥Ôª¼äµÄË÷Òı£¬±ãÊÇÒ»¸ö¼òµ¥µÄ¹ı³Ì¡£
+    å…¶ä¸­ $\Omega \in \mathcal{R}^d,(d = 2, 3)$ æ˜¯è®¡ç®—åŒºåŸŸï¼Œ
+    $[0,T]$ æ˜¯æ—¶é—´åŒºé—´, $\vec{u}$æ˜¯é€Ÿåº¦å˜é‡å¹¶ä¸”å¸¸é‡$p$æ˜¯å‹åŠ›ï¼Œ $\vec{n}$ æ˜¯è¾¹ç•Œ
+    $\partial \Omega$ä¸Šçš„å¤–æ³•å‘æ–¹å‘ï¼Œ $\nu > 0$ æ˜¯ç²˜æ€§åŠ¨åŠ›å­¦ç³»æ•°ã€‚
+    æˆ‘ä»¬ç”¨\cite{li2001mesh} å’Œ \cite{di2005}ä¸­æå‡ºçš„ç§»åŠ¨ç½‘æ ¼æœ‰é™å…ƒæ–¹æ³•æ±‚è§£(\ref{eq::NS}) å’Œ (\ref{eq::bc})ã€‚
+    è¿‡å»å‡ åå¹´ï¼Œå¾ˆå¤šäººåœ¨ç§»åŠ¨ç½‘æ ¼ç§»åŠ¨ç½‘æ ¼æ–¹æ³•ä¸Šåšå‡ºäº†å¾ˆå¤šå·¥ä½œ(\cite{cao1999adaptive}ã€
+    \cite{cao2003moving}ã€\cite{di2005moving}ã€\cite{di2007level}ã€\cite{di2007moving}ã€
+    \cite{li2001PHDthesis}ã€\cite{li2006moving})ã€‚Winslow \cite{Winslow1966NUMERICAL} æå‡ºäº†
+    ç”¨ç§»åŠ¨ç½‘æ ¼æ–¹æ³•æ±‚è§£æ¤­åœ†æ–¹ç¨‹ã€‚ä½œä¸ºWinslowçš„å·¥ä½œçš„æ‹“å±•, Dvinsky \cite{dvinsky1991adaptive}
+    æå‡ºäº†è°ƒå’Œå‡½æ•°ç†è®ºå¯ä»¥ç”¨æ¥äº§ç”Ÿç½‘æ ¼ã€‚æ”¶åˆ°Dvinskyå·¥ä½œçš„å¯å‘, L1, Tang and Zhang \cite{li2001mesh}
+    æå‡ºäº†åŸºäºè°ƒå’Œæ˜ å°„çš„ç§»åŠ¨ç½‘æ ¼æœ‰é™å…ƒæ–¹æ³•ã€‚é‚¸\cite{di2005moving}æŠŠè¿™ç§ç§»åŠ¨ç½‘æ ¼ç­–ç•¥åº”ç”¨åˆ°æ±‚è§£åŸå§‹
+    å˜é‡å½¢å¼çš„ä¸å¯å‹Navier-Stokesæ–¹ç¨‹ã€‚æ–‡ä¸­åœ¨ç§»åŠ¨ç½‘æ ¼ç­–ç•¥ä¸­æå‡ºäº†ä¿æŒæ•£åº¦çš„æ’å€¼æ–¹æ³•ï¼Œè¿™æ˜¯é€šè¿‡
+    æ±‚è§£ä¸€ä¸ªç±»ä¼¼çº¿æ€§åŒ–çš„Navier-Stokesæ–¹ç¨‹ã€‚æˆ‘ä»¬åœ¨ä¸Šä¸€ç« ä¸­ï¼Œæåˆ°äº†æˆ‘ä»¬å°†$4P1-P1$å…ƒåº”ç”¨åˆ°ç§»åŠ¨ç½‘æ ¼    æœ‰é™å…ƒæ–¹æ³•ä¸Šã€‚$4P1-P1$å…ƒè‡ªç„¶æ»¡è¶³LBB(inf-sup)æ¡ä»¶ï¼Œåœ¨\cite{bercovier1979error}ç»™å‡ºäº†$P1isop2P1$
+    å…ƒçš„è¯¯å·®æ”¶æ•›é˜¶ï¼Œé€Ÿåº¦$L^2$è¯¯å·®æ˜¯äºŒé˜¶æ”¶æ•›ï¼Œå‹åŠ›æ˜¯ä¸€é˜¶æ”¶æ•›ã€‚$4P1-P1$è·Ÿ$P1isoP2P1$å…ƒå…·æœ‰ç›¸åŒçš„
+    æ•°æ®ç»“æ„ï¼Œä½†æ˜¯$4P1-P1$å…ƒä¸­çš„é€Ÿåº¦å•å…ƒä¸Šçš„åŸºå‡½æ•°å…¨éƒ¨ä½äºä¸€ä¸ªé€Ÿåº¦å•å…ƒä¸Šï¼Œåœ¨é€Ÿåº¦å•å…ƒå’Œå‹åŠ›å•å…ƒ
+    è¿›è¡Œæ‹¼è£…çš„æ—¶å€™ï¼Œåªè¦å»ºç«‹é€Ÿåº¦å•å…ƒå’Œå‹åŠ›å•å…ƒé—´çš„ç´¢å¼•ï¼Œä¾¿æ˜¯ä¸€ä¸ªç®€å•çš„è¿‡ç¨‹ã€‚
 
-    ¾İÎÒÃÇËùÖª£¬ÓÃÂú×ãinf-supÌõ¼şµÄ$4P1-P1$Ôª¿ÉÒÔÍÆ³öÒ»¸ö°°µãÎÊÌâ£¬ĞíºÍºÎ(\cite{xu1992iterative}¡¢\cite{shen1999schur}¡¢\cite{he2003})
-    ½«Á½¸ñ×Ó·½·¨Ó¦ÓÃµ½Navier-Stokes·½³ÌµÄÇó½â¡£ºÜ¶àÈËÔÚÎªkrylov×Ó¿Õ¼ä·½·¨Ìá¹©Ô¤´¦Àí×Ó·½Ãæ×ö³öÁËºÜ¶à¹¤×÷¡£
-    ÔÚ\cite{benzi2005numerical}ÎÄÖĞ£¬¸ÅÀ¨ÁËÇó½â°°µãÎÊÌâ³£ÓÃµÄÊıÖµ·½·¨£¬ÀıÈç¿éÔ¤´¦ÀíºÍ¶àÖØÍø¸ñÔ¤´¦Àí¡£ÎÄÏ×(
-    \cite{bai2005inexact}, \cite{bai2006structured},\cite{elman2007least},\cite{elman2009boundary}µÈ)ÖĞÌá³öÁËĞí¶à¿éÔ¤´¦Àí·½·¨£¬À´
-    ÕÒµ½°°µãÎÊÌâµÄschur²¹µÄ¸üºÃµÄ½üËÆ¡£\cite{benzi2006augmented}ÖĞÌá³öÁËÇó½âOssenÏµÍ³µÄÔö¹ãµÄ»ùÓÚlagarian·½·¨¡£ÔÚ\cite{benzi2011relaxed}
-    ÖĞÌá³öÁËÇó½â²»¿ÉÑ¹Navier-Stokes·½³ÌµÄÎ¬Êı·Ö½âµÄÔ¤´¦Àí·½·¨¡£(\cite{boyle2007hsl}
-    \cite{boyle2010hsl_mi20})ÖĞÌá³öÁËÇó½âNavier-Stokes·½³ÌµÄÒ»ÖÖ¸ßĞ§µÄKrylov×Ó¿Õ¼ä·½·¨£¬ÕâÖÖ·½·¨ÊÇÓÃ´úÊı¶àÖØÍø¸ñ×öÔ¤´¦Àí×Ó¡£
-    µ«ÊÇ¾İÎÒÃÇËùÖª£¬¶ÔÓÚ°°µãÎÊÌâµÄ¸ßĞ§Ô¤´¦Àí·½·¨»ù±¾ÉÏ¶¼ÊÇ»ùÓÚ¾ùÔÈÍø¸ñÉÏµÄ£¬¾¡¹ÜÔÚ\cite{benzi2011relaxed}Ò»ÎÄÖĞ£¬¿¼ÂÇÁËÀ­Éì
-    Íø¸ñµÄÇéĞÎ¡£
+    æ®æˆ‘ä»¬æ‰€çŸ¥ï¼Œç”¨æ»¡è¶³inf-supæ¡ä»¶çš„$4P1-P1$å…ƒå¯ä»¥æ¨å‡ºä¸€ä¸ªéç‚¹é—®é¢˜ï¼Œè®¸å’Œä½•(\cite{xu1992iterative}ã€\cite{shen1999schur}ã€\cite{he2003})
+    å°†ä¸¤æ ¼å­æ–¹æ³•åº”ç”¨åˆ°Navier-Stokesæ–¹ç¨‹çš„æ±‚è§£ã€‚å¾ˆå¤šäººåœ¨ä¸ºkrylovå­ç©ºé—´æ–¹æ³•æä¾›é¢„å¤„ç†å­æ–¹é¢åšå‡ºäº†å¾ˆå¤šå·¥ä½œã€‚
+    åœ¨\cite{benzi2005numerical}æ–‡ä¸­ï¼Œæ¦‚æ‹¬äº†æ±‚è§£éç‚¹é—®é¢˜å¸¸ç”¨çš„æ•°å€¼æ–¹æ³•ï¼Œä¾‹å¦‚å—é¢„å¤„ç†å’Œå¤šé‡ç½‘æ ¼é¢„å¤„ç†ã€‚æ–‡çŒ®(
+    \cite{bai2005inexact}, \cite{bai2006structured},\cite{elman2007least},\cite{elman2009boundary}ç­‰)ä¸­æå‡ºäº†è®¸å¤šå—é¢„å¤„ç†æ–¹æ³•ï¼Œæ¥
+    æ‰¾åˆ°éç‚¹é—®é¢˜çš„schurè¡¥çš„æ›´å¥½çš„è¿‘ä¼¼ã€‚\cite{benzi2006augmented}ä¸­æå‡ºäº†æ±‚è§£Ossenç³»ç»Ÿçš„å¢å¹¿çš„åŸºäºlagarianæ–¹æ³•ã€‚åœ¨\cite{benzi2011relaxed}
+    ä¸­æå‡ºäº†æ±‚è§£ä¸å¯å‹Navier-Stokesæ–¹ç¨‹çš„ç»´æ•°åˆ†è§£çš„é¢„å¤„ç†æ–¹æ³•ã€‚(\cite{boyle2007hsl}
+    \cite{boyle2010hsl_mi20})ä¸­æå‡ºäº†æ±‚è§£Navier-Stokesæ–¹ç¨‹çš„ä¸€ç§é«˜æ•ˆçš„Krylovå­ç©ºé—´æ–¹æ³•ï¼Œè¿™ç§æ–¹æ³•æ˜¯ç”¨ä»£æ•°å¤šé‡ç½‘æ ¼åšé¢„å¤„ç†å­ã€‚
+    ä½†æ˜¯æ®æˆ‘ä»¬æ‰€çŸ¥ï¼Œå¯¹äºéç‚¹é—®é¢˜çš„é«˜æ•ˆé¢„å¤„ç†æ–¹æ³•åŸºæœ¬ä¸Šéƒ½æ˜¯åŸºäºå‡åŒ€ç½‘æ ¼ä¸Šçš„ï¼Œå°½ç®¡åœ¨\cite{benzi2011relaxed}ä¸€æ–‡ä¸­ï¼Œè€ƒè™‘äº†æ‹‰ä¼¸
+    ç½‘æ ¼çš„æƒ…å½¢ã€‚
 
-    ÔÚ\cite{elman2005finite}µÄ»ù´¡ÉÏ£¬ÎÒÃÇ½«ÎªÒÆ¶¯Íø¸ñÓĞÏŞÔª·½·¨Çó½â(\ref{eq::NS})ºÍ
-    (\ref{eq::bc})Ìá¹©ÁËÒ»¸ö´úÊı¶àÖØÍø¸ñÔ¤´¦Àí·½·¨¡£ÎÒÃÇÍ¨¹ıÊıÖµÀı×ÓÀ´±íÃ÷£¬ÎÒÃÇµÄÔ¤´¦Àí×ÓµÄ¸ßĞ§ĞÔ¡£
-    \section{Ê±¼ä¸ñÊ½µÄÀëÉ¢}
-        ÔÚÊ±¼ä²ãÀëÉ¢ÉÏ£¬ÎÒÃÇ°ÑÊ±¼äÇø¼ä$[0, T]$·Ö³É$N$·İ£¬$\{t_i\}_{i = 1}^N$¡£Áî$\vec{u}^j$ ºÍ $p^j$ ÊÇÁ¬ĞøĞÎÊ½½â$\vec{u}(\cdot, t_j)$ ºÍ $p(\cdot, t_j)$µÄÀëÉ¢½üËÆ¡£ÔÚÊ±¼ä¸ñÊ½µÄÀëÉ¢ÉÏ£¬Ö÷Òª·ÖÎªËã×Ó·ÖÁÑ·½·¨ºÍÈ«Òş¸ñÊ½¡£
-        ÔÚËã×Ó·ÖÁÑ·½·¨£¬Ò²¿ÉÒÔ¿´³ÉÊÇ·Ö²¿·½·¨¡£×î¼òµ¥µÄ·½·¨ÊÇ½«Ëã×Ó·Ö³ÉÁ½²½£¬ÔÚÃ¿Ò»²½ÖĞ·Ö±ğÓÃÏòÇ°ºÍÏòºóÅ·À­¸ñÊ½£¬¿ÉÒÔ²Î¿¼\cite{peaceman1955numerical}¡£
-        ÔÚ\cite{he2003two}ÖĞ£¬½«ÕâÖÖÁ½²½·ÖÁÑ·½·¨Ó¦ÓÃµ½Navier-Stokes·½³ÌµÄÊ±¼äÀëÉ¢ÉÏ¡£
-        Í¨³£µÄÁ½²½·½·¨ÈçÏÂ£º
+    åœ¨\cite{elman2005finite}çš„åŸºç¡€ä¸Šï¼Œæˆ‘ä»¬å°†ä¸ºç§»åŠ¨ç½‘æ ¼æœ‰é™å…ƒæ–¹æ³•æ±‚è§£(\ref{eq::NS})å’Œ
+    (\ref{eq::bc})æä¾›äº†ä¸€ä¸ªä»£æ•°å¤šé‡ç½‘æ ¼é¢„å¤„ç†æ–¹æ³•ã€‚æˆ‘ä»¬é€šè¿‡æ•°å€¼ä¾‹å­æ¥è¡¨æ˜ï¼Œæˆ‘ä»¬çš„é¢„å¤„ç†å­çš„é«˜æ•ˆæ€§ã€‚
+    \section{æ—¶é—´æ ¼å¼çš„ç¦»æ•£}
+        åœ¨æ—¶é—´å±‚ç¦»æ•£ä¸Šï¼Œæˆ‘ä»¬æŠŠæ—¶é—´åŒºé—´$[0, T]$åˆ†æˆ$N$ä»½ï¼Œ$\{t_i\}_{i = 1}^N$ã€‚ä»¤$\vec{u}^j$ å’Œ $p^j$ æ˜¯è¿ç»­å½¢å¼è§£$\vec{u}(\cdot, t_j)$ å’Œ $p(\cdot, t_j)$çš„ç¦»æ•£è¿‘ä¼¼ã€‚åœ¨æ—¶é—´æ ¼å¼çš„ç¦»æ•£ä¸Šï¼Œä¸»è¦åˆ†ä¸ºç®—å­åˆ†è£‚æ–¹æ³•å’Œå…¨éšæ ¼å¼ã€‚
+        åœ¨ç®—å­åˆ†è£‚æ–¹æ³•ï¼Œä¹Ÿå¯ä»¥çœ‹æˆæ˜¯åˆ†éƒ¨æ–¹æ³•ã€‚æœ€ç®€å•çš„æ–¹æ³•æ˜¯å°†ç®—å­åˆ†æˆä¸¤æ­¥ï¼Œåœ¨æ¯ä¸€æ­¥ä¸­åˆ†åˆ«ç”¨å‘å‰å’Œå‘åæ¬§æ‹‰æ ¼å¼ï¼Œå¯ä»¥å‚è€ƒ\cite{peaceman1955numerical}ã€‚
+        åœ¨\cite{he2003two}ä¸­ï¼Œå°†è¿™ç§ä¸¤æ­¥åˆ†è£‚æ–¹æ³•åº”ç”¨åˆ°Navier-Stokesæ–¹ç¨‹çš„æ—¶é—´ç¦»æ•£ä¸Šã€‚
+        é€šå¸¸çš„ä¸¤æ­¥æ–¹æ³•å¦‚ä¸‹ï¼š
         \begin{algorithm}
-            \caption{Peaceman-Rachford ¸ñÊ½}
+            \caption{Peaceman-Rachford æ ¼å¼}
             \begin{algorithmic}[1]
-                ¸ø¶¨$\vec{u}^0, p^0, \theta \in [0, 1], \alpha \in (0, 1) \beta \in (0, 1)$, ¼ÙÉè$\vec{u}^n$ÒÑÖª£¬Í¨¹ıÒÔÏÂÇó½â$\vec{u}^{n + 1}$:
+                ç»™å®š$\vec{u}^0, p^0, \theta \in [0, 1], \alpha \in (0, 1) \beta \in (0, 1)$, å‡è®¾$\vec{u}^n$å·²çŸ¥ï¼Œé€šè¿‡ä»¥ä¸‹æ±‚è§£$\vec{u}^{n + 1}$:
                 \begin{eqnarray}
                     \begin{aligned}
                         \frac{\vec{u}^{n + \theta} - \vec{u}^n}{\theta \delta t} - \alpha \nu \nabla^2\vec{u}^{n + \theta} + \vec{u}^* \cdot \nabla\vec{u}^{n + \theta}
-                        & = \beta \nu \nabla^2\vec{u}^n - \nabla p^n \quad \mbox {ÔÚ} \Omega \mbox{ÄÚ},& \\
-                        \vec{u}^{n + \theta} & = \vec{g}^{n + \theta} \quad \mbox{ÔÚ} \partial \Omega \mbox{ÉÏ}:&                                 \label{eq::first_step_PR}
+                        & = \beta \nu \nabla^2\vec{u}^n - \nabla p^n \quad \mbox {åœ¨} \Omega \mbox{å†…},& \\
+                        \vec{u}^{n + \theta} & = \vec{g}^{n + \theta} \quad \mbox{åœ¨} \partial \Omega \mbox{ä¸Š}:&                                 \label{eq::first_step_PR}
                     \end{aligned}
                \end{eqnarray}
                \begin{eqnarray}
                     \begin{aligned}
                         \frac{\vec{u}^{n + 1} - \vec{u}^{N + \theta}}{(1 - \theta)\delta t} - \beta \nu \nabla^2\vec{u}^{n + 1} + \nabla p^{n + 1}
-                        & =  \alpha \nu \nabla^2 \vec{u}^{n + \theta} - \vec{u}^* - \nabla \vec{u}^{n + \theta} \quad \mbox{ÔÚ} \Omega \mbox{ÄÚ},&\\
-                        \nabla \cdot \vec{u}^{n + 1} & =  0 \quad \mbox{ÔÚ} \Omega \mbox{ÄÚ},&\\
-                        \vec{u}^{n + 1} & = \vec{g}^{n + 1} \quad \mbox{ÔÚ} \partial \Omega ÉÏ.&
+                        & =  \alpha \nu \nabla^2 \vec{u}^{n + \theta} - \vec{u}^* - \nabla \vec{u}^{n + \theta} \quad \mbox{åœ¨} \Omega \mbox{å†…},&\\
+                        \nabla \cdot \vec{u}^{n + 1} & =  0 \quad \mbox{åœ¨} \Omega \mbox{å†…},&\\
+                        \vec{u}^{n + 1} & = \vec{g}^{n + 1} \quad \mbox{åœ¨} \partial \Omega ä¸Š.&
                         \label{eq::second_step_PR}
                     \end{aligned}
                \end{eqnarray}
             \end{algorithmic}
             \label{alg::Peaceman_Rachford}
          \end{algorithm}
-         ÔÚ(\ref{alg::Peaceman_Rachford})ÖĞ$\vec{u}^*$µÄÈ¡ÖµÒª±£Ö¤É¢¶ÈÎª0µÄÌõ¼ş£¬²¢ÇÒ$\alpha + \beta = 1$¡£ËüÊµ¼ÊÉÏÊÇÏÈÇó½âÒ»¸ö¶ÔÁ÷·½³Ì
-         (\ref{eq::first_step_PR})£¬È»ºóÔÙÇó½âÒ»¸ö¹ãÒåµÄStokes·½³Ì(\ref{eq::second_step_PR})¡£Õâ¸öËã·¨µÚÒ»²½¼ÆËãµÄÊ±ºòĞèÒª$p^0$µÄÖµ£¬Ëü
-         ¿ÉÒÔÔÚºÜĞ¡µÄÊ±¼ä²½³¤Çé¿öÏÂ£¬È«Òş¸ñÊ½ÏòÇ°·¢Õ¹Ò»²½µÃµ½¡£Ò»°ã×ÔÈ»µÄ£¬$\vec{u}^* = \vec{u}^n$, ÕâÑùÔÚÊ±¼ä¸ñÊ½ÉÏÖ»ÓĞÒ»½×¾«¶ÈµÄ¡£ÕâÖÖ
-         ·½·¨²»ÊÇÎŞÌõ¼şÎÈ¶¨µÄ£¬²¢ÇÒĞèÒª±È½ÏĞ¡µÄÊ±¼ä²½³¤¡£µ±$\theta = \frac{1}{2}, \vec{u}^* = \vec{u}^{n + theta}$Ê±£¬¿ÉÒÔ»ñµÃ¶ş½×¾«¶È£¬
-         ÕâÊ±ºòÇó½â(\ref{eq::first_step_PR})±ä³ÉÁËÒ»¸öÇó½â·ÇÏßĞÔµÄ¶ÔÁ÷·½³Ì¡£ÏêÏ¸ÄÚÈİ¿ÉÒÔ²Î¿¼(\cite{silvester1996fast})¡£\cite{dean1993some}½«
-         Á½²½Peaceman-RachfordÍÆ¹ãµ½Èı²½, ±£³ÖÁËµ±$t \leftarrow \infty$Ê±µÄÊıÖµÎÈ¶¨ĞÔ£º
+         åœ¨(\ref{alg::Peaceman_Rachford})ä¸­$\vec{u}^*$çš„å–å€¼è¦ä¿è¯æ•£åº¦ä¸º0çš„æ¡ä»¶ï¼Œå¹¶ä¸”$\alpha + \beta = 1$ã€‚å®ƒå®é™…ä¸Šæ˜¯å…ˆæ±‚è§£ä¸€ä¸ªå¯¹æµæ–¹ç¨‹
+         (\ref{eq::first_step_PR})ï¼Œç„¶åå†æ±‚è§£ä¸€ä¸ªå¹¿ä¹‰çš„Stokesæ–¹ç¨‹(\ref{eq::second_step_PR})ã€‚è¿™ä¸ªç®—æ³•ç¬¬ä¸€æ­¥è®¡ç®—çš„æ—¶å€™éœ€è¦$p^0$çš„å€¼ï¼Œå®ƒ
+         å¯ä»¥åœ¨å¾ˆå°çš„æ—¶é—´æ­¥é•¿æƒ…å†µä¸‹ï¼Œå…¨éšæ ¼å¼å‘å‰å‘å±•ä¸€æ­¥å¾—åˆ°ã€‚ä¸€èˆ¬è‡ªç„¶çš„ï¼Œ$\vec{u}^* = \vec{u}^n$, è¿™æ ·åœ¨æ—¶é—´æ ¼å¼ä¸Šåªæœ‰ä¸€é˜¶ç²¾åº¦çš„ã€‚è¿™ç§
+         æ–¹æ³•ä¸æ˜¯æ— æ¡ä»¶ç¨³å®šçš„ï¼Œå¹¶ä¸”éœ€è¦æ¯”è¾ƒå°çš„æ—¶é—´æ­¥é•¿ã€‚å½“$\theta = \frac{1}{2}, \vec{u}^* = \vec{u}^{n + theta}$æ—¶ï¼Œå¯ä»¥è·å¾—äºŒé˜¶ç²¾åº¦ï¼Œ
+         è¿™æ—¶å€™æ±‚è§£(\ref{eq::first_step_PR})å˜æˆäº†ä¸€ä¸ªæ±‚è§£éçº¿æ€§çš„å¯¹æµæ–¹ç¨‹ã€‚è¯¦ç»†å†…å®¹å¯ä»¥å‚è€ƒ(\cite{silvester1996fast})ã€‚\cite{dean1993some}å°†
+         ä¸¤æ­¥Peaceman-Rachfordæ¨å¹¿åˆ°ä¸‰æ­¥, ä¿æŒäº†å½“$t \leftarrow \infty$æ—¶çš„æ•°å€¼ç¨³å®šæ€§ï¼š
          \begin{algorithm}
-             \caption{Glowinski $\Theta$¸ñÊ½}
+             \caption{Glowinski $\Theta$æ ¼å¼}
             \begin{algorithmic}[1]
-                ¸ø¶¨$\vec{u}^0, \theta \in [0, 1/2], \alpha \in (0, 1), \beta \in (0, 1)$, ¼ÙÉè$\vec{u}^n$ÒÑÖª£¬Í¨¹ıÒÔÏÂÇó½â$\vec{u}^{n + 1}$:
+                ç»™å®š$\vec{u}^0, \theta \in [0, 1/2], \alpha \in (0, 1), \beta \in (0, 1)$, å‡è®¾$\vec{u}^n$å·²çŸ¥ï¼Œé€šè¿‡ä»¥ä¸‹æ±‚è§£$\vec{u}^{n + 1}$:
                 \begin{eqnarray}
                     \begin{aligned}
                         \frac{\vec{u}^{n + \theta} - \vec{u}^n}{\theta \delta t} - \alpha \nu \nabla^2\vec{u}^{n + \theta} +
                         \nabla p^{n + \theta}
-                        & = \beta \nu \nabla^2\vec{u}^n - \vec{u}^n \cdot \nabla\vec{u}^{n} \quad \mbox {ÔÚ} \Omega \mbox{ÄÚ},& \\
-                        \nabla \cdot \vec{u}^{n + \theta} & =  0 \quad \mbox{ÔÚ} \Omega \mbox{ÄÚ},&\\
-                        \vec{u}^{n + \theta} & = \vec{g}^{n + \theta} \quad \mbox{ÔÚ} \partial \Omega \mbox{ÉÏ};& \\
+                        & = \beta \nu \nabla^2\vec{u}^n - \vec{u}^n \cdot \nabla\vec{u}^{n} \quad \mbox {åœ¨} \Omega \mbox{å†…},& \\
+                        \nabla \cdot \vec{u}^{n + \theta} & =  0 \quad \mbox{åœ¨} \Omega \mbox{å†…},&\\
+                        \vec{u}^{n + \theta} & = \vec{g}^{n + \theta} \quad \mbox{åœ¨} \partial \Omega \mbox{ä¸Š};& \\
                     \end{aligned}
                     \label{eq::first_step_GL_theta}
                 \end{eqnarray}
                 \begin{eqnarray}
                     \begin{aligned}
                         \frac{\vec{u}^{n + 1 - \theta} - \vec{u}^{n + \theta}}{(1 - 2\theta) \delta t} - \beta \nu \nabla^2\vec{u}^{n + 1 - \theta} + \vec{u}^* \cdot \nabla \vec{u}^{n + 1 -\theta}
-                        & = \alpha \nu \nabla^2\vec{u}^{n + \theta}- \nabla p^{n + \theta} \cdot \nabla\vec{u}^{n} \quad \mbox {ÔÚ} \Omega \mbox{ÄÚ},& \\
-                        \vec{u}^{n + 1 - \theta} & = \vec{g}^{n + 1 - \theta} \quad \mbox{ÔÚ} \partial \Omega \mbox{ÉÏ};& \\
+                        & = \alpha \nu \nabla^2\vec{u}^{n + \theta}- \nabla p^{n + \theta} \cdot \nabla\vec{u}^{n} \quad \mbox {åœ¨} \Omega \mbox{å†…},& \\
+                        \vec{u}^{n + 1 - \theta} & = \vec{g}^{n + 1 - \theta} \quad \mbox{åœ¨} \partial \Omega \mbox{ä¸Š};& \\
                     \end{aligned}
                     \label{eq::second_step_GL_theta}
                 \end{eqnarray}
@@ -115,109 +115,109 @@
                     \begin{aligned}
                         \frac{\vec{u}^{n + 1} - \vec{u}^{n + 1 - \theta}}{\theta \delta t} - \alpha \nu \nabla^2\vec{u}^{n + 1} +
                         \nabla p^{n + 1}
-                        & = \beta \nu \nabla^2\vec{u}^{n + 1 - \theta} - \vec{u}^* \cdot \nabla\vec{u}^{n + 1 - \theta} \quad \mbox {ÔÚ} \Omega \mbox{ÄÚ},& \\
-                        \nabla \cdot \vec{u}^{n + 1} & = 0 \quad \mbox{ÔÚ} \Omega \mbox{ÄÚ},&\\
-                        \vec{u}^{n + \theta} & = \vec{g}^{n + \theta} \quad \mbox{ÔÚ} \partial \Omega \mbox{ÉÏ}.& \\
+                        & = \beta \nu \nabla^2\vec{u}^{n + 1 - \theta} - \vec{u}^* \cdot \nabla\vec{u}^{n + 1 - \theta} \quad \mbox {åœ¨} \Omega \mbox{å†…},& \\
+                        \nabla \cdot \vec{u}^{n + 1} & = 0 \quad \mbox{åœ¨} \Omega \mbox{å†…},&\\
+                        \vec{u}^{n + \theta} & = \vec{g}^{n + \theta} \quad \mbox{åœ¨} \partial \Omega \mbox{ä¸Š}.& \\
                     \end{aligned}
                     \label{eq::third_step_GL_theta}
                 \end{eqnarray}
             \end{algorithmic}
          \end{algorithm}
-         ÕâÖÖËã·¨ĞèÒªÔÚÃ¿¸öÊ±¼ä²½ÖĞ¼ÆËãÁ½¸ö¹ãÒåµÄStokes·½³Ì(\ref{eq::second_step_GL_theta}) ºÍ(\ref{eq::third_step_GL_theta}), ºÍÒ»¸ö·ÇÏßĞÔµÄ¶ÔÁ÷
-         ·½³Ì(\ref{eq::first_step_GL_theta})¡£µ±ÎÒÃÇÈ¡$\alpha = \beta = 1/2$»òÕß$\theta = 1 - 1/\sqrt(2), \alpha + \beta = 1$£¬µ±$t \leftarrow
-         \infty$Ê±£¬¸Ã¸ñÊ½Ê±¼äÉÏÓĞ¶ş½×¾«¶È¡£ÌØ±ğµÄ£¬µ±$\theta = 1 - 1/\sqrt{2}, \alpha = (1 -2\theta)/(1 - \theta), \beta = \theta/(1 - \theta)$Ê±£¬
-         ÕâÖÖ·½·¨ÔÚÊ±¼äÉÏÊÇÓĞ¶ş½×¾«¶ÈµÄ£¬²¢ÇÒÊÇÎŞÌõ¼şÎÈ¶¨µÄ¡£
-         (\cite{smith1997implicit})ÖĞÌá³öÁËÒ»ÖÖÏßĞÔ»¯$\Theta-$¸ñÊ½£¬Ëü±£³ÖÁË¶ş½×¾«¶È¡£ËüµÄÏë·¨ÊÇ½«¶ÔÁ÷·½³Ì(\ref{eq::second_step_GL_theta})ÖĞµÄ¶ÔÁ÷Ïî
+         è¿™ç§ç®—æ³•éœ€è¦åœ¨æ¯ä¸ªæ—¶é—´æ­¥ä¸­è®¡ç®—ä¸¤ä¸ªå¹¿ä¹‰çš„Stokesæ–¹ç¨‹(\ref{eq::second_step_GL_theta}) å’Œ(\ref{eq::third_step_GL_theta}), å’Œä¸€ä¸ªéçº¿æ€§çš„å¯¹æµ
+         æ–¹ç¨‹(\ref{eq::first_step_GL_theta})ã€‚å½“æˆ‘ä»¬å–$\alpha = \beta = 1/2$æˆ–è€…$\theta = 1 - 1/\sqrt(2), \alpha + \beta = 1$ï¼Œå½“$t \leftarrow
+         \infty$æ—¶ï¼Œè¯¥æ ¼å¼æ—¶é—´ä¸Šæœ‰äºŒé˜¶ç²¾åº¦ã€‚ç‰¹åˆ«çš„ï¼Œå½“$\theta = 1 - 1/\sqrt{2}, \alpha = (1 -2\theta)/(1 - \theta), \beta = \theta/(1 - \theta)$æ—¶ï¼Œ
+         è¿™ç§æ–¹æ³•åœ¨æ—¶é—´ä¸Šæ˜¯æœ‰äºŒé˜¶ç²¾åº¦çš„ï¼Œå¹¶ä¸”æ˜¯æ— æ¡ä»¶ç¨³å®šçš„ã€‚
+         (\cite{smith1997implicit})ä¸­æå‡ºäº†ä¸€ç§çº¿æ€§åŒ–$\Theta-$æ ¼å¼ï¼Œå®ƒä¿æŒäº†äºŒé˜¶ç²¾åº¦ã€‚å®ƒçš„æƒ³æ³•æ˜¯å°†å¯¹æµæ–¹ç¨‹(\ref{eq::second_step_GL_theta})ä¸­çš„å¯¹æµé¡¹
          \begin{equation}
             \vec{u}^* = \frac{2\theta - 1}{\theta} \vec{u}^n + \frac{1- \theta}{\theta}\vec{u}^{n + \theta}.
          \end{equation}
-         ´Ó¶øÊ¹µÃ·ÇÏßĞÔ¶ÔÁ÷À©É¢·½³Ì±ä³ÉÁËÏßĞÔ»¯µÄ¶ÔÁ÷À©É¢·½³Ì¡£
-         ÎÒÃÇ½«È«Òş¸ñÊ½µÄ½üËÆ·½·¨±íÊöÈçÏÂ£º
-         ×î¼òµ¥µÄÊ±¼ä¸ñÊ½ÊÇÒ»²½ÓĞÏŞ²î·ÖÀëÉ¢£¬ÔÚÈçºÎ´¦Àí·ÇÏßĞÔ¶ÔÁ÷ÏîÉÏ¿ÉÒÔ¹éÄÉÎªÒÔÏÂËã·¨£º
+         ä»è€Œä½¿å¾—éçº¿æ€§å¯¹æµæ‰©æ•£æ–¹ç¨‹å˜æˆäº†çº¿æ€§åŒ–çš„å¯¹æµæ‰©æ•£æ–¹ç¨‹ã€‚
+         æˆ‘ä»¬å°†å…¨éšæ ¼å¼çš„è¿‘ä¼¼æ–¹æ³•è¡¨è¿°å¦‚ä¸‹ï¼š
+         æœ€ç®€å•çš„æ—¶é—´æ ¼å¼æ˜¯ä¸€æ­¥æœ‰é™å·®åˆ†ç¦»æ•£ï¼Œåœ¨å¦‚ä½•å¤„ç†éçº¿æ€§å¯¹æµé¡¹ä¸Šå¯ä»¥å½’çº³ä¸ºä»¥ä¸‹ç®—æ³•ï¼š
         \begin{algorithm}
-            \caption{·ÇÏßĞÔÒşÊ½$\Theta$ ¸ñÊ½}
+            \caption{éçº¿æ€§éšå¼$\Theta$ æ ¼å¼}
             \begin{algorithmic}[1]
-                ¸ø¶¨$\vec{u}^0, \theta \in [0, 1]$, ¼ÙÉè$\vec{u}^n$ÒÑÖª£¬Í¨¹ıÒÔÏÂÇó½â$\vec{u}^{n + 1}$:
+                ç»™å®š$\vec{u}^0, \theta \in [0, 1]$, å‡è®¾$\vec{u}^n$å·²çŸ¥ï¼Œé€šè¿‡ä»¥ä¸‹æ±‚è§£$\vec{u}^{n + 1}$:
                 \begin{eqnarray}
                     \frac{\vec{u}^{n + 1} - \vec{u}^n}{\delta t} - \nu \nabla^2\vec{u}^{n + \theta} + \vec{u}^* \cdot \nabla\vec{u}^{n + \theta}
-                    + \nabla p^{n + \theta} & = 0\quad \mbox {ÔÚ} \Omega \mbox{ÄÚ},&
+                    + \nabla p^{n + \theta} & = 0\quad \mbox {åœ¨} \Omega \mbox{å†…},&
                     \label{alg::nonlinear_Theta_moment}    \\
-                    \nabla \cdot \vec{u}^{n + \theta} & = 0 \quad \mbox{ÔÚ} \Omega \mbox{ÄÚ},&
+                    \nabla \cdot \vec{u}^{n + \theta} & = 0 \quad \mbox{åœ¨} \Omega \mbox{å†…},&
                     \label{eq::nonlinear_theta_mass} \\
-                    \vec{u}^{n + \theta} & = \vec{g}^{n + \theta} \quad \mbox{ÔÚ} \partial \Omega \mbox{ÉÏ}.&
+                    \vec{u}^{n + \theta} & = \vec{g}^{n + \theta} \quad \mbox{åœ¨} \partial \Omega \mbox{ä¸Š}.&
                \end{eqnarray}
             \end{algorithmic}
             \label{alg::nonlinear_Theta}
          \end{algorithm}
-         ÆäÖĞ
+         å…¶ä¸­
          \begin{eqnarray}
             \vec{u}^{n + \theta} & = & \theta\vec{u}^{n + 1} + (1 - \theta)\vec{u}^n. \\
             p^{n + \theta} & = & \theta p^{n + 1} - (1 - \theta)p^n.
          \end{eqnarray}
-         $\theta = 1$Ê±£¬ÊÇ½«·ÇÏßĞÔÏîÒşÊ½»¯´¦ÀíÁË¡£µ±$\vec{u}^{n + \theta} = \vec{u}^{n + 1}, \vec{u}^* = \vec{u}^{n + 1}$
-         ¸ñÊ½±ä³ÉÁËÊ±¼ä·½ÏòÒ»½×¾«¶ÈµÄÏòºóÅ·À­¸ñÊ½£¬µ±$\vec{u}^{n + \theta} = \vec{u}^{n + 1/2}, \vec{u}^* = \vec{u}^{n + 1/2}$Ê±£¬
-         ¾ÍÊÇÊ±¼ä·½ÏòµÄ¶ş½×¾«¶ÈµÄCrank-Nicolson¸ñÊ½¡£µ«ÊÇÕâÁ½ÖÖ¸ñÊ½ÔÚÃ¿¸öÊ±¼ä²½ÖĞ¶¼ĞèÒªÇó½âÒ»¸ö·ÇÏßĞÔÎÊÌâ£¬Òò´ËÔÚ¼ÆËãĞ§ÂÊÉÏ¶¼²»ÊÇ
-         ¸ßĞ§µÄ¡£Ò»ÖÖÕÛÖĞµÄ°ì·¨ÊÇ½«$\vec{u}^{n + \theta} = \vec{u}^{n + 1}, \vec{u}^* = \vec{u}^{n},p^{n + \theta} = p^{n + 1}$,
-         ÕâÑùËäÈ»ÔÚÊ±¼äÉÏËğÊ§ÁËÒ»½×¾«¶È£¬µ«ÊÇÊ±¼äÀëÉ¢¸ñÊ½»¹ÊÇÎŞÌõ¼şÎÈ¶¨µÄ£¬Òò´ËÎÒÃÇ±¾ÎÄÖĞµÄ·½·¨¾ÍÊÇ²ÉÓÃµÄÕâÖÖÏßĞÔ»¯²ßÂÔ¡£
-         ÎÒÃÇÀ´ÑéÖ¤ÏßĞÔ»¯ÏòºóÅ·À­·½·¨µÄÎÈ¶¨ĞÔ¡£²»Ê§Ò»°ãĞÔ£¬ÎÒÃÇÈ¡$\vec{g}^{n + 1} = \vec{0}$£¬¶Ô\eqref{eq::nonlinear_theta_moment}·½³Ì
-         Á½±ßÍ¬Ê±³ËÉÏ$\vec{u}^{n + 1}$£¬²¢ÔÚ$\Omega$ÉÏ×ö$L_2$ÄÚ»ı¡£ÎÒÃÇ¿ÉÒÔÍ¨¹ıÑ¡È¡»ùº¯ÊıÊ¹µÃ¶ÔÁ÷Ïî£º
+         $\theta = 1$æ—¶ï¼Œæ˜¯å°†éçº¿æ€§é¡¹éšå¼åŒ–å¤„ç†äº†ã€‚å½“$\vec{u}^{n + \theta} = \vec{u}^{n + 1}, \vec{u}^* = \vec{u}^{n + 1}$
+         æ ¼å¼å˜æˆäº†æ—¶é—´æ–¹å‘ä¸€é˜¶ç²¾åº¦çš„å‘åæ¬§æ‹‰æ ¼å¼ï¼Œå½“$\vec{u}^{n + \theta} = \vec{u}^{n + 1/2}, \vec{u}^* = \vec{u}^{n + 1/2}$æ—¶ï¼Œ
+         å°±æ˜¯æ—¶é—´æ–¹å‘çš„äºŒé˜¶ç²¾åº¦çš„Crank-Nicolsonæ ¼å¼ã€‚ä½†æ˜¯è¿™ä¸¤ç§æ ¼å¼åœ¨æ¯ä¸ªæ—¶é—´æ­¥ä¸­éƒ½éœ€è¦æ±‚è§£ä¸€ä¸ªéçº¿æ€§é—®é¢˜ï¼Œå› æ­¤åœ¨è®¡ç®—æ•ˆç‡ä¸Šéƒ½ä¸æ˜¯
+         é«˜æ•ˆçš„ã€‚ä¸€ç§æŠ˜ä¸­çš„åŠæ³•æ˜¯å°†$\vec{u}^{n + \theta} = \vec{u}^{n + 1}, \vec{u}^* = \vec{u}^{n},p^{n + \theta} = p^{n + 1}$,
+         è¿™æ ·è™½ç„¶åœ¨æ—¶é—´ä¸ŠæŸå¤±äº†ä¸€é˜¶ç²¾åº¦ï¼Œä½†æ˜¯æ—¶é—´ç¦»æ•£æ ¼å¼è¿˜æ˜¯æ— æ¡ä»¶ç¨³å®šçš„ï¼Œå› æ­¤æˆ‘ä»¬æœ¬æ–‡ä¸­çš„æ–¹æ³•å°±æ˜¯é‡‡ç”¨çš„è¿™ç§çº¿æ€§åŒ–ç­–ç•¥ã€‚
+         æˆ‘ä»¬æ¥éªŒè¯çº¿æ€§åŒ–å‘åæ¬§æ‹‰æ–¹æ³•çš„ç¨³å®šæ€§ã€‚ä¸å¤±ä¸€èˆ¬æ€§ï¼Œæˆ‘ä»¬å–$\vec{g}^{n + 1} = \vec{0}$ï¼Œå¯¹\eqref{eq::nonlinear_theta_moment}æ–¹ç¨‹
+         ä¸¤è¾¹åŒæ—¶ä¹˜ä¸Š$\vec{u}^{n + 1}$ï¼Œå¹¶åœ¨$\Omega$ä¸Šåš$L_2$å†…ç§¯ã€‚æˆ‘ä»¬å¯ä»¥é€šè¿‡é€‰å–åŸºå‡½æ•°ä½¿å¾—å¯¹æµé¡¹ï¼š
          \begin{equation}
             \int_{\Omega}(\vec{u}^n \cdot \vec{u}^{n + 1}) \cdot \vec{u}^{n + 1} = 0.
          \end{equation}
-         ²¢ÇÒ¶ÔÖÊÁ¿ÊØºã·½³Ì(\ref{eq::nonlinear_theta_mass})¹ØÓÚ$p^{n + 1}$×ö$L_2$ÄÚ»ı£¬ÔÙÀûÓÃ·Ö²¿»ı·Ö£º
+         å¹¶ä¸”å¯¹è´¨é‡å®ˆæ’æ–¹ç¨‹(\ref{eq::nonlinear_theta_mass})å…³äº$p^{n + 1}$åš$L_2$å†…ç§¯ï¼Œå†åˆ©ç”¨åˆ†éƒ¨ç§¯åˆ†ï¼š
          \begin{equation}
             \int_{\Omega} \nabla p^{n + 1} \cdot \vec{u}^{n + 1} = -\int_{\Omega}p^{n + 1}(\nabla \cdot \vec{u}^{n + 1}) = 0. \notag
          \end{equation}
-         Òò´Ë,
+         å› æ­¤,
          \begin{equation}
             \frac{1}{\delta t}\int_{\Omega}(\vec{u}^{n + 1} - \vec{u}^n)\vec{u}^{n + 1} + \nu \int_{\Omega}\nabla \vec{u}^{n + 1} \cdot \vec{u}^{u + 1} = 0.
             \label{eq::stable_LEuler}
          \end{equation}
-         ¶Ô(\ref{eq::stable_LEuler})ÔÚ$[t_n, t_{n + 1}]$ÉÏ½øĞĞ»ı·Ö£¬¿ÉµÃ
+         å¯¹(\ref{eq::stable_LEuler})åœ¨$[t_n, t_{n + 1}]$ä¸Šè¿›è¡Œç§¯åˆ†ï¼Œå¯å¾—
          \begin{eqnarray}
             ||\vec{u}^{n + 1}||^2 + \nu \int_{t_n}^{t^{n + 1}}||\nabla \vec{u}||^2
             & = & \int_{\Omega} \vec{u}^{n} \vec{u}^{n + 1} \\ \notag
             &\leq & \frac{1}{2}\int_{\Omega} ((\vec{u}^{n})^2 + (\vec{u}^{n + 1})^2) \\ \notag
             & = & \frac{1}{2}||\vec{u}^n||^2 + \frac{1}{2}||\vec{u}^{n + 1}||^2. \\ \notag
          \end{eqnarray}
-         ´Ó¶øÎÒÃÇ¿ÉÒÔµÃµ½
+         ä»è€Œæˆ‘ä»¬å¯ä»¥å¾—åˆ°
          \begin{equation}
             \frac{1}{2}||\vec{u}^{n + 1}||^2 + \nu \int_{t_n}^{t_{n + 1}}||\vec{u}^{n + 1}||^2 \leq \frac{1}{2}||\vec{u}^{n}||^2.
             \label{eq::inequality_LEuler}
          \end{equation}
-         ×¢Òâµ½(\ref{eq::inequality_LEuler})ÖĞµÄµÚ¶şÏîÊÇÑÏ¸ñÕıµÄ£¬Òò´Ë
+         æ³¨æ„åˆ°(\ref{eq::inequality_LEuler})ä¸­çš„ç¬¬äºŒé¡¹æ˜¯ä¸¥æ ¼æ­£çš„ï¼Œå› æ­¤
          \begin{equation}
             \frac{1}{2} ||\vec{u}^{n + 1}||^2 < \frac{1}{2} ||\vec{u}^{n}||^2.
          \end{equation}
-         µÄ³ÉÁ¢¸úÊ±¼ä²½³¤$\delta t$ÎŞ¹Ø¡£¼´ÏßĞÔ»¯ÏòºóÅ·À­¸ñÊ½ÊÇÎŞÌõ¼şÎÈ¶¨µÄ¡£
-         ÔÚÕâÖÖÏßĞÔ»¯²ßÂÔµÄ»ù´¡ÉÏ£¬Ò»ÖÖ±£³ÖÊ±¼äÉÏ¶ş½×¾«¶ÈµÄ·½·¨ÊÇ$\theta = 1/2, \vec{u}^* = {3/2\vec{u}^n - 1/2\vec{u}^{n - 1}}$£¬
-         ÕâÊÇ\cite{simo1994unconditional}ÖĞÌá³öµÄ¡£ÎÒÃÇ½«ÕâÖÖÁ½²½·½·¨±íÊöÈçÏÂ£º
+         çš„æˆç«‹è·Ÿæ—¶é—´æ­¥é•¿$\delta t$æ— å…³ã€‚å³çº¿æ€§åŒ–å‘åæ¬§æ‹‰æ ¼å¼æ˜¯æ— æ¡ä»¶ç¨³å®šçš„ã€‚
+         åœ¨è¿™ç§çº¿æ€§åŒ–ç­–ç•¥çš„åŸºç¡€ä¸Šï¼Œä¸€ç§ä¿æŒæ—¶é—´ä¸ŠäºŒé˜¶ç²¾åº¦çš„æ–¹æ³•æ˜¯$\theta = 1/2, \vec{u}^* = {3/2\vec{u}^n - 1/2\vec{u}^{n - 1}}$ï¼Œ
+         è¿™æ˜¯\cite{simo1994unconditional}ä¸­æå‡ºçš„ã€‚æˆ‘ä»¬å°†è¿™ç§ä¸¤æ­¥æ–¹æ³•è¡¨è¿°å¦‚ä¸‹ï¼š
         \begin{algorithm}
-            \caption{Simo-Armero ¸ñÊ½}
+            \caption{Simo-Armero æ ¼å¼}
             \begin{algorithmic}[1]
-                ¸ø¶¨$\vec{u}^0£¬ \vec{u}^1$, Í¨¹ıÒÔÏÂÇó½â$\vec{u}^{k}, k = 1, \cdots, n + 1$:
+                ç»™å®š$\vec{u}^0ï¼Œ \vec{u}^1$, é€šè¿‡ä»¥ä¸‹æ±‚è§£$\vec{u}^{k}, k = 1, \cdots, n + 1$:
                 \begin{eqnarray}
                     \begin{aligned}
                         \frac{\vec{u}^{n + 1} - \vec{u}^n}{\delta t} - \nu \nabla^2\vec{u}^{n + 1/2} + (\frac{3}{2}\vec{u}^n - \frac{1}{2}\vec{u}^{n - 1}) \cdot \nabla\vec{u}^{n + 1/2}
-                        + \nabla p^{n + 1/2} & = 0\quad \mbox {ÔÚ} \Omega \mbox{ÄÚ},& \\
-                        \nabla \cdot \vec{u}^{n + 1/2} & = 0 \quad \mbox{ÔÚ} \Omega \mbox{ÄÚ},& \\
-                        \vec{u}^{n + 1/2} & = \vec{g}^{n + 1/2} \quad \mbox{ÔÚ} \partial \Omega \mbox{ÉÏ}.&
+                        + \nabla p^{n + 1/2} & = 0\quad \mbox {åœ¨} \Omega \mbox{å†…},& \\
+                        \nabla \cdot \vec{u}^{n + 1/2} & = 0 \quad \mbox{åœ¨} \Omega \mbox{å†…},& \\
+                        \vec{u}^{n + 1/2} & = \vec{g}^{n + 1/2} \quad \mbox{åœ¨} \partial \Omega \mbox{ä¸Š}.&
                         \label{eq::simo_arero}
                     \end{aligned}
                \end{eqnarray}
             \end{algorithmic}
             \label{alg::simo_armero}
          \end{algorithm}
-        ÆäÖĞ$u^1$¿ÉÒÔÓÉÏòºóÅ·À­¸ñÊ½µÃµ½£¬ Ëã·¨(\ref{alg::simo_armero})Ò²ÊÇÎŞÌõ¼şÎÈ¶¨µÄ£¬Ö¤Ã÷¹ı³Ì¿ÉÒÔ¸ù¾İÏßĞÔ»¯ÏòºóÅ·À­¸ñÊ½µÄÖ¤Ã÷¡£
+        å…¶ä¸­$u^1$å¯ä»¥ç”±å‘åæ¬§æ‹‰æ ¼å¼å¾—åˆ°ï¼Œ ç®—æ³•(\ref{alg::simo_armero})ä¹Ÿæ˜¯æ— æ¡ä»¶ç¨³å®šçš„ï¼Œè¯æ˜è¿‡ç¨‹å¯ä»¥æ ¹æ®çº¿æ€§åŒ–å‘åæ¬§æ‹‰æ ¼å¼çš„è¯æ˜ã€‚
 
-   ¸ù¾İÉÏÒ»ÕÂÖĞ£¬ÎÒÃÇÌáµ½µÄ$4p1-P1$Ôª£¬ÕâÖÖÓĞÏŞÔªÊÇ»ùÓÚÁ½Ì×Èı½ÇĞÎÍø¸ñºÍÁ½¸öÓĞÏŞÔª¿Õ¼ä¡£¸ù¾İ\cite{li2005multi}ÖĞµÄ¼¸ºÎÒÅ´«Ê÷ÖĞµÄËÄ²æÊ÷½á¹¹£¬
-   ËÙ¶ÈÍø¸ñ¿ÉÒÔÍ¨¹ıÑ¹Á¦Íø¸ñÈ«¾Ö¼ÓÃÜÒ»´ÎµÃµ½£¬ÈçÍ¼\ref{fig::hgeometry_tree}ËùÊ¾¡£ËÙ¶Èµ¥ÔªºÍÑ¹Á¦µ¥Ôª¼äµÄÒ»Ò»¶ÔÓ¦¹ØÏµ¿ÉÒÔ¸ù¾İ¼¸ºÎÒÅ´«Ê÷½á¹¹£¬
-   Ïà¶ÔÈİÒ×µÄ»ñµÃ¡£ÎÒÃÇÏÈ¸ø³öÒ»Ğ©·ûºÅµÄ¶¨Òå£º
-   $\mathcal{T}_h$ÊÇËÙ¶ÈÍø¸ñµÄÒ»¸öÈı½ÇÆÊ·Ö£¬×î´óµÄÍø¸ñ³ß¶È$h = max_{T \in \mathcal{T}_h} diam(T)$£¬Í¬ÑùµÄ£¬$\mathcal{T}_{H}(H = 2h)$ ÊÇÑ¹Á¦
-   Íø¸ñµÄÈı½ÇÆÊ·Ö¡£ËÙ¶ÈºÍÑ¹Á¦µÄÓĞÏŞÎ¬¿Õ¼ä·Ö±ğÎª$X_h \subset (H_0^1(\Omega)^2)$ ºÍ $P_H \subset \mathcal{L}^2(\Omega)$¡£ÄÇÃ´Navier-StokesÎÊÌâ
-   µÄÈ«ÀëÉ¢ĞÎÊ½Îª£º
+   æ ¹æ®ä¸Šä¸€ç« ä¸­ï¼Œæˆ‘ä»¬æåˆ°çš„$4p1-P1$å…ƒï¼Œè¿™ç§æœ‰é™å…ƒæ˜¯åŸºäºä¸¤å¥—ä¸‰è§’å½¢ç½‘æ ¼å’Œä¸¤ä¸ªæœ‰é™å…ƒç©ºé—´ã€‚æ ¹æ®\cite{li2005multi}ä¸­çš„å‡ ä½•é—ä¼ æ ‘ä¸­çš„å››å‰æ ‘ç»“æ„ï¼Œ
+   é€Ÿåº¦ç½‘æ ¼å¯ä»¥é€šè¿‡å‹åŠ›ç½‘æ ¼å…¨å±€åŠ å¯†ä¸€æ¬¡å¾—åˆ°ï¼Œå¦‚å›¾\ref{fig::hgeometry_tree}æ‰€ç¤ºã€‚é€Ÿåº¦å•å…ƒå’Œå‹åŠ›å•å…ƒé—´çš„ä¸€ä¸€å¯¹åº”å…³ç³»å¯ä»¥æ ¹æ®å‡ ä½•é—ä¼ æ ‘ç»“æ„ï¼Œ
+   ç›¸å¯¹å®¹æ˜“çš„è·å¾—ã€‚æˆ‘ä»¬å…ˆç»™å‡ºä¸€äº›ç¬¦å·çš„å®šä¹‰ï¼š
+   $\mathcal{T}_h$æ˜¯é€Ÿåº¦ç½‘æ ¼çš„ä¸€ä¸ªä¸‰è§’å‰–åˆ†ï¼Œæœ€å¤§çš„ç½‘æ ¼å°ºåº¦$h = max_{T \in \mathcal{T}_h} diam(T)$ï¼ŒåŒæ ·çš„ï¼Œ$\mathcal{T}_{H}(H = 2h)$ æ˜¯å‹åŠ›
+   ç½‘æ ¼çš„ä¸‰è§’å‰–åˆ†ã€‚é€Ÿåº¦å’Œå‹åŠ›çš„æœ‰é™ç»´ç©ºé—´åˆ†åˆ«ä¸º$X_h \subset (H_0^1(\Omega)^2)$ å’Œ $P_H \subset \mathcal{L}^2(\Omega)$ã€‚é‚£ä¹ˆNavier-Stokesé—®é¢˜
+   çš„å…¨ç¦»æ•£å½¢å¼ä¸ºï¼š
 
-   ¸ø¶¨$t_n$Ê±¿ÌµÄ$(\vec{u}_h^n, p_H^n)$£¬À´¼ÆËã$(\vec{u}_h^{n + 1}, p_H^{n + 1})$ Í¨¹ı
+   ç»™å®š$t_n$æ—¶åˆ»çš„$(\vec{u}_h^n, p_H^n)$ï¼Œæ¥è®¡ç®—$(\vec{u}_h^{n + 1}, p_H^{n + 1})$ é€šè¿‡
    \begin{equation}
      \begin{aligned}
        \frac{1}{dt}(\vec{u}_h^{n + 1}, \vec{v}_h) + \nu (\nabla
@@ -228,46 +228,46 @@
      \end{aligned}
      \label{eq::NS_weak_form}
    \end{equation}
-   ¶ÔËùÓĞµÄ $(\vec{v}_h, q_H) \in \mathcal{X}_h \times P_H$.
+   å¯¹æ‰€æœ‰çš„ $(\vec{v}_h, q_H) \in \mathcal{X}_h \times P_H$.
 
     \begin{figure}[h]
         \begin{minipage}[t]{0.4\textwidth}
           \centering
           \begin{tikzpicture}
-            % Èı½ÇĞÎ
+            % ä¸‰è§’å½¢
             \draw (2, 1) -- (4, 1) -- (3, 3) -- cycle;
             \draw (5, 1) -- (6, 3) -- (7, 1) -- cycle;
             \draw (5.5, 2) -- (6.5, 2) -- (6, 1) -- cycle;
           \end{tikzpicture}
-          \caption{È«¾Ö¼ÓÃÜÒ»´ÎµÄÍø¸ñ}
+          \caption{å…¨å±€åŠ å¯†ä¸€æ¬¡çš„ç½‘æ ¼}
         \end{minipage}
         \begin{minipage}[t]{0.6\textwidth}
           \centering
           \begin{tikzpicture}
-            %Îå¸öĞ¡Èı½ÇĞÎ
+            %äº”ä¸ªå°ä¸‰è§’å½¢
             \draw (1.0, 0.0) -- (1.2, 0.4) -- (1.4, 0.0) -- cycle;
             \draw (2.0, 0.0) -- (2.2, 0.4) -- (2.4, 0.0) -- cycle;
             \draw (3.0, 0.0) -- (3.2, 0.4) -- (3.4, 0.0) -- cycle;
             \draw (4.0, 0.0) -- (4.2, 0.4) -- (4.4, 0.0) -- cycle;
             \draw (2.6, 2.4) -- (2.2, 1.8) -- (3.0, 1.8) -- cycle;
             \draw (2.4, 2.1) -- (2.6, 1.8) -- (2.8, 2.1) -- cycle;
-            %ËÄÌõÏß
+            %å››æ¡çº¿
             \draw (2.6, 2.0) -- (1.2, 0.2);
             \draw (2.6, 2.0) -- (2.2, 0.2);
             \draw (2.6, 2.0) -- (3.2, 0.2);
             \draw (2.6, 2.0) -- (4.2, 0.2);
           \end{tikzpicture}
-          \caption{ËüµÄ¼¸ºÎÒÅ´«Ê÷}
+          \caption{å®ƒçš„å‡ ä½•é—ä¼ æ ‘}
         \end{minipage}
-      \caption{¼¸ºÎÒÅ´«Ê÷½á¹¹}
+      \caption{å‡ ä½•é—ä¼ æ ‘ç»“æ„}
       \label{fig::hgrometrytree}
     \end{figure}
 
 
-\section{¿ìËÙKrylovÇó½â}
-  Áî$\left(\{\phi_j \}_{j = 1}^n, 0 \right)^T$ ºÍ $\left(0, \{\phi_j\}_{j = 1}^n\right)^T$ ÊÇËÙ¶È¿Õ¼ä$X_h$µÄÏßĞÔÔª»ùº¯Êı¡£Í¬Ê±£¬
-  $\{\psi_k\}_{k = 1}^m$ ÎªÑ¹Á¦¿Õ¼ä$P_H$µÄÏßĞÔÔª»ùº¯Êı¡£$t_{n + 1}$ Ê±¿Ì£¬ËÙ¶È½âµÄ·ÖÁ¿ĞÎÊ½$\vec{u}_h^{n + 1} = (u_h^{x, n + 1},
-  u_h^{y, n + 1})^T$£¬Ñ¹Á¦ÊıÖµ½âÎª $\vec{p}_H^{n + 1}$ at $t = t_{n + 1}$£¬¿ÉÒÔĞ´Îª£º
+\section{å¿«é€ŸKrylovæ±‚è§£}
+  ä»¤$\left(\{\phi_j \}_{j = 1}^n, 0 \right)^T$ å’Œ $\left(0, \{\phi_j\}_{j = 1}^n\right)^T$ æ˜¯é€Ÿåº¦ç©ºé—´$X_h$çš„çº¿æ€§å…ƒåŸºå‡½æ•°ã€‚åŒæ—¶ï¼Œ
+  $\{\psi_k\}_{k = 1}^m$ ä¸ºå‹åŠ›ç©ºé—´$P_H$çš„çº¿æ€§å…ƒåŸºå‡½æ•°ã€‚$t_{n + 1}$ æ—¶åˆ»ï¼Œé€Ÿåº¦è§£çš„åˆ†é‡å½¢å¼$\vec{u}_h^{n + 1} = (u_h^{x, n + 1},
+  u_h^{y, n + 1})^T$ï¼Œå‹åŠ›æ•°å€¼è§£ä¸º $\vec{p}_H^{n + 1}$ at $t = t_{n + 1}$ï¼Œå¯ä»¥å†™ä¸ºï¼š
   \begin{equation}
     u_h^{x, n + 1} = \sum_{j = 1}^{n_u} \alpha_j^{x, n + 1} \phi_j,
     \qquad u_h^{y, n + 1} = \sum_{j = 1}^{n_u} \alpha_j^{y, n + 1}
@@ -276,8 +276,8 @@
     \label{eq::basis_fun}
   \end{equation}
 
-  ½«(\ref{eq::basis_fun}) ´øÈëÈõĞÎÊ½
-  (\ref{eq::NS_weak_form})ÖĞ£¬¿ÉÒÔµÃµ½Ò»¸ö°°µãÎÊÌâ£º
+  å°†(\ref{eq::basis_fun}) å¸¦å…¥å¼±å½¢å¼
+  (\ref{eq::NS_weak_form})ä¸­ï¼Œå¯ä»¥å¾—åˆ°ä¸€ä¸ªéç‚¹é—®é¢˜ï¼š
   \begin{equation}
     \left[
       \begin{array}{lll}
@@ -302,16 +302,16 @@
     \right],
     \label{eq::linear_system}
   \end{equation}
-  ×¢Òâµ½É¢¶È¾ØÕó $B = [Bx, By]$ Îª
+  æ³¨æ„åˆ°æ•£åº¦çŸ©é˜µ $B = [Bx, By]$ ä¸º
   \begin{eqnarray}
     B_x := [B_x]_{kj} = -\left(\psi_k, \frac{\partial \phi_j}{\partial
         x} \right), k = 1, \cdots, n_p, j = 1, \cdots, n_u, \\
     B_y := [B_y]_{kj} = -\left(\psi_k, \frac{\partial \phi_j}{\partial
         y} \right), k = 1, \cdots, n_p, j = 1, \cdots, n_u.
   \end{eqnarray}
-  ÒòÎªËÙ¶Èµ¥ÔªÉÏµÄ»ùº¯ÊıºÍÑ¹Á¦µ¥ÔªÉÏµÄ»ùº¯Êı²¢²»ÔÚÍ¬Ò»ÕÅÍø¸ñÉÏ£¬ËùÒÔ×°Åä¾ØÕó$B$²¢²»ÊÇÒ»¸öÏÔÈ»µÄ¹ı³Ì¡£ÕâĞèÒª¸ù¾İÉÏÃæÌáµ½µÄËÙ¶Èµ¥ÔªºÍÑ¹Á¦µ¥Ôª¼ä
-  µÄ$1-1$Ë÷Òı£¬ÎÒÃÇ¿ÉÒÔ½ö½öÖ»ÓÃËÙ¶ÈºÍÑ¹Á¦µ¥ÔªÉÏµÄÏßĞÔÔªº¯ÊıÀ´×°Åä$B$£¬Æ´×°$B^T$µÄ¹ı³ÌÀàËÆ¡£
-  ÎÒÃÇ¶¨Òå $F_\nu^{n + 1} = \frac{1}{dt} M + \nu A + N$, ÆäÖĞ
+  å› ä¸ºé€Ÿåº¦å•å…ƒä¸Šçš„åŸºå‡½æ•°å’Œå‹åŠ›å•å…ƒä¸Šçš„åŸºå‡½æ•°å¹¶ä¸åœ¨åŒä¸€å¼ ç½‘æ ¼ä¸Šï¼Œæ‰€ä»¥è£…é…çŸ©é˜µ$B$å¹¶ä¸æ˜¯ä¸€ä¸ªæ˜¾ç„¶çš„è¿‡ç¨‹ã€‚è¿™éœ€è¦æ ¹æ®ä¸Šé¢æåˆ°çš„é€Ÿåº¦å•å…ƒå’Œå‹åŠ›å•å…ƒé—´
+  çš„$1-1$ç´¢å¼•ï¼Œæˆ‘ä»¬å¯ä»¥ä»…ä»…åªç”¨é€Ÿåº¦å’Œå‹åŠ›å•å…ƒä¸Šçš„çº¿æ€§å…ƒå‡½æ•°æ¥è£…é…$B$ï¼Œæ‹¼è£…$B^T$çš„è¿‡ç¨‹ç±»ä¼¼ã€‚
+  æˆ‘ä»¬å®šä¹‰ $F_\nu^{n + 1} = \frac{1}{dt} M + \nu A + N$, å…¶ä¸­
   \begin{eqnarray}
     M := &[M]_{ij} =& \left( \phi_i, \phi_j \right),\quad  i,j = 1, \cdots,
     n_u, \\
@@ -321,8 +321,8 @@
     i,j = 1, \cdots, n_u.
   \end{eqnarray}
 
-  ÎªÁË¸ßĞ§µÄÇó½âÏßĞÔ·½³Ì×é(\ref{eq::linear_system})£¬ÎÒÃÇÓÃÔ¤´¦ÀíµÄGMRES(generalized minimal residual algorithm)×÷ÎªÇó½âÆ÷¡£ÔÚ\cite{elman2005finite}
-  ÖĞ¿¼ÂÇµÄ¿éÈı½ÇÔ¤´¦Àí$\mathcal{P}$¶¨ÒåÈçÏÂ£º
+  ä¸ºäº†é«˜æ•ˆçš„æ±‚è§£çº¿æ€§æ–¹ç¨‹ç»„(\ref{eq::linear_system})ï¼Œæˆ‘ä»¬ç”¨é¢„å¤„ç†çš„GMRES(generalized minimal residual algorithm)ä½œä¸ºæ±‚è§£å™¨ã€‚åœ¨\cite{elman2005finite}
+  ä¸­è€ƒè™‘çš„å—ä¸‰è§’é¢„å¤„ç†$\mathcal{P}$å®šä¹‰å¦‚ä¸‹ï¼š
   \begin{equation}
     \mathcal{P} =
     \left(
@@ -333,15 +333,15 @@
       \end{array}
     \right)
   \end{equation}
-  ÆäÖĞ $S = B_xF^{-1}B_x^T + B_yF^{-1}B_y^T$ ÊÇ Schur ²¹¾ØÕó¡£Ô¤´¦Àí¾ÍÊÇÒªÍê³É½üËÆ¾ØÕóµÄÇóÄæ£¬ÊµÊ©$\mathcal{P}^{-1}$µÄ¹ı³Ì·ÖÎªÁ½²½£¬
-  µÚÒ»²½ÊÇÇó½âschur²¹µÄÏµÍ³£¬µÚ¶ş²½ÊÇÇó½âÁ½¸ö´¿Á¿µÄ¸ú$F$ÓĞ¹ØµÄÏµÍ³¡£Ö±½ÓÇó½âschur²¹µÄ·½³Ì×éÊÇ·Ç³£ºÄÊ±µÄ£¬ÒòÎªËüÏµÊı¾ØÕóÀï°üº¬Ò»¸öÄæ
-  ¾ØÕó¡£ËùÒÔ£¬ÔÚÊµ¼ÊµÄ¼ÆËãÖĞ£¬ÕÒµ½schur²¹µÄ½üËÆ¾ØÕó£¬È»ºóÓÃ½üËÆ¾ØÕó´úÌæschur²¹¾ØÕóÀ´½øĞĞÇó½â¡£\cite{elman2005finite}Ò»ÎÄÖĞÌáµ½PCDÔ¤
-  ´¦Àí¿ÉÒÔÓÃÀ´×÷Îªschur²¹µÄ½üËÆ¡£PCD¾ØÕó¶¨ÒåÎª£º
+  å…¶ä¸­ $S = B_xF^{-1}B_x^T + B_yF^{-1}B_y^T$ æ˜¯ Schur è¡¥çŸ©é˜µã€‚é¢„å¤„ç†å°±æ˜¯è¦å®Œæˆè¿‘ä¼¼çŸ©é˜µçš„æ±‚é€†ï¼Œå®æ–½$\mathcal{P}^{-1}$çš„è¿‡ç¨‹åˆ†ä¸ºä¸¤æ­¥ï¼Œ
+  ç¬¬ä¸€æ­¥æ˜¯æ±‚è§£schurè¡¥çš„ç³»ç»Ÿï¼Œç¬¬äºŒæ­¥æ˜¯æ±‚è§£ä¸¤ä¸ªçº¯é‡çš„è·Ÿ$F$æœ‰å…³çš„ç³»ç»Ÿã€‚ç›´æ¥æ±‚è§£schurè¡¥çš„æ–¹ç¨‹ç»„æ˜¯éå¸¸è€—æ—¶çš„ï¼Œå› ä¸ºå®ƒç³»æ•°çŸ©é˜µé‡ŒåŒ…å«ä¸€ä¸ªé€†
+  çŸ©é˜µã€‚æ‰€ä»¥ï¼Œåœ¨å®é™…çš„è®¡ç®—ä¸­ï¼Œæ‰¾åˆ°schurè¡¥çš„è¿‘ä¼¼çŸ©é˜µï¼Œç„¶åç”¨è¿‘ä¼¼çŸ©é˜µä»£æ›¿schurè¡¥çŸ©é˜µæ¥è¿›è¡Œæ±‚è§£ã€‚\cite{elman2005finite}ä¸€æ–‡ä¸­æåˆ°PCDé¢„
+  å¤„ç†å¯ä»¥ç”¨æ¥ä½œä¸ºschurè¡¥çš„è¿‘ä¼¼ã€‚PCDçŸ©é˜µå®šä¹‰ä¸ºï¼š
   \begin{equation}
     S_* = A_p F_p^{-1} Q_p.
     \label{eq::PCD}
   \end{equation}
-  ÆäÖĞ$A_p, F_p$ ºÍ $Q_p$È«²¿¶¨ÒåÔÚÑ¹Á¦¿Õ¼äÉÏ¡£ $Q_p$ ÊÇÑ¹Á¦ÖÊÁ¿¾ØÕó£¬ $A_p$ ÊÇÑ¹Á¦¸Õ¶È¾ØÕó£¬$F_p$ ÊÇ¶ÔÁ÷À©É¢¾ØÕó£¬ËüÃÇ·Ö±ğ¶¨ÒåÎª£º
+  å…¶ä¸­$A_p, F_p$ å’Œ $Q_p$å…¨éƒ¨å®šä¹‰åœ¨å‹åŠ›ç©ºé—´ä¸Šã€‚ $Q_p$ æ˜¯å‹åŠ›è´¨é‡çŸ©é˜µï¼Œ $A_p$ æ˜¯å‹åŠ›åˆšåº¦çŸ©é˜µï¼Œ$F_p$ æ˜¯å¯¹æµæ‰©æ•£çŸ©é˜µï¼Œå®ƒä»¬åˆ†åˆ«å®šä¹‰ä¸ºï¼š
   \begin{eqnarray}
     F_p := [F_p]_{ij} = \nu (\nabla \psi_i, \nabla \psi_j) +
     (\vec{u}_h^n \cdot \nabla \psi_i, \psi_j), \quad i,j = 1, \cdots, n_p, \\
@@ -349,20 +349,20 @@
     n_p.
     \label{eq::pcd_mat}
   \end{eqnarray}
-  Áî
+  ä»¤
   \begin{equation}
     W_p^n := [W_p^n]_{ij} = (\vec{u}_h^n \cdot \nabla \psi_i,
     \psi_j), \quad i,j = 1, \cdots, n_p.
   \end{equation}
-  ÄÇÃ´$F_p$ ¿ÉÒÔ±»ÖØĞÂĞ´³É£º
+  é‚£ä¹ˆ$F_p$ å¯ä»¥è¢«é‡æ–°å†™æˆï¼š
   \begin{equation}
     F_p = \nu A_p + W_p^n.
   \end{equation}
-  ÎÒÃÇÊµÊ©PCDÔ¤´¦ÀíÍ¨¹ı
+  æˆ‘ä»¬å®æ–½PCDé¢„å¤„ç†é€šè¿‡
   \begin{equation}
     S_*^{-1} \approx Q_p^{-1} F_p A_p^{-1}.
   \end{equation}
-  ¾«È·µÄPCD Ô¤´¦ÀíËã×Ó¶¨ÒåÎª
+  ç²¾ç¡®çš„PCD é¢„å¤„ç†ç®—å­å®šä¹‰ä¸º
   \begin{equation}
     \mathcal{M}^{-1} =
     \left(
@@ -373,18 +373,18 @@
       \end{array}
     \right)
   \end{equation}
-  ÎÒÃÇ·ÖÁ½²½½âÊÍÔ¤´¦ÀíµÄÇó½â¹ı³Ì£ºÁî$V^d = \mathcal{M}^{-1} V^s$£¬
-  ÆäÖĞ
+  æˆ‘ä»¬åˆ†ä¸¤æ­¥è§£é‡Šé¢„å¤„ç†çš„æ±‚è§£è¿‡ç¨‹ï¼šä»¤$V^d = \mathcal{M}^{-1} V^s$ï¼Œ
+  å…¶ä¸­
   \begin{equation}
     V^d = (V_x^d, V_y^d, V_p^d)^T, V^s = (V_x^s, V_y^s, V_p^s)^T.
   \end{equation}
-  µÚÒ»²½ÎÒÃÇÇó½â£º
+  ç¬¬ä¸€æ­¥æˆ‘ä»¬æ±‚è§£ï¼š
   \begin{equation}
     V_p^d = S_*^{-1} V_p^s = Q_p^{-1} F_p A_p^{-1} V_p^s.
     \label{eq::solve_schur}
   \end{equation}
-  ËüÆäÖĞ°üº¬Á½¸öpossionÎÊÌâµÄÇó½â$Q_p^{-1}$ and $A_p^{-1}$£¬ËùÒÔÎÒÃÇ¿ÉÒÔÓÃÎªÇó½âpossionÎÊÌâÉè¼ÆµÄ¶àÖØÍø¸ñÇó½âÆ÷À´ÊµÏÖÇó½â¡£
-  µÚ¶ş²½ÎÒÃÇÔÙÓÃÕâÖÖ¶àÖØÍø¸ñÇó½âÆ÷È¥Çó½â
+  å®ƒå…¶ä¸­åŒ…å«ä¸¤ä¸ªpossioné—®é¢˜çš„æ±‚è§£$Q_p^{-1}$ and $A_p^{-1}$ï¼Œæ‰€ä»¥æˆ‘ä»¬å¯ä»¥ç”¨ä¸ºæ±‚è§£possioné—®é¢˜è®¾è®¡çš„å¤šé‡ç½‘æ ¼æ±‚è§£å™¨æ¥å®ç°æ±‚è§£ã€‚
+  ç¬¬äºŒæ­¥æˆ‘ä»¬å†ç”¨è¿™ç§å¤šé‡ç½‘æ ¼æ±‚è§£å™¨å»æ±‚è§£
   \begin{equation}
     \begin{aligned}
       V_x^d = F^{-1} (V_x^s - B_x^T V_p^d), \\
@@ -392,45 +392,45 @@
     \end{aligned}
     \label{eq::solve_velocity}
   \end{equation}
-  ½«(\ref{eq::solve_schur}) ºÍ (\ref{eq::solve_velocity})ÖĞµÄ½âºÏ²¢ÔÚÒ»Æğ£¬¾ÍµÃµ½ÁËÒªÇó½âµÄ $V^d$.
+  å°†(\ref{eq::solve_schur}) å’Œ (\ref{eq::solve_velocity})ä¸­çš„è§£åˆå¹¶åœ¨ä¸€èµ·ï¼Œå°±å¾—åˆ°äº†è¦æ±‚è§£çš„ $V^d$.
 
-  ÔÚÊµ¼ÊµÄ¼ÆËãÖĞ£¬ÎÒÃÇ¶Ô¾ØÕó$F$, $F_p$, $Q_p$, ºÍ $A_p$µÄÇó½â£¬ÊÇÓÃ¹Ì¶¨µÄ¼¸²½´úÊı¶àÖØÍø¸ñµü´ú(algbraic multi-grid)À´´úÌæ¾«È·Çó½â¡£Õâ
-  ¾ÍÊÇµü´úµÄPCD·½·¨¡£ÎÒÃÇÓÃµÄ¶àÖØÍø¸ñÇó½âÆ÷ÊÇÔÚAFEPackÖĞ(Ò»¸ö×ÔÊÊÓ¦ÓĞÏŞÔª°ü)£¬¿ÉÒÔ´Ó\url{http://dsec.pku.edu.cn/~rli}»ñµÃ¡£ÔÚ(\cite{elman2005finite},
-  µÚ10ÕÂ)ÖĞ£¬ÊıÖµËãÀıËµÃ÷ÁËPCDÔ¤´¦ÀíµÄ¸ßĞ§¡£\cite{elman2011fast}Ò»ÎÄ½«PCDÔ¤´¦Àí·½·¨Ó¦ÓÃµ½bouyancyÇı¶¯Á÷ÎÊÌâÉÏ¡£ÔÚÎÒÃÇµÄÊıÖµÊµÑéÖĞ£¬·¢ÏÖÈç¹û½«
-  \eqref{eq::pcd_mat}ÖĞµÄ
+  åœ¨å®é™…çš„è®¡ç®—ä¸­ï¼Œæˆ‘ä»¬å¯¹çŸ©é˜µ$F$, $F_p$, $Q_p$, å’Œ $A_p$çš„æ±‚è§£ï¼Œæ˜¯ç”¨å›ºå®šçš„å‡ æ­¥ä»£æ•°å¤šé‡ç½‘æ ¼è¿­ä»£(algbraic multi-grid)æ¥ä»£æ›¿ç²¾ç¡®æ±‚è§£ã€‚è¿™
+  å°±æ˜¯è¿­ä»£çš„PCDæ–¹æ³•ã€‚æˆ‘ä»¬ç”¨çš„å¤šé‡ç½‘æ ¼æ±‚è§£å™¨æ˜¯åœ¨AFEPackä¸­(ä¸€ä¸ªè‡ªé€‚åº”æœ‰é™å…ƒåŒ…)ï¼Œå¯ä»¥ä»\url{http://dsec.pku.edu.cn/~rli}è·å¾—ã€‚åœ¨(\cite{elman2005finite},
+  ç¬¬10ç« )ä¸­ï¼Œæ•°å€¼ç®—ä¾‹è¯´æ˜äº†PCDé¢„å¤„ç†çš„é«˜æ•ˆã€‚\cite{elman2011fast}ä¸€æ–‡å°†PCDé¢„å¤„ç†æ–¹æ³•åº”ç”¨åˆ°bouyancyé©±åŠ¨æµé—®é¢˜ä¸Šã€‚åœ¨æˆ‘ä»¬çš„æ•°å€¼å®éªŒä¸­ï¼Œå‘ç°å¦‚æœå°†
+  \eqref{eq::pcd_mat}ä¸­çš„
   \begin{equation}
     F_p = \nu A_p + W_p^n.
   \end{equation}
-  ÖĞ$A_p$Ç°ÃæµÄÏµÊıÈ¥µô£¬»á·¢ÏÖGMRESµÄµü´ú²½Êı»á¼õÉÙ¡£ÎÒÃÇ²ÉÓÃ(\cite{elman2009boundary})ÖĞÔÚNeumann±ß½çÉÏµÄ´¦Àí¾ØÕó$F_p$ ºÍ $A_p$µÄ·½·¨£¬À´Ìá¸ß
-  Çó½âĞ§ÂÊ¡£$F_p$ĞèÒªÔÚ±ß½ç$\partial \Omega = \partial \Omega_D \cup \partial \Omega_N$ÉÏÂú×ã±ß½çÌõ¼ş
+  ä¸­$A_p$å‰é¢çš„ç³»æ•°å»æ‰ï¼Œä¼šå‘ç°GMRESçš„è¿­ä»£æ­¥æ•°ä¼šå‡å°‘ã€‚æˆ‘ä»¬é‡‡ç”¨(\cite{elman2009boundary})ä¸­åœ¨Neumannè¾¹ç•Œä¸Šçš„å¤„ç†çŸ©é˜µ$F_p$ å’Œ $A_p$çš„æ–¹æ³•ï¼Œæ¥æé«˜
+  æ±‚è§£æ•ˆç‡ã€‚$F_p$éœ€è¦åœ¨è¾¹ç•Œ$\partial \Omega = \partial \Omega_D \cup \partial \Omega_N$ä¸Šæ»¡è¶³è¾¹ç•Œæ¡ä»¶
   \begin{equation}
     \nu \frac{\partial p_h}{\partial n} + (\vec{w}_h \cdot \vec{n})
     p_h = 0.
     \label{eq::bc_Fp}
   \end{equation}
-  ÎÒÃÇÖªµÀ¶ÔÓÚ·½Ç»Á÷£¬ÔÚËùÓĞµÄ±ß½çÉÏ$\vec{w}_h \cdot \vec{n} = 0$£¬ËùÒÔ(\ref{eq::bc_Fp})½«»áÍË»¯³É
+  æˆ‘ä»¬çŸ¥é“å¯¹äºæ–¹è…”æµï¼Œåœ¨æ‰€æœ‰çš„è¾¹ç•Œä¸Š$\vec{w}_h \cdot \vec{n} = 0$ï¼Œæ‰€ä»¥(\ref{eq::bc_Fp})å°†ä¼šé€€åŒ–æˆ
   \begin{equation}
     \frac{\partial p_h}{\partial n} = 0.
   \end{equation}
-  Õâ¾ÍÒâÎ¶×ÅÎÒÃÇÔÚËùÓĞµÄ±ß½ç$\partial \Omega$ÉÏ£¬¶Ô$F_p$²»²ÉÈ¡ÈÎºÎ²Ù×÷£¬$A_p$²ÉÈ¡Í¬ÑùµÄ²Ù×÷¡£
-  ÔÚ±¾ÎÄÖĞ£¬ÎÒÃÇ½«PCDÔ¤´¦Àí·½·¨Ó¦ÓÃµ½ÒÆ¶¯Íø¸ñÓĞÏŞÔª·½·¨£¬À´¸ßĞ§µØÇó½âNavier-StokesÎÊÌâ\eqref{eq::linear_system}¡£
-\section{ÒÆ¶¯Íø¸ñ²ßÂÔ}
-  \subsection{Íø¸ñÒÆ¶¯µÄÁ÷³Ì}
-     ÔÙÉÏÒ»ÕÂÖĞÎÒÃÇÏêÏ¸µÄ½éÉÜ¹ıÒÆ¶¯Íø¸ñµÄ²ßÂÔ£¬ÕâÒ»ÕÂÖĞ¼òÒªÃèÊöÒ»ÏÂ¡£ÔÚ$t = t_{n}$Ê±¿Ì£¬ÎÒÃÇ»ñµÃÁËÊıÖµ½â $\vec{u}_h^{(n)}, p_H^{(n)}$ ÔÚ$t_n$Ê±¿ÌµÄ
-     Íø¸ñ $\mathcal{T}_h^n$ÉÏ¡£ÎÒÃÇ¸ù¾İ\cite{di2005moving}ÖĞµÄ·½·¨£¬ÓÃ±£³ÖÉ¢¶ÈÎª0µÄ²îÖµ·½·¨½«$\mathcal{T}_h^n$ÉÏµÄÊıÖµ½â²îÖµµ½$t_{n + 1}$Ê±¿ÌµÄÍø¸ñ
-     $\mathcal{T}_h^{(n + 1)}$ÉÏ¡£¼òµ¥µÄÀ´Ëµ£¬×Ü¹²·ÖÎªÈı²½£º
+  è¿™å°±æ„å‘³ç€æˆ‘ä»¬åœ¨æ‰€æœ‰çš„è¾¹ç•Œ$\partial \Omega$ä¸Šï¼Œå¯¹$F_p$ä¸é‡‡å–ä»»ä½•æ“ä½œï¼Œ$A_p$é‡‡å–åŒæ ·çš„æ“ä½œã€‚
+  åœ¨æœ¬æ–‡ä¸­ï¼Œæˆ‘ä»¬å°†PCDé¢„å¤„ç†æ–¹æ³•åº”ç”¨åˆ°ç§»åŠ¨ç½‘æ ¼æœ‰é™å…ƒæ–¹æ³•ï¼Œæ¥é«˜æ•ˆåœ°æ±‚è§£Navier-Stokesé—®é¢˜\eqref{eq::linear_system}ã€‚
+\section{ç§»åŠ¨ç½‘æ ¼ç­–ç•¥}
+  \subsection{ç½‘æ ¼ç§»åŠ¨çš„æµç¨‹}
+     å†ä¸Šä¸€ç« ä¸­æˆ‘ä»¬è¯¦ç»†çš„ä»‹ç»è¿‡ç§»åŠ¨ç½‘æ ¼çš„ç­–ç•¥ï¼Œè¿™ä¸€ç« ä¸­ç®€è¦æè¿°ä¸€ä¸‹ã€‚åœ¨$t = t_{n}$æ—¶åˆ»ï¼Œæˆ‘ä»¬è·å¾—äº†æ•°å€¼è§£ $\vec{u}_h^{(n)}, p_H^{(n)}$ åœ¨$t_n$æ—¶åˆ»çš„
+     ç½‘æ ¼ $\mathcal{T}_h^n$ä¸Šã€‚æˆ‘ä»¬æ ¹æ®\cite{di2005moving}ä¸­çš„æ–¹æ³•ï¼Œç”¨ä¿æŒæ•£åº¦ä¸º0çš„å·®å€¼æ–¹æ³•å°†$\mathcal{T}_h^n$ä¸Šçš„æ•°å€¼è§£å·®å€¼åˆ°$t_{n + 1}$æ—¶åˆ»çš„ç½‘æ ¼
+     $\mathcal{T}_h^{(n + 1)}$ä¸Šã€‚ç®€å•çš„æ¥è¯´ï¼Œæ€»å…±åˆ†ä¸ºä¸‰æ­¥ï¼š
      \begin{enumerate}[step 1]
-     \item »ñÈ¡¿ØÖÆº¯Êı¡£ Áî$m = 1/G$£¬ÆäÖĞ$G$ÊÇ¿ØÖÆº¯Êı¡£»ùÓÚÎĞÁ¿µÄ¿ØÖÆº¯Êı
+     \item è·å–æ§åˆ¶å‡½æ•°ã€‚ ä»¤$m = 1/G$ï¼Œå…¶ä¸­$G$æ˜¯æ§åˆ¶å‡½æ•°ã€‚åŸºäºæ¶¡é‡çš„æ§åˆ¶å‡½æ•°
        \begin{equation}
          \centering
          G = \sqrt{1 + \alpha |\omega|^\beta}.
          \label{eq::monitor_vorticity}
        \end{equation}
-       ÆäÖĞ $\omega = \nabla \times \vec{u}$£¬ $\alpha, \beta$
-       ÊÇÁ½¸öÕıµÄ³£Êı¡£ÔÚ±¾ÎÄÖĞ£¬$\beta = 2$ÓĞ±È½ÏµÄĞ§¹û£¬$\alpha$ ¸ù¾İ²»Í¬µÄÎÊÌâ£¬Ñ¡È¡²»Í¬µÄÖµ¡£
+       å…¶ä¸­ $\omega = \nabla \times \vec{u}$ï¼Œ $\alpha, \beta$
+       æ˜¯ä¸¤ä¸ªæ­£çš„å¸¸æ•°ã€‚åœ¨æœ¬æ–‡ä¸­ï¼Œ$\beta = 2$æœ‰æ¯”è¾ƒçš„æ•ˆæœï¼Œ$\alpha$ æ ¹æ®ä¸åŒçš„é—®é¢˜ï¼Œé€‰å–ä¸åŒçš„å€¼ã€‚
        problems.
 
-     \item »ñÈ¡ÎïÀíÍø¸ñÉÏµÄÒÆ¶¯·½Ïò¡£Çó½â
+     \item è·å–ç‰©ç†ç½‘æ ¼ä¸Šçš„ç§»åŠ¨æ–¹å‘ã€‚æ±‚è§£
        \begin{equation}
          \begin{aligned}
            \nabla_{\vec{x}}(m \nabla_{\vec{x}} \vec{\xi}) = 0, \\
@@ -438,20 +438,20 @@
          \end{aligned}
          \label{eq::logical}
        \end{equation}
-       À´»ñµÃÒ»¸öĞÂµÄÂß¼­Íø¸ñ$\mathcal{T}_c^*$£¬$\mathcal{A}^*$ ×÷ÎªËüµÄ½Úµã¡£
-       ÎÒÃÇ¿ÉÒÔµÃµ½ĞÂµÄÂß¼­Íø¸ñºÍ³õÊ¼Âß¼­Íø¸ñ$\mathcal{T}_c^0(\mbox{½ÚµãÎª} \mathcal{A}^0)$
-       Ö®¼äµÄÎó²î
+       æ¥è·å¾—ä¸€ä¸ªæ–°çš„é€»è¾‘ç½‘æ ¼$\mathcal{T}_c^*$ï¼Œ$\mathcal{A}^*$ ä½œä¸ºå®ƒçš„èŠ‚ç‚¹ã€‚
+       æˆ‘ä»¬å¯ä»¥å¾—åˆ°æ–°çš„é€»è¾‘ç½‘æ ¼å’Œåˆå§‹é€»è¾‘ç½‘æ ¼$\mathcal{T}_c^0(\mbox{èŠ‚ç‚¹ä¸º} \mathcal{A}^0)$
+       ä¹‹é—´çš„è¯¯å·®
        \begin{equation}
          \delta \mathcal{A} = \mathcal{A}^0 - \mathcal{A}^*.
        \end{equation}
-       ÎÒÃÇ¿ÉÒÔ¸ù¾İ$\delta \mathcal{A}$À´»ñµÃÎïÀíÇøÓòµÄÎ»ÒÆ$\delta X_i$£¬Í¨³£ÔÙ³ËÉÏÒ»¸öÕıµÄ³£Êı$\mu$
-       ±ÜÃâÍø¸ñ²ø½Ó£º
+       æˆ‘ä»¬å¯ä»¥æ ¹æ®$\delta \mathcal{A}$æ¥è·å¾—ç‰©ç†åŒºåŸŸçš„ä½ç§»$\delta X_i$ï¼Œé€šå¸¸å†ä¹˜ä¸Šä¸€ä¸ªæ­£çš„å¸¸æ•°$\mu$
+       é¿å…ç½‘æ ¼ç¼ æ¥ï¼š
        \begin{equation}
          X_i^{(n + 1)} = X_i^{(n)} + \mu \delta X_i.
        \end{equation}
-     \item ±£³ÖÉ¢¶ÈÎª0µÄ²îÖµ¡£
-       ÔÚÓÃÒÆ¶¯Íø¸ñÓĞÏŞÔª·½·¨À´Çó½â²»¿ÉÑ¹Á÷Ìå·½³ÌµÄÊ±ºò£¬ĞèÒªÔÚÊıÖµ½â²îÖµµÄ¹ı³ÌÖĞ±£³ÖÉ¢¶ÈÎª0¡£ÔÚ\cite{di2005moving}ÖĞ£¬
-       ÊıÖµ½âÔÚĞÂÍø¸ñ$\mathcal{T}^{(n + 1)}$ÉÏµÄÖØĞÂ·Ö²¼£¬ÊÇÍ¨¹ıÇó½âÒ»¸öÀàËÆÎŞÕ³µÄNavier-Stokes·½³Ì¡£
+     \item ä¿æŒæ•£åº¦ä¸º0çš„å·®å€¼ã€‚
+       åœ¨ç”¨ç§»åŠ¨ç½‘æ ¼æœ‰é™å…ƒæ–¹æ³•æ¥æ±‚è§£ä¸å¯å‹æµä½“æ–¹ç¨‹çš„æ—¶å€™ï¼Œéœ€è¦åœ¨æ•°å€¼è§£å·®å€¼çš„è¿‡ç¨‹ä¸­ä¿æŒæ•£åº¦ä¸º0ã€‚åœ¨\cite{di2005moving}ä¸­ï¼Œ
+       æ•°å€¼è§£åœ¨æ–°ç½‘æ ¼$\mathcal{T}^{(n + 1)}$ä¸Šçš„é‡æ–°åˆ†å¸ƒï¼Œæ˜¯é€šè¿‡æ±‚è§£ä¸€ä¸ªç±»ä¼¼æ— ç²˜çš„Navier-Stokesæ–¹ç¨‹ã€‚
        \begin{eqnarray}
          \begin{aligned}
            \frac{\partial \vec{u}}{\partial \tau} - \nabla_{\vec{x}}\vec{u}
@@ -460,11 +460,11 @@
          \end{aligned}
          \label{eq::continous_update}
        \end{eqnarray}
-       ÆäÖĞ $\delta \vec{x} := x^{\text{old}} - x^{\text{new}}$£¬
-       $x^{\text{old}}, x^{\text{new}}$ ÊÇÎïÀíÇøÓòÉÏµÄÁ½×é×ø±ê¡£$\tau$ ÊÇÒ»¸öĞéÄâÊ±¼ä£¬Í¨³£È¡³É$1.0$¡£ÒòÎª¶ÔÁ÷ËÙ¶È$\delta \vec{x}$
-       Ïà¶Ô½ÏĞ¡¡£ÕâÀï $\hat{p}$ ÊÇÒ»¸öÁÙÊ±±äÁ¿£¬ÎªÁË¸ú(\ref{eq::NS})ÖĞµÄÑ¹Á¦±äÁ¿Çø±ğ¿ªÀ´¡£
+       å…¶ä¸­ $\delta \vec{x} := x^{\text{old}} - x^{\text{new}}$ï¼Œ
+       $x^{\text{old}}, x^{\text{new}}$ æ˜¯ç‰©ç†åŒºåŸŸä¸Šçš„ä¸¤ç»„åæ ‡ã€‚$\tau$ æ˜¯ä¸€ä¸ªè™šæ‹Ÿæ—¶é—´ï¼Œé€šå¸¸å–æˆ$1.0$ã€‚å› ä¸ºå¯¹æµé€Ÿåº¦$\delta \vec{x}$
+       ç›¸å¯¹è¾ƒå°ã€‚è¿™é‡Œ $\hat{p}$ æ˜¯ä¸€ä¸ªä¸´æ—¶å˜é‡ï¼Œä¸ºäº†è·Ÿ(\ref{eq::NS})ä¸­çš„å‹åŠ›å˜é‡åŒºåˆ«å¼€æ¥ã€‚
 
-       (\ref{eq::continous_update})µÄÈõĞÎÊ½ÊÇ: Ñ°ÕÒ $(\vec{u}_h, \hat{p}_H) \in X_E^h \times P^H$ Ê¹µÃ
+       (\ref{eq::continous_update})çš„å¼±å½¢å¼æ˜¯: å¯»æ‰¾ $(\vec{u}_h, \hat{p}_H) \in X_E^h \times P^H$ ä½¿å¾—
        \begin{eqnarray}
          \begin{aligned}
            \left( \partial_{\tau} \vec{u}_h - \nabla_{\vec{x}}\vec{u}_h
@@ -476,7 +476,7 @@
          \label{eq::semi_discreted_update}
        \end{eqnarray}
 
-       ÔÚ±¾ÎÄÖĞ£¬ÎÒÃÇÓÃÊ±¼ä²ãÉÏÓÃÏÔÊ¾¸ñÊ½ÀëÉ¢£º
+       åœ¨æœ¬æ–‡ä¸­ï¼Œæˆ‘ä»¬ç”¨æ—¶é—´å±‚ä¸Šç”¨æ˜¾ç¤ºæ ¼å¼ç¦»æ•£ï¼š
        (\ref{eq::semi_discreted_update}) for time discretization:
        \begin{eqnarray}
          \begin{aligned}
@@ -491,12 +491,12 @@
          \end{aligned}
          \label{eq::full_discreted_update}
        \end{eqnarray}
-       ÆäÖĞ$\vec{u}_h^{(n)}$ ºÍ $p_H^{(n)}$ ÊÇ ·½³Ì(\ref{eq::NS}) ÔÚ $t = t_{n}$ Ê±¿ÌµÄÍø¸ñÉÏ¼ÆËãµÄÊıÖµ½â¡£$\vec{u}_{h,*}^{(n)}$ ºÍ $p_{h, *}^{(n)}$
-      ÊÇÔÚĞÂÍø¸ñ$\mathcal{T}^{(n + 1)}$ÉÏ£¬$t_n$Ê±¿ÌµÄÊıÖµ½â£¬ÊÇÒ»¸öÖĞ¼ä±äÁ¿¡£
+       å…¶ä¸­$\vec{u}_h^{(n)}$ å’Œ $p_H^{(n)}$ æ˜¯ æ–¹ç¨‹(\ref{eq::NS}) åœ¨ $t = t_{n}$ æ—¶åˆ»çš„ç½‘æ ¼ä¸Šè®¡ç®—çš„æ•°å€¼è§£ã€‚$\vec{u}_{h,*}^{(n)}$ å’Œ $p_{h, *}^{(n)}$
+      æ˜¯åœ¨æ–°ç½‘æ ¼$\mathcal{T}^{(n + 1)}$ä¸Šï¼Œ$t_n$æ—¶åˆ»çš„æ•°å€¼è§£ï¼Œæ˜¯ä¸€ä¸ªä¸­é—´å˜é‡ã€‚
      \end{enumerate}
 
-   \subsection{ÓÃAMG Ô¤´¦ÀíÇó½â(\ref{eq::full_discreted_update})}
-   (\ref{eq::full_discreted_update}) ½«»áµÃµ½Ò»¸öÏßĞÔÏµÍ³£¬ ËüµÄÏµÊı¾ØÕóÎª$\mathcal{M}^p$£¬¶¨ÒåÈçÏÂ£º
+   \subsection{ç”¨AMG é¢„å¤„ç†æ±‚è§£(\ref{eq::full_discreted_update})}
+   (\ref{eq::full_discreted_update}) å°†ä¼šå¾—åˆ°ä¸€ä¸ªçº¿æ€§ç³»ç»Ÿï¼Œ å®ƒçš„ç³»æ•°çŸ©é˜µä¸º$\mathcal{M}^p$ï¼Œå®šä¹‰å¦‚ä¸‹ï¼š
    \begin{equation}
      \mathcal{M}^p =
      \left(
@@ -508,12 +508,12 @@
      \right)
      \label{mat::moving}
    \end{equation}
-   ¾İÎÒÃÇËùÖª£¬¾ØÕó$\mathcal{M}^p$µÄschur²¹¾ØÕóÎª£º
+   æ®æˆ‘ä»¬æ‰€çŸ¥ï¼ŒçŸ©é˜µ$\mathcal{M}^p$çš„schurè¡¥çŸ©é˜µä¸ºï¼š
    \begin{equation}
     M_S = B_x Q_p^{-1} B_x^T + B_y Q_p^{-1} B_y^T.
    \end{equation}
-   ¸ù¾İ(\cite{elman2005finite}, µÚ5ÕÂ)£¬¶ÔÓÚÂú×ãLBBÌõ¼şµÄ»ìºÏÔª½üËÆ£¬µ±±ß½çÌõ¼şÈ«²¿ÊÇ·â±ÕÁ÷Ìå±ß½çÊ±£¬$M_S$ÊÇ¸úÑ¹Á¦¿Õ¼äµÄ¸Õ¶È¾ØÕó
-   $A_p$Æ×µÈ¼ÛµÄ¡£Òò´ËÎÒÃÇ¿ÉÒÔÓÃ $A_p$ À´×÷Îªschur²¹¾ØÕóµÄ½üËÆ¾ØÕó¡£ÄÇÃ´ÎÒÃÇ¿ÉÒÔÑ¡È¡
+   æ ¹æ®(\cite{elman2005finite}, ç¬¬5ç« )ï¼Œå¯¹äºæ»¡è¶³LBBæ¡ä»¶çš„æ··åˆå…ƒè¿‘ä¼¼ï¼Œå½“è¾¹ç•Œæ¡ä»¶å…¨éƒ¨æ˜¯å°é—­æµä½“è¾¹ç•Œæ—¶ï¼Œ$M_S$æ˜¯è·Ÿå‹åŠ›ç©ºé—´çš„åˆšåº¦çŸ©é˜µ
+   $A_p$è°±ç­‰ä»·çš„ã€‚å› æ­¤æˆ‘ä»¬å¯ä»¥ç”¨ $A_p$ æ¥ä½œä¸ºschurè¡¥çŸ©é˜µçš„è¿‘ä¼¼çŸ©é˜µã€‚é‚£ä¹ˆæˆ‘ä»¬å¯ä»¥é€‰å–
    \begin{equation}
      \mathcal{K} =
      \left(
@@ -526,43 +526,43 @@
      \label{eq::updateSolution_precond}
    \end{equation}
 
-   À´×÷Îª(\ref{mat::moving})µÄ¿éÔ¤´¦Àí¾ØÕó£¬ÆäÖĞ $M_S^* = A_p$ »òÕß $M_S^* =
-   \frac{1}{\nu} A_p$¡£ÎÒÃÇÑ¡Ôñ²»Í¬µÄ$M_S^*$À´×÷Îªschur²¹¾ØÕóµÄ½üËÆ¾ØÕó£¬
-   À´¶Ô±ÈÇó½âĞ§ÂÊµÄ²î±ğ¡£ÔÚÎÒÃÇµÄÊµ¼Ê¼ÆËãÖĞ£¬$\frac{1}{\nu}A_p$ Òª±È $A_p$Ğ§ÂÊÒª¸ß¡£
-   ¶ÔÓÚÈëÁ÷/³öÁ÷ÎÊÌâ£¬$A_p$ ĞèÒªÔÚNeumann±ß½çÉÏ×ö³öÒ»Ğ©ĞŞ¸ÄÀ´Ìá¸ß¼ÆËãĞ§ÂÊ¡£ÔÚ³öÁ÷±ß½ç
-   $\partial \Omega_N$ÉÏ£¬ÀëÉ¢µÄÑ¹Á¦ $p_h$ ĞèÒªÂú×ãÒ»¸öÆë´ÎµÄDirichlet±ß½çÌõ¼ş¡£
-   ¶øÔÚ$\Omega_D$ÉÏ£¬Ñ¹Á¦$p_h$ÒªÂú×ãNeumannÌõ¼ş $\frac{\partial p_h}{\partial n} = 0$£¬
-   ÄÇ¾ÍÒâÎ¶×ÅÎÒÃÇÔÚDirichlet±ß½çÉÏ£¬¶Ô$A_p$²»²ÉÈ¡ÈÎºÎ²Ù×÷¡£Ï¸½Ú¿ÉÒÔ²Î¿¼\cite{elman2009boundary}¡£
-   ×¢Òâµ½£¬Ò»µ©Íø¸ñ·¢ÉúÒÆ¶¯£¬ËùÓĞµÄ¾ØÕó $M, B_x^T, B_y^T, B_x, B_y, A_p$ ¶¼ĞèÒªÖØĞÂ¹¹½¨¡£
+   æ¥ä½œä¸º(\ref{mat::moving})çš„å—é¢„å¤„ç†çŸ©é˜µï¼Œå…¶ä¸­ $M_S^* = A_p$ æˆ–è€… $M_S^* =
+   \frac{1}{\nu} A_p$ã€‚æˆ‘ä»¬é€‰æ‹©ä¸åŒçš„$M_S^*$æ¥ä½œä¸ºschurè¡¥çŸ©é˜µçš„è¿‘ä¼¼çŸ©é˜µï¼Œ
+   æ¥å¯¹æ¯”æ±‚è§£æ•ˆç‡çš„å·®åˆ«ã€‚åœ¨æˆ‘ä»¬çš„å®é™…è®¡ç®—ä¸­ï¼Œ$\frac{1}{\nu}A_p$ è¦æ¯” $A_p$æ•ˆç‡è¦é«˜ã€‚
+   å¯¹äºå…¥æµ/å‡ºæµé—®é¢˜ï¼Œ$A_p$ éœ€è¦åœ¨Neumannè¾¹ç•Œä¸Šåšå‡ºä¸€äº›ä¿®æ”¹æ¥æé«˜è®¡ç®—æ•ˆç‡ã€‚åœ¨å‡ºæµè¾¹ç•Œ
+   $\partial \Omega_N$ä¸Šï¼Œç¦»æ•£çš„å‹åŠ› $p_h$ éœ€è¦æ»¡è¶³ä¸€ä¸ªé½æ¬¡çš„Dirichletè¾¹ç•Œæ¡ä»¶ã€‚
+   è€Œåœ¨$\Omega_D$ä¸Šï¼Œå‹åŠ›$p_h$è¦æ»¡è¶³Neumannæ¡ä»¶ $\frac{\partial p_h}{\partial n} = 0$ï¼Œ
+   é‚£å°±æ„å‘³ç€æˆ‘ä»¬åœ¨Dirichletè¾¹ç•Œä¸Šï¼Œå¯¹$A_p$ä¸é‡‡å–ä»»ä½•æ“ä½œã€‚ç»†èŠ‚å¯ä»¥å‚è€ƒ\cite{elman2009boundary}ã€‚
+   æ³¨æ„åˆ°ï¼Œä¸€æ—¦ç½‘æ ¼å‘ç”Ÿç§»åŠ¨ï¼Œæ‰€æœ‰çš„çŸ©é˜µ $M, B_x^T, B_y^T, B_x, B_y, A_p$ éƒ½éœ€è¦é‡æ–°æ„å»ºã€‚
 
-   ÔÚÎÒÃÇµÄËã·¨ÖĞ£¬PCDÔ¤´¦ÀíµÄGMRES×÷ÎªÇó½âÏßĞÔÏµÍ³(\ref{eq::linear_system})µÄÇó½âÆ÷¡£
-   ÎÒÃÇ¶¨ÒåGMRESÊÕÁ²µÄÍ£Ö¹×¼ÔòÎª
+   åœ¨æˆ‘ä»¬çš„ç®—æ³•ä¸­ï¼ŒPCDé¢„å¤„ç†çš„GMRESä½œä¸ºæ±‚è§£çº¿æ€§ç³»ç»Ÿ(\ref{eq::linear_system})çš„æ±‚è§£å™¨ã€‚
+   æˆ‘ä»¬å®šä¹‰GMRESæ”¶æ•›çš„åœæ­¢å‡†åˆ™ä¸º
    \begin{equation}
      ||r^{(k)}||  \leq 10^{-6} ||r^{(0)}||
    \end{equation}
-   ÆäÖĞ $r^{(k)}$ ÊÇÏßĞÔÏµÍ³(\ref{eq::linear_system})µÄ²Ğ²î£¬$r^{0}$ ÊÇ(\ref{eq::linear_system})µÄÓÒ¶ËÏîµÄ²Ğ²î¡£
-   ×îºó£¬ÎªÁËÇå³şµØ±íÊöÎÒÃÇµÄËã·¨£¬ÎÒÃÇ¸ø³öËã·¨µÄÁ÷³ÌÍ¼ÈçÏÂ£º
+   å…¶ä¸­ $r^{(k)}$ æ˜¯çº¿æ€§ç³»ç»Ÿ(\ref{eq::linear_system})çš„æ®‹å·®ï¼Œ$r^{0}$ æ˜¯(\ref{eq::linear_system})çš„å³ç«¯é¡¹çš„æ®‹å·®ã€‚
+   æœ€åï¼Œä¸ºäº†æ¸…æ¥šåœ°è¡¨è¿°æˆ‘ä»¬çš„ç®—æ³•ï¼Œæˆ‘ä»¬ç»™å‡ºç®—æ³•çš„æµç¨‹å›¾å¦‚ä¸‹ï¼š
 
       \begin{algorithm}
-        \caption{ÒÆ¶¯Íø¸ñÓĞÏŞÔª·½·¨Çó½âNavier-Stokes}
+        \caption{ç§»åŠ¨ç½‘æ ¼æœ‰é™å…ƒæ–¹æ³•æ±‚è§£Navier-Stokes}
         \begin{algorithmic}[1]
-          \State ÓÃAMGÔ¤´¦ÀíÀ´Çó½âÎÈÌ¬µÄStokes·½³ÌÀ´»ñµÃ³õÖµÖµ $\vec{u}_h^{(0)}, p_H^{(0)}$.
+          \State ç”¨AMGé¢„å¤„ç†æ¥æ±‚è§£ç¨³æ€çš„Stokesæ–¹ç¨‹æ¥è·å¾—åˆå€¼å€¼ $\vec{u}_h^{(0)}, p_H^{(0)}$.
           \While {$t_n < T$}
-          \State ÔÚ$\triangle_p^{(n)}$ÉÏ£¬ÓÃ $\vec{u}_h^{(n)}, p_H^{(n)}$ ¼ÆËã¿ØÖÆº¯Êı£¬²¢ÇÒÍ¨¹ıÇó½âµ÷ºÍÓ³Éä(\ref{eq::logical})À´»ñµÃ
-                 ĞÂµÄÂß¼­Íø¸ñ$\vec{\xi}^*$¡£ \label{state::monitor}
-          \State ÅĞ¶Ï Èç¹û $\vec{\xi}^* - \vec{\xi}^{(0)}$ µÄ $L_2$ ·¶ÊıÊÇ²»ÊÇ±ÈÈİÈÌÁ¿Ğ¡¡£ÈôÊÇ£¬Ôòµü´ú½áÊø£¬·ñÔò
-                 ¼ÌĞø \ref{state::start} - \ref{state::end}¡£
-          \State ÓÃ$\vec{\xi}^* - \vec{\xi}^{(0)}$Ö®¼äµÄÎó²îÀ´¼ÆËãÑ¹Á¦Íø¸ñ$\triangle_p^{(n)}$ÔÚÎïÀíÇøÓòÉÏµÄÒÆ¶¯Á¿$\delta \vec{x}$¡£
+          \State åœ¨$\triangle_p^{(n)}$ä¸Šï¼Œç”¨ $\vec{u}_h^{(n)}, p_H^{(n)}$ è®¡ç®—æ§åˆ¶å‡½æ•°ï¼Œå¹¶ä¸”é€šè¿‡æ±‚è§£è°ƒå’Œæ˜ å°„(\ref{eq::logical})æ¥è·å¾—
+                 æ–°çš„é€»è¾‘ç½‘æ ¼$\vec{\xi}^*$ã€‚ \label{state::monitor}
+          \State åˆ¤æ–­ å¦‚æœ $\vec{\xi}^* - \vec{\xi}^{(0)}$ çš„ $L_2$ èŒƒæ•°æ˜¯ä¸æ˜¯æ¯”å®¹å¿é‡å°ã€‚è‹¥æ˜¯ï¼Œåˆ™è¿­ä»£ç»“æŸï¼Œå¦åˆ™
+                 ç»§ç»­ \ref{state::start} - \ref{state::end}ã€‚
+          \State ç”¨$\vec{\xi}^* - \vec{\xi}^{(0)}$ä¹‹é—´çš„è¯¯å·®æ¥è®¡ç®—å‹åŠ›ç½‘æ ¼$\triangle_p^{(n)}$åœ¨ç‰©ç†åŒºåŸŸä¸Šçš„ç§»åŠ¨é‡$\delta \vec{x}$ã€‚
                  \label{state::start}
-          \State ÔÚËÙ¶ÈÍø¸ñ $\triangle_v^{(n)}$ ÉÏ£¬ÓÃAMGÔ¤´¦Àí·½·¨Çó½â·½³Ì (\ref{eq::full_discreted_update}) À´»ñÈ¡ÖĞ¼ä±äÁ¿
-                 $\vec{u}_{h, *}^{(n)}, p_{H, *}^{(n)}$¡£
-          \State ¸üĞÂÑ¹Á¦Íø¸ñ $\triangle_p^{(n)}$ µ½ $\triangle_p^{(n +
-                 1)}$ ²¢ÇÒÀûÓÃ¼¸ºÎÒÅ´«Ê÷½á¹¹À´Í¬²½ $\triangle_v^{(n)}$ µ½
-                 $\triangle_v^{(n + 1)}$¡£
-          \State »Øµ½ \ref{state::monitor}¡£ \label{state::end}
+          \State åœ¨é€Ÿåº¦ç½‘æ ¼ $\triangle_v^{(n)}$ ä¸Šï¼Œç”¨AMGé¢„å¤„ç†æ–¹æ³•æ±‚è§£æ–¹ç¨‹ (\ref{eq::full_discreted_update}) æ¥è·å–ä¸­é—´å˜é‡
+                 $\vec{u}_{h, *}^{(n)}, p_{H, *}^{(n)}$ã€‚
+          \State æ›´æ–°å‹åŠ›ç½‘æ ¼ $\triangle_p^{(n)}$ åˆ° $\triangle_p^{(n +
+                 1)}$ å¹¶ä¸”åˆ©ç”¨å‡ ä½•é—ä¼ æ ‘ç»“æ„æ¥åŒæ­¥ $\triangle_v^{(n)}$ åˆ°
+                 $\triangle_v^{(n + 1)}$ã€‚
+          \State å›åˆ° \ref{state::monitor}ã€‚ \label{state::end}
 
-          \State ÓÃAMGÔ¤´¦Àí·½·¨À´Çó½â Navier-Stokes ÎÊÌâ (\ref{eq::linear_system})£¬´Ó¶ø»ñµÃĞÂÍø¸ñ$\triangle_v^{(n + 1)}$ ºÍ $\triangle_p^{(n
-                 + 1)}$ ÉÏµÄÊıÖµ½â $\vec{u}_h^{(n + 1)}, p_H^{(n + 1)}$¡£
+          \State ç”¨AMGé¢„å¤„ç†æ–¹æ³•æ¥æ±‚è§£ Navier-Stokes é—®é¢˜ (\ref{eq::linear_system})ï¼Œä»è€Œè·å¾—æ–°ç½‘æ ¼$\triangle_v^{(n + 1)}$ å’Œ $\triangle_p^{(n
+                 + 1)}$ ä¸Šçš„æ•°å€¼è§£ $\vec{u}_h^{(n + 1)}, p_H^{(n + 1)}$ã€‚
           \EndWhile
         \end{algorithmic}
         \label{alg::solve}
@@ -572,23 +572,23 @@
 % ----------------------------------------------------------------------------------------
 %	SECTION 6
 % ----------------------------------------------------------------------------------------
-\section{ÊıÖµËãÀı}
-      ÎÒÃÇÓÃÈı¸öÊıÖµËãÀıÀ´Õ¹Ê¾ÎÒÃÇµÄ·½·¨¡£ÔÚÊµ¼ÊµÄ¼ÆËã¹ı³ÌÖĞ£¬ÎÒÃÇ²ÉÓÃÎÈÌ¬µÄStokes·½³ÌµÄ½â×÷ÎªNavier-Stokes·½³ÌµÄ³õÊ¼Öµ£¬
-      ±ß½çÌõ¼şÉèÖÃ¸úNavier-Stokes·½³ÌÒ»ÖÂ¡£ÔÚÎÒÃÇµÄËã·¨ÖĞ£¬³õÊ¼µÄÎïÀíÇøÓòºÍÂß¼­ÇøÓòÊÇÒ»ÖÂµÄ¡£Íø¸ñµÄÒÆ¶¯Ğ§¹ûÒÔ¼°ÊıÖµ½âÔÚ
-      ÏÂÃæÕ¹Ê¾³öÀ´¡£ÎÒÃÇµÄ´úÂëÊÇ»ùÓÚÓĞÏŞÔª°üAFEPack¡£
+\section{æ•°å€¼ç®—ä¾‹}
+      æˆ‘ä»¬ç”¨ä¸‰ä¸ªæ•°å€¼ç®—ä¾‹æ¥å±•ç¤ºæˆ‘ä»¬çš„æ–¹æ³•ã€‚åœ¨å®é™…çš„è®¡ç®—è¿‡ç¨‹ä¸­ï¼Œæˆ‘ä»¬é‡‡ç”¨ç¨³æ€çš„Stokesæ–¹ç¨‹çš„è§£ä½œä¸ºNavier-Stokesæ–¹ç¨‹çš„åˆå§‹å€¼ï¼Œ
+      è¾¹ç•Œæ¡ä»¶è®¾ç½®è·ŸNavier-Stokesæ–¹ç¨‹ä¸€è‡´ã€‚åœ¨æˆ‘ä»¬çš„ç®—æ³•ä¸­ï¼Œåˆå§‹çš„ç‰©ç†åŒºåŸŸå’Œé€»è¾‘åŒºåŸŸæ˜¯ä¸€è‡´çš„ã€‚ç½‘æ ¼çš„ç§»åŠ¨æ•ˆæœä»¥åŠæ•°å€¼è§£åœ¨
+      ä¸‹é¢å±•ç¤ºå‡ºæ¥ã€‚æˆ‘ä»¬çš„ä»£ç æ˜¯åŸºäºæœ‰é™å…ƒåŒ…AFEPackã€‚
 
-     \subsection{·½Ç»Çı¶¯Á÷}
-       ÎÒÃÇ¿¼ÂÇ¾­µäËãÀı£ºÕıÔò»¯µÄ·½Ç»Á÷¡£ÎÒÃÇµÄ¼ÆËãÇøÓòÊÇ$\Omega = [-1, 1] \times [-1, 1]$£¬Õ³ĞÔÏµÊıÊÇ$\nu = 0.001$¡£Dirichlet
-       ±ß½çÌõ¼şÉèÖÃÔÚËùÓĞµÄ±ß½ç$\partial \Omega$ÉÏ¡£ÔÚ¶¥²¿±ßÉÏ£¬ËÙ¶È$\vec{u} = (1 - x^4, 0)^T$£¬ÎŞ»¬ÒÆÌõ¼şÉèÖÃÔÚ$\partial \Omega$
-       µÄÆäËü²¿·Ö¡£
+     \subsection{æ–¹è…”é©±åŠ¨æµ}
+       æˆ‘ä»¬è€ƒè™‘ç»å…¸ç®—ä¾‹ï¼šæ­£åˆ™åŒ–çš„æ–¹è…”æµã€‚æˆ‘ä»¬çš„è®¡ç®—åŒºåŸŸæ˜¯$\Omega = [-1, 1] \times [-1, 1]$ï¼Œç²˜æ€§ç³»æ•°æ˜¯$\nu = 0.001$ã€‚Dirichlet
+       è¾¹ç•Œæ¡ä»¶è®¾ç½®åœ¨æ‰€æœ‰çš„è¾¹ç•Œ$\partial \Omega$ä¸Šã€‚åœ¨é¡¶éƒ¨è¾¹ä¸Šï¼Œé€Ÿåº¦$\vec{u} = (1 - x^4, 0)^T$ï¼Œæ— æ»‘ç§»æ¡ä»¶è®¾ç½®åœ¨$\partial \Omega$
+       çš„å…¶å®ƒéƒ¨åˆ†ã€‚
 
-       ÔÚÎÒÃÇµÄÒÆ¶¯²ßÂÔÖĞ£¬ÎÒÃÇÑ¡È¡ÎĞÁ¿(\ref{eq::monitor_vorticity})Îª¿ØÖÆº¯Êı¡£²ÎÊıÈ¡³É$\alpha = 0.5, \beta = 2.0$Ê±Íø¸ñÒÆ¶¯Ğ§¹û
-       ±íÏÖºÃ¡£ÔÚÍ¼\ref{fig::cavity_flow_mesh}ÖĞÕ¹Ê¾µÄÊÇ·¢Õ¹µ½ÎÈÌ¬µÄÒÆ¶¯Íø¸ñÒÔ¼°ÎĞÁ¿µÄµÈ¸ßÏß¡£ÎÒÃÇ¿ÉÒÔ¿´³öÍø¸ñ¼¯ÖĞÔÚ¶¥²¿±ßºÍÓÒ±ß±ß½ç
-       £¬ÕâĞ©µØ·½¶¼ÊÇÎĞÁ¿±È½Ï´óµÄµØ·½¡£ËÙ¶ÈµÄÁ÷ËÙÏßÈçÍ¼\ref{fig::cavity_flow_streamline}¡£
+       åœ¨æˆ‘ä»¬çš„ç§»åŠ¨ç­–ç•¥ä¸­ï¼Œæˆ‘ä»¬é€‰å–æ¶¡é‡(\ref{eq::monitor_vorticity})ä¸ºæ§åˆ¶å‡½æ•°ã€‚å‚æ•°å–æˆ$\alpha = 0.5, \beta = 2.0$æ—¶ç½‘æ ¼ç§»åŠ¨æ•ˆæœ
+       è¡¨ç°å¥½ã€‚åœ¨å›¾\ref{fig::cavity_flow_mesh}ä¸­å±•ç¤ºçš„æ˜¯å‘å±•åˆ°ç¨³æ€çš„ç§»åŠ¨ç½‘æ ¼ä»¥åŠæ¶¡é‡çš„ç­‰é«˜çº¿ã€‚æˆ‘ä»¬å¯ä»¥çœ‹å‡ºç½‘æ ¼é›†ä¸­åœ¨é¡¶éƒ¨è¾¹å’Œå³è¾¹è¾¹ç•Œ
+       ï¼Œè¿™äº›åœ°æ–¹éƒ½æ˜¯æ¶¡é‡æ¯”è¾ƒå¤§çš„åœ°æ–¹ã€‚é€Ÿåº¦çš„æµé€Ÿçº¿å¦‚å›¾\ref{fig::cavity_flow_streamline}ã€‚
 
-       ´Ó±í\ref{tab::GMRES_steps_initial}ÖĞ£¬ÎÒÃÇµÃÖªÔÚPCDÔ¤´¦ÀíÖĞ£¬Ñ¡È¡$F_p = A_p + W_p^n$ ±È $F_p = \nu A_p + W_p^n$ ĞèÒªµÄµü´ú²½Êı
-       ÒªÉÙºÜ¶à¡£ÔÚÃ¿¸öÊ±¼ä²½£¬Çó½âÏßĞÔ·½³Ì×éµÄ(\ref{eq::linear_system})µÄGMRESµü´ú²½ÊıÈçÍ¼\ref{fig::cavity_GMRES_steps}¡£ËüĞèÒª$12-24$
-       ²½µü´úÊÕÁ²£¬µ±Á÷ÌåÇ÷ÓÚÎÈ¶¨µÄÊ±ºò£¬µü´ú´ÎÊıÔÚ$15-16$²½¡£
+       ä»è¡¨\ref{tab::GMRES_steps_initial}ä¸­ï¼Œæˆ‘ä»¬å¾—çŸ¥åœ¨PCDé¢„å¤„ç†ä¸­ï¼Œé€‰å–$F_p = A_p + W_p^n$ æ¯” $F_p = \nu A_p + W_p^n$ éœ€è¦çš„è¿­ä»£æ­¥æ•°
+       è¦å°‘å¾ˆå¤šã€‚åœ¨æ¯ä¸ªæ—¶é—´æ­¥ï¼Œæ±‚è§£çº¿æ€§æ–¹ç¨‹ç»„çš„(\ref{eq::linear_system})çš„GMRESè¿­ä»£æ­¥æ•°å¦‚å›¾\ref{fig::cavity_GMRES_steps}ã€‚å®ƒéœ€è¦$12-24$
+       æ­¥è¿­ä»£æ”¶æ•›ï¼Œå½“æµä½“è¶‹äºç¨³å®šçš„æ—¶å€™ï¼Œè¿­ä»£æ¬¡æ•°åœ¨$15-16$æ­¥ã€‚
 
 
        \begin{figure}[!htbp]
@@ -642,16 +642,16 @@
        \end{table}
    \subsection{Backward step flow}
 
-      Õâ¸öËãÀıÄ£ÄâµÄÊÇÁ÷Ìå¾­¹ıÒ»¸öÏòºóµÄÌ¨½×¡£¹ÜµÀµÄ³¤¶ÈÊÇ$l = 5$£¬ÔÚÈëÁ÷±ß½ç$x = -1, y \in (0, -1)$ÉèÖÃµÄÊÇPoiseuilleÁ÷Ìõ¼ş
-      $\vec{u} = (1 - y^2, 0)^T$¡£ÔÚ¹ÜµÀµÄ¶¥¶ËºÍµ×¶ËÉèÖÃµÄÎŞ»¬ÒÆ±ß½çÌõ¼ş$\vec{u} = (0, 0)^T$£¬×ÔÈ»Ìõ¼şÉèÖÃÔÚ³öÁ÷±ß½ç$x = 5, y \in (-1, 1)$
-      ÉÏ¡£ÎÒÃÇÑ¡È¡Õ³ĞÔÏµÊıÎª$\nu = 0.02$£¬ÄÇÃ´µ±$t \rightarrow \infty$Ê±£¬Á÷ÌåÇ÷ÏòÓÚÎÈÌ¬¡£
+      è¿™ä¸ªç®—ä¾‹æ¨¡æ‹Ÿçš„æ˜¯æµä½“ç»è¿‡ä¸€ä¸ªå‘åçš„å°é˜¶ã€‚ç®¡é“çš„é•¿åº¦æ˜¯$l = 5$ï¼Œåœ¨å…¥æµè¾¹ç•Œ$x = -1, y \in (0, -1)$è®¾ç½®çš„æ˜¯Poiseuilleæµæ¡ä»¶
+      $\vec{u} = (1 - y^2, 0)^T$ã€‚åœ¨ç®¡é“çš„é¡¶ç«¯å’Œåº•ç«¯è®¾ç½®çš„æ— æ»‘ç§»è¾¹ç•Œæ¡ä»¶$\vec{u} = (0, 0)^T$ï¼Œè‡ªç„¶æ¡ä»¶è®¾ç½®åœ¨å‡ºæµè¾¹ç•Œ$x = 5, y \in (-1, 1)$
+      ä¸Šã€‚æˆ‘ä»¬é€‰å–ç²˜æ€§ç³»æ•°ä¸º$\nu = 0.02$ï¼Œé‚£ä¹ˆå½“$t \rightarrow \infty$æ—¶ï¼Œæµä½“è¶‹å‘äºç¨³æ€ã€‚
 
 
-      ÎÒÃÇÑ¡È¡(\ref{eq::monitor_vorticity})Îª¿ØÖÆº¯Êı£¬¿ØÖÆº¯ÊıÖĞµÄ²ÎÊıÊÇ$\alpha = 2.0, \beta = 2.0$¡£ÎÒÃÇÖªµÀÆæÒìĞÔ½«»á³öÏÖÔÚÁ÷ÌåÀ©Õ¹µÄ¹Õ½Ç
-      ´¦£¬Òò´ËÕâÀïĞèÒª¸ü¶àµÄÍø¸ñ¡£ÔÚÍ¼ \ref{fig::step_flow_mesh_streamline}ÖĞ£¬Íø¸ñ¼¯ÖĞÔÚ°¼½øÈ¥µÄ¹Õ½Ç´¦£¬Õâ¸úÎÒÃÇµÄÉèÏëÒ»ÖÂ¡£
+      æˆ‘ä»¬é€‰å–(\ref{eq::monitor_vorticity})ä¸ºæ§åˆ¶å‡½æ•°ï¼Œæ§åˆ¶å‡½æ•°ä¸­çš„å‚æ•°æ˜¯$\alpha = 2.0, \beta = 2.0$ã€‚æˆ‘ä»¬çŸ¥é“å¥‡å¼‚æ€§å°†ä¼šå‡ºç°åœ¨æµä½“æ‰©å±•çš„æ‹è§’
+      å¤„ï¼Œå› æ­¤è¿™é‡Œéœ€è¦æ›´å¤šçš„ç½‘æ ¼ã€‚åœ¨å›¾ \ref{fig::step_flow_mesh_streamline}ä¸­ï¼Œç½‘æ ¼é›†ä¸­åœ¨å‡¹è¿›å»çš„æ‹è§’å¤„ï¼Œè¿™è·Ÿæˆ‘ä»¬çš„è®¾æƒ³ä¸€è‡´ã€‚
 
-      ÒªÂú×ãCFLÌõ¼ş£¬ÎÒÃÇµÄ¼ÆËãÊ±¼ä²½³¤ÔÚ$0.008$×óÓÒ¡£Çó½â (\ref{eq::linear_system}) ºÍ (\ref{eq::full_discreted_update})µÄGMRESµü´ú²½ÊıÔÚÍ¼
-      \ref{fig::GMRES_steps_total} ÖĞ¸ø³ö¡£´ÓÖĞ¿ÉÒÔ·¢ÏÖÇó½â (\ref{eq::linear_system}) ĞèÒªÉÙÓÚ$21$²½µü´ú¾ÍÄÜÊÕÁ²¡£
+      è¦æ»¡è¶³CFLæ¡ä»¶ï¼Œæˆ‘ä»¬çš„è®¡ç®—æ—¶é—´æ­¥é•¿åœ¨$0.008$å·¦å³ã€‚æ±‚è§£ (\ref{eq::linear_system}) å’Œ (\ref{eq::full_discreted_update})çš„GMRESè¿­ä»£æ­¥æ•°åœ¨å›¾
+      \ref{fig::GMRES_steps_total} ä¸­ç»™å‡ºã€‚ä»ä¸­å¯ä»¥å‘ç°æ±‚è§£ (\ref{eq::linear_system}) éœ€è¦å°‘äº$21$æ­¥è¿­ä»£å°±èƒ½æ”¶æ•›ã€‚
 
       \begin{figure}[!htbp]
         \centering
@@ -673,17 +673,17 @@
 
    \subsection{Flow over cylinder}
 
-      Õâ¸öËãÀıÄ£ÄâµÄÊÇÁ÷ÌåÔÚ³¤·½ĞÎµÄ¹ÜµÀÁ÷ÖĞ£¬Á÷¹ıÒ»¸öÔ²ĞÎµÄÕÏ°­Îï¡£Õâ¸öÎÊÌâÔÚ\cite{cao1999anr}ÖĞ¿¼ÂÇ¹ı£¬ÊÇÒÔÁ÷º¯ÊıĞÎÊ½¼ÆËãµÄ¡£
-      Ô²ĞÎÕÏ°­µÄÔ²ĞÄÊÇ$(0, 0)$£¬°ë¾¶ÊÇ$r = 0.3$£¬À×ÅµÊıÊÇ$Re = 600$£¬¼ÆËãÇøÓòÊÇ $\Omega = [-1, 5] \times [-1, 1]$¡£ÔÚÈëÁ÷±ß½ç
-      $x = -1$£¬ÉèÖÃ¾ßÓĞpoiseuilleĞÔÖÊµÄ±ß½çÌõ¼ş $\vec{u} = (1 - y^2, 0)^T$¡£ÔÚ¹ÜµÀµÄÉÏ±ß½çºÍÏÂ±ß½ç£¬Éè¶¨Ìõ¼ş$\vec{u} = (0, 0)^T$¡£
-      ×ÔÈ»Ìõ¼şÉèÖÃÔÚ³öÁ÷±ß½ç $x = 5$ ÉÏ¡£
-      
-      ÔÚÎÒÃÇµÄÒÆ¶¯²ßÂÔÖĞ£¬ÓÃ»§¿ÉÒÔÉèÖÃ¿ØÖÆº¯Êı (\ref{eq::monitor_vorticity}) µÄ²ÎÊı$\alpha$ ºÍ $\beta$¡£$\alpha$ µÄÖµÔ½´ó£¬
-      Íø¸ñ¾Û¼¯µÄ³Ì¶È¾ÍÔ½´ó¡£´ÓÍ¼ \ref{fig::cylinder_GMRES_steps}ÖĞ£¬ÎÒÃÇ¿ÉÒÔ¿´³ö $\alpha = 5, \beta = 2$ Ê±GMRESµÄµü´ú²½Êı
-      Òª±È $\alpha = 1, \beta = 2$ Ê±µÄµü´ú´ÎÊı¶à¡£µ±ÎÒÃÇÑ¡Ôñ²»Í¬µÄPCD²»Í¬µÄ$F_p$£¬GMRESµü´ú´ÎÊıµÄ±È½ÏÔÚÍ¼ \ref{fig::cylinder_GMRES_steps_comparation}ÖĞ¸ø³ö¡£ÎÒÃÇ·¢ÏÖÑ¡Ôñ $F_p = A + W_p^n$ µÄ¼ÆËãĞ§ÂÊÒª¸ßÓÚ $F_p = \nu A + W_p^n$¡£
+      è¿™ä¸ªç®—ä¾‹æ¨¡æ‹Ÿçš„æ˜¯æµä½“åœ¨é•¿æ–¹å½¢çš„ç®¡é“æµä¸­ï¼Œæµè¿‡ä¸€ä¸ªåœ†å½¢çš„éšœç¢ç‰©ã€‚è¿™ä¸ªé—®é¢˜åœ¨\cite{cao1999anr}ä¸­è€ƒè™‘è¿‡ï¼Œæ˜¯ä»¥æµå‡½æ•°å½¢å¼è®¡ç®—çš„ã€‚
+      åœ†å½¢éšœç¢çš„åœ†å¿ƒæ˜¯$(0, 0)$ï¼ŒåŠå¾„æ˜¯$r = 0.3$ï¼Œé›·è¯ºæ•°æ˜¯$Re = 600$ï¼Œè®¡ç®—åŒºåŸŸæ˜¯ $\Omega = [-1, 5] \times [-1, 1]$ã€‚åœ¨å…¥æµè¾¹ç•Œ
+      $x = -1$ï¼Œè®¾ç½®å…·æœ‰poiseuilleæ€§è´¨çš„è¾¹ç•Œæ¡ä»¶ $\vec{u} = (1 - y^2, 0)^T$ã€‚åœ¨ç®¡é“çš„ä¸Šè¾¹ç•Œå’Œä¸‹è¾¹ç•Œï¼Œè®¾å®šæ¡ä»¶$\vec{u} = (0, 0)^T$ã€‚
+      è‡ªç„¶æ¡ä»¶è®¾ç½®åœ¨å‡ºæµè¾¹ç•Œ $x = 5$ ä¸Šã€‚
 
-      ÔÚÍ¼ \ref{fig::cylinder_mesh_2s}ÖĞ£¬Õ¹Ê¾ÁË $t = 2s$ Ê±µÄÍø¸ñÒÆ¶¯Ğ§¹û¡£¿ÉÒÔ·¢ÏÖ£¬Íø¸ñÃ÷ÏÔµÄ¾Û¼¯ÔÚÔ²ĞÎÕÏ°­ÎïµÄÖÜÎ§¡£¾İÎÒÃÇËùÖª£¬
-      µ±Ñ¡È¡ÊÊµ±µÄÀ×ÅµÊıÊ±£¬»á³öÏÖÎĞ½ÖÏÖÏó£¬²Î¿¼\cite{milton1982album}Ò»ÎÄ£¬ÕıÈçÍ¼ Figure \ref{fig::cylinder_mesh_40s}ËùÕ¹Ê¾µÄ¡£
+      åœ¨æˆ‘ä»¬çš„ç§»åŠ¨ç­–ç•¥ä¸­ï¼Œç”¨æˆ·å¯ä»¥è®¾ç½®æ§åˆ¶å‡½æ•° (\ref{eq::monitor_vorticity}) çš„å‚æ•°$\alpha$ å’Œ $\beta$ã€‚$\alpha$ çš„å€¼è¶Šå¤§ï¼Œ
+      ç½‘æ ¼èšé›†çš„ç¨‹åº¦å°±è¶Šå¤§ã€‚ä»å›¾ \ref{fig::cylinder_GMRES_steps}ä¸­ï¼Œæˆ‘ä»¬å¯ä»¥çœ‹å‡º $\alpha = 5, \beta = 2$ æ—¶GMRESçš„è¿­ä»£æ­¥æ•°
+      è¦æ¯” $\alpha = 1, \beta = 2$ æ—¶çš„è¿­ä»£æ¬¡æ•°å¤šã€‚å½“æˆ‘ä»¬é€‰æ‹©ä¸åŒçš„PCDä¸åŒçš„$F_p$ï¼ŒGMRESè¿­ä»£æ¬¡æ•°çš„æ¯”è¾ƒåœ¨å›¾ \ref{fig::cylinder_GMRES_steps_comparation}ä¸­ç»™å‡ºã€‚æˆ‘ä»¬å‘ç°é€‰æ‹© $F_p = A + W_p^n$ çš„è®¡ç®—æ•ˆç‡è¦é«˜äº $F_p = \nu A + W_p^n$ã€‚
+
+      åœ¨å›¾ \ref{fig::cylinder_mesh_2s}ä¸­ï¼Œå±•ç¤ºäº† $t = 2s$ æ—¶çš„ç½‘æ ¼ç§»åŠ¨æ•ˆæœã€‚å¯ä»¥å‘ç°ï¼Œç½‘æ ¼æ˜æ˜¾çš„èšé›†åœ¨åœ†å½¢éšœç¢ç‰©çš„å‘¨å›´ã€‚æ®æˆ‘ä»¬æ‰€çŸ¥ï¼Œ
+      å½“é€‰å–é€‚å½“çš„é›·è¯ºæ•°æ—¶ï¼Œä¼šå‡ºç°æ¶¡è¡—ç°è±¡ï¼Œå‚è€ƒ\cite{milton1982album}ä¸€æ–‡ï¼Œæ­£å¦‚å›¾ Figure \ref{fig::cylinder_mesh_40s}æ‰€å±•ç¤ºçš„ã€‚
 
       \begin{figure}[!htbp]
         \begin{center}

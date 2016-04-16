@@ -1,13 +1,13 @@
 %%---------------------------------------------------------------------------%%
-%%------------ µÚÒ»ÕÂ£ºĞ÷ÂÛ -------------------------------------------------%%
+%%------------ ç¬¬ä¸€ç« ï¼šç»ªè®º -------------------------------------------------%%
 %%---------------------------------------------------------------------------%%
 
 
-\chapter{Ğ÷ÂÛ}
+\chapter{ç»ªè®º}
 \label{chapter:Introduction}
 
 
-\section{ÑĞ¾¿±³¾°}
+\section{ç ”ç©¶èƒŒæ™¯}
 
 
 
@@ -19,66 +19,66 @@
 
 
 
-\section{µü´ú·¨½éÉÜ}
+\section{è¿­ä»£æ³•ä»‹ç»}
 
 \begin{itemize}
 \item
-Ò»°ãµÄ~Newton~·¨~(³õÊ¼µã~$x_0$~ ¸ø¶¨)£º
+ä¸€èˆ¬çš„~Newton~æ³•~(åˆå§‹ç‚¹~$x_0$~ ç»™å®š)ï¼š
 $$
 F'(x_k) \Delta x_k = -F(x_k),\ x_{k+1} = x_k + \Delta x_k, \quad k =
 0,1,\ldots.
 $$
 \item
-¼ò»¯~Newton~·¨£º
-ÕâÖÖ±äĞÎµÄ~Newton~·¨½«Ã¿²½¼ÆËã~$F'(x_k)$~¸ÄÎª¹Ì¶¨µÄ~$F'(x_0)$~(³õÊ¼µã~$x_0$~
-¸ø¶¨)£º
+ç®€åŒ–~Newton~æ³•ï¼š
+è¿™ç§å˜å½¢çš„~Newton~æ³•å°†æ¯æ­¥è®¡ç®—~$F'(x_k)$~æ”¹ä¸ºå›ºå®šçš„~$F'(x_0)$~(åˆå§‹ç‚¹~$x_0$~
+ç»™å®š)ï¼š
 $$
 F'(x_0) \Delta x_k = -F(x_k),\ x_{k+1} = x_k + \Delta x_k,\quad k =
 0,1,\ldots.
 $$
-ÕâÑù, Ã¿²½Ö»ĞèÒª¼ÆËã~$n$~¸ö·ÖÁ¿º¯Êı, µ«ÕâÖÖµü´ú·¨Ö»ÓĞÏßĞÔÊÕÁ²£®
+è¿™æ ·, æ¯æ­¥åªéœ€è¦è®¡ç®—~$n$~ä¸ªåˆ†é‡å‡½æ•°, ä½†è¿™ç§è¿­ä»£æ³•åªæœ‰çº¿æ€§æ”¶æ•›ï¼
 \item
-~Newton~Àà·¨£º µ±ËùÒª´¦ÀíµÄ·½³Ì×éÎ¬Êı½Ï´óÊ±,
-ºÜÄÑÇó½â~Newton~·½³Ì~(\ref{eq:NewtonEquation})~µÄ¾«È·½â~$\Delta
-x_k$, ½ø¶øÎŞ·¨µÃµ½¾«È·µÄ~Jacobi~¾ØÕó~$F'(x_{k+1})$£®
-ÎªÁËÄÜ¹»Ó¦ÓÃ~Newton~·¨½ÏºÃµÄ´¦ÀíÕâÖÖÇé¿ö,
-µÃµ½ÁËÈçÏÂµÄÒ»ÖÖ±äĞÎ~Newton~·¨~(³õÊ¼µã~$x_0$~ ¸ø¶¨)£º
+~Newton~ç±»æ³•ï¼š å½“æ‰€è¦å¤„ç†çš„æ–¹ç¨‹ç»„ç»´æ•°è¾ƒå¤§æ—¶,
+å¾ˆéš¾æ±‚è§£~Newton~æ–¹ç¨‹~(\ref{eq:NewtonEquation})~çš„ç²¾ç¡®è§£~$\Delta
+x_k$, è¿›è€Œæ— æ³•å¾—åˆ°ç²¾ç¡®çš„~Jacobi~çŸ©é˜µ~$F'(x_{k+1})$ï¼
+ä¸ºäº†èƒ½å¤Ÿåº”ç”¨~Newton~æ³•è¾ƒå¥½çš„å¤„ç†è¿™ç§æƒ…å†µ,
+å¾—åˆ°äº†å¦‚ä¸‹çš„ä¸€ç§å˜å½¢~Newton~æ³•~(åˆå§‹ç‚¹~$x_0$~ ç»™å®š)ï¼š
 \begin{equation}
 \label{it:NML_general} M(x_k)\Delta x_k = -F(x_k),\ x_{k+1} = x_k +
 \Delta x_k,\ \ k = 0,1,\ldots,
 \end{equation}
-ÆäÖĞ~$M(x_k)$~ÊÇ½üËÆÓÚ~$F'(x_k)$~µÄ¾ØÕó£®
+å…¶ä¸­~$M(x_k)$~æ˜¯è¿‘ä¼¼äº~$F'(x_k)$~çš„çŸ©é˜µï¼
 \item
-·Ç¾«È·~Newton~·¨£º Í¬Ñù¿¼ÂÇ´ó¹æÄ£·½³Ì×éÇéĞÎ,
-Ïà±ÈÓÚ~Newton~Àà·¨ÓÃÒ»¸ö½üËÆµÄ~Jacobi~¾ØÕóÀ´´úÌæ~$ F'(x_k)$,
-Èô¿¼ÂÇÔÚÇó½â~Newton~·½³Ì~(\ref{eq:NewtonEquation})~Ê±,
-²»È¥ÇóÆä¾«È·½â¶øÖ»ĞèÒªÇóÂú×ãÄ³ÖÖÌõ¼şµÄ½üËÆ½âÀ´×÷Îªµü´úĞŞÕı,
-ÕâÑù±ãµÃµ½ÈçÏÂµÄ±äĞÎ~Newton~·¨~(³õÊ¼µã~$x_0$~ ¸ø¶¨)£º
+éç²¾ç¡®~Newton~æ³•ï¼š åŒæ ·è€ƒè™‘å¤§è§„æ¨¡æ–¹ç¨‹ç»„æƒ…å½¢,
+ç›¸æ¯”äº~Newton~ç±»æ³•ç”¨ä¸€ä¸ªè¿‘ä¼¼çš„~Jacobi~çŸ©é˜µæ¥ä»£æ›¿~$ F'(x_k)$,
+è‹¥è€ƒè™‘åœ¨æ±‚è§£~Newton~æ–¹ç¨‹~(\ref{eq:NewtonEquation})~æ—¶,
+ä¸å»æ±‚å…¶ç²¾ç¡®è§£è€Œåªéœ€è¦æ±‚æ»¡è¶³æŸç§æ¡ä»¶çš„è¿‘ä¼¼è§£æ¥ä½œä¸ºè¿­ä»£ä¿®æ­£,
+è¿™æ ·ä¾¿å¾—åˆ°å¦‚ä¸‹çš„å˜å½¢~Newton~æ³•~(åˆå§‹ç‚¹~$x_0$~ ç»™å®š)ï¼š
 \begin{equation}
 \label{it:INM_BanachSpace} F'(x_k) \Delta x_k = -F(x_k) + r_k,\
 x_{k+1} = x_k + \Delta x_k,\quad k = 0,1,\ldots,
 \end{equation}
-ÆäÖĞ~$r_k \in \mathbb{Y}$~Ò»°ãÓ¦Âú×ã~$\|r_k\|/\|F(x_k)\|\leqslant
-\eta_k,\ k= 0,1,\ldots$~, $\{\eta_k\}$~Âú×ã~$0\leqslant \eta_k <1$,
-¿ÉÄÜÓë~$x_k$~ÓĞ¹Ø, Îª¿ØÖÆĞòÁĞ,
-ÓÃÀ´¿ØÖÆÇó·½³Ì~(\ref{eq:NewtonEquation})~µÄ½âµÄ¾«È·³Ì¶È£®
-ÏÔÈ»Áî~$\eta_k \equiv 0$~Ê±µÃµ½Ò»°ãµÄ~Newton~·¨£®
+å…¶ä¸­~$r_k \in \mathbb{Y}$~ä¸€èˆ¬åº”æ»¡è¶³~$\|r_k\|/\|F(x_k)\|\leqslant
+\eta_k,\ k= 0,1,\ldots$~, $\{\eta_k\}$~æ»¡è¶³~$0\leqslant \eta_k <1$,
+å¯èƒ½ä¸~$x_k$~æœ‰å…³, ä¸ºæ§åˆ¶åºåˆ—,
+ç”¨æ¥æ§åˆ¶æ±‚æ–¹ç¨‹~(\ref{eq:NewtonEquation})~çš„è§£çš„ç²¾ç¡®ç¨‹åº¦ï¼
+æ˜¾ç„¶ä»¤~$\eta_k \equiv 0$~æ—¶å¾—åˆ°ä¸€èˆ¬çš„~Newton~æ³•ï¼
 \item
-Äâ~Newton~·¨£ºNewton~·¨µÄÖ÷ÒªÈ±µãÖ®Ò»ÊÇÃ¿²½¶¼Òª¼ÆËãµ¼Êı~$F'(x)$~µÄÖµ,
-µ±·ÖÁ¿º¯Êı½Ï¸´ÔÓÊ±¼ÆËãºÜ²»·½±ã,
-Äâ~Newton~·¨ÊÇÕë¶ÔÕâÒ»È±µãÌá³öµÄËã·¨,
-ÆäºËĞÄÊÇÓÃÍ¨¹ı¼ÆËãº¯ÊıÖµÀ´´úÌæµ¼ÊıÒÔ±ÜÃâÇóµ¼£º
+æ‹Ÿ~Newton~æ³•ï¼šNewton~æ³•çš„ä¸»è¦ç¼ºç‚¹ä¹‹ä¸€æ˜¯æ¯æ­¥éƒ½è¦è®¡ç®—å¯¼æ•°~$F'(x)$~çš„å€¼,
+å½“åˆ†é‡å‡½æ•°è¾ƒå¤æ‚æ—¶è®¡ç®—å¾ˆä¸æ–¹ä¾¿,
+æ‹Ÿ~Newton~æ³•æ˜¯é’ˆå¯¹è¿™ä¸€ç¼ºç‚¹æå‡ºçš„ç®—æ³•,
+å…¶æ ¸å¿ƒæ˜¯ç”¨é€šè¿‡è®¡ç®—å‡½æ•°å€¼æ¥ä»£æ›¿å¯¼æ•°ä»¥é¿å…æ±‚å¯¼ï¼š
 $$
 J_k \Delta x_k = -F(x_k), \ J_{k+1} = J_k + \Delta J_k,\quad k =
 0,1,\ldots,
 $$
-ÆäÖĞ~$J_k$~ÊÇ½üËÆÓÚ~$F'(x_k)$~µÄ¾ØÕó£®²»Í¬µÄ~$\Delta J_k$~Ñ¡Ôñ£¬
-¿ÉÒÔµÃµ½²»Í¬µÄµü´ú·¨. ÀıÈç£¬µ±È¡$\Delta J_k = F(x_{k+1})\tran{\Delta
-x_k}/(\tran{\Delta x_k}\Delta x_k)$£¬ ÔòµÃµ½~Broyden~·¨¡£
+å…¶ä¸­~$J_k$~æ˜¯è¿‘ä¼¼äº~$F'(x_k)$~çš„çŸ©é˜µï¼ä¸åŒçš„~$\Delta J_k$~é€‰æ‹©ï¼Œ
+å¯ä»¥å¾—åˆ°ä¸åŒçš„è¿­ä»£æ³•. ä¾‹å¦‚ï¼Œå½“å–$\Delta J_k = F(x_{k+1})\tran{\Delta
+x_k}/(\tran{\Delta x_k}\Delta x_k)$ï¼Œ åˆ™å¾—åˆ°~Broyden~æ³•ã€‚
 \item
-~Gauss-Newton~·¨£º
-ÕâÖÖ±äĞÎµÄ~Newton~·¨Ö÷ÒªÓ¦ÓÃÓÚÇó½â·ÇÏßĞÔ×îĞ¡¶ş³Ë~(Ô¼Êø/ÎŞÔ¼Êø)~ÎÊÌâ,
-µü´ú¸ñÊ½Îª:
+~Gauss-Newton~æ³•ï¼š
+è¿™ç§å˜å½¢çš„~Newton~æ³•ä¸»è¦åº”ç”¨äºæ±‚è§£éçº¿æ€§æœ€å°äºŒä¹˜~(çº¦æŸ/æ— çº¦æŸ)~é—®é¢˜,
+è¿­ä»£æ ¼å¼ä¸º:
 \begin{equation}
 \label{it:GNM_BanachSpace} \|F'(x_k)\Delta x_k + F(x_k)\| = \min,\
 x_{k+1} = x_k + \Delta x_k,\quad k = 0,1,\ldots.
@@ -90,19 +90,19 @@ x_{k+1} = x_k + \Delta x_k,\quad k = 0,1,\ldots.
 
 \begin{itemize}
 \item[1)]
-Kantorovich~ĞÍÊÕÁ²ÀíÂÛ£ºÀíÂÛÉÏ£¬
-Newton~·¨ÊÕÁ²ĞÔµÄÒ»¸ö×îÖØÒªÊÕÁ²½á¹ûÊÇ±»³ÆÎª
-~Newton-Kantorovich~°ë¾Ö²¿ÊÕÁ²¶¨Àí~\cite{Kantorvich1982}£®
-¸Ã¶¨ÀíÔÚÀíÂÛºÍÓ¦ÓÃÉÏ¶¼ÊÇÏàµ±ÖØÒªµÄ£¬ ËüÊÇ½â·½³ÌËã·¨ÏÖ´úÑĞ¾¿µÄÆğµã£®
-´óÁ¿µÄÊÕÁ²½á¹û¶¼ÊÇ»ùÓÚËùÎ½µÄ~Kantorovich~ĞÍÌõ¼ş¶øµÃµ½µÄ,
-ÀıÈç£¬\cite{Ortega1970,Rokne1972,Rall1974,GraggTapia1974,Deuflhard1979,
-Ypma1982,Huang1993,Gutierrez1997a,Wang1999,Gutierrez2000,Ezquerro2002}£®
+Kantorovich~å‹æ”¶æ•›ç†è®ºï¼šç†è®ºä¸Šï¼Œ
+Newton~æ³•æ”¶æ•›æ€§çš„ä¸€ä¸ªæœ€é‡è¦æ”¶æ•›ç»“æœæ˜¯è¢«ç§°ä¸º
+~Newton-Kantorovich~åŠå±€éƒ¨æ”¶æ•›å®šç†~\cite{Kantorvich1982}ï¼
+è¯¥å®šç†åœ¨ç†è®ºå’Œåº”ç”¨ä¸Šéƒ½æ˜¯ç›¸å½“é‡è¦çš„ï¼Œ å®ƒæ˜¯è§£æ–¹ç¨‹ç®—æ³•ç°ä»£ç ”ç©¶çš„èµ·ç‚¹ï¼
+å¤§é‡çš„æ”¶æ•›ç»“æœéƒ½æ˜¯åŸºäºæ‰€è°“çš„~Kantorovich~å‹æ¡ä»¶è€Œå¾—åˆ°çš„,
+ä¾‹å¦‚ï¼Œ\cite{Ortega1970,Rokne1972,Rall1974,GraggTapia1974,Deuflhard1979,
+Ypma1982,Huang1993,Gutierrez1997a,Wang1999,Gutierrez2000,Ezquerro2002}ï¼
 
 \item[2)]
-Smale~µã¹À¼ÆÀíÂÛ£º¸ÃÀíÂÛÊÇÓÉ~Smale~ÓÚ~1986~ÄêÌá³ö£¬ÓÉ~$\alpha-$ÀíÂÛ
-ºÍ~$\gamma-$ÀíÂÛ×é³É¡£ÔÚ~$\alpha-$ÀíÂÛÖĞ£¬
-¼ÙÉè~$F$~ÔÚ³õÊ¼µã~$x_0$~ÊÇ½âÎöµÄ£¬
-¸ø³öÁË»ùÓÚÈçÏÂÈı¸ö²»±äÁ¿µÄÊÕÁ²ÅĞ¾İ~\cite{Smale1986}£º
+Smale~ç‚¹ä¼°è®¡ç†è®ºï¼šè¯¥ç†è®ºæ˜¯ç”±~Smale~äº~1986~å¹´æå‡ºï¼Œç”±~$\alpha-$ç†è®º
+å’Œ~$\gamma-$ç†è®ºç»„æˆã€‚åœ¨~$\alpha-$ç†è®ºä¸­ï¼Œ
+å‡è®¾~$F$~åœ¨åˆå§‹ç‚¹~$x_0$~æ˜¯è§£æçš„ï¼Œ
+ç»™å‡ºäº†åŸºäºå¦‚ä¸‹ä¸‰ä¸ªä¸å˜é‡çš„æ”¶æ•›åˆ¤æ®~\cite{Smale1986}ï¼š
 \begin{equation*}
 \begin{cases}
 \alpha(F,x_0) = \beta(F,x_0)\gamma(F,x_0),\\
@@ -111,13 +111,13 @@ Smale~µã¹À¼ÆÀíÂÛ£º¸ÃÀíÂÛÊÇÓÉ~Smale~ÓÚ~1986~ÄêÌá³ö£¬ÓÉ~$\alpha-$ÀíÂÛ
 \frac{1}{k!} F'(x_0)^{-1}F^{(k)}(x_0)^{-1}\right\|^{\frac{1}{k-1}}.
 \end{cases}
 \end{equation*}
-¶ø~$\gamma-$ÀíÂÛÔòÑĞ¾¿ÁËËã×Ó~$F$~ÔÚ½âÎöÌõ¼şÏÂµÄ¾Ö²¿ÊÕÁ²ĞÔ¡£
-¶¨Àí~\ref{th:SmaleGammaTh}~³ÆÎª~$\gamma-$¶¨Àí¡£
-ÍõĞË»ªµÈÈË¸Ä½ø²¢ÍêÉÆÁË~Smale~µã¹À¼ÆÀíÂÛ
-~(¼ûÎÄÏ×~\cite{WangLi2001}~¼°ÆäËùÁĞÎÄÏ×)£® ÖµµÃÖ¸³öµÄÊÇ£¬
-ÍõĞË»ªÒıÈëÁË~$\gamma$~Ìõ¼ş
-²¢ÔÚ´Ë»ù´¡ÉÏÏµÍ³½¨Á¢ÁË~Smale~Ô­ÏÈÔÚ½âÎöÌõ¼şÏÂµÄÈ«²¿½á¹û
-(¼ûÎÄÏ×~\cite{WangHan1997b}~¼°ÆäËùÁĞÎÄÏ×).
+è€Œ~$\gamma-$ç†è®ºåˆ™ç ”ç©¶äº†ç®—å­~$F$~åœ¨è§£ææ¡ä»¶ä¸‹çš„å±€éƒ¨æ”¶æ•›æ€§ã€‚
+å®šç†~\ref{th:SmaleGammaTh}~ç§°ä¸º~$\gamma-$å®šç†ã€‚
+ç‹å…´åç­‰äººæ”¹è¿›å¹¶å®Œå–„äº†~Smale~ç‚¹ä¼°è®¡ç†è®º
+~(è§æ–‡çŒ®~\cite{WangLi2001}~åŠå…¶æ‰€åˆ—æ–‡çŒ®)ï¼ å€¼å¾—æŒ‡å‡ºçš„æ˜¯ï¼Œ
+ç‹å…´åå¼•å…¥äº†~$\gamma$~æ¡ä»¶
+å¹¶åœ¨æ­¤åŸºç¡€ä¸Šç³»ç»Ÿå»ºç«‹äº†~Smale~åŸå…ˆåœ¨è§£ææ¡ä»¶ä¸‹çš„å…¨éƒ¨ç»“æœ
+(è§æ–‡çŒ®~\cite{WangHan1997b}~åŠå…¶æ‰€åˆ—æ–‡çŒ®).
 \end{itemize}
 
 
@@ -125,72 +125,17 @@ Smale~µã¹À¼ÆÀíÂÛ£º¸ÃÀíÂÛÊÇÓÉ~Smale~ÓÚ~1986~ÄêÌá³ö£¬ÓÉ~$\alpha-$ÀíÂÛ
 
 
 
-\begin{definition}[$Q$~ÊÕÁ²½×]
-\label{def:Q-orderConv} ÉèĞòÁĞ~$\{x_k\}$~ÊÕÁ²µ½~$x^*$~£® Èç¹û´æÔÚ~$q
-\geqslant 1$~¼°³£Êı~$c \geqslant 0$~ºÍ~$N \geqslant 0$~Ê¹µÃµ±~$k
-\geqslant N$~Ê±ÓĞ~$ \|x^* - x_{k+1}\| \leqslant c\|x^* - x_k\|^q$£¬
-Ôò³ÆĞòÁĞ~$\{x_n\}$~¾ßÓĞ~$Q$~ÊÕÁ²½×ÖÁÉÙÎª~$q$£®ÌØ±ğµØ£¬µ±~$q =
-2$~Ê±³ÆÎª~(ÖÁÉÙ)~$Q$~Æ½·½ÊÕÁ²£¬$q = 3$~Ê±³ÆÎª~(ÖÁÉÙ)~$Q$~Á¢·½ÊÕÁ²£®
-\end{definition}
+\section{çŸ©é˜µå‡½æ•°}
 
 
-
-
-
-
-\section{¾ØÕóº¯Êı}
-
-\begin{definition}
-\label{def:fun_spectrum} ¶ÔÓÚÈÎÒâº¯Êı~$f$, Èç¹û
-$$
-f^{(j)}(\lambda_\ell), \ \ \ j = 0, \ldots, n_\ell-1,\ \ell =
-1,\ldots, r
-$$
-µÄÖµ¶¼´æÔÚ, Ôò³Æ~$f$~ÔÚ~$A$~µÄÆ×ÉÏÓĞ¶¨Òå.
-\end{definition}
-
-\begin{definition}
-\label{def:MatFun} Éèº¯Êı~$f$~ÔÚ¾ØÕó~$A \in \CS^{n\times
-n}$~µÄÆ×ÉÏÓĞ¶¨Òå, ÇÒÓĞ~Jordan~µä·¶ĞÎ~(\ref{eq:JorCanForm}), ÔòÓĞ
-\begin{equation}
-\label{eq:MatFun} f(A) := Zf(J)Z^{-1} = Z\diag(f(J_k))Z^{-1},
-\end{equation}
-ÆäÖĞ
-$$
-f(J_k) = \left[\begin{array}{cccc} f(\lambda_k) & f'(\lambda_k) & \cdots & \displaystyle \frac{f^{(m_k-1)}(\lambda_k)}{(m_k-1)!} \\
- & f(\lambda_k) & \ddots & \vdots\\
- &  & \ddots & f'(\lambda_k) \\
- &  &  & f(\lambda_k) \end{array}\right].
-$$
-\end{definition}
-
-\begin{theorem}[{\cite[¶¨Àí~1.13]{Higham2008}}]
-\label{th:MatFunProperty} Éèº¯Êı~$f$~ÔÚ¾ØÕó~$A\in\CS^{n\times
-n}$~µÄÆ×ÉÏÓĞ¶¨Òå, ÔòÓĞÈçÏÂĞÔÖÊ£º
+\begin{theorem}[{\cite[å®šç†~1.15]{Higham2008}}]
+\label{th:MatFun_sum_product} è®¾å‡½æ•°~$f,g$~åœ¨çŸ©é˜µ~$A\in\CS^{n\times
+n}$~çš„è°±ä¸Šæœ‰å®šä¹‰.
 \begin{enumerate}
 \item[\textup{(i)}]
-$f(A)$~Óë~$A$~¿É½»»», ¼´~$f(A)A = Af(A)$;
+è‹¥~$h(t) = f(t) + g(t)$, åˆ™~$h(A) = f(A)+g(A)$;
 \item[\textup{(ii)}]
-$f(\tran{A})= \tran{f(A)}$;
-\item[\textup{(iii)}]
-$f(XAX^{-1}) = Xf(A)X^{-1}$;
-\item[\textup{(iv)}]
-$f(A)$~µÄÈ«²¿ÌØÕ÷Öµ·Ö±ğÎª~$f(\lambda_\ell)$,  ÆäÖĞ~$\lambda_\ell,
-\ell = 1,\ldots,n$~Îª~$A$~µÄÌØÕ÷Öµ;
-\item[\textup{(v)}]
-Èç¹û~$X$~Óë~$A$~¿É½»»», ÄÇÃ´~$X$~Óë~$f(A)$~¿É½»»».
-\end{enumerate}
-\end{theorem}
-
-
-\begin{theorem}[{\cite[¶¨Àí~1.15]{Higham2008}}]
-\label{th:MatFun_sum_product} Éèº¯Êı~$f,g$~ÔÚ¾ØÕó~$A\in\CS^{n\times
-n}$~µÄÆ×ÉÏÓĞ¶¨Òå.
-\begin{enumerate}
-\item[\textup{(i)}]
-Èô~$h(t) = f(t) + g(t)$, Ôò~$h(A) = f(A)+g(A)$;
-\item[\textup{(ii)}]
-Èô~$h(t)=f(t)g(t)$, Ôò~$h(A)=f(A)g(A)$.
+è‹¥~$h(t)=f(t)g(t)$, åˆ™~$h(A)=f(A)g(A)$.
 \end{enumerate}
 \end{theorem}
 
@@ -199,38 +144,14 @@ n}$~µÄÆ×ÉÏÓĞ¶¨Òå.
 
 
 
-\subsection{¾ØÕóÆ½·½¸ù}
+\subsection{çŸ©é˜µå¹³æ–¹æ ¹}
 
 \begin{theorem}[\cite{HornJohnson1991}]
-\label{th:MatSquRoot_Existence} ¾ØÕó~$A\in\CS^{n\times
-n}$~´æÔÚÒ»¸öÆ½·½¸ùµÄ³äÒªÌõ¼şÊÇÈçÏÂ¶¨ÒåµÄµİÔöµÄÕûÊıÊıÁĞ~$d_1,
-d_2,\ldots$~Ã»ÓĞÁ½Ïî¶¼ÊÇÏàÍ¬µÄÆæÊı£º
-$$
-d_\ell = \dim(\nspace(A^\ell)) - \dim(\nspace(A^{\ell-1})), \ \ \
-\ell = 1,2,\ldots.
-$$
+
 \end{theorem}
 
-\begin{theorem}[¾ØÕóÆ½·½¸ùµÄ·ÖÀà, \cite{Higham2008}]
-\label{th:MatSquRoot_Classification} Éè·ÇÆæÒì¾ØÕó~$A\in\CS^{n\times
-n}$~µÄ~Jordan~µä·¶ĞÎÓÉ~$(\ref{eq:JorCanForm})$~¸ø³ö,
-ÆäËùÓĞ²»Í¬µÄÌØÕ÷ÖµÊıÎª~$r$.  Èç¹û~$r\leq s$,
-ÄÇÃ´~$A$~ÓĞ~$2^r$~×¼Æ½·½¸ù, ÓÉÈçÏÂÊ½×Ó¸ø³ö£º
-$$
-X_j = Z \diag(L_1^{(j_1)},L_2^{(j_2)},\ldots,L_s^{j_s})Z^{-1},\ \ \
-j = 1, 2, \ldots, 2^r,
-$$
-ÆäÖĞ~$j_k = 1$~»ò~$2$, µ±~$\lambda_\ell = \lambda_k$~Ê±~$j_\ell =
-j_k,\ k=1,2,\ldots,s$. ÌØ±ğµØ, Èç¹û~$r<s$, ÄÇÃ´~$A$~´æÔÚ·Ç×¼Æ½·½¸ù,
-ÆäĞÎÊ½Îª
-$$
-X_j(U) =
-ZU\diag(L_1^{(j_1)},L_2^{(j_2)},\ldots,L_s^{j_s})U^{-1}Z^{-1}, \ \ \
-j=2^r+1, \ldots, 2^s,
-$$
-ÆäÖĞ~$j_k = 1$~»ò~$2$, $U$~ÎªÈÎÒâµÄÓë~$J$~¿É½»»»µÄ·ÇÆæÒì¾ØÕó,
-ÇÒ¶ÔÓÚÃ¿Ò»¸ö ~$j$, ´æÔÚ~$\ell$~ºÍ~$k$, Ê¹µÃµ±~$j_\ell\neq
-j_k$~Ê±~$\lambda_\ell = \lambda_k$.
+\begin{theorem}[çŸ©é˜µå¹³æ–¹æ ¹çš„åˆ†ç±», \cite{Higham2008}]
+
 \end{theorem}
 
 
@@ -244,48 +165,48 @@ u_{ii}^2 & = t_{ii},\quad i = 1,2,\ldots,n,\\
 (u_{ii}+u_{jj})u_{ij} & = t_{ij} - \sum_{k=i+1}^{j-1}u_{ik}u_{kj},
 \quad j > i.
 \end{align*}
-ÓÚÊÇ, ÓĞÈçÏÂ¼ÆËã·ÇÆæÒì¾ØÕóÆ½·½¸ùµÄËã·¨,
-¸ÃËã·¨ÓÉ~Bj\"{o}rck~$\&$~Hammarling~ÓÚ~\cite{Bjorck1983}~µÃµ½.
+äºæ˜¯, æœ‰å¦‚ä¸‹è®¡ç®—éå¥‡å¼‚çŸ©é˜µå¹³æ–¹æ ¹çš„ç®—æ³•,
+è¯¥ç®—æ³•ç”±~Bj\"{o}rck~$\&$~Hammarling~äº~\cite{Bjorck1983}~å¾—åˆ°.
 
 \begin{algorithm}[h!]
-\floatname{algorithm}{Ëã·¨}
-\caption{¼ÆËã¾ØÕóÆ½·½¸ùµÄ~Schur~·¨~\cite{Bjorck1983}}
-\label{al:MatSquRoot_SchurMethod} ¸ø¶¨·ÇÆæÒì¾ØÕó~$A\in\CS^{n\times
-n}$, ±¾Ëã·¨Í¨¹ı~Schur~·Ö½âÀ´¼ÆËã~$A$~µÄÖ÷Æ½·½¸ù~$A^{1/2}$.
+\floatname{algorithm}{ç®—æ³•}
+\caption{è®¡ç®—çŸ©é˜µå¹³æ–¹æ ¹çš„~Schur~æ³•~\cite{Bjorck1983}}
+\label{al:MatSquRoot_SchurMethod} ç»™å®šéå¥‡å¼‚çŸ©é˜µ~$A\in\CS^{n\times
+n}$, æœ¬ç®—æ³•é€šè¿‡~Schur~åˆ†è§£æ¥è®¡ç®—~$A$~çš„ä¸»å¹³æ–¹æ ¹~$A^{1/2}$.
 \newcounter{newlist}
 \begin{list}{\arabic{newlist}.}{\usecounter{newlist}
 \setlength{\rightmargin}{0em}\setlength{\leftmargin}{1.2em}}
 \item
-¼ÆËã¾ØÕó~$A$~µÄ~Schur~·Ö½â~$A = QRQ^*$;
+è®¡ç®—çŸ©é˜µ~$A$~çš„~Schur~åˆ†è§£~$A = QRQ^*$;
 \item
-¼ÆËã¾ØÕó~$U$~¸÷¶Ô½ÇÔªËØµÄÖ÷Æ½·½¸ù~$u_{ii} = t_{ii}^{1/2},\ i = 1,
+è®¡ç®—çŸ©é˜µ~$U$~å„å¯¹è§’å…ƒç´ çš„ä¸»å¹³æ–¹æ ¹~$u_{ii} = t_{ii}^{1/2},\ i = 1,
 \ldots, n$;
 \item
-ÒÀ´Î¼ÆËã¾ØÕó~$U$~µÄ·Ç¶Ô½ÇÔª£º
+ä¾æ¬¡è®¡ç®—çŸ©é˜µ~$U$~çš„éå¯¹è§’å…ƒï¼š
 $$
 u_{ij} = \displaystyle
 \frac{t_{ij}-\displaystyle\sum_{k=i+1}^{j-1}u_{ik}u_{kj}}{u_{ii}+u_{jj}},
 \quad j = 2,3,\ldots,n,\ i = j-1,j-2,\ldots,1;
 $$
 \item
-¼ÆËã~$X = QUQ^*$.
+è®¡ç®—~$X = QUQ^*$.
 \end{list}
 \end{algorithm}
 
 \begin{algorithm}[h!]
-\floatname{algorithm}{Ëã·¨}
-\caption{¼ÆËã¾ØÕóÆ½·½¸ùµÄÊµ~Schur~·¨~\cite{Higham1987}}
-\label{al:MatSquRoot_RealSchurMethod} ¸ø¶¨¾ØÕó~$A\in\RS^{n\times
-n}$, ÆäËùÓĞÌØÕ÷Öµ¶¼²»ÊôÓÚ~$\RS^- := (-\infty,0]$.
-±¾Ëã·¨Í¨¹ıÊµ~Schur~·Ö½âÀ´¼ÆËã~$A$~µÄÖ÷Æ½·½¸ù~$A^{1/2}$.
+\floatname{algorithm}{ç®—æ³•}
+\caption{è®¡ç®—çŸ©é˜µå¹³æ–¹æ ¹çš„å®~Schur~æ³•~\cite{Higham1987}}
+\label{al:MatSquRoot_RealSchurMethod} ç»™å®šçŸ©é˜µ~$A\in\RS^{n\times
+n}$, å…¶æ‰€æœ‰ç‰¹å¾å€¼éƒ½ä¸å±äº~$\RS^- := (-\infty,0]$.
+æœ¬ç®—æ³•é€šè¿‡å®~Schur~åˆ†è§£æ¥è®¡ç®—~$A$~çš„ä¸»å¹³æ–¹æ ¹~$A^{1/2}$.
 \begin{list}{\arabic{newlist}.}{\usecounter{newlist}
 \setlength{\rightmargin}{0em}\setlength{\leftmargin}{1.2em}}
 \item
-¼ÆËã¾ØÕó~$A$~µÄÊµ~Schur~·Ö½â~$A = QR\tran{Q}$, ÆäÖĞ~$R$~ÊÇ~$m\times
-m$~µÄ¿é¾ØÕó.
+è®¡ç®—çŸ©é˜µ~$A$~çš„å®~Schur~åˆ†è§£~$A = QR\tran{Q}$, å…¶ä¸­~$R$~æ˜¯~$m\times
+m$~çš„å—çŸ©é˜µ.
 \item
-¼ÆËã¾ØÕó~$U$~¸÷¶Ô½Ç¿éµÄÖ÷Æ½·½¸ù£ºµ±~$R_{ii}=[r_{ij}]_{1\times1}$~Ê±,
-$U_{ii} = R_{ii}^{1/2}$£»µ±~$R_{ii}=[r_{ij}]_{2\times2}$~Ê±,
+è®¡ç®—çŸ©é˜µ~$U$~å„å¯¹è§’å—çš„ä¸»å¹³æ–¹æ ¹ï¼šå½“~$R_{ii}=[r_{ij}]_{1\times1}$~æ—¶,
+$U_{ii} = R_{ii}^{1/2}$ï¼›å½“~$R_{ii}=[r_{ij}]_{2\times2}$~æ—¶,
 $$
 U_{ii} = \left[\begin{array}{cc} \alpha +
 \displaystyle\frac{1}{4\alpha}(r_{11}-r_{22}) &
@@ -294,7 +215,7 @@ U_{ii} = \left[\begin{array}{cc} \alpha +
 \displaystyle\frac{1}{4\alpha}(r_{11}-r_{22})
 \end{array}\right],
 $$
-ÆäÖĞ
+å…¶ä¸­
 \begin{equation*}
 \alpha = \left\{
 \begin{array}{ll}
@@ -311,251 +232,127 @@ $$
 \frac{\left(-(r_{11}-r_{22})^2-4r_{21}r_{22}\right)^{1/2}}{2}.
 $$
 \item
-ÒÀ´ÎÍ¨¹ı¼ÆËãÈçÏÂµÄ·½³Ì¶øµÃµ½¾ØÕó~$U$~µÄ·Ç¶Ô½Ç¿é~$U_{ij}$£º
+ä¾æ¬¡é€šè¿‡è®¡ç®—å¦‚ä¸‹çš„æ–¹ç¨‹è€Œå¾—åˆ°çŸ©é˜µ~$U$~çš„éå¯¹è§’å—~$U_{ij}$ï¼š
 $$
 U_{ii}U_{ij} + U_{ij}U_{jj} = R_{ij} - \sum_{k=i+1}^{j-1}
 U_{ik}U_{kj}, \quad j = 2,3,\ldots,m,\ i = j-1,j-2,\ldots,1.
 $$
 \item
-¼ÆËã~$X = QU\tran{Q}$.
+è®¡ç®—~$X = QU\tran{Q}$.
 \end{list}
 \end{algorithm}
 
 
 
 
-\begin{lemma}[{\cite[ÒıÀí~6.8]{Higham2008}}]
-¼ÙÉè~Newton~·¨~$(\ref{it:NM_MatSquRoot_original})$~
-µÄ³õÊ¼µã~$X_0$~Óë¾ØÕó~$A$~¿É½»»»,
-ÇÒËù²úÉúµÄĞòÁĞ~$\{X_k\}$~ÊÇÓĞ¶¨ÒåµÄ. Ôò¶ÔÓÚËùÓĞµÄ~$k\geq1$,
-$X_k$~Óë~$A$~¶¼ÊÇ¿É½»»»µÄ,  ÇÒ´ËÊ±~Newton~·¨µÄµü´ú¸ñÊ½Îª£º
-\begin{equation}
-\label{it:NM_MatSquRoot} X_{k+1} = \frac{1}{2}(X_k+X_k^{-1}A).
-\end{equation}
-\end{lemma}
-
-\begin{equation}
-\label{it:NM_MatSquRoot_Coupled} \left\{
-\begin{array}{ll}
-\displaystyle X_{k + 1} = \frac{1}{2}(X_k + Y_k^{-1}), & X_0 =
-A, \\
-\displaystyle Y_{k + 1} = \frac{1}{2}(Y_k + X_k^{-1}), & Y_0 = \I.
-\end{array} \right.
-\end{equation}
-
-
-\subsection{¾ØÕó~$p$~´Î¸ù}
+\begin{lemma}[{\cite[å¼•ç†~6.8]{Higham2008}}]
+å‡è®¾~Newton~æ³•~$(\ref{it:NM_MatSquRoot_original})$~
+çš„åˆå§‹ç‚¹~$X_0$~ä¸çŸ©é˜µ~$A$~å¯äº¤æ¢,
+ä¸”æ‰€äº§ç”Ÿçš„åºåˆ—~$\{X_k\}$~æ˜¯æœ‰å®šä¹‰çš„. åˆ™å¯¹äºæ‰€æœ‰çš„~$k\geq1$,
+$X_k$~ä¸~$A$~éƒ½æ˜¯å¯äº¤æ¢çš„,  ä¸”æ­¤æ—¶~Newton~æ³•çš„è¿­ä»£æ ¼å¼ä¸ºï¼š
 
 
 
-\begin{theorem}[¾ØÕó~$p$~´Î¸ùµÄ´æÔÚĞÔ, {\cite{Psarrakos2002}}]
-\label{th:MatpthRoor_existence} ¶¨ÒåÈçÏÂµÄÕûÊıÁĞ~$\{d_k\}$£º
-$$
-d_k = \dim(\nspace(A^k)) - \dim(\nspace(A^{k-1})),\quad
-k=1,2,\ldots.
-$$
-¾ØÕó~$A\in\CS^{n\times n}$~´æÔÚ~$p$~´Î¸ùµÄ³äÒªÌõ¼şÊÇ
-¶ÔÓÚÈÎÒ»ÕûÊı~$\nu\geq0$,
-ÊıÁĞ~$\{d_k\}$~ÖĞÖÁ¶àÖ»ÓĞÒ»¸öÔªËØ´¦ÓÚ~$p\nu$~Óë~$p(\nu+1)$~Ö®¼ä.
-\end{theorem}
+\subsection{çŸ©é˜µ~$p$~æ¬¡æ ¹}
 
 
 
-\begin{theorem}[¾ØÕó~$p$~´Î¸ùµÄ·ÖÀà~\cite{Smith2003}]
-\end{theorem}
-
-
-\begin{theorem}[{\cite[¶¨Àí~7.2]{Higham2008}}]
-\end{theorem}
-
-\begin{theorem}[\cite{Iannazzo2006}]
-\label{th:Conv_NM_Ian2006} ¸ø¶¨¾ØÕó~$A\in\CS^{n\times
-n}$£¬ÉèÆäÆ×Îª~$\sigma(A)$¡£Èô~$\sigma(A) \subset \MCE_1$, ÆäÖĞ
-\begin{equation}
-\label{set:ConvReg_NM_Ian2006} \MCE_1 := \{z\in\CS: \Real{z}
->0, |z| \leq 1\},
-\end{equation}
-ÔòÒÔ~$X_0 = \I$~Îª³õÊ¼µãµÄ
-~Newton~·¨~$(\ref{it:NM_MatpthRoot_original})$~
-Ëù²úÉúµÄ¾ØÕóĞòÁĞ~$\{X_k\}$~ÊÕÁ²ÓÚ¾ØÕó~$A$~µÄÖ÷~$p$~´Î¸ù~$A^{1/p}$.
-\end{theorem}
-
-\begin{theorem}[\cite{Iannazzo2008}]
-\label{th:Conv_NM_Ian2006} ¸ø¶¨¾ØÕó~$A\in\CS^{n\times
-n}$£¬ÉèÆäÆ×Îª~$\sigma(A)$¡£Èô~$\sigma(A) \subset \MCE_2$, ÆäÖĞ
-\begin{equation}
-\label{set:ConvReg_NM_Ian08} \MCE_2 := \left\{z\in\CS: |z|\leq 2,
-|\arg(z)|< \frac{\pi}{4}\right\},
-\end{equation}
-ÔòÒÔ~$X_0 = \I$~Îª³õÊ¼µãµÄ
-~Newton~·¨~$(\ref{it:NM_MatpthRoot_original})$~
-Ëù²úÉúµÄ¾ØÕóĞòÁĞ~$\{X_k\}$~ÊÕÁ²ÓÚ¾ØÕó~$A$~µÄÖ÷~$p$~´Î¸ù~$A^{1/p}$.
-\end{theorem}
-
-
-\begin{equation}
-\label{it:NM_MatpthRoot_Coupled} \left\{
-\begin{array}{ll}
-\displaystyle X_{k + 1} = X_k \left(\frac{(p-1)\I + N_k}{p}\right),
-& X_0 = \I, \\
-\displaystyle N_{k + 1} = \left(\frac{(p-1)\I + N_k}{p}\right)^{- p}
-N_k, & N_0 = A.
-\end{array} \right.
-\end{equation}
 
 \begin{algorithm}[h!]
-\floatname{algorithm}{Ëã·¨}
-\caption{¼ÆËã¾ØÕóÖ÷~$p$~´Î¸ùµÄ~Schur-Newton~·¨~\cite[Ëã·¨~
+\floatname{algorithm}{ç®—æ³•}
+\caption{è®¡ç®—çŸ©é˜µä¸»~$p$~æ¬¡æ ¹çš„~Schur-Newton~æ³•~\cite[ç®—æ³•~
 3]{Iannazzo2008}} \label{al:MatpthRoot_SchurNewton_Ian08}
-¸ø¶¨¾ØÕó~$A\in\RS^{n\times n}$, ÆäËùÓĞÌØÕ÷Öµ¶¼²»ÊôÓÚ~$\RS^- :=
-(-\infty,0]$. ¸ø¶¨ÕûÊı~$p\geq 2$, Ôò´æÔÚÕûÊı~$k_0 \geq
-0$~¼°ÆæÊı~$q$~Ê¹µÃ~$p = 2^{k_0}q$.
-±¾Ëã·¨Í¨¹ıÊµ~Schur~·Ö½âºÍ¶ÔÅ¼~Newton~·¨~(\ref{it:NM_MatpthRoot_Coupled})~
-À´¼ÆËã~$A$~µÄÖ÷~$p$~´Î¸ù~$A^{1/p}$.
+ç»™å®šçŸ©é˜µ~$A\in\RS^{n\times n}$, å…¶æ‰€æœ‰ç‰¹å¾å€¼éƒ½ä¸å±äº~$\RS^- :=
+(-\infty,0]$. ç»™å®šæ•´æ•°~$p\geq 2$, åˆ™å­˜åœ¨æ•´æ•°~$k_0 \geq
+0$~åŠå¥‡æ•°~$q$~ä½¿å¾—~$p = 2^{k_0}q$.
+æœ¬ç®—æ³•é€šè¿‡å®~Schur~åˆ†è§£å’Œå¯¹å¶~Newton~æ³•~(\ref{it:NM_MatpthRoot_Coupled})~
+æ¥è®¡ç®—~$A$~çš„ä¸»~$p$~æ¬¡æ ¹~$A^{1/p}$.
 \begin{list}{\arabic{newlist}.}{\usecounter{newlist}
 \setlength{\rightmargin}{0em}\setlength{\leftmargin}{1.2em}}
 \item
-¼ÆËã¾ØÕó~$A$~µÄÊµ~Schur~·Ö½â~$A = QR\tran{Q}$.
+è®¡ç®—çŸ©é˜µ~$A$~çš„å®~Schur~åˆ†è§£~$A = QR\tran{Q}$.
 \item
-Èô~$q=1$£¬Áî~$k_1 = k_0$; Èô~$q\neq1$£¬ÔòÑ¡È¡~$k_1\geq k_0$~Ê¹µÃ
-´æÔÚÕıÊı~$s$~Ê¹ÈÎÒâ~$A$~µÄÌØÕ÷Öµ~$\lambda$~Âú×ã
+è‹¥~$q=1$ï¼Œä»¤~$k_1 = k_0$; è‹¥~$q\neq1$ï¼Œåˆ™é€‰å–~$k_1\geq k_0$~ä½¿å¾—
+å­˜åœ¨æ­£æ•°~$s$~ä½¿ä»»æ„~$A$~çš„ç‰¹å¾å€¼~$\lambda$~æ»¡è¶³
 $$
 s \lambda^{1/{2^{k_1}}} \in \left\{z\in \CS: \left|z -
 \frac{6}{5}\right| \leq \frac{3}{4}\right\}.
 $$
 \item
-Í¨¹ıËã·¨~\ref{al:MatSquRoot_RealSchurMethod}~¼ÆËã~$B =
+é€šè¿‡ç®—æ³•~\ref{al:MatSquRoot_RealSchurMethod}~è®¡ç®—~$B =
 R^{1/{2^{k_1}}}$.
 \item
-Èô~$q=1$, ÔòÁî~$X = QB\tran{Q}$£»Èô~$q\neq 1$,
-ÔòÍ¨¹ı¶ÔÅ¼~Newton~·¨~(\ref{it:NM_MatpthRoot_Coupled})~ À´¼ÆËã~$C =
-(B/s)^{1/q}$~²¢Áî~$X = Q(Cs^{1/q})^{2^{k_1-k_0}}\tran{Q}$.
+è‹¥~$q=1$, åˆ™ä»¤~$X = QB\tran{Q}$ï¼›è‹¥~$q\neq 1$,
+åˆ™é€šè¿‡å¯¹å¶~Newton~æ³•~(\ref{it:NM_MatpthRoot_Coupled})~ æ¥è®¡ç®—~$C =
+(B/s)^{1/q}$~å¹¶ä»¤~$X = Q(Cs^{1/q})^{2^{k_1-k_0}}\tran{Q}$.
 \end{list}
 \end{algorithm}
 
 
-Guo $\&$ Higham
-\cite{GuoHigham2006}~¸ø³öÁËÒ»ÖÖº¬²ÎÊıµÄ¶ÔÅ¼~Newton~·¨£º
-\begin{equation}
-\label{it:NM_MatpthRoot_ParCoupled} \left\{
-\begin{array}{ll}
-\displaystyle X_{k + 1} = \left(\frac{(p+1)\I -
-N_k}{p}\right)^{-1}X_k,
-& X_0 = c\I, \\
-\displaystyle N_{k + 1} = \left(\frac{(p+1)\I - N_k}{p}\right)^p
-N_k, & \displaystyle N_0 = \frac{1}{c^p}A.
-\end{array} \right.
-\end{equation}
-ÏÔÈ»£¬µ±~$N_k \to \I$~Ê±~$X_k \to
-A^{1/p}$¡£´ËÍâ£¬Ò²¸ø³öÁË¼ÆËã¾ØÕóÖ÷~$p$~´Î¸ùµÄËã·¨
-~\ref{al:MatpthRoot_ParSchurNewton_GuoHig06}£º
 
 \begin{algorithm}[h!]
-\floatname{algorithm}{Ëã·¨}
-\caption{¼ÆËã¾ØÕóÖ÷~$p$~´Î¸ùµÄº¬²ÎÊı~Schur-Newton~·¨~\cite[Ëã·¨~
+\floatname{algorithm}{ç®—æ³•}
+\caption{è®¡ç®—çŸ©é˜µä¸»~$p$~æ¬¡æ ¹çš„å«å‚æ•°~Schur-Newton~æ³•~\cite[ç®—æ³•~
 3.3]{GuoHigham2006}} \label{al:MatpthRoot_ParSchurNewton_GuoHig06}
-¸ø¶¨¾ØÕó~$A\in\RS^{n\times n}$, ÆäËùÓĞÌØÕ÷Öµ¶¼²»ÊôÓÚ~$\RS^- :=
-(-\infty,0]$. ¸ø¶¨ÕûÊı~$p\geq 2$, Ôò´æÔÚÕûÊı~$k_0 \geq
-0$~¼°ÆæÊı~$q$~Ê¹µÃ~$p = 2^{k_0}q$.
-±¾Ëã·¨Í¨¹ıÊµ~Schur~·Ö½âºÍº¬²ÎÊı~Newton~·¨~
+ç»™å®šçŸ©é˜µ~$A\in\RS^{n\times n}$, å…¶æ‰€æœ‰ç‰¹å¾å€¼éƒ½ä¸å±äº~$\RS^- :=
+(-\infty,0]$. ç»™å®šæ•´æ•°~$p\geq 2$, åˆ™å­˜åœ¨æ•´æ•°~$k_0 \geq
+0$~åŠå¥‡æ•°~$q$~ä½¿å¾—~$p = 2^{k_0}q$.
+æœ¬ç®—æ³•é€šè¿‡å®~Schur~åˆ†è§£å’Œå«å‚æ•°~Newton~æ³•~
 (\ref{it:NM_MatpthRoot_ParCoupled})~
-À´¼ÆËã~$A$~µÄÖ÷~$p$~´Î¸ù~$A^{1/p}$.
+æ¥è®¡ç®—~$A$~çš„ä¸»~$p$~æ¬¡æ ¹~$A^{1/p}$.
 \begin{list}{\arabic{newlist}.}{\usecounter{newlist}
 \setlength{\rightmargin}{0em}\setlength{\leftmargin}{1.2em}}
 \item
-¼ÆËã¾ØÕó~$A$~µÄÊµ~Schur~·Ö½â~$A = QR\tran{Q}$.
+è®¡ç®—çŸ©é˜µ~$A$~çš„å®~Schur~åˆ†è§£~$A = QR\tran{Q}$.
 \item
-Èô~$q=1$£¬Áî~$k_1 = k_0$; Èô~$q\neq1$£¬ÔòÑ¡È¡~$k_1\geq k_0$~Ê¹µÃ
-$|\lambda_1/\lambda_n|^{1/2^{k_1}}\leq 2$, ÆäÖĞ~$\lambda_1,\ldots,
-\lambda_n$~Îª~$A$~µÄÌØÕ÷ÖµÇÒÂú×ã~$|\lambda_n|\leq \cdots \leq
+è‹¥~$q=1$ï¼Œä»¤~$k_1 = k_0$; è‹¥~$q\neq1$ï¼Œåˆ™é€‰å–~$k_1\geq k_0$~ä½¿å¾—
+$|\lambda_1/\lambda_n|^{1/2^{k_1}}\leq 2$, å…¶ä¸­~$\lambda_1,\ldots,
+\lambda_n$~ä¸º~$A$~çš„ç‰¹å¾å€¼ä¸”æ»¡è¶³~$|\lambda_n|\leq \cdots \leq
 |\lambda_1|$,
-µ±~$\lambda_\ell$~²»È«ÊÇÊµÊıÊ±£¬ÖØĞÂÑ¡È¡~$k_1$~Ê¹µÃ¶ÔÈÎÒâµÄ~$\ell
-\in \{1,2,\ldots,n\}$~¶¼ÓĞ
+å½“~$\lambda_\ell$~ä¸å…¨æ˜¯å®æ•°æ—¶ï¼Œé‡æ–°é€‰å–~$k_1$~ä½¿å¾—å¯¹ä»»æ„çš„~$\ell
+\in \{1,2,\ldots,n\}$~éƒ½æœ‰
 $$
 \arg(\lambda_\ell^{1/2^{k_1}}) \in
 \left(-\frac{\pi}{8},\frac{\pi}{8}\right).
 $$
 \item
-Í¨¹ıËã·¨~\ref{al:MatSquRoot_RealSchurMethod}~¼ÆËã~$B =
+é€šè¿‡ç®—æ³•~\ref{al:MatSquRoot_RealSchurMethod}~è®¡ç®—~$B =
 R^{1/{2^{k_1}}}$.
 \item
-Èô~$q=1$, ÔòÁî~$X = QB\tran{Q}$£»Èô~$q\neq 1$, ÔòÏÈÑ¡È¡²ÎÊı~$c$,
-ÔÙÍ¨¹ıº¬²ÎÊı¶ÔÅ¼~Newton~·¨~ (\ref{it:NM_MatpthRoot_ParCoupled})~
-À´¼ÆËã~$C = B^{1/q}$~²¢Áî~$X = QC^{2^{k_1-k_0}}\tran{Q}$.
+è‹¥~$q=1$, åˆ™ä»¤~$X = QB\tran{Q}$ï¼›è‹¥~$q\neq 1$, åˆ™å…ˆé€‰å–å‚æ•°~$c$,
+å†é€šè¿‡å«å‚æ•°å¯¹å¶~Newton~æ³•~ (\ref{it:NM_MatpthRoot_ParCoupled})~
+æ¥è®¡ç®—~$C = B^{1/q}$~å¹¶ä»¤~$X = QC^{2^{k_1-k_0}}\tran{Q}$.
 \end{list}
 \end{algorithm}
 
 
-Halley~·¨ÊÇ¼ÆËã¾ØÕóÖ÷~$p$~´Î¸ùµÄÁíÒ»ÖÖÖØÒªµÄµü´ú·¨¡£
-ÀàËÆÓÚ~Newton~·¨£¬Èô³õÊ¼µã~$X_0$~Óë¾ØÕó~$A$~¿É½»»»£¬
-Ôò¿ÉµÃÈçÏÂµÄ¼ÆËã¾ØÕóÖ÷~$p$~´Î¸ùµÄ¼ò»¯~Halley~·¨£º
-\begin{equation}
-\label{it:HM_MatpthRoot_original} X_{k+1} = X_k\left((p+1)X_k^p +
-(p-1)A\right)^{-1} \left((p-1)X_k^p + (p+1)A\right), \quad AX_0 =
-X_0A.
-\end{equation}
-ÌØ±ğµØ£¬³õÊ¼µãÈ¡Îª~$X_0 =
-\I$~ÊÇÑĞ¾¿Ê±Ö÷Òª¿¼ÂÇµÄÇéĞÎ£¬Èç~\cite{Iannazzo2008,Guo2010,Lin2010}¡£
-¹ØÓÚ~Halley~(\ref{it:HM_MatpthRoot_original})~·¨µÄÊÕÁ²ĞÔ£¬ Iannazzo
-\cite{Iannazzo2008}~µÃµ½ÁËÈçÏÂµÄ½á¹û£º
-
-\begin{theorem}[\cite{Iannazzo2008}]
-\label{th:Conv_HM_Ian08} ¸ø¶¨¾ØÕó~$A\in\CS^{n\times
-n}$£¬ÉèÆäÆ×Îª~$\sigma(A)$¡£Èô~$\sigma(A) \subset \{z\in \CS:
-\Real{z}>0\}$, ÔòÒÔ~$X_0 = \I$~Îª³õÊ¼µãµÄ
-~Halley~·¨~$(\ref{it:HM_MatpthRoot_original})$~
-Ëù²úÉúµÄ¾ØÕóĞòÁĞ~$\{X_k\}$~ÊÕÁ²ÓÚ¾ØÕó~$A$~µÄÖ÷~$p$~´Î¸ù~$A^{1/p}$.
-\end{theorem}
-
-
-Guo~ÔÚ~\cite{Guo2010}~ÖĞ½øÒ»²½Ö¤Ã÷ÁËµ± ~$\sigma(A) \subset \{z\in
-\CS:
-\Real{z}>0\}$~Ê±~Halley~·¨~(\ref{it:HM_MatpthRoot_original})~ÊÇÈı½×ÊÕÁ²µÄ¡£
-Ó¦ÓÃÔÚ\cite{Iannazzo2006}ÖĞ¶ÔNewton·¨ÎÈ¶¨ĞÔµÄ·ÖÎö·½·¨¿ÉÖª£¬
-Halley~·¨~(\ref{it:HM_MatpthRoot_original})~Í¬ÑùÔÚÊıÖµ¼ÆËãÖĞÊÇ²»ÎÈ¶¨µÄ¡£
-¹ÊÀàËÆÓÚ~Newton~·¨£¬¿ÉÒıÈëÈçÏÂµÄ¾ßÓĞÊıÖµÎÈ¶¨µÄ¶ÔÅ¼ĞÎÊ½µÄ~Halley~·¨£º
-\begin{equation}
-\label{it:HM_MatpthRoot_Coupled} \left\{
-\begin{array}{ll}
-\displaystyle X_{k+1} = X_k\left((p+1)\I + (p-1)N_k\right)^{-1}
-\left((p-1)\I + (p+1)N_k\right),
-& X_0 = \I, \\
-\displaystyle N_{k + 1}  = N_k\left((p+1)\I + (p-1)N_k\right)^{-1}
-\left((p-1)\I + (p+1)N_k\right), & \displaystyle N_0 = A.
-\end{array} \right.
-\end{equation}
-ÏÔÈ»£¬µ±~$N_k \to \I$~Ê±~$X_k \to
-A^{1/p}$¡£Ëã·¨~\ref{al:MatpthRoot_SchurHalley_Ian08}~
-¸ø³öÁËÓ¦ÓÃ¶ÔÅ¼~Halley~·¨~(\ref{it:HM_MatpthRoot_Coupled})~
-À´¼ÆËã~$A$~µÄÖ÷~$p$~´Î¸ù~$A^{1/p}$¡£
-
 \begin{algorithm}[h!]
-\floatname{algorithm}{Ëã·¨}
-\caption{¼ÆËã¾ØÕóÖ÷~$p$~´Î¸ùµÄ~Schur-Halley~·¨~\cite[Ëã·¨~
+\floatname{algorithm}{ç®—æ³•}
+\caption{è®¡ç®—çŸ©é˜µä¸»~$p$~æ¬¡æ ¹çš„~Schur-Halley~æ³•~\cite[ç®—æ³•~
 4]{Iannazzo2008}} \label{al:MatpthRoot_SchurHalley_Ian08}
-¸ø¶¨¾ØÕó~$A\in\RS^{n\times n}$, ÆäËùÓĞÌØÕ÷Öµ¶¼²»ÊôÓÚ~$\RS^- :=
-(-\infty,0]$. ¸ø¶¨ÕûÊı~$p\geq 2$, Ôò´æÔÚÕûÊı~$k_0 \geq
-0$~¼°ÆæÊı~$q$~Ê¹µÃ~$p = 2^{k_0}q$.
-±¾Ëã·¨Í¨¹ıÊµ~Schur~·Ö½âºÍ¶ÔÅ¼~Halley~·¨~(\ref{it:HM_MatpthRoot_Coupled})~
-À´¼ÆËã~$A$~µÄÖ÷~$p$~´Î¸ù~$A^{1/p}$.
+ç»™å®šçŸ©é˜µ~$A\in\RS^{n\times n}$, å…¶æ‰€æœ‰ç‰¹å¾å€¼éƒ½ä¸å±äº~$\RS^- :=
+(-\infty,0]$. ç»™å®šæ•´æ•°~$p\geq 2$, åˆ™å­˜åœ¨æ•´æ•°~$k_0 \geq
+0$~åŠå¥‡æ•°~$q$~ä½¿å¾—~$p = 2^{k_0}q$.
+æœ¬ç®—æ³•é€šè¿‡å®~Schur~åˆ†è§£å’Œå¯¹å¶~Halley~æ³•~(\ref{it:HM_MatpthRoot_Coupled})~
+æ¥è®¡ç®—~$A$~çš„ä¸»~$p$~æ¬¡æ ¹~$A^{1/p}$.
 \begin{list}{\arabic{newlist}.}{\usecounter{newlist}
 \setlength{\rightmargin}{0em}\setlength{\leftmargin}{1.2em}}
 \item
-¼ÆËã¾ØÕó~$A$~µÄÊµ~Schur~·Ö½â~$A = QR\tran{Q}$.
+è®¡ç®—çŸ©é˜µ~$A$~çš„å®~Schur~åˆ†è§£~$A = QR\tran{Q}$.
 \item
-Èô~$q=1$£¬Áî~$k_1 = k_0$; Èô~$q\neq1$£¬ÔòÑ¡È¡~$k_1\geq k_0$~Ê¹µÃ
-´æÔÚÕıÊı~$s$~Ê¹ÈÎÒâ~$A$~µÄÌØÕ÷Öµ~$\lambda$~Âú×ã
+è‹¥~$q=1$ï¼Œä»¤~$k_1 = k_0$; è‹¥~$q\neq1$ï¼Œåˆ™é€‰å–~$k_1\geq k_0$~ä½¿å¾—
+å­˜åœ¨æ­£æ•°~$s$~ä½¿ä»»æ„~$A$~çš„ç‰¹å¾å€¼~$\lambda$~æ»¡è¶³
 $$
 s \lambda^{1/{2^{k_1}}} \in \left\{z\in \CS: \left|z -
 \frac{8}{5}\right| \leq 1\right\}.
 $$
 \item
-Í¨¹ıËã·¨~\ref{al:MatSquRoot_RealSchurMethod}~¼ÆËã~$B =
+é€šè¿‡ç®—æ³•~\ref{al:MatSquRoot_RealSchurMethod}~è®¡ç®—~$B =
 R^{1/{2^{k_1}}}$.
 \item
-Èô~$q=1$, ÔòÁî~$X = QB\tran{Q}$£»Èô~$q\neq 1$,
-ÔòÍ¨¹ı¶ÔÅ¼~Halley~·¨~(\ref{it:HM_MatpthRoot_Coupled})~ À´¼ÆËã~$C =
-(B/s)^{1/q}$~²¢Áî~$X = Q(Cs^{1/q})^{2^{k_1-k_0}}\tran{Q}$.
+è‹¥~$q=1$, åˆ™ä»¤~$X = QB\tran{Q}$ï¼›è‹¥~$q\neq 1$,
+åˆ™é€šè¿‡å¯¹å¶~Halley~æ³•~(\ref{it:HM_MatpthRoot_Coupled})~ æ¥è®¡ç®—~$C =
+(B/s)^{1/q}$~å¹¶ä»¤~$X = Q(Cs^{1/q})^{2^{k_1-k_0}}\tran{Q}$.
 \end{list}
 \end{algorithm}
 
@@ -568,4 +365,4 @@ R^{1/{2^{k_1}}}$.
 
 
 
-\section{ÂÛÎÄµÄ×éÖ¯}
+\section{è®ºæ–‡çš„ç»„ç»‡}

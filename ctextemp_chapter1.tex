@@ -1,0 +1,368 @@
+%%---------------------------------------------------------------------------%%
+%%------------ 第一章：绪论 -------------------------------------------------%%
+%%---------------------------------------------------------------------------%%
+
+
+\chapter{绪论}
+\label{chapter:Introduction}
+
+
+\section{研究背景}
+
+
+
+
+
+
+
+
+
+
+
+\section{迭代法介绍}
+
+\begin{itemize}
+\item
+一般的~Newton~法~(初始点~$x_0$~ 给定)：
+$$
+F'(x_k) \Delta x_k = -F(x_k),\ x_{k+1} = x_k + \Delta x_k, \quad k =
+0,1,\ldots.
+$$
+\item
+简化~Newton~法：
+这种变形的~Newton~法将每步计算~$F'(x_k)$~改为固定的~$F'(x_0)$~(初始点~$x_0$~
+给定)：
+$$
+F'(x_0) \Delta x_k = -F(x_k),\ x_{k+1} = x_k + \Delta x_k,\quad k =
+0,1,\ldots.
+$$
+这样, 每步只需要计算~$n$~个分量函数, 但这种迭代法只有线性收敛．
+\item
+~Newton~类法： 当所要处理的方程组维数较大时,
+很难求解~Newton~方程~(\ref{eq:NewtonEquation})~的精确解~$\Delta
+x_k$, 进而无法得到精确的~Jacobi~矩阵~$F'(x_{k+1})$．
+为了能够应用~Newton~法较好的处理这种情况,
+得到了如下的一种变形~Newton~法~(初始点~$x_0$~ 给定)：
+\begin{equation}
+\label{it:NML_general} M(x_k)\Delta x_k = -F(x_k),\ x_{k+1} = x_k +
+\Delta x_k,\ \ k = 0,1,\ldots,
+\end{equation}
+其中~$M(x_k)$~是近似于~$F'(x_k)$~的矩阵．
+\item
+非精确~Newton~法： 同样考虑大规模方程组情形,
+相比于~Newton~类法用一个近似的~Jacobi~矩阵来代替~$ F'(x_k)$,
+若考虑在求解~Newton~方程~(\ref{eq:NewtonEquation})~时,
+不去求其精确解而只需要求满足某种条件的近似解来作为迭代修正,
+这样便得到如下的变形~Newton~法~(初始点~$x_0$~ 给定)：
+\begin{equation}
+\label{it:INM_BanachSpace} F'(x_k) \Delta x_k = -F(x_k) + r_k,\
+x_{k+1} = x_k + \Delta x_k,\quad k = 0,1,\ldots,
+\end{equation}
+其中~$r_k \in \mathbb{Y}$~一般应满足~$\|r_k\|/\|F(x_k)\|\leqslant
+\eta_k,\ k= 0,1,\ldots$~, $\{\eta_k\}$~满足~$0\leqslant \eta_k <1$,
+可能与~$x_k$~有关, 为控制序列,
+用来控制求方程~(\ref{eq:NewtonEquation})~的解的精确程度．
+显然令~$\eta_k \equiv 0$~时得到一般的~Newton~法．
+\item
+拟~Newton~法：Newton~法的主要缺点之一是每步都要计算导数~$F'(x)$~的值,
+当分量函数较复杂时计算很不方便,
+拟~Newton~法是针对这一缺点提出的算法,
+其核心是用通过计算函数值来代替导数以避免求导：
+$$
+J_k \Delta x_k = -F(x_k), \ J_{k+1} = J_k + \Delta J_k,\quad k =
+0,1,\ldots,
+$$
+其中~$J_k$~是近似于~$F'(x_k)$~的矩阵．不同的~$\Delta J_k$~选择，
+可以得到不同的迭代法. 例如，当取~$\Delta J_k = F(x_{k+1})\tran{\Delta
+x_k}/(\tran{\Delta x_k}\Delta x_k)$， 则得到~Broyden~法。
+\item
+~Gauss-Newton~法：
+这种变形的~Newton~法主要应用于求解非线性最小二乘~(约束/无约束)~问题,
+迭代格式为:
+\begin{equation}
+\label{it:GNM_BanachSpace} \|F'(x_k)\Delta x_k + F(x_k)\| = \min,\
+x_{k+1} = x_k + \Delta x_k,\quad k = 0,1,\ldots.
+\end{equation}
+\end{itemize}
+
+
+
+
+\begin{itemize}
+\item[1)]
+Kantorovich~型收敛理论：理论上，
+Newton~法收敛性的一个最重要收敛结果是被称为
+~Newton-Kantorovich~半局部收敛定理~\cite{Kantorvich1982}．
+该定理在理论和应用上都是相当重要的， 它是解方程算法现代研究的起点．
+大量的收敛结果都是基于所谓的~Kantorovich~型条件而得到的,
+例如，\cite{Ortega1970,Rokne1972,Rall1974,GraggTapia1974,Deuflhard1979,
+Ypma1982,Huang1993,Gutierrez1997a,Wang1999,Gutierrez2000,Ezquerro2002}．
+
+\item[2)]
+Smale~点估计理论：该理论是由~Smale~于~1986~年提出，由~$\alpha-$ 理论
+和~$\gamma-$ 理论组成。在~$\alpha-$ 理论中，
+假设~$F$~在初始点~$x_0$~是解析的，
+给出了基于如下三个不变量的收敛判据~\cite{Smale1986}：
+\begin{equation*}
+\begin{cases}
+\alpha(F,x_0) = \beta(F,x_0)\gamma(F,x_0),\\
+\beta(F,x_0) = \|F'(x_0)^{-1}F(x_0)\|,\\
+\gamma(F,x_0) = \sup\limits_{k \geqslant 2} \left\|\displaystyle
+\frac{1}{k!} F'(x_0)^{-1}F^{(k)}(x_0)^{-1}\right\|^{\frac{1}{k-1}}.
+\end{cases}
+\end{equation*}
+而~$\gamma-$ 理论则研究了算子~$F$~在解析条件下的局部收敛性。
+定理~\ref{th:SmaleGammaTh}~称为~$\gamma-$ 定理。
+王兴华等人改进并完善了~Smale~点估计理论
+~(见文献~\cite{WangLi2001}~及其所列文献)． 值得指出的是，
+王兴华引入了~$\gamma$~条件
+并在此基础上系统建立了~Smale~原先在解析条件下的全部结果
+~(见文献~\cite{WangHan1997b}~及其所列文献).
+\end{itemize}
+
+
+
+
+
+
+\section{矩阵函数}
+
+
+\begin{theorem}[{\cite[定理~1.15]{Higham2008}}]
+\label{th:MatFun_sum_product} 设函数~$f,g$~在矩阵~$A\in\CS^{n\times
+n}$~的谱上有定义.
+\begin{enumerate}
+\item[\textup{(i)}]
+若~$h(t) = f(t) + g(t)$, 则~$h(A) = f(A)+g(A)$;
+\item[\textup{(ii)}]
+若~$h(t)=f(t)g(t)$, 则~$h(A)=f(A)g(A)$.
+\end{enumerate}
+\end{theorem}
+
+
+
+
+
+
+\subsection{矩阵平方根}
+
+\begin{theorem}[\cite{HornJohnson1991}]
+
+\end{theorem}
+
+\begin{theorem}[矩阵平方根的分类, \cite{Higham2008}]
+
+\end{theorem}
+
+
+
+\begin{theorem}[\cite{Higham2008}]
+\end{theorem}
+
+
+\begin{align*}
+u_{ii}^2 & = t_{ii},\quad i = 1,2,\ldots,n,\\
+(u_{ii}+u_{jj})u_{ij} & = t_{ij} - \sum_{k=i+1}^{j-1}u_{ik}u_{kj},
+\quad j > i.
+\end{align*}
+于是, 有如下计算非奇异矩阵平方根的算法,
+该算法由~Bj\"{o}rck~$\&$~Hammarling~于~\cite{Bjorck1983}~得到.
+
+\begin{algorithm}[h!]
+\floatname{algorithm}{算法}
+\caption{计算矩阵平方根的~Schur~法~\cite{Bjorck1983}}
+\label{al:MatSquRoot_SchurMethod} 给定非奇异矩阵~$A\in\CS^{n\times
+n}$, 本算法通过~Schur~分解来计算~$A$~的主平方根~$A^{1/2}$.
+\newcounter{newlist}
+\begin{list}{\arabic{newlist}.}{\usecounter{newlist}
+\setlength{\rightmargin}{0em}\setlength{\leftmargin}{1.2em}}
+\item
+计算矩阵~$A$~的~Schur~分解~$A = QRQ^*$;
+\item
+计算矩阵~$U$~各对角元素的主平方根~$u_{ii} = t_{ii}^{1/2},\ i = 1,
+\ldots, n$;
+\item
+依次计算矩阵~$U$~的非对角元：
+$$
+u_{ij} = \displaystyle
+\frac{t_{ij}-\displaystyle\sum_{k=i+1}^{j-1}u_{ik}u_{kj}}{u_{ii}+u_{jj}},
+\quad j = 2,3,\ldots,n,\ i = j-1,j-2,\ldots,1;
+$$
+\item
+计算~$X = QUQ^*$.
+\end{list}
+\end{algorithm}
+
+\begin{algorithm}[h!]
+\floatname{algorithm}{算法}
+\caption{计算矩阵平方根的实~Schur~法~\cite{Higham1987}}
+\label{al:MatSquRoot_RealSchurMethod} 给定矩阵~$A\in\RS^{n\times
+n}$, 其所有特征值都不属于~$\RS^- := (-\infty,0]$.
+本算法通过实~Schur~分解来计算~$A$~的主平方根~$A^{1/2}$.
+\begin{list}{\arabic{newlist}.}{\usecounter{newlist}
+\setlength{\rightmargin}{0em}\setlength{\leftmargin}{1.2em}}
+\item
+计算矩阵~$A$~的实~Schur~分解~$A = QR\tran{Q}$, 其中~$R$~是~$m\times
+m$~的块矩阵.
+\item
+计算矩阵~$U$~各对角块的主平方根：当~$R_{ii}=[r_{ij}]_{1\times1}$~时,
+$U_{ii} = R_{ii}^{1/2}$；当~$R_{ii}=[r_{ij}]_{2\times2}$~时,
+$$
+U_{ii} = \left[\begin{array}{cc} \alpha +
+\displaystyle\frac{1}{4\alpha}(r_{11}-r_{22}) &
+\displaystyle\frac{1}{2\alpha}r_{12} \\
+\displaystyle\frac{1}{2\alpha}r_{21} & \alpha -
+\displaystyle\frac{1}{4\alpha}(r_{11}-r_{22})
+\end{array}\right],
+$$
+其中
+\begin{equation*}
+\alpha = \left\{
+\begin{array}{ll}
+\displaystyle \left(\frac{|\theta|+(\theta^2 +
+\mu^2)^{1/2}}{2}\right)^{1/2}, & \theta \geq 0,\\
+\displaystyle
+\frac{\mu}{2\left(\displaystyle\frac{|\theta|+(\theta^2 +
+\mu^2)^{1/2}}{2}\right)^{1/2}}, & \theta <0,
+\end{array}
+\right.
+\end{equation*}
+$$
+\theta = \frac{r_{11}+r_{12}}{2},\quad \mu =
+\frac{\left(-(r_{11}-r_{22})^2-4r_{21}r_{22}\right)^{1/2}}{2}.
+$$
+\item
+依次通过计算如下的方程而得到矩阵~$U$~的非对角块~$U_{ij}$：
+$$
+U_{ii}U_{ij} + U_{ij}U_{jj} = R_{ij} - \sum_{k=i+1}^{j-1}
+U_{ik}U_{kj}, \quad j = 2,3,\ldots,m,\ i = j-1,j-2,\ldots,1.
+$$
+\item
+计算~$X = QU\tran{Q}$.
+\end{list}
+\end{algorithm}
+
+
+
+
+\begin{lemma}[{\cite[引理~6.8]{Higham2008}}]
+假设~Newton~法~$(\ref{it:NM_MatSquRoot_original})$~
+的初始点~$X_0$~与矩阵~$A$~可交换,
+且所产生的序列~$\{X_k\}$~是有定义的. 则对于所有的~$k\geq1$,
+$X_k$~与~$A$~都是可交换的,  且此时~Newton~法的迭代格式为：
+
+
+
+\subsection{矩阵~$p$~次根}
+
+
+
+
+\begin{algorithm}[h!]
+\floatname{algorithm}{算法}
+\caption{计算矩阵主~$p$~次根的~Schur-Newton~法~\cite[算法~
+3]{Iannazzo2008}} \label{al:MatpthRoot_SchurNewton_Ian08}
+给定矩阵~$A\in\RS^{n\times n}$, 其所有特征值都不属于~$\RS^- :=
+(-\infty,0]$. 给定整数~$p\geq 2$, 则存在整数~$k_0 \geq
+0$~及奇数~$q$~使得~$p = 2^{k_0}q$.
+本算法通过实~Schur~分解和对偶~Newton~法~(\ref{it:NM_MatpthRoot_Coupled})~
+来计算~$A$~的主~$p$~次根~$A^{1/p}$.
+\begin{list}{\arabic{newlist}.}{\usecounter{newlist}
+\setlength{\rightmargin}{0em}\setlength{\leftmargin}{1.2em}}
+\item
+计算矩阵~$A$~的实~Schur~分解~$A = QR\tran{Q}$.
+\item
+若~$q=1$，令~$k_1 = k_0$; 若~$q\neq1$，则选取~$k_1\geq k_0$~使得
+存在正数~$s$~使任意~$A$~的特征值~$\lambda$~满足
+$$
+s \lambda^{1/{2^{k_1}}} \in \left\{z\in \CS: \left|z -
+\frac{6}{5}\right| \leq \frac{3}{4}\right\}.
+$$
+\item
+通过算法~\ref{al:MatSquRoot_RealSchurMethod}~计算~$B =
+R^{1/{2^{k_1}}}$.
+\item
+若~$q=1$, 则令~$X = QB\tran{Q}$；若~$q\neq 1$,
+则通过对偶~Newton~法~(\ref{it:NM_MatpthRoot_Coupled})~ 来计算~$C =
+(B/s)^{1/q}$~并令~$X = Q(Cs^{1/q})^{2^{k_1-k_0}}\tran{Q}$.
+\end{list}
+\end{algorithm}
+
+
+
+\begin{algorithm}[h!]
+\floatname{algorithm}{算法}
+\caption{计算矩阵主~$p$~次根的含参数~Schur-Newton~法~\cite[算法~
+3.3]{GuoHigham2006}} \label{al:MatpthRoot_ParSchurNewton_GuoHig06}
+给定矩阵~$A\in\RS^{n\times n}$, 其所有特征值都不属于~$\RS^- :=
+(-\infty,0]$. 给定整数~$p\geq 2$, 则存在整数~$k_0 \geq
+0$~及奇数~$q$~使得~$p = 2^{k_0}q$.
+本算法通过实~Schur~分解和含参数~Newton~法~
+(\ref{it:NM_MatpthRoot_ParCoupled})~
+来计算~$A$~的主~$p$~次根~$A^{1/p}$.
+\begin{list}{\arabic{newlist}.}{\usecounter{newlist}
+\setlength{\rightmargin}{0em}\setlength{\leftmargin}{1.2em}}
+\item
+计算矩阵~$A$~的实~Schur~分解~$A = QR\tran{Q}$.
+\item
+若~$q=1$，令~$k_1 = k_0$; 若~$q\neq1$，则选取~$k_1\geq k_0$~使得
+~$|\lambda_1/\lambda_n|^{1/2^{k_1}}\leq 2$, 其中~$\lambda_1,\ldots,
+\lambda_n$~为~$A$~的特征值且满足~$|\lambda_n|\leq \cdots \leq
+|\lambda_1|$,
+当~$\lambda_\ell$~不全是实数时，重新选取~$k_1$~使得对任意的~$\ell
+\in \{1,2,\ldots,n\}$~都有
+$$
+\arg(\lambda_\ell^{1/2^{k_1}}) \in
+\left(-\frac{\pi}{8},\frac{\pi}{8}\right).
+$$
+\item
+通过算法~\ref{al:MatSquRoot_RealSchurMethod}~计算~$B =
+R^{1/{2^{k_1}}}$.
+\item
+若~$q=1$, 则令~$X = QB\tran{Q}$；若~$q\neq 1$, 则先选取参数~$c$,
+再通过含参数对偶~Newton~法~ (\ref{it:NM_MatpthRoot_ParCoupled})~
+来计算~$C = B^{1/q}$~并令~$X = QC^{2^{k_1-k_0}}\tran{Q}$.
+\end{list}
+\end{algorithm}
+
+
+\begin{algorithm}[h!]
+\floatname{algorithm}{算法}
+\caption{计算矩阵主~$p$~次根的~Schur-Halley~法~\cite[算法~
+4]{Iannazzo2008}} \label{al:MatpthRoot_SchurHalley_Ian08}
+给定矩阵~$A\in\RS^{n\times n}$, 其所有特征值都不属于~$\RS^- :=
+(-\infty,0]$. 给定整数~$p\geq 2$, 则存在整数~$k_0 \geq
+0$~及奇数~$q$~使得~$p = 2^{k_0}q$.
+本算法通过实~Schur~分解和对偶~Halley~法~(\ref{it:HM_MatpthRoot_Coupled})~
+来计算~$A$~的主~$p$~次根~$A^{1/p}$.
+\begin{list}{\arabic{newlist}.}{\usecounter{newlist}
+\setlength{\rightmargin}{0em}\setlength{\leftmargin}{1.2em}}
+\item
+计算矩阵~$A$~的实~Schur~分解~$A = QR\tran{Q}$.
+\item
+若~$q=1$，令~$k_1 = k_0$; 若~$q\neq1$，则选取~$k_1\geq k_0$~使得
+存在正数~$s$~使任意~$A$~的特征值~$\lambda$~满足
+$$
+s \lambda^{1/{2^{k_1}}} \in \left\{z\in \CS: \left|z -
+\frac{8}{5}\right| \leq 1\right\}.
+$$
+\item
+通过算法~\ref{al:MatSquRoot_RealSchurMethod}~计算~$B =
+R^{1/{2^{k_1}}}$.
+\item
+若~$q=1$, 则令~$X = QB\tran{Q}$；若~$q\neq 1$,
+则通过对偶~Halley~法~(\ref{it:HM_MatpthRoot_Coupled})~ 来计算~$C =
+(B/s)^{1/q}$~并令~$X = Q(Cs^{1/q})^{2^{k_1-k_0}}\tran{Q}$.
+\end{list}
+\end{algorithm}
+
+
+
+
+
+
+
+
+
+
+\section{论文的组织}
